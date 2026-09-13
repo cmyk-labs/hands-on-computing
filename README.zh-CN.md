@@ -1,9 +1,17 @@
 <!-- <p align="center">
-  <img src="docs/assets/logo.png" width="180" alt="动手学计算机 Logo">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-zh-cn-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/logo-zh-cn-light.png">
+    <img src="docs/assets/logo-zh-cn-light.png" width="180" alt="动手学计算机 Logo">
+  </picture>
 </p> -->
 
 <p align="center">
-  <img src="docs/assets/banner2.png" width="1200" alt="动手学计算机：从编程基础到 AI 工程，理解原理，动手实践">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-zh-cn-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/banner-zh-cn-light.png">
+    <img src="docs/assets/banner-zh-cn-light.png" width="1200" alt="动手学计算机：从编程基础到 AI 工程，理解原理，动手实践">
+  </picture>
 </p>
 
 <h1 align="center">《动手学计算机》 从编程基础到 AI 工程</h1>
@@ -52,16 +60,16 @@
 
 | 教程内容 | 简介 | 地址 |
 | --- | --- | --- |
-| **Python** | 从类型、函数与对象入门，学习标准库、类型标注、测试与打包，进一步探索并发、运行机制和性能分析。 | [目录](content/编程语言/python/plan.md) · [规范](content/编程语言/python/Python编程规范.md) |
-| **JavaScript** | 从语言基础理解作用域、闭包、原型与模块，掌握 Promise、异步调度、自动化测试和项目组织。 | [目录](content/编程语言/javascript/plan.md) · [规范](content/编程语言/javascript/JavaScript编程规范.md) |
-| **TypeScript** | 在 JavaScript 基础上学习类型推断、收窄、泛型与类型操作，实践运行时校验、类型测试和包分发。 | [目录](content/编程语言/typescript/plan.md) · [规范](content/编程语言/typescript/TypeScript编程规范.md) |
+| **Python** | 从类型、函数与对象入门，学习标准库、类型标注、测试与打包，进一步探索并发、运行机制和性能分析。 | [目录](content/编程语言/python/plan.md) |
+| **JavaScript** | 从语言基础理解作用域、闭包、原型与模块，掌握 Promise、异步调度、自动化测试和项目组织。 | [目录](content/编程语言/javascript/plan.md) |
+| **TypeScript** | 在 JavaScript 基础上学习类型推断、收窄、泛型与类型操作，实践运行时校验、类型测试和包分发。 | [目录](content/编程语言/typescript/plan.md) |
 
 ### Web与应用开发
 
 | 教程内容 | 简介 | 地址 |
 | --- | --- | --- |
-| **HTML** | 从文档结构与语义入门，学习链接、图片、表格、表单和原生交互，结合可访问性检查完成多页面网站实践。 | [目录](content/Web与应用开发/html/plan.md) · [规范](content/Web与应用开发/html/HTML编程规范.md) |
-| **CSS** | 从选择器、层叠与盒模型理解样式，学习 Flexbox、Grid、响应式布局、主题和动画，完成页面样式实践。 | [目录](content/Web与应用开发/css/plan.md) · [规范](content/Web与应用开发/css/CSS编程规范.md) |
+| **HTML** | 从文档结构与语义入门，学习链接、图片、表格、表单和原生交互，结合可访问性检查完成多页面网站实践。 | [目录](content/Web与应用开发/html/plan.md) |
+| **CSS** | 从选择器、层叠与盒模型理解样式，学习 Flexbox、Grid、响应式布局、主题和动画，完成页面样式实践。 | [目录](content/Web与应用开发/css/plan.md) |
 
 ## 🤝 欢迎贡献
 
