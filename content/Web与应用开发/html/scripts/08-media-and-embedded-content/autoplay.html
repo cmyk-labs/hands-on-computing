@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>静音自动播放观察</title>
+</head>
+<body>
+  <h1>自动播放是否发生</h1>
+  <p>保持静音，观察约四秒；若未开始，请手动播放。</p>
+  <video controls autoplay muted playsinline preload="none"
+         src="signal.mp4" poster="poster.png" width="320" height="180"
+         aria-label="静音自动播放的方块视频">
+    <track kind="captions" src="captions-zh.vtt" srclang="zh-CN"
+           label="中文（含声音提示）" default>
+    此浏览器不支持 video。
+  </video>
+  <p>文字说明：黄色方块先在左侧，两秒后切换到右侧。
+     原文件有两声短音，此页面默认静音。</p>
+  <p><a href="video.html">返回手动播放页面</a></p>
+  <!-- 观察而不预设策略：刷新后不点击，查看时间是否推进和画面是否切换。 -->
+  <!-- 若时间保持为零，手动播放应仍可使用；不能据此直接认定文件损坏。 -->
+  <!-- 允许自动播放时，preload=none 不会阻止为播放所需的加载。 -->
+  <!-- 操作：保持 muted；观察后暂停或关闭这个标签页。 -->
+</body>
+</html>

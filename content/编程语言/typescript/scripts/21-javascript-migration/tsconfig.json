@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2025",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "lib": [
+      "ES2025"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": ".",
+    "outDir": "./.build",
+    "noEmitOnError": true,
+    "allowJs": true,
+    "checkJs": true
+  },
+  "files": [
+    "legacy.js",
+    "model.ts",
+    "main.ts",
+    "legacy.test.js"
+  ]
+}

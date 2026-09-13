@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>定位与层叠上下文：滚动</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>定位与层叠上下文：滚动</h1>
+<nav><a href="index.html">定位首页</a></nav>
+<section>
+<h2>fixed 参照</h2>
+<p class="fixed-note">视口底部固定提示</p>
+<div class="transformed">
+  <p class="local-fixed">变换祖先内的 fixed</p>
+  <p>滚动页面，比较这条提示和视口底部提示。</p>
+</div>
+</section>
+<section>
+<h2>sticky 条件与范围</h2>
+<div class="scroll-box good" tabindex="0" role="region" aria-label="有 top 的粘性定位">
+  <div class="sticky-chapter">
+    <div class="before">滚动到标题</div>
+    <h3 class="sticky-label">章节标题</h3>
+    <div class="after">章节正文：继续滚动，观察标题何时离开。</div>
+  </div>
+  <div class="tail">下一块内容</div>
+</div>
+<div class="scroll-box no-inset" tabindex="0" role="region" aria-label="缺少 top 的对照">
+  <div class="sticky-chapter">
+    <div class="before">滚动到标题</div>
+    <h3 class="sticky-label">章节标题</h3>
+    <div class="after">章节正文：继续滚动，观察标题何时离开。</div>
+  </div>
+  <div class="tail">下一块内容</div>
+</div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+* { box-sizing: border-box; }
+body { margin: 0 auto; padding: 1rem; max-width: 70rem; font: 1rem/1.6 system-ui, sans-serif; color: #17212b; background: #fff; }
+h1 { font-size: 2rem; } h2 { font-size: 1.4rem; } h3 { font-size: 1.1rem; }
+a { color: #0645ad; } :focus { outline: 3px solid #0645ad; outline-offset: 3px; }
+.news p, .break-demo p { margin-top: 0; }
+.fill, .break-demo { border-block: 1px solid #6b7280; margin-block: 1rem; }
+.keep { padding: 0.5rem; border: 1px solid #6b7280; }
+.report { columns: 20rem 2; column-gap: 2rem; }
+.overflow-columns p { margin-top: 0; }
+.news {
+  columns: 18rem 3;
+  column-gap: 2rem;
+  column-rule: 1px solid #6b7280;
+}
+/* 18rem 是期望列宽，3 是列数上限；空间不足时可以只剩一列。 */
+
+.span { column-span: all; }
+/* 跨越当前多列容器的全部列；观察中间标题前后的两组文字。 */
+
+.fill { columns: 3; block-size: 12rem; column-gap: 1rem; line-height: 1.5; }
+.fill p { margin: 0; }
+.balanced { column-fill: balance; }
+.sequential { column-fill: auto; }
+/* 两组有相同六条文字与高度；比较最后一条记录位于哪一列。 */
+
+.break-demo { columns: 2; column-gap: 2rem; }
+.keep { break-inside: avoid; }
+.new-column { break-before: column; }
+/* avoid 尽量避免拆开内容，column 则明确要求换列。 */
+
+.overflow-window { overflow-x: auto; border: 1px solid #6b7280; }
+.overflow-columns {
+  columns: 14rem 2;
+  block-size: 10rem;
+  column-fill: auto;
+  column-gap: 2rem;
+}
+/* 此处特意限制高度，用外层横向滚动展示新增列，不把剩余文字裁掉。 */
+
+@media print {
+  .screen-only { display: none; }
+  body { margin: 0; padding: 0; max-width: none; color: #000; background: #fff; }
+  .report { columns: auto; block-size: auto; overflow: visible; }
+  h2, h3 { break-after: avoid-page; }
+  .keep { break-inside: avoid; }
+  .report p { orphans: 3; widows: 3; }
+  .appendix { break-before: page; }
+  /* 在真实打印预览中检查：导航不打印，正文单列，附录从新页开始。 */
+}
+
+@page {
+  size: A4 portrait;
+  margin: 18mm;
+}
+@page :first { margin-top: 24mm; }
+/* 页盒设置不同于 body 的外边距；打印机与用户设置仍可能影响最终输出。 */

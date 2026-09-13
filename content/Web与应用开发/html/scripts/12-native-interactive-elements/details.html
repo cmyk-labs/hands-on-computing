@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>阅读记录 · 折叠问题</title>
+</head>
+<body>
+  <main>
+    <h1>阅读记录常见问题</h1>
+    <details>
+      <summary>什么时候记录？</summary>
+      <p>读完一个自然段后，先记下一个问题。</p>
+    </details>
+    <!-- 独立问题初始折叠；按 Tab 聚焦摘要，再按空格展开。 -->
+    <section aria-labelledby="faq-title">
+      <h2 id="faq-title">开始前的两个问题</h2>
+      <details name="reading-faq" open>
+        <summary id="length-summary">记录要写多长？</summary>
+        <p>先写一个发现和一个仍想追问的问题。</p>
+        <p><a href="#after-faq">读完这一项</a></p>
+      </details>
+      <details name="reading-faq">
+        <summary id="topic-summary">没有想好主题怎么办？</summary>
+        <p>挑出刚才最想再读一次的句子，从它开始。</p>
+        <p><a href="#after-faq">读完这一项</a></p>
+      </details>
+    </section>
+    <p id="after-faq"><button type="button">折叠组之后的焦点位置</button></p>
+  </main>
+  <!-- 检查：互斥组第一项初始展开；打开第二项后，第一项关闭。 -->
+  <!-- 用 Tab 将焦点移到 summary，按空格展开或折叠，再用 Tab 前进。 -->
+  <!-- 折叠项里的链接不应进入当前 Tab 顺序；展开后链接可以获得焦点。 -->
+  <!-- 浏览器不支持 name 时，可能同时展开两项；不能把这种表现当作互斥成功。 -->
+</body>
+</html>

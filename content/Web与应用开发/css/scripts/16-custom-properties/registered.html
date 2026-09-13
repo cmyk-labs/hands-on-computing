@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自定义属性与主题 · 注册属性与普通值回退</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>自定义属性与主题</h1>
+<nav aria-label="本章示例"><a href="index.html">复用、继承与作用范围</a> · <a href="invalid.html">回退与计算值无效</a> · <a href="registered.html">注册属性与普通值回退</a> · <a href="themes.html">跟随系统主题</a> · <a href="light.html">固定浅色主题</a> · <a href="dark.html">固定暗色主题</a></nav>
+<main>
+<section>
+<h2>@property 声明类型、初始值与继承行为</h2>
+<div class="registered-parent">
+  <p class="registered-child">未在自身赋值</p>
+  <p class="registered-invalid">自身给出错误类型</p>
+  <p class="registered-inherit">显式要求继承</p>
+</div>
+<div class="plain-parent"><p class="plain-fallback">普通自定义属性的显式值回退</p></div>
+</section>
+</main>
+</body>
+</html>

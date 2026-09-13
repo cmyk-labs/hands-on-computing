@@ -1,0 +1,29 @@
+# 阅读示例：假定此配套目录成为独立仓库根目录，未在本仓库启用。
+# 自托管 Windows runner 必须已准备统一 Conda 环境和本章所需工具。
+name: Python source checks
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: [self-hosted, Windows]
+    defaults:
+      run:
+        shell: powershell
+    env:
+      PYTHON_EXE: C:/Users/ZHUANG/miniconda3/envs/hands-on-computing/python.exe
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: utf-8
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
+    steps:
+      - uses: actions/checkout@v6
+      - name: Check code
+        run: '& $env:PYTHON_EXE -B -m ruff check --no-cache .'
+      - name: Check formatting
+        run: '& $env:PYTHON_EXE -B -m ruff format --check --no-cache .'
+      - name: Test source
+        run: |
+          $env:PYTHONPATH = Join-Path $PWD "src"
+          & $env:PYTHON_EXE -B -m pytest -q -p no:cacheprovider

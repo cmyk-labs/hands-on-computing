@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>社区工具站 · 分站库存</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>分站库存</h1>
+    <p>教学用库存快照；每个站点下面有卷尺和钳子两条记录，数量单位为件。</p>
+    <table id="branches">
+      <caption>各站点工具库存（件）</caption>
+      <thead>
+        <tr>
+          <th scope="col">站点</th><th scope="col">工具</th>
+          <th scope="col">可借</th><th scope="col">借出</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="2" scope="rowgroup">北站</th>
+          <th scope="row">卷尺</th><td>4</td><td>2</td>
+        </tr>
+        <tr><th scope="row">钳子</th><td>3</td><td>1</td></tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <th rowspan="0" scope="rowgroup">南站</th>
+          <th scope="row">卷尺</th><td>2</td><td>1</td>
+        </tr>
+        <tr><th scope="row">钳子</th><td>5</td><td>0</td></tr>
+      </tbody>
+    </table>
+    <!-- 预期：四列；北站和南站的名称现在都覆盖各自两条记录。 -->
+    <!-- 检查：每组第二个 tr 只有三个单元格，第一列沿用站点的跨行格。 -->
+    <!-- 南站的 0 仅表示 rowspan 延伸范围；数量栏的 0 才表示没有借出。 -->
+    <p><a href="index.html">返回库存页</a></p>
+  </main>
+</body>
+</html>

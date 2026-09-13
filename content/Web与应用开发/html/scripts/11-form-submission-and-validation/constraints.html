@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>必填、范围与长度</title>
+</head>
+<body>
+  <main>
+    <h1>必填、范围与长度</h1>
+    <p>只填写虚构别名。原生提示由浏览器提供。</p>
+    <form action="echo" method="post">
+      <p>
+        <label for="alias">虚构别名（必填，3～8 个 UTF-16 码元）</label>
+        <input id="alias" name="alias" type="text"
+               required minlength="3" maxlength="8" autocomplete="off">
+      </p>
+      <p>
+        <label for="copies">模拟份数（必填，只允许 1、3、5）</label>
+        <input id="copies" name="copies" type="number"
+               min="1" max="5" step="2" required value="1">
+      </p>
+      <p>
+        <label for="note">可选备注（填写时 3～8 个 UTF-16 码元）</label>
+        <textarea id="note" name="note" minlength="3" maxlength="8"></textarea>
+      </p>
+      <p>
+        <label>
+          <input id="confirmed" name="confirmed" type="checkbox"
+                 value="yes" required>我确认使用模拟数据（必选）
+        </label>
+      </p>
+      <p>
+        <button type="submit" name="intent" value="checked">按原生约束提交</button>
+        <button type="submit" name="intent" value="unchecked"
+                formnovalidate>跳过校验并回显（仅作对照）</button>
+        <button type="reset">清回示例初值</button>
+      </p>
+    </form>
+  </main>
+  <p><a href="pattern.html">继续查看格式与输入提示</a></p>
+  <!-- 地址：http://127.0.0.1:8011/constraints.html -->
+  <!-- 先点正常提交：空别名应阻止请求；手动输入 ab 后仍应因太短而失败。 -->
+  <!-- 输入 abc、勾选确认、备注留空，份数依次改为 0、2、6：正常提交都应失败。 -->
+  <!-- 把份数改为 3 后应能提交；别名 abc、空 note、copies=3、confirmed=yes 应回显。 -->
+  <!-- 每次返回后按需重新填值；保持其他字段合法，才能单独观察某一条约束。 -->
+  <!-- 手动连续键入 9 个 ASCII 字母，观察第 9 个是否被挡住；不用脚本赋值测试长度。 -->
+  <!-- 别名留空时点“跳过校验”应仍可发出请求；回显不代表这些数据业务上有效。 -->
+</body>
+</html>

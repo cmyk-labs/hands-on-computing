@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文件选择与隐藏字段</title>
+</head>
+<body>
+  <h1>文件选择与隐藏字段</h1>
+<p>只选择本章 sample.txt；本页不读取或上传文件。</p>
+  <form onsubmit="event.preventDefault()">
+    <input type="hidden" name="plan_id" value="demo-plan-10">
+    <p><label for="practice-file">练习附件</label>
+      <input id="practice-file" name="attachment" type="file"></p>
+    <p><button type="reset">清除文件选择</button></p>
+  </form>
+  <!-- 检查：选择 sample.txt 后，浏览器应显示已选文件名；不会打开上传进度。 -->
+  <!-- 重置后不再选中文件，但磁盘上的 sample.txt 仍存在。 -->
+  <!-- 在 Elements 找到 name="plan_id" 和 value="demo-plan-10"；页面没有这个输入框。 -->
+  <!-- hidden 不是可关联 label 的可操作输入；不要用它保存需对使用者保密的值。 -->
+  <p><a href="index.html">返回本章入口</a></p>
+</body>
+</html>

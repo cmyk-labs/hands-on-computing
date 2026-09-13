@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2025",
+    "module": "NodeNext",
+    "strict": true,
+    "lib": ["ES2025"],
+    "types": ["node"],
+    "rootDir": ".",
+    "outDir": "../../.build/02-types-and-inference",
+    "noEmitOnError": true
+  },
+  "files": [
+    "basics.ts",
+    "assertions.ts",
+    "any-runtime-error.ts",
+    "assertion-runtime-error.ts",
+    "nonnull-runtime-error.ts"
+  ]
+}

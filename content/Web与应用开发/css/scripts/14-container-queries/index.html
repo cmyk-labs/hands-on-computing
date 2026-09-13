@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>容器查询 · 卡片与容器类型</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>容器查询</h1>
+<nav aria-label="本章示例"><a href="index.html">卡片与容器类型</a> · <a href="nested.html">祖先搜索与嵌套条件</a> · <a href="units.html">容器单位与回退</a> · <a href="style-query.html">样式查询与显式类回退</a></nav>
+<main>
+<section>
+<h2>同一卡片根据所在空间调整</h2>
+<div class="card-host wide-host">
+  <article class="responsive-card"><div class="card-picture">封面</div><div><h3>布局课程</h3><p>同一结构放在宽容器。</p></div></article>
+</div>
+<div class="card-host narrow-host">
+  <article class="responsive-card"><div class="card-picture">封面</div><div><h3>布局课程</h3><p>同一结构放在窄容器。</p></div></article>
+</div>
+</section>
+
+<section>
+<h2>尺寸隔离与可以查询的轴</h2>
+<div class="two-axis-box"><p class="height-marker">此处同时提供宽与高。</p></div>
+</section>
+</main>
+</body>
+</html>

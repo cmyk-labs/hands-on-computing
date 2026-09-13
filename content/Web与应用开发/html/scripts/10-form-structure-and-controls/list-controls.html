@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>固定选项与自由输入建议</title>
+</head>
+<body>
+  <h1>固定选项与自由输入建议</h1>
+<form onsubmit="event.preventDefault()">
+    <p><label for="main-topic">本次主题（单选）</label>
+      <select id="main-topic" name="main_topic">
+        <optgroup label="页面基础">
+          <option value="text">文本与列表</option>
+          <option value="forms" selected>表单控件</option>
+        </optgroup>
+        <optgroup label="后续练习">
+          <option value="project">多页面实践</option>
+        </optgroup>
+      </select>
+    </p>
+    <p><label for="review-items">复习项目（可多选）</label></p>
+    <select id="review-items" name="review_item" multiple size="3">
+      <option value="labels" selected>标签关联</option>
+      <option value="defaults">默认值</option>
+      <option value="groups">控件分组</option>
+    </select>
+    <p>Windows 中可按住 Ctrl 点击不相邻的复习项目。</p>
+    <p><label for="extra-topic">补充主题（可自行填写）</label>
+      <input id="extra-topic" name="extra_topic" type="text" list="topic-suggestions">
+    </p>
+    <datalist id="topic-suggestions">
+      <option value="HTML 表单"></option>
+      <option value="HTML 语义"></option>
+      <option value="HTML 表格"></option>
+    </datalist>
+    <p><button type="reset">恢复默认选择</button></p>
+  </form>
+  <!-- 初始主主题显示“表单控件”，对应 value="forms"；文字和数据值不必相同。 -->
+  <!-- 检查：选择“标签关联”和“控件分组”，multiple 允许它们同时选中。 -->
+  <!-- 在补充主题输入“HTML”，尝试建议；再输入“自定义练习”，应可保留此列表外文字。 -->
+  <!-- 检查源码：list 关联 topic-suggestions；for 关联 extra-topic。 -->
+  <p><a href="index.html">返回本章入口</a></p>
+</body>
+</html>

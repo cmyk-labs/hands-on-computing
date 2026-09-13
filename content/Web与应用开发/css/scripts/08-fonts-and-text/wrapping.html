@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>字体与文本排版：换行</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>字体与文本排版：换行</h1>
+<nav><a href="index.html">字体示例</a></nav>
+<section>
+<h2>空白对照</h2>
+<p class="whitespace normal">A   B
+C   D  E   F</p>
+<p class="whitespace pre">A   B
+C   D  E   F</p>
+<p class="whitespace pre-wrap">A   B
+C   D  E   F</p>
+<p class="whitespace pre-line">A   B
+C   D  E   F</p>
+<p class="whitespace nowrap">A   B
+C   D  E   F</p>
+</section>
+<section>
+<h2>断行与连字符</h2>
+<p class="long normal-break">engineeringnotebookexamplewithoutspaces</p>
+<p class="long emergency">engineeringnotebookexamplewithoutspaces</p>
+<p class="long break-all">Read engineering notes.</p>
+<p class="long cjk">中文通常允许在字符之间换行。</p>
+<p class="long keep-all">中文通常允许在字符之间换行。</p>
+<p class="long hyphenated" lang="en">Internationalization improves documentation.</p>
+<p class="long manual-hyphen" lang="en">inter&shy;national&shy;ization</p>
+</section>
+<section>
+<h2>单行省略</h2>
+<p class="ellipsis">这是一段需要完整阅读但暂时以单行省略展示的课程说明。</p>
+<details>
+  <summary>阅读完整说明</summary>
+  <p>这是一段需要完整阅读但暂时以单行省略展示的课程说明。</p>
+</details>
+</section>
+
+</body>
+</html>

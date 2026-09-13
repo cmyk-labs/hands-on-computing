@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>提交方法与实际字段</title>
+</head>
+<body>
+  <main>
+    <h1>提交方法与实际字段</h1>
+    <p>仅填写模拟数据。提交后只回显请求。</p>
+    <h2>GET 基本提交</h2>
+    <form action="echo" method="get">
+      <label for="basic-query">查询词</label>
+      <input id="basic-query" name="q" value="HTML">
+      <button type="submit">GET 基本提交</button>
+    </form>
+    <!-- 保持初值提交：地址为 /echo?q=HTML，回显方法为 GET，请求体为空。 -->
+
+    <h2>比较提交设置与字段</h2>
+    <form action="echo" method="get" accept-charset="UTF-8">
+      <p>
+        <label for="query">查询词</label>
+        <input id="query" name="q" value="HTML 表单">
+      </p>
+      <p>
+        <label for="ticket">只读编号</label>
+        <input id="ticket" name="ticket" value="D11" readonly>
+      </p>
+      <p>
+        <label for="memo">备注（可留空）</label>
+        <input id="memo" name="memo">
+      </p>
+      <p>
+        <label for="unavailable">尚未开放的字段</label>
+        <input id="unavailable" name="locked" value="不可选" disabled>
+      </p>
+      <p>
+        <label for="local-note">有 id、没有 name 的字段</label>
+        <input id="local-note" value="仅显示">
+      </p>
+      <fieldset>
+        <legend>关注主题</legend>
+        <label><input type="checkbox" name="topic" value="html" checked>HTML</label>
+        <label><input type="checkbox" name="topic" value="css" checked>CSS</label>
+        <label><input type="checkbox" name="topic" value="js">JavaScript</label>
+      </fieldset>
+      <p>
+        <button type="submit" name="intent" value="get">GET 查询回显</button>
+        <button type="submit" name="intent" value="post"
+                formaction="echo-post" formmethod="post"
+                formenctype="application/x-www-form-urlencoded">POST 回显</button>
+        <button type="reset">恢复示例初值</button>
+      </p>
+    </form>
+  </main>
+  <nav aria-label="本章实验">
+    <a href="upload.html">文件上传</a> |
+    <a href="constraints.html">原生约束</a> |
+    <a href="pattern.html">格式与输入提示</a>
+  </nav>
+  <!-- 完整示例中，“GET 查询回显”应到 /echo，“POST 回显”应到 /echo-post。 -->
+  <!-- 完整示例保持初值提交：q、ticket、memo、两个 topic 和本次按钮的 intent 应进入数据。 -->
+  <!-- locked、无 name 的 local-note、未选中的 js 不应出现；memo 应保留空值。 -->
+  <!-- 用回显页链接返回后点“恢复示例初值”，再比较另一个按钮，避免历史状态干扰。 -->
+</body>
+</html>

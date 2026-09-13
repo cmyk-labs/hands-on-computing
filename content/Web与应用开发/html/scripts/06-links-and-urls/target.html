@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>target 与 rel 对照</title>
+  <style>
+    body { font-family: sans-serif; line-height: 1.6; margin: 2rem; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <h1>target 与 rel 对照</h1>
+  <h2>target：打开位置</h2>
+  <p><a href="pages/guide.html" target="_self">打开指南（当前页）</a></p>
+  <p><a href="pages/guide.html" target="_blank">打开指南（新窗口或标签页）</a></p>
+  <h2>rel：比较窗口信息</h2>
+  <p>分别打开下面两条链接，比较新页面的“窗口信息”。</p>
+  <p><a href="target.html" target="_blank" rel="noopener">查看窗口信息（新页面，noopener）</a></p>
+  <p><a href="target.html" target="_blank" rel="noreferrer">查看窗口信息（新页面，noreferrer）</a></p>
+  <h2>窗口信息</h2>
+  <pre id="window-status"></pre>
+  <p><a href="index.html" target="_self">在当前页返回实验导航</a></p>
+  <script>
+    // window.opener 为 null 表示没有打开者窗口的引用；两个 rel 示例均应如此。
+    // document.referrer 表示来源地址；noreferrer 示例应为空字符串。
+    // noopener 示例也可能因隐私设置等原因没有来源，不将空值直接归因于 noopener。
+    document.querySelector("#window-status").textContent = [
+      "原窗口引用（window.opener）：" + (window.opener === null ? "未提供" : "已提供"),
+      "来源地址（document.referrer）：" + (document.referrer || "未提供")
+    ].join("\n");
+  </script>
+</body>
+</html>

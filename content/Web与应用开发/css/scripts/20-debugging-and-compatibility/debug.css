@@ -1,0 +1,12 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+.notice { color: teal; }
+#notice { color: navy; }
+.missing { color: maroon; }
+.invalid { color: teal; color: 20px; }
+.inline-box { display: inline; width: 160px; border: 1px solid; }
+/* 四种情况：notice被覆盖、missing未匹配、20px无效、行内盒width有效但不适用。 */

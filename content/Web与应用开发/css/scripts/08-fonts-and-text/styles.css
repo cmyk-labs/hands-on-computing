@@ -1,0 +1,70 @@
+body { margin: 24px; font-family: sans-serif; line-height: 1.6; color: #222; background: white; }
+section { margin-bottom: 32px; }
+.reading { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; font-size: 1rem; font-weight: 400; }
+.reading strong { font-weight: 700; }
+.serif { font-family: Georgia, "Noto Serif CJK SC", serif; font-style: italic; }
+.mono { font-family: Consolas, monospace; }
+/* 在 Rendered Fonts 中查看实际字体；计算的 font-family 列表不是命中证明。
+   系统没有某字体或该字体没有中文字形时，继续使用后续字体。 */
+
+.unitless, .percentage { font-size: 16px; border: 1px solid #777; margin: 12px 0; }
+.unitless { line-height: 1.5; }
+.percentage { line-height: 150%; }
+.unitless p, .percentage p { font-size: 24px; margin: 0; }
+/* 子元素使用行高分别为 36px、24px；在 Computed 中核对。
+   两个父元素自身均为 24px 行高，差异来自继承的是数值还是计算长度。 */
+
+.aligned { width: 280px; text-align: center; border: 1px solid #777; }
+.decorated { text-decoration: underline solid #006666; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+.decorated span { text-decoration: none; }
+.spacing { letter-spacing: 0.04em; word-spacing: 0.25em; }
+/* text-align 不会把段落盒本身居中；后代的 none 不抹去祖先画来的装饰线。
+   word-spacing 比较英文空格处的距离；中文连续字之间并不是英文单词空格。 */
+
+.whitespace { width: 8ch; border: 1px solid #777; font: 20px/1.5 monospace; }
+.normal { white-space: normal; }
+.pre { white-space: pre; }
+.pre-wrap { white-space: pre-wrap; }
+.pre-line { white-space: pre-line; }
+.nowrap { white-space: nowrap; }
+/* 比较源码换行、连续空格与窄盒中的自动换行；pre 与 nowrap 可溢出。
+   ch 以字体中数字 0 的字符进宽为参考，不保证等于任意字符的宽度。 */
+
+.long { width: 160px; border: 1px solid #777; }
+.normal-break { overflow-wrap: normal; }
+.emergency { overflow-wrap: break-word; overflow-wrap: anywhere; }
+.break-all { word-break: break-all; }
+.keep-all { word-break: keep-all; }
+.hyphenated { hyphens: auto; overflow-wrap: break-word; }
+.manual-hyphen { hyphens: manual; }
+/* 长连续字符串对照溢出与应急换行；keep-all 的中文可能溢出。
+   自动断词依赖英文词典，不能预先断言断点；软连字符只在断行处显示。 */
+
+.ellipsis {
+  width: 240px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* 在有限宽度内显示单行省略；取消 overflow 后对照。
+   用键盘展开完整说明，确保被省略内容仍有可操作的阅读入口。 */
+
+@font-face {
+  font-family: "Notebook Roboto";
+  src: url("fonts/roboto-variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+.web-font { font-family: "Notebook Roboto", sans-serif; font-size: 24px; }
+.system-font { font-family: sans-serif; font-size: 24px; }
+/* Network 检查真实字体请求，Rendered Fonts 区分拉丁字形和中文回退。
+   禁用缓存并限速刷新可观察加载过程；不要把本地快速加载当作性能结论。 */
+
+.variable { font-family: "Notebook Roboto", sans-serif; font-size: 36px; }
+.light { font-weight: 300; }
+.heavy { font-weight: 750; }
+.width-normal { display: inline-block; font-variation-settings: "wdth" 100; }
+.width-narrow { display: inline-block; font-variation-settings: "wdth" 75; }
+/* 字体完成加载后比较 300/750 的笔画和 100/75 的实际文字宽度。
+   不支持可变字体或字体加载失败时保留可读文字，不声称变体效果已出现。 */

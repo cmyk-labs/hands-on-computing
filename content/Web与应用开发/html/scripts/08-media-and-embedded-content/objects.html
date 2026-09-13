@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>认识 object 与 embed</title>
+</head>
+<body>
+  <h1>同一张原创封面的两种嵌入写法</h1>
+  <h2>object 使用 data</h2>
+  <object data="poster.png" type="image/png" width="320" height="180"
+          aria-label="黄色方块位于深蓝画面左侧">
+    <img src="poster.png" width="320" height="180"
+         alt="黄色方块位于深蓝画面左侧">
+  </object>
+  <h2>embed 使用 src</h2>
+  <embed src="poster.png" type="image/png" width="320" height="180"
+         title="黄色方块位于深蓝画面左侧">
+  <p><a href="poster.png">单独打开封面图像</a></p>
+  <p><a href="iframe.html">返回 iframe 对照</a></p>
+  <!-- 预期：两处都显示同一张封面；embed 没有结束标签和子内容。 -->
+  <!-- 练习只在副本中把 object 的 data 改为不存在的文件，观察内部后备图像。 -->
+  <!-- 该图像例子不能证明目标浏览器支持 PDF 或其他嵌入资源。 -->
+</body>
+</html>

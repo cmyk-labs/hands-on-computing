@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>完整格式与输入提示</title>
+</head>
+<body>
+  <main>
+    <h1>完整格式与输入提示</h1>
+    <p>以下三个表单分别提交；全部使用模拟内容。</p>
+    <section>
+      <h2>大写编号</h2>
+      <form action="echo" method="post">
+        <p>
+          <label for="code">练习编号（必填，3～8 位大写字母、数字或连字符）</label>
+          <input id="code" name="code" type="text"
+                 pattern="[A-Z0-9\-]{3,8}" required value="AB-12"
+                 autocomplete="off">
+        </p>
+        <button type="submit">检查编号并回显</button>
+      </form>
+      <!-- AB-12 应成功；ab-12、AB/12、AB 分别有小写、斜杠、长度问题，应失败。 -->
+      <!-- 清空后应因 required 失败；检查原始属性中只写一个反斜杠。 -->
+    </section>
+    <section>
+      <h2>保留前导零的数字编号</h2>
+      <form action="echo" method="post">
+        <p>
+          <label for="digits">模拟数字编号（必填，六位数字）</label>
+          <input id="digits" name="digits" type="text" inputmode="numeric"
+                 pattern="[0-9]{6}" required value="001234"
+                 autocomplete="off">
+        </p>
+        <button type="submit">检查六位编号并回显</button>
+      </form>
+      <!-- 001234 应原样回显；粘贴 00a234 后，应由 pattern 阻止提交。 -->
+      <!-- 在移动设备观察键盘；桌面窗口变窄不能证明真实触屏键盘符合预期。 -->
+    </section>
+    <section>
+      <h2>自动填充提示</h2>
+      <form action="echo" method="post">
+        <p>
+          <label for="nickname">模拟昵称（可留空）</label>
+          <input id="nickname" name="nickname" type="text"
+                 autocomplete="nickname">
+        </p>
+        <button type="submit">回显模拟昵称</button>
+      </form>
+      <!-- autocomplete 不会自动建立必填或格式约束；留空仍可回显 nickname=""。 -->
+      <!-- 候选填充值不作固定预期；只手工填虚构昵称，不选择个人账户资料。 -->
+    </section>
+  </main>
+  <p><a href="constraints.html">返回原生约束页</a></p>
+</body>
+</html>

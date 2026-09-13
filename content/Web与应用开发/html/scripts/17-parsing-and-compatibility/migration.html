@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>旧式标记迁移</title>
+  <style>
+    /* 表现放在 CSS 中；标题与缩略词的含义由 HTML 元素表达。 */
+    .notice-title { text-align: center; color: #175cd3; }
+    .notice-text { text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>旧式标记迁移</h1>
+  <h2>待迁移的源码</h2>
+  <!-- 旧写法只作为文字显示，不进入页面的元素树。 -->
+  <pre><code>&lt;center&gt;&lt;font color="#175cd3"&gt;阅读提醒&lt;/font&gt;&lt;/center&gt;
+&lt;p align="center"&gt;比较 &lt;acronym title="Document Object Model"&gt;DOM&lt;/acronym&gt; 与源码。&lt;/p&gt;</code></pre>
+  <h2>迁移后的内容</h2>
+  <h3 class="notice-title">阅读提醒</h3>
+  <p class="notice-text">比较 <abbr title="Document Object Model">DOM</abbr> 与源码。</p>
+  <!-- 检查：提醒是 h3；缩略词是 abbr；元素树中没有 center、font、acronym。 -->
+  <!-- 居中与颜色来自 CSS；不要求新旧写法在所有浏览器中逐像素一致。 -->
+  <p><a href="dom.html">返回实验入口</a></p>
+</body>
+</html>

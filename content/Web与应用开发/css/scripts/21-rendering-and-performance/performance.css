@@ -1,0 +1,30 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+@keyframes move-left { from { left: 0; } to { left: 160px; } }
+@keyframes move-transform { from { transform: translateX(0); } to { transform: translateX(160px); } }
+.samples .row { height: 24px; }
+.mover {
+  position: relative;
+  width: 40px;
+  height: 16px;
+  background: #286276;
+  animation: move-left 2s linear infinite alternate paused;
+}
+#transform-mode:checked ~ .samples .mover { animation-name: move-transform; }
+#run:checked ~ .samples .mover { animation-play-state: running; }
+/* 两种模式都在2s内移动160px；每次只播放一种，默认暂停。 */
+#hint:checked ~ .samples .row:first-child .mover { will-change: transform; }
+@keyframes fade { from { opacity: 1; } to { opacity: 0.5; } }
+.fade-box { width: 280px; padding: 12px; background: #cce8ed; animation: fade 2s linear infinite alternate paused; }
+#fade:checked ~ .fade-box { animation-play-state: running; }
+/* 取消hint后恢复will-change:auto；提示只用于试验，不预设它能改善此例。 */
+@media (prefers-reduced-motion: reduce) {
+  .mover, .fade-box { animation: none; }
+  #transform-mode:checked ~ .samples .mover { animation-name: none; }
+  #hint:checked ~ .samples .row:first-child .mover { will-change: auto; }
+}
+/* 减少运动下不播放；测量动画前先确认当前偏好与播放状态。 */

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>结果、度量与进度</title>
+</head>
+<body>
+  <h1>结果、度量与进度</h1>
+<form onsubmit="event.preventDefault()">
+    <p><label for="reading-minutes">阅读时长（0～60 分钟）</label>
+      <input id="reading-minutes" name="minutes" type="range" min="0" max="60" value="30"></p>
+    <p><label for="minutes-result">当前选择</label>
+      <output id="minutes-result" name="minutes_result" for="reading-minutes">30</output> 分钟</p>
+    <button type="reset">恢复 30 分钟</button>
+  </form>
+  <h2>静态示意值</h2>
+  <p><label for="battery-level">电量示意（65%）</label>
+    <meter id="battery-level" min="0" max="100" value="65">65%</meter></p>
+  <p><label for="review-progress">复习进度示意（已完成 3 / 5 项）</label>
+    <progress id="review-progress" max="5" value="3">3 / 5 项</progress></p>
+  <p><label for="unknown-progress">进度不确定的样式示意</label>
+    <progress id="unknown-progress">进度不确定</progress></p>
+  <p>以上电量和任务数都是示意数据；没有后台任务运行。</p>
+  <p><a href="index.html">返回本章入口</a></p>
+  <script>
+    const minutesInput = document.getElementById("reading-minutes");
+    const minutesResult = document.getElementById("minutes-result");
+    minutesInput.addEventListener("input", () => {
+      minutesResult.value = minutesInput.value;
+    });
+  </script>
+  <!-- 检查：滑块初始为 30，调到 45 后 output 应显示 45；重置后两者都恢复 30。 -->
+  <!-- meter 对应当前电量，progress 对应完成工作量；调滑块不会改变这两条示意值。 -->
+  <!-- 在练习副本中给 unknown-progress 加 value="0"，比较已知零进度与不确定状态。 -->
+</body>
+</html>

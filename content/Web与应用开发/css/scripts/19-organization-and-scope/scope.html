@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>作用域边界与层叠</title>
+  <link rel="stylesheet" href="scope.css">
+</head>
+<body>
+<main>
+<h1>作用域边界与层叠</h1>
+<p><a href="index.html">返回首页</a></p><section><div class="scope-root">
+  <p class="scoped-text">范围内段落</p>
+  <div class="stop"><p class="scoped-text">下边界内段落</p></div>
+</div>
+<p class="scoped-text">范围外段落</p></section><section><div class="outer">
+  <div class="inner">
+    <p class="probe">同优先级比较接近度</p>
+    <p class="probe priority">较远但选择器优先级更高</p>
+    <p id="layer-proof" class="layer-probe">先比较层，再考虑其他条件</p>
+  </div>
+</div></section>
+</main>
+</body>
+</html>

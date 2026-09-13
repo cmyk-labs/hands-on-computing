@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>正常流与溢出</title>
+<link rel="stylesheet" href="visibility.css">
+</head>
+<body>
+<h1>正常流与溢出</h1>
+<nav aria-label="本章页面"><a href="index.html">index.html</a> · <a href="overflow.html">overflow.html</a> · <a href="visibility.html">visibility.html</a></nav>
+<section id="demo-8">
+<h2>三种隐藏方式的布局与焦点差异</h2>
+<button id="hide-start" type="button">从这里开始按 Tab</button>
+<button class="hide-item hide-none" type="button">display none</button>
+<button class="hide-item hide-visibility" type="button">visibility hidden</button>
+<button class="hide-item hide-opacity" type="button">透明按钮，聚焦后显示</button>
+<button id="hide-end" type="button">结束</button>
+</section>
+
+<section id="demo-9">
+<h2>contents 与 HTML hidden 要分清</h2>
+<div class="contents-box">
+  <p class="contents-child">父盒消失，子内容仍在</p>
+</div>
+<p class="ordinary-hidden" hidden>当前不呈现的内容</p>
+</section>
+</body>
+</html>

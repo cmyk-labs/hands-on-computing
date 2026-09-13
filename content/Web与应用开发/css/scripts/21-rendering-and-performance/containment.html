@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>隔离带来的语义边界</title>
+  <link rel="stylesheet" href="containment.css">
+</head>
+<body>
+<main>
+<h1>隔离带来的语义边界</h1>
+<p><a href="index.html">返回首页</a></p><div class="paint-box"><div class="overflow-piece">未隔离的溢出</div></div>
+<div class="paint-box clipped"><div class="overflow-piece">绘制隔离后的溢出</div></div>
+<div class="size-shell"><div class="size-box"><div class="sized-content">子内容高80px</div></div></div>
+<div class="size-shell"><div class="size-box explicit"><div class="sized-content">额外预留90px</div></div></div>
+</main>
+</body>
+</html>

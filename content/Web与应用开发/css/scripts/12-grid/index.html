@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grid 布局 · 轨道、尺寸与页面区域</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Grid 布局</h1>
+<nav aria-label="本章示例"><a href="index.html">轨道、尺寸与页面区域</a> · <a href="placement.html">自动放置与隐式轨道</a> · <a href="alignment.html">对齐与重叠</a> · <a href="subgrid.html">子网格与独立网格回退</a></nav>
+<main>
+<section>
+<h2>从两列认识网格线、轨道与区域</h2>
+<div class="line-grid">
+  <div class="wide-item">A：跨两列</div>
+  <div>B：第一列</div>
+  <div>C：第二列</div>
+</div>
+</section>
+
+<section>
+<h2>fr、repeat() 与 minmax() 控制尺寸</h2>
+<div class="fraction-grid">
+  <div>固定 100px</div>
+  <div>剩余空间的一份</div>
+  <div>剩余空间的两份</div>
+</div>
+<div class="safe-grid">
+  <div>ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+  <div>另一列仍可阅读</div>
+</div>
+</section>
+
+<section>
+<h2>命名区域与 Grid、Flexbox 配合</h2>
+<div class="page-grid">
+  <header class="page-heading">阅读计划</header>
+  <nav class="page-menu" aria-label="阅读分类">基础 · 进阶</nav>
+  <article class="page-body">
+    <h3>布局笔记</h3>
+    <div class="actions"><button type="button">收藏</button><button type="button">标记已读</button></div>
+  </article>
+</div>
+</section>
+</main>
+</body>
+</html>

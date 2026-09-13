@@ -1,0 +1,54 @@
+body { margin: 24px; padding-bottom: 80px; font-family: sans-serif; line-height: 1.6; color: #222; background: white; }
+section { margin-bottom: 32px; }
+button { font: inherit; }
+:focus-visible { outline: 3px solid #006666; outline-offset: 3px; }
+.flow-demo { width: 260px; border: 2px solid #777; margin: 24px 0; }
+.item { height: 40px; background: #e0eeee; }
+.following { background: #f5dfb2; }
+.static-box { position: static; top: 16px; left: 20px; }
+.relative-box { position: relative; top: 16px; left: 20px; }
+/* static 的偏移不起作用；relative 的盒向右下移动，但后续盒原位不动。
+   观察重叠位置，不能把视觉移动当作给后续内容增加了外边距。 */
+
+.positioned-card { position: relative; width: 280px; height: 120px; padding: 16px; border: 4px solid #777; margin: 24px 0; }
+.badge { position: absolute; top: 0; right: 0; width: 80px; height: 28px; background: #f5dfb2; }
+.inset-fill { position: absolute; inset: 12px; border: 2px dashed #006666; }
+/* 角标参照 positioned-card 的内边距边界，不是直接父 div。
+   inset-fill 未设宽高，用四边偏移填充剩余区域；改卡片尺寸再检查。 */
+
+.fixed-note { position: fixed; left: 12px; right: 12px; bottom: 8px; margin: 0; padding: 8px; background: #e0eeee; z-index: 5; }
+.transformed { transform: translate(0); height: 180px; border: 4px solid #777; padding: 40px 16px 16px; }
+.local-fixed { position: fixed; top: 0; right: 0; margin: 0; background: #f5dfb2; }
+/* translate(0) 视觉上不移动，却仍是非 none 变换：它建立 fixed 包含块。
+   页面滚动时 local-fixed 随祖先走，fixed-note 仍相对视口底部定位。 */
+
+.scroll-box { width: 320px; max-width: 100%; height: 220px; overflow: auto; border: 2px solid #777; margin: 20px 0; }
+.sticky-chapter { height: 400px; }
+.before { height: 60px; }
+.sticky-label { position: sticky; top: 0; height: 40px; margin: 0; background: #e0eeee; }
+.after { height: 300px; }
+.tail { height: 200px; background: #f5dfb2; }
+.no-inset .sticky-label { top: auto; }
+/* good 标题到滚动口顶部后暂时停留；所属章节离开时，标题一起离开。
+   no-inset 在纵轴没有非 auto 偏移，标题按正常位置滚走。
+   sticky 始终在正常流中保留位置，后面的正文不会补占标题原位置。 */
+
+.stack-stage { position: relative; isolation: isolate; width: 360px; max-width: 100%; height: 200px; }
+.context-a { position: absolute; left: 0; top: 0; width: 220px; height: 150px; z-index: 1; background: #e0eeee; }
+.high-child { position: absolute; left: 120px; top: 50px; width: 180px; height: 80px; z-index: 9999; background: #bedddd; }
+.context-b { position: absolute; left: 160px; top: 80px; width: 180px; height: 100px; z-index: 2; background: #f5dfb2; }
+/* B 遮住 A 的子元素，9999 只在 A 内比较；把 A 的 z-index 改成 3 再看。
+   isolation: isolate 为本实验建立独立层叠上下文，不改变其正常流位置。 */
+
+.clipped-container { height: 100px; overflow: hidden; transform: translate(0); border: 2px solid #777; }
+.ordinary-cover { position: fixed; top: 45%; left: 10%; right: 10%; height: 160px; z-index: 2147483647; background: #f5dfb2; pointer-events: none; }
+dialog { z-index: -1; width: 26rem; max-width: calc(100% - 4rem); border: 2px solid #006666; padding: 20px; }
+dialog:not([open]) { display: none; }
+dialog::backdrop { background-color: rgb(0 0 0 / 25%); }
+/* showModal() 成功后，对话框进入顶层；即使 z-index 为 -1 仍在普通内容之上。
+   它不再被原祖先的 overflow 裁剪；按 Escape 或关闭按钮退出。 */
+
+.obstruction { position: relative; max-width: 30rem; padding-top: 4rem; border: 1px solid #777; }
+.overlay-label { position: absolute; top: 0; left: 0; margin: 0; padding: 8px; background: #e0eeee; }
+/* 4rem 是本例给提示预留的空间，并非所有字号和文本长度都安全。
+   增加提示文字或放大字体后重新核对；必要时让提示回到正常流。 */

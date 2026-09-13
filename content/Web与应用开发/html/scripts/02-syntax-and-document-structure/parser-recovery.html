@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>浏览器错误恢复实验</title>
+</head>
+<body>
+  <h1>浏览器错误恢复实验</h1>
+  <h2>反例一：试图把 div 放进 p</h2>
+  <div id="nesting-case">
+    <!-- 故意保留错误。预期：inner-block 不会成为 intro 的子元素。 -->
+    <p id="intro">前半句<div id="inner-block">中间容器</div>后半句</p>
+    <!-- 解析 div 开始标签时，前一个 p 会结束。 -->
+    <!-- 后半句在该 p 外；多余的 p 结束标签还会使这里产生一个空 p。 -->
+  </div>
+  <h2>反例二：试图用斜杠关闭 div</h2>
+  <div id="slash-case">
+    <!-- 故意保留错误：这个 div 不会因尾随斜杠而关闭。 -->
+    <div id="not-closed" />
+    <p id="after-slash">我仍然位于 not-closed 容器中。</p>
+    </div>
+  </div>
+  <!-- 在 Elements 中展开 not-closed，预期 after-slash 是它的子元素。 -->
+  <!-- 缩进与斜杠不决定这个父子关系；显式结束标签才在这里关闭 div。 -->
+</body>
+</html>

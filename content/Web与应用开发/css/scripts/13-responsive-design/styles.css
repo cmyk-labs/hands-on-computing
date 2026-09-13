@@ -1,0 +1,132 @@
+/* 页面阅读辅助：统一盒尺寸计算、字号与分组间距；各实验规则在下方。 */
+* { box-sizing: border-box; }
+body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; }
+nav { margin-bottom: 24px; }
+nav a { display: inline-block; margin: 0 12px 8px 0; }
+section { margin: 24px 0; }
+h2 { font-size: 20px; }
+button, input, select { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+
+
+.fluid-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.fluid-layout > article {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid teal;
+  overflow-wrap: anywhere;
+}
+@media (min-width: 640px) {
+  .fluid-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* 分别在 639px 与 640px 检查卡片从上下排列变成并排。 */
+}
+
+.viewport-sample {
+  max-width: 40rem;
+  padding: 1rem;
+  border: 1px solid teal;
+  /* 放大页面至 200%：检查文字可读、内容未被固定高度裁掉。 */
+}
+
+.range-sample, .logic-sample, .not-sample, .or-sample {
+  border: 3px solid gray;
+  padding: 8px;
+}
+@media (min-width: 640px) and (max-width: 960px) {
+  .range-sample { background-color: #e1f1ed; }
+}
+@media (640px <= width < 960px) {
+  .range-sample { border-color: teal; }
+  /* 960px 时回退背景仍在，严格范围的蓝绿色边框退出。 */
+}
+@media screen and (min-width: 640px), print {
+  .logic-sample { border-style: dashed; }
+}
+@media not screen and (min-width: 640px) {
+  .not-sample { font-weight: bold; }
+  /* 屏幕 639px 时匹配；屏幕 640px 时不匹配；print 时匹配。 */
+}
+@media (width < 640px) or (width >= 960px) {
+  .or-sample { border-style: dotted; }
+}
+
+.orientation-sample, .resolution-sample { border: 2px solid gray; padding: 8px; }
+@media (orientation: landscape) {
+  .orientation-sample { border-style: dashed; }
+}
+@media (min-resolution: 2dppx) {
+  .resolution-sample { border-width: 6px; }
+  /* 结合设备像素比仿真观察边框；本例不据此声称图像更清晰。 */
+}
+
+.input-link {
+  display: inline-block;
+  padding: 12px 16px;
+  border: 2px solid currentColor;
+  color: #174f79;
+}
+.input-link:focus-visible { outline: 3px solid #174f79; outline-offset: 4px; }
+@media (hover: hover) and (pointer: fine) {
+  .input-link:hover { background-color: #e1f1ed; }
+}
+@media (pointer: coarse) {
+  .input-link { padding: 18px 24px; }
+}
+/* Tab 聚焦并按 Enter：即使不满足 hover 条件，仍能到达链接目标。 */
+
+.preference-panel {
+  background-color: #ffffff;
+  color: #17202a;
+  border: 2px solid currentColor;
+  padding: 16px;
+}
+.preference-panel a { color: inherit; }
+.reading-space { min-height: 80vh; }
+html { scroll-behavior: auto; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+@media (prefers-color-scheme: dark) {
+  .preference-panel { background-color: #17202a; color: #f4f7fa; }
+}
+@media (prefers-contrast: more) {
+  .preference-panel { border-width: 4px; }
+}
+@media (forced-colors: active) {
+  .preference-panel { border: 3px solid CanvasText; }
+}
+/* 仿真 reduce 后检查根元素的 scroll-behavior 为 auto，并实际点击锚点。 */
+
+.image-host { max-width: 800px; }
+.fluid-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.crop-image {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  margin-top: 16px;
+  /* 比较源图的三色区域：固定框可能裁边；上图保持完整比例。 */
+}
+
+.overflow-check { max-width: 48rem; min-width: 0; }
+.long-address { overflow-wrap: anywhere; }
+.code-scroll {
+  max-width: 100%;
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid gray;
+}
+.code-scroll:focus-visible { outline: 3px solid teal; outline-offset: 3px; }
+/* 320px 下只有代码区允许横向滚动；Tab 聚焦后用方向键检查可操作性。 */

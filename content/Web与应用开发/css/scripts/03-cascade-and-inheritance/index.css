@@ -1,0 +1,35 @@
+/* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
+body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
+
+.order-demo { color: teal; font-size: 20px; }
+.order-demo { color: navy; }
+/* 检查：20px 字号仍保留；只在本例其他比较条件相同后，后面的 navy 胜出。 */
+
+.importance-demo { color: navy !important; }
+/* 第一段：作者重要规则覆盖普通内联；第二段：重要内联优先于同来源的重要规则。 */
+
+#specific-target { color: navy; }
+.specific-panel p.notice { color: maroon; }
+/* 本例同来源、同重要性、同层：ID 一栏先决出胜负，后写的 maroon 仍被覆盖。 */
+
+:is(.is-target, #never-used) { color: navy; }
+.is-target { color: maroon; }
+.where-target { color: teal; }
+:where(#where-target) { color: maroon; }
+/* 检查：第一段深蓝；第二段蓝绿色，尽管 where 规则后写且参数含 ID。 */
+
+#inherit-parent { color: navy !important; border: 2px solid teal; padding: 12px; }
+.inherit-own { color: maroon; }
+/* 检查：第一个 span 深蓝且没有自己的边框；第二个 span 为 maroon。 */
+
+.reset-parent { color: navy; padding: 20px; border: 1px solid gray; }
+.reset-parent > p { color: maroon; padding: 10px; border: 1px solid teal; }
+.reset-parent > .reset-initial { padding: initial; }
+.reset-parent > .reset-inherit { padding: inherit; }
+.reset-parent > .reset-unset { color: unset; padding: unset; }
+/* 检查三个段落的 padding：0、20px、0；最后一段颜色从父元素继承。 */
+
+.origin-initial, .origin-revert { display: inline-block; border: 1px solid teal; }
+.origin-initial { display: initial; }
+.origin-revert { display: revert; }
+/* 常见默认样式下检查 display：前者 inline，后者 block；用户样式可能影响后者。 */

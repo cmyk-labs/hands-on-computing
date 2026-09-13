@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文件上传与原始请求体</title>
+</head>
+<body>
+  <main>
+    <h1>文件上传与原始请求体</h1>
+    <p>仅选择本章的小型模拟文本，接收端不保存上传文件。</p>
+    <p><a href="sample-note.txt">查看模拟素材 sample-note.txt</a></p>
+    <form action="echo" method="post" enctype="multipart/form-data">
+      <p>
+        <label for="caption">文件说明</label>
+        <input id="caption" name="caption" value="模拟笔记">
+      </p>
+      <p>
+        <label for="attachment">模拟文本文件（必选）</label>
+        <input id="attachment" type="file" name="attachment"
+               accept=".txt,text/plain" required>
+      </p>
+      <button type="submit" name="intent" value="upload">上传并回显</button>
+    </form>
+  </main>
+  <p><a href="submission.html">返回提交页</a></p>
+  <!-- 先不选文件就提交：支持原生校验的浏览器应阻止此次提交。 -->
+  <!-- 选中 sample-note.txt 后：Content-Type 应有 multipart/form-data 和 boundary。 -->
+  <!-- 在原始体中找 caption、attachment、filename 及文件的两行文本。 -->
+  <!-- intent=upload 是按钮字段；文件中的 strong 标签应原样显示，不能变成加粗内容。 -->
+  <!-- 检查“Body bytes received”表示整个请求体大小，不能当作单个文件大小。 -->
+</body>
+</html>

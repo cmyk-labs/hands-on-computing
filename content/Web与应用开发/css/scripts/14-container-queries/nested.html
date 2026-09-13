@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>容器查询 · 祖先搜索与嵌套条件</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>容器查询</h1>
+<nav aria-label="本章示例"><a href="index.html">卡片与容器类型</a> · <a href="nested.html">祖先搜索与嵌套条件</a> · <a href="units.html">容器单位与回退</a> · <a href="style-query.html">样式查询与显式类回退</a></nav>
+<main>
+<section>
+<h2>容器不能用自身尺寸查询自身</h2>
+<div class="self-box">
+  <p class="self-child">后代可以查询这个盒子。</p>
+</div>
+</section>
+
+<section>
+<h2>命名筛选与最近合格祖先</h2>
+<div class="outer-scope">
+  <p class="outer-marker">外层的直接后代</p>
+  <div class="inner-scope">
+    <p class="nearest-marker">最近同名容器</p>
+    <p class="named-marker">指定外层名称</p>
+    <p class="both-conditions">两个容器的条件同时成立</p>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>嵌套条件可以来自不同容器</h2>
+<!-- 与上一组相同的嵌套结构；该独立组用于只观察两层条件。 -->
+<div class="outer-scope">
+  <div class="inner-scope">
+    <p class="both-conditions">两个容器的条件同时成立</p>
+  </div>
+</div>
+</section>
+</main>
+</body>
+</html>

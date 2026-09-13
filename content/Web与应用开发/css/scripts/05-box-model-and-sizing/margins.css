@@ -1,0 +1,18 @@
+/* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
+body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
+
+.margin-well { border: 1px solid gray; margin-bottom: 16px; }
+.margin-well > p { margin: 0; background-color: lightyellow; }
+.margin-well > .margin-first { margin-bottom: 24px; }
+.margin-well > .margin-second { margin-top: 40px; }
+.negative-well > .margin-second { margin-top: -10px; }
+/* 测量两段边框边缘之间的距离：第一组 40px；第二组 24 + (-10) = 14px。 */
+
+.parent-well, .empty-well { border: 1px solid gray; margin-bottom: 16px; }
+.parent-open, .parent-padded { background-color: lightyellow; }
+.parent-open > p, .parent-padded > p { margin: 24px 0 0; }
+.parent-padded { padding-top: 1px; }
+.empty-block { margin: 20px 0 30px; }
+.after-empty { margin: 0; background-color: lightyellow; }
+/* 第一组父盒顶部与段落顶部重合；第二组段落位于父盒顶部下方 25px。
+   空块上下外边距合为 30px；从外框内容顶部到后一段测量，不是 50px。 */

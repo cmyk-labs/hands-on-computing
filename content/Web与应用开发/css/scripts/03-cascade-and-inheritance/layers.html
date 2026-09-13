@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>层叠、优先级与继承</title>
+<link rel="stylesheet" href="layers.css">
+</head>
+<body>
+<h1>层叠、优先级与继承</h1>
+<nav aria-label="本章页面"><a href="index.html">index.html</a> · <a href="layers.html">layers.html</a></nav>
+<section id="demo-8">
+<h2>层叠层与重要声明的反转</h2>
+<p id="layer-specific" class="layer-normal">层顺序先于 ID 优先级</p>
+<p class="layer-free">未分层的普通声明</p>
+<p class="layer-important">重要声明反转层顺序</p>
+</section>
+
+<section id="demo-9">
+<h2>revert-layer 回退当前层并追踪声明</h2>
+<p class="layer-rollback">只退回当前层</p>
+</section>
+</body>
+</html>

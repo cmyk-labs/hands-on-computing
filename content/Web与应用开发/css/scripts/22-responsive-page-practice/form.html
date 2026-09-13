@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>提交阅读建议 · 表单页</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-header">
+  <strong>阅读工作坊</strong>
+  <nav aria-label="主导航">
+    <a href="index.html">内容页</a>
+    <a href="catalog.html">目录页</a>
+    <a href="form.html">表单页</a>
+  </nav>
+</header>
+<main id="main" tabindex="-1"><h1>提交阅读建议</h1><form action="form.html" method="get">
+  <div class="field">
+    <label for="email">邮箱（必填）</label>
+    <input id="email" name="email" type="email" required aria-describedby="email-help">
+    <p id="email-help">请输入含 @ 的邮箱；只用虚构数据体验校验。</p>
+  </div>
+  <div class="field">
+    <label for="message">阅读建议</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+  </div>
+  <label class="check"><input type="checkbox" name="digest">希望收到摘要（演示选项）</label>
+  <button type="submit">检查并重新打开本页</button>
+  <!-- 仅演示原生校验；静态服务器不保存表单，GET 参数会出现在地址栏。 -->
+</form></main>
+</body>
+</html>

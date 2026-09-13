@@ -1,0 +1,18 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+@keyframes travel {
+  from { transform: translateX(0); }
+  50% { transform: translateX(80px) translateY(12px); }
+  to { transform: translateX(160px); }
+}
+.track { width: 260px; height: 100px; border: 1px dashed; }
+.token { width: 64px; background: #cce8ed; animation: travel 2s linear 1 both paused; }
+#play:checked ~ .track .token { animation-play-state: running; }
+/* 勾选开始；取消是暂停，不是重放。刷新页面可重新开始。 */
+@media (prefers-reduced-motion: reduce) {
+  .token, .runner, .sample, .orb, .layout-box { animation: none; }
+}

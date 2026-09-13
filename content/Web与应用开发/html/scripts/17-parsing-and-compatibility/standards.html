@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文档模式对照</title>
+</head>
+<body>
+  <h1>文档模式对照</h1>
+  <p>检查文档开头的 DOCTYPE，并读取当前模式。</p>
+  <pre id="report">等待浏览器读取。</pre>
+  <p><a href="dom.html">返回实验入口</a></p>
+  <script>
+    document.querySelector("#report").textContent = JSON.stringify({
+      contentType: document.contentType,
+      hasDoctype: document.doctype !== null,
+      compatMode: document.compatMode
+    }, null, 2);
+    // 有 DOCTYPE 时预期 CSS1Compat；无 DOCTYPE 时预期 BackCompat。
+    // 两页看起来可能相同，不能仅凭外观判断模式。
+  </script>
+</body>
+</html>

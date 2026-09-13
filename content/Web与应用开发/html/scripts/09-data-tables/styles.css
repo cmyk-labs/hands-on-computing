@@ -1,0 +1,50 @@
+/* 样式仅由本章独立页面加载，不注入 Notebook 输出。 */
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 24px;
+  color: #203040;
+  background: #ffffff;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  padding: 8px 0;
+}
+
+th,
+td {
+  border: 1px solid #708090;
+  padding: 8px 12px;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  text-align: right;
+}
+
+.tool-column {
+  background-color: #f1f3f5;
+}
+
+.saturday-columns {
+  background-color: #e8f2fc;
+}
+
+.sunday-columns {
+  background-color: #fff2d8;
+}
+
+/* 预期：周末表的周六两列浅蓝，周日两列浅黄，第一列浅灰。 */
+/* 未为行或单元格另设背景，因此能看见下面的列背景。 */
+/* 删除页面 link 后，这些颜色和边框消失，th/scope/headers 仍在 DOM 中。 */
+/* 库存表应有 table 角色及“工具库存（件）”名称；表头分别有列/行表头角色。 */

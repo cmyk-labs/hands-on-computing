@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>有封面和字幕的短视频</title>
+</head>
+<body>
+  <h1>方块换位置</h1>
+  <video id="demo-video" controls muted playsinline preload="metadata"
+         poster="poster.png" width="320" height="180"
+         aria-label="方块换位置，约四秒">
+    <source src="signal.webm" type="video/webm">
+    <source src="signal.mp4" type="video/mp4">
+    <track kind="captions" src="captions-zh.vtt" srclang="zh-CN"
+           label="中文（含声音提示）" default>
+    此浏览器不支持 video，请使用下方文字说明或下载链接。
+  </video>
+  <p>完整说明：深蓝背景中，黄色方块先在左侧，两秒时切到右侧。
+     约 0.25 秒和 2.25 秒各有一声短音，没有人声。</p>
+  <p>视频默认静音；如要听声音，先降低设备音量，再主动取消静音。</p>
+  <p><a href="signal.mp4" download>下载 MP4 视频</a> ·
+     <a href="signal.webm" download>下载 WebM 视频</a> ·
+     <a href="captions-zh.vtt">打开中文字幕文本</a></p>
+  <p><a href="audio.html">仅听音频</a> ·
+     <a href="autoplay.html">观察静音自动播放</a> ·
+     <a href="iframe.html">观察嵌入页面</a></p>
+  <!-- 预期：点击播放前显示封面；播放后方块在两秒附近切换位置。 -->
+  <!-- 检查：字幕菜单选中文轨道，前后两段文字应随播放时间切换。 -->
+  <!-- 在 Network 或媒体元素 currentSrc 中看实际选中的资源，不能假定两个都播放。 -->
+  <!-- 约四秒结束；容器时长可能略多于四秒，封面本身不能证明视频解码成功。 -->
+</body>
+</html>

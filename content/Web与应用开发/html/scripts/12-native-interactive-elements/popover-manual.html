@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>manual 弹出层与焦点恢复</title>
+</head>
+<body>
+  <main>
+    <h1>保留一条阅读提示</h1>
+    <button id="open-manual" type="button"
+      popovertarget="manual-note" popovertargetaction="show">显示固定提示</button>
+    <p><label for="manual-outside">背景记录：</label>
+      <input id="manual-outside" value="可在提示出现时继续写"></p>
+    <section id="manual-note" popover="manual" aria-labelledby="manual-title">
+      <h2 id="manual-title">固定提示</h2>
+      <p>先写一个问题，再决定是否继续。</p>
+      <button id="close-manual" type="button"
+        popovertarget="manual-note" popovertargetaction="hide">关闭固定提示</button>
+    </section>
+  </main>
+  <script>
+    const opener = document.querySelector("#open-manual");
+    document.querySelector("#close-manual").addEventListener("click", () => {
+      // 显式决定关闭后的去处；显示/隐藏仍由按钮的 HTML 属性完成。
+      opener.focus();
+    });
+  </script>
+  <!-- 检查：显示后点击背景输入框并编辑，面板仍显示；Esc 也不关闭。 -->
+  <!-- 从打开按钮按 Tab 进入内部关闭按钮，再激活；面板隐藏，焦点回到 open-manual。 -->
+  <!-- 这里的焦点恢复来自上方 focus()，不能归因于 manual 的自动行为。 -->
+</body>
+</html>

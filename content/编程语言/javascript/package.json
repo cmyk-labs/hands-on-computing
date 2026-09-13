@@ -1,0 +1,23 @@
+{
+  "name": "javascript-notebook-examples",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "24.11.0",
+    "npm": "11.6.1"
+  },
+  "scripts": {
+    "test:24": "node --test scripts/24-testing/mean.test.mjs scripts/24-testing/async.test.mjs scripts/24-testing/isolation-a.test.mjs scripts/24-testing/isolation-b.test.mjs",
+    "coverage:24": "node --test --experimental-test-coverage scripts/24-testing/mean.test.mjs scripts/24-testing/async.test.mjs scripts/24-testing/isolation-a.test.mjs scripts/24-testing/isolation-b.test.mjs",
+    "lint:25": "eslint --config scripts/25-project-tools/eslint.config.mjs scripts/25-project-tools/clean.mjs",
+    "format:25": "prettier --check scripts/25-project-tools/clean.mjs",
+    "check:25": "node scripts/25-project-tools/ci.mjs",
+    "test:26": "node --test scripts/26-data-pipeline/pipeline.test.mjs",
+    "demo:26": "node scripts/26-data-pipeline/demo.mjs",
+    "pack:26": "node scripts/26-data-pipeline/pack-check.mjs"
+  },
+  "devDependencies": {
+    "eslint": "10.10.0",
+    "prettier": "3.6.2"
+  }
+}

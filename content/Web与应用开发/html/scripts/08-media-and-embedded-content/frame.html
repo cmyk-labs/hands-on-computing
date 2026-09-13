@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>本地嵌入卡片</title>
+</head>
+<body>
+  <h1>本地卡片</h1>
+  <p id="script-state">脚本未执行</p>
+  <p id="parent-state">尚未尝试读取父页面</p>
+  <p id="fullscreen-state">尚未读取全屏能力</p>
+  <script>
+    // 这些语句只在本卡片中执行，不注入 Notebook。
+    document.querySelector("#script-state").textContent = "脚本已执行";
+    try {
+      document.querySelector("#parent-state").textContent =
+        "父页面标题：" + parent.document.title;
+    } catch (error) {
+      // 跨源或不透明来源下，拒绝 DOM 访问是本实验预期的边界。
+      if (error.name !== "SecurityError") throw error;
+      document.querySelector("#parent-state").textContent =
+        "SecurityError：无法读取父页面 DOM";
+    }
+    document.querySelector("#fullscreen-state").textContent =
+      "fullscreenEnabled：" + document.fullscreenEnabled;
+    // 全屏策略观察以支持该属性的 Chrome/Edge 为准；这里只读取，不请求全屏。
+  </script>
+  <!-- 放进禁用脚本的 iframe 时，上面三行初始文字应保持不变。 -->
+</body>
+</html>

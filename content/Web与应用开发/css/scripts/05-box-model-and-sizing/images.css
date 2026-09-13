@@ -1,0 +1,17 @@
+/* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
+body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
+
+.natural-image { display: block; max-width: 100%; height: auto; }
+.scaled-image { display: block; width: 150px; max-width: 100%; height: auto; }
+/* 页面可用宽度不少于 300px 时，图像依次显示为 300×150 和 150×75。
+   src 从 images.html 出发，指向同目录的 pattern.svg。 */
+
+.fit-image { width: 150px; height: 120px; border: 2px solid gray; background-color: lightyellow; }
+.fit-fill { object-fit: fill; }
+.fit-contain { object-fit: contain; }
+.fit-cover-left { object-fit: cover; object-position: left center; }
+.fit-cover-right { object-fit: cover; object-position: right center; }
+.fit-none { object-fit: none; }
+.fit-down { object-fit: scale-down; }
+/* 六个元素外沿尺寸都为 154×124；观察圆形是否变形、上下留空及左右裁切。
+   当前自然尺寸大于盒子，scale-down 与 contain 相同；none 则保持 300×150 后裁切。 */

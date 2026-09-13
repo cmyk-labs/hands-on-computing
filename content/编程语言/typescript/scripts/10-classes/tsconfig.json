@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2025",
+    "module": "NodeNext",
+    "lib": [
+      "ES2025"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": ".",
+    "outDir": "../../.build/10-classes",
+    "noEmitOnError": true,
+    "noImplicitOverride": true,
+    "useDefineForClassFields": true
+  },
+  "files": [
+    "main.ts",
+    "private-runtime-error.ts"
+  ]
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>固定宽度的图像候选</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>固定宽度的湖景卡片</h1>
+    <p><a href="index.html">返回图像实验</a></p>
+    <figure>
+      <img id="sample-image" class="scene density-image"
+           src="lake-240.svg"
+           srcset="lake-240.svg 1x, lake-480.svg 2x"
+           width="240" height="135"
+           alt="红色小屋位于蓝色湖泊左岸，远处是连绵的山峰。">
+      <figcaption>同样的湖景，提供两个密度候选。</figcaption>
+    </figure>
+    <button id="inspect" type="button">读取当前图像</button>
+    <pre id="selection">图像信息等待读取。</pre>
+  </main>
+  <script src="inspect.js"></script>
+  <!-- 检查：在 390px 和 1000px 视口中，图像显示宽度都应为 240px。 -->
+  <!-- 在设备工具栏改变 DPR 并重新加载，记录 currentSrc 与 Network 请求。 -->
+  <!-- 不预先指定浏览器必须下载哪一个候选。 -->
+</body>
+</html>

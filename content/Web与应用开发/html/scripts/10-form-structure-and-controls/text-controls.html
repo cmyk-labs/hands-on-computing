@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>单行与多行文字</title>
+</head>
+<body>
+  <h1>单行与多行文字</h1>
+<p>所有内容都是练习数据；不要填写真实口令或个人联系方式。</p>
+  <form onsubmit="event.preventDefault()">
+    <p><label for="text-title">安排名称</label>
+      <input id="text-title" name="title" type="text" value="阅读练习"></p>
+    <p><label for="demo-password">演示口令</label>
+      <input id="demo-password" name="demo_password" type="password" value="demo-only-123"></p>
+    <p><label for="demo-email">虚构邮箱</label>
+      <input id="demo-email" name="demo_email" type="email" value="learner@example.test"></p>
+    <p><label for="demo-url">虚构页面地址</label>
+      <input id="demo-url" name="demo_url" type="url" value="https://example.test/notes"></p>
+    <p><label for="demo-tel">虚构电话形式</label>
+      <input id="demo-tel" name="demo_tel" type="tel" value="+00 0000 0000"></p>
+    <p><label for="topic-search">主题关键词</label>
+      <input id="topic-search" name="query" type="search" placeholder="例如：HTML 表单"></p>
+    <p><label for="reading-note">练习备注</label></p>
+    <textarea id="reading-note" name="note" rows="3" cols="32">先读一篇短文。
+再写两行摘要。</textarea>
+    <p><button type="reset">恢复示例文字</button></p>
+  </form>
+  <!-- 检查：口令通常显示为圆点等符号；这里只观察预填的虚构值。 -->
+  <!-- 在搜索框输入“标签”，placeholder 应消失，但“主题关键词”标签仍在。 -->
+  <!-- 在 textarea 内按 Enter 应能换行；rows=3 不会阻止继续输入第四行。 -->
+  <!-- 恢复示例文字后，搜索框重新为空；其他控件恢复各自的默认值。 -->
+  <p><a href="index.html">返回本章入口</a></p>
+</body>
+</html>

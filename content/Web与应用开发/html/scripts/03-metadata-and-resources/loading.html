@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>脚本加载实验 | 动手学计算机</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="stylesheet" href="styles.css">
+  <!-- 普通经典脚本在这里执行时，正文末尾的 end 尚不存在。 -->
+  <script src="classic.js"></script>
+  <!-- 故意反例：无 src 的经典脚本不应加 defer，添加也不会产生延迟效果。 -->
+  <script defer>
+    // 预期仍是 false 和 loading；不要把这个属性照搬到正式页面。
+    record("inline-classic-with-defer");
+  </script>
+  <!-- 两者都在解析后执行；defer-first 先于 defer-second。 -->
+  <script defer src="defer-first.js"></script>
+  <script defer src="defer-second.js"></script>
+  <!-- 两个 async 脚本互不依赖，不预设谁先执行。 -->
+  <script async src="async-first.js"></script>
+  <script async src="async-second.js"></script>
+  <!-- 本模块未加 async，也没有顶层 await；执行时 end 已存在。 -->
+  <script type="module" src="module-main.js"></script>
+</head>
+<body>
+  <h1>脚本加载实验</h1>
+  <p>每次刷新记录一次真实顺序；末尾元素表示脚本执行时是否已能找到正文结束标记。</p>
+  <noscript>
+    <p>当前未启用脚本，加载日志不可用；正文和链接仍可阅读。</p>
+    <p><a href="metadata.html">阅读不依赖脚本的学习页</a></p>
+  </noscript>
+  <h2>本次执行日志</h2>
+  <pre id="loading-log">等待脚本记录。</pre>
+  <h2>模块作用域</h2>
+  <p id="module-result">模块尚未更新这段文字。</p>
+  <p id="scope-result">等待模块外的名称检查。</p>
+  <p><a href="metadata.html">返回元数据实验</a></p>
+  <p id="end">正文结束标记</p>
+  <script>
+    // 预期 end 已存在，但此时解析器尚未处理完文档，readyState 仍为 loading。
+    record("body-end");
+  </script>
+  <!-- 浏览器检查：classic-head 与内联 defer 反例为 false； -->
+  <!-- body-end、两个 defer 和默认模块为 true；defer-first 先于 defer-second。 -->
+  <!-- 本例模块未加 async 且不含顶层 await；它和两个 defer 先于 DOMContentLoaded。 -->
+  <!-- load 在本例日志的最后；不把此结论推广到模块内的异步后续工作。 -->
+  <!-- async 的互相顺序及相对 DOMContentLoaded 的位置均不作硬性预期。 -->
+</body>
+</html>

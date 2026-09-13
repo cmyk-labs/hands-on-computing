@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "AMD",
+    "moduleResolution": "classic",
+    "noEmit": true
+  },
+  "files": [
+    "main.ts",
+    "ambient.d.ts"
+  ]
+}

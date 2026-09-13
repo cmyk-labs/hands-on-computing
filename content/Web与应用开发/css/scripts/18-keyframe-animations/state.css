@@ -1,0 +1,23 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+.status { border-left: 4px solid #777; padding: 12px; }
+@keyframes acknowledge { 50% { transform: translateY(-6px); } }
+#done:checked ~ .status { border-color: #146536; background: #d8f0e1; animation: acknowledge 600ms ease-out; }
+.row { display: flex; align-items: center; gap: 12px; margin-block: 24px; }
+.layout-box { flex: none; width: 80px; height: 40px; background: #cce8ed; }
+@keyframes widen { from { width: 80px; } to { width: 160px; } }
+@keyframes stretch { from { transform: scaleX(1); } to { transform: scaleX(2); } }
+.by-width { animation: widen 2s linear -1s both paused; }
+.by-scale { transform-origin: left center; animation: stretch 2s linear -1s both paused; }
+/* 两个盒子暂停在中点：width 为120px会推开邻居；scaleX(1.5)保留80px布局宽度。 */
+@media (prefers-reduced-motion: reduce) {
+  .token, .runner, .sample, .orb, .layout-box { animation: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #done:checked ~ .status { animation: none; }
+}
+/* 关闭提示动画后，“已完成”的边框和背景仍由状态规则保持。 */

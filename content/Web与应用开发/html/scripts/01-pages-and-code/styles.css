@@ -1,0 +1,11 @@
+/* 预期：页面使用无衬线字体，正文宽度受限，大标题呈蓝色。 */
+body {
+  font-family: sans-serif;
+  max-width: 44rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  color: #175cd3;
+}

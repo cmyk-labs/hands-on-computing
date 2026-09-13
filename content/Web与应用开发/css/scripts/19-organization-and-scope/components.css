@@ -1,0 +1,5 @@
+.note-card { border: 1px solid #778899; padding: 16px; }
+.note-card__title { margin-block: 0 8px; font-size: 1.25rem; }
+.note-card--featured { border-width: 3px; }
+.note-card__button:disabled { cursor: not-allowed; color: #555; }
+/* --featured 是本例的变体约定；disabled 是原生禁用状态，不是仅改变外观的类。 */

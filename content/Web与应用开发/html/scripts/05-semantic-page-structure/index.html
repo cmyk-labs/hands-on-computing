@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>周末阅读记录 · 周末手记</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 页面级 header；站点名称不是这篇记录的主标题。 -->
+  <header id="top" class="site-header">
+    <p class="site-name">周末手记</p>
+    <nav aria-label="页内目录">
+      <ul>
+        <li><a href="#reading-plan">阅读安排</a></li>
+        <li><a href="#review">读后整理</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- div 只供布局；main 与 aside 仍各自表达原来的内容职责。 -->
+  <div class="page-layout">
+    <main>
+      <article>
+        <!-- 文章级 header；本页唯一 h1 表达中心主题。 -->
+        <header>
+          <h1>周末阅读记录</h1>
+          <p>给周末留一段安静阅读的时间。</p>
+          <div class="record-meta">
+            <p>记录人：小林</p>
+            <p>分类：<span class="category">阅读</span></p>
+          </div>
+        </header>
+
+        <!-- 区域名称来自所引用 h2 的文字，不是来自 section 的 id。 -->
+        <section id="reading-plan" aria-labelledby="reading-plan-title">
+          <h2 id="reading-plan-title">阅读安排</h2>
+          <p>这次先读完整篇，再回头整理问题。</p>
+          <h3>星期六</h3>
+          <p>上午读两篇短文，下午记下想继续追问的问题。</p>
+          <h3>星期日</h3>
+          <p>重读一篇短文，把两次阅读的想法放在一起比较。</p>
+        </section>
+
+        <!-- 只有 h2 与 id，没有区域命名属性；仍是有效的主题分节。 -->
+        <section id="review">
+          <h2>读后整理</h2>
+          <p>挑出一个问题，写成下周的阅读清单。</p>
+          <ol>
+            <li>写下最想保留的一句话。</li>
+            <li>记录一个尚未想清楚的问题。</li>
+            <li>选择下次继续阅读的方向。</li>
+          </ol>
+        </section>
+
+        <!-- 文章 footer 的作用域是 article，不是整站。 -->
+        <footer>
+          <p>整理说明：这份记录只保留本周末的阅读安排与想法。</p>
+        </footer>
+      </article>
+    </main>
+
+    <aside aria-labelledby="booklist-title">
+      <h2 id="booklist-title">随手书单</h2>
+      <p>下次想试试这些阅读方向：</p>
+      <ul>
+        <li>一篇旅行随笔</li>
+        <li>一则短篇故事</li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <p>周末手记 · 记录个人阅读。</p>
+    <p><a href="#top">回到页头</a></p>
+  </footer>
+  <!-- 检查：main 只有一个；标题依次为 h1、h2、h3、h3、h2、h2。 -->
+  <!-- 导航应定位到对应分节；页脚的单独链接无需再包一个 nav。 -->
+</body>
+</html>

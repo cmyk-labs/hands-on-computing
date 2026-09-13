@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自定义属性与主题 · 回退与计算值无效</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>自定义属性与主题</h1>
+<nav aria-label="本章示例"><a href="index.html">复用、继承与作用范围</a> · <a href="invalid.html">回退与计算值无效</a> · <a href="registered.html">注册属性与普通值回退</a> · <a href="themes.html">跟随系统主题</a> · <a href="light.html">固定浅色主题</a> · <a href="dark.html">固定暗色主题</a></nav>
+<main>
+<section>
+<h2>var() 的缺失回退与循环依赖</h2>
+<p class="missing-fallback">缺少主颜色时采用后备颜色</p>
+<p class="cycle-fallback">循环导致引用无效时采用回退</p>
+<p class="literal-fallback">保留普通声明作为语法不支持回退</p>
+</section>
+
+<section>
+<h2>类型错误不一定使用 var() 回退</h2>
+<div class="invalid-parent">
+  <p class="literal-invalid">字面颜色错误</p>
+  <p class="computed-invalid">替换后的类型错误</p>
+  <p class="background-invalid">背景替换后的类型错误</p>
+</div>
+</section>
+</main>
+</body>
+</html>

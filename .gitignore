@@ -1,0 +1,62 @@
+# 本地草稿与编辑器配置
+/drafts/
+.vscode/
+.idea/
+.playwright-mcp/
+
+# 本地环境配置；保留可共享的配置样例
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+!.env.template
+
+# 安装的依赖与包管理器缓存
+node_modules/
+.npm-cache/
+.npm/
+npm-debug.log*
+.venv/
+venv/
+
+# Python 与 Notebook 缓存
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.eggs/
+
+# 构建产物与增量检查缓存
+build/
+dist/
+.build/
+.build-browser/
+.build-test/
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+/content/编程语言/typescript/scripts/24-package-distribution/.types/
+/content/编程语言/typescript/scripts/26-jsx-tsx/.preserve/
+/content/编程语言/typescript/scripts/27-decorators/.legacy/
+/content/编程语言/typescript/scripts/28-legacy-namespaces/.global/
+
+# 测试报告与覆盖率产物
+test-results/
+playwright-report/
+coverage/
+htmlcov/
+.coverage
+.coverage.*
+
+# 操作系统及编辑器临时文件
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.swp
+*.swo
+*~

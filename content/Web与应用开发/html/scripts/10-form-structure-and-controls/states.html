@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>默认值、只读与禁用</title>
+</head>
+<body>
+  <h1>默认值、只读与禁用</h1>
+<form onsubmit="event.preventDefault()">
+    <p><label for="editable-title">可编辑安排</label>
+      <input id="editable-title" name="title" type="text" value="周末阅读"></p>
+    <p><label for="readonly-code">只读编号</label>
+      <input id="readonly-code" name="code" type="text" value="DEMO-010" readonly></p>
+    <p><label for="disabled-place">禁用地点</label>
+      <input id="disabled-place" name="place" type="text" value="练习室 B" disabled></p>
+    <p><label for="default-note">可编辑备注</label></p>
+    <textarea id="default-note" name="note" rows="2" cols="32">先整理三个问题。</textarea>
+    <p><input id="default-review" name="review" type="checkbox" value="yes" checked>
+      <label for="default-review">安排复习</label></p>
+    <p><label for="default-level">练习程度</label>
+      <select id="default-level" name="level">
+        <option value="intro" selected>入门</option>
+        <option value="extended">扩展</option>
+      </select>
+    </p>
+    <fieldset disabled>
+      <legend>暂不可编辑的补充安排
+        <label><input id="legend-marker" name="marker" type="checkbox" value="yes">标记稍后查看</label>
+      </legend>
+      <p><label for="extra-place">补充地点</label>
+        <input id="extra-place" name="extra_place" type="text" value="练习室 C"></p>
+      <p><label for="extra-mode">补充方式</label>
+        <select id="extra-mode" name="extra_mode"><option value="quiet">安静阅读</option></select></p>
+    </fieldset>
+    <p><button type="reset">恢复所有默认状态</button></p>
+  </form>
+  <!-- 检查：Tab 能到只读编号并选中其文字，却跳过禁用地点、补充地点及补充方式。 -->
+  <!-- 第一个 legend 内的“标记稍后查看”仍可勾选；勾选它不会自动启用这一组。 -->
+  <!-- 改安排、备注、勾选和下拉选项后重置，应回到源码给出的四种默认状态。 -->
+  <!-- 重置后仍然只读/禁用：reset 不会删除这些属性。 -->
+  <p><a href="index.html">返回本章入口</a></p>
+</body>
+</html>

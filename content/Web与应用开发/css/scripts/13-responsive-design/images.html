@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>响应式设计与媒体查询 · 图像与窄屏检查</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>响应式设计与媒体查询</h1>
+<nav aria-label="本章示例"><a href="index.html">流式布局与查询条件</a> · <a href="preferences.html">输入能力与用户偏好</a> · <a href="images.html">图像与窄屏检查</a></nav>
+<main>
+<section>
+<h2>图片随布局缩放与固定框裁剪</h2>
+<div class="image-host">
+  <img class="fluid-image" src="scene.svg" width="640" height="360" alt="左侧蓝色、中央绿色、右侧橙色的尺寸示意图">
+  <img class="crop-image" src="scene.svg" width="640" height="360" alt="相同示意图，使用固定高度裁剪">
+</div>
+</section>
+
+<section>
+<h2>窄屏、长内容与放大后的检查</h2>
+<div class="overflow-check">
+  <p class="long-address">https://example.invalid/ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+  <pre class="code-scroll" tabindex="0" aria-label="可横向滚动的代码"><code>grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));</code></pre>
+</div>
+</section>
+</main>
+</body>
+</html>

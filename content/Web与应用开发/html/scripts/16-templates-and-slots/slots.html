@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>插槽与自定义元素</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="card.js" defer></script>
+  <script src="slots.js" defer></script>
+</head>
+<body>
+  <nav aria-label="本章实验">
+    <a href="index.html">模板实例</a> ·
+    <a href="slots.html">插槽与自定义元素</a> ·
+    <a href="declarative.html">声明式 Shadow DOM</a>
+  </nav>
+  <main>
+    <h1>插槽与自定义元素</h1>
+    <p>卡片的标题与正文由外部提供，内部结构由模板定义。</p>
+    <template id="card-template">
+      <style>
+        :host { display: block; border: 2px solid #6b7280; padding: 16px; margin: 16px 0; }
+        h2 { color: #7c3c98; }
+        ::slotted([slot="title"]) { border-bottom: 2px dashed #7c3c98; }
+      </style>
+      <article>
+        <h2><slot name="title">未命名笔记</slot></h2>
+        <p class="internal-note">内部说明：这段文字来自 shadow tree。</p>
+        <div><slot><p>没有提供正文</p></slot></div>
+      </article>
+    </template>
+
+    <study-card id="first-card">
+      <span id="provided-title" slot="title">周末阅读</span>
+      <p id="provided-body">原始正文 <em id="detail">（初稿）</em></p>
+      <span id="unmatched" slot="missing">没有同名插槽的内容</span>
+    </study-card>
+
+    <h2>完全空的宿主</h2>
+    <!-- 两个标签间刻意没有空白，默认插槽才能显示回退正文。 -->
+    <study-card id="empty-card"></study-card>
+    <h2>只有一个空格的宿主</h2>
+    <!-- 一个空格也是 Text 节点，会占用默认插槽；这里不能删除该空格。 -->
+    <study-card id="space-card"> </study-card>
+
+    <button type="button" id="toggle-title">切换标题的 slot 名称</button>
+    <button type="button" id="edit-detail">修改正文内部文字</button>
+    <button type="button" id="move-body">移动正文到卡片外／移回</button>
+    <pre id="slot-status" aria-live="polite">等待脚本注册 study-card。</pre>
+    <h2>卡片外的暂存区</h2>
+    <div id="outside"></div>
+    <noscript><p>本页需要 JavaScript 注册元素；请另看声明式示例。</p></noscript>
+  </main>
+  <!-- 检查：标题来自具名插槽；原始正文来自默认插槽；missing 内容不显示。 -->
+  <!-- empty-card 显示回退正文，space-card 不显示；两者均有回退标题。 -->
+</body>
+</html>

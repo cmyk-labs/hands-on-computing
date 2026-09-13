@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2025",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "legacy",
+    "strict": true,
+    "types": [],
+    "lib": [
+      "ES2025"
+    ],
+    "rootDir": ".",
+    "outDir": ".global",
+    "noEmitOnError": true
+  },
+  "files": [
+    "global-b.ts"
+  ]
+}

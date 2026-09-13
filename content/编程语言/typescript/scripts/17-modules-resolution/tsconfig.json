@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2025",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": [
+      "ES2025"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": ".",
+    "outDir": "../../.build/17-modules-resolution",
+    "noEmitOnError": true,
+    "verbatimModuleSyntax": true
+  },
+  "files": [
+    "main.ts",
+    "cjs-consumer.cts",
+    "scope-module-a.ts",
+    "scope-module-b.ts"
+  ]
+}

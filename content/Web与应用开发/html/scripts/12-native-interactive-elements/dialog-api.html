@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>对话框 DOM API 与焦点</title>
+</head>
+<body>
+  <main>
+    <h1>选择阅读提醒的打开方式</h1>
+    <p>
+      <button id="open-modeless" type="button">非模态打开</button>
+      <button id="open-modal" type="button">模态打开</button>
+    </p>
+    <p><label for="background-input">背景笔记：</label>
+      <input id="background-input" value="等会儿再补充"></p>
+    <dialog id="note-dialog" aria-labelledby="note-title">
+      <h2 id="note-title">阅读提醒</h2>
+      <p><label for="dialog-input">提醒内容：</label>
+        <input id="dialog-input" value="留一个问题"></p>
+      <button id="api-close" type="button" autofocus>关闭提醒</button>
+    </dialog>
+  </main>
+  <script>
+    const dialog = document.querySelector("#note-dialog");
+    document.querySelector("#open-modeless").addEventListener("click", () => {
+      if (!dialog.open) dialog.show();
+    });
+    document.querySelector("#open-modal").addEventListener("click", () => {
+      if (!dialog.open) dialog.showModal();
+    });
+    document.querySelector("#api-close").addEventListener("click", () => {
+      dialog.close();
+    });
+  </script>
+  <!-- 非模态：背景可编辑，Esc 默认不关闭；焦点在框内点关闭后检查原打开按钮。 -->
+  <!-- 模态：Tab/Shift+Tab 不能到背景输入框；Esc 可关闭，外部点击不关闭。 -->
+  <!-- 两种模式初始都以 autofocus 聚焦 api-close，不能以“焦点进入”判断模态。 -->
+  <!-- 先关闭再换一种模式；用键盘打开与关闭后，检查焦点轮廓回到对应打开按钮。 -->
+</body>
+</html>

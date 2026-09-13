@@ -1,0 +1,25 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+.track { width: 220px; height: 90px; border: 1px dashed; }
+.tile { box-sizing: border-box; width: 100px; height: 60px; background: #cce8ed; border: 2px solid #246; }
+.moved { transform: translate(50%, 12px); }
+/* 水平移动 50px：百分比相对自身参考盒宽度；track 的占位仍为原尺寸。 */
+.order-row { padding: 24px; height: 90px; border-bottom: 1px dotted; }
+.order-a { transform-origin: 0 0; transform: translateX(40px) scale(1.5); }
+.order-b { transform-origin: 0 0; transform: scale(1.5) translateX(40px); }
+.pivot { transform-origin: left top; transform: rotate(20deg); }
+/* A 的平移为 40px，B 的平移被缩放为 60px；两者宽度都变为 150px。 */
+.individual { transform: translateX(40px) rotate(10deg) scale(1.1); }
+@supports (translate: 40px) and (rotate: 10deg) and (scale: 1.1) {
+  .individual {
+    transform: none;
+    scale: 1.1;
+    rotate: 10deg;
+    translate: 40px;
+    /* 清除 transform 回退，避免同一个变换被叠加两次。 */
+  }
+}

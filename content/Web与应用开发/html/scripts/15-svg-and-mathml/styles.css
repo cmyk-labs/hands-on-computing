@@ -1,0 +1,39 @@
+/* 本文件只由独立 HTML 页面加载。 */
+body {
+  max-width: 880px;
+  margin: 24px auto;
+  padding: 0 20px;
+  color: #243247;
+  background: #fcfbf8;
+  font-family: sans-serif;
+  line-height: 1.7;
+}
+
+h1,
+h2 {
+  color: #174e63;
+}
+
+section {
+  margin: 28px 0;
+}
+
+a {
+  color: #145d83;
+}
+
+.viewport-demo {
+  border: 1px solid #6c7b89;
+  background: #ffffff;
+}
+
+.sample-dot {
+  fill: #156b84;
+}
+
+/* 预期：index.html 内联圆为蓝色；外部 SVG 的圆仍为棕橙色。 */
+/* 检查 Styles：禁用 .sample-dot 的 fill 声明，内联圆应恢复棕橙色。 */
+/* 即使 shapes.svg 的圆也有同名 class，本页选择器不会进入 img 内部。 */
+/* 检查名称：external-card 应使用 alt；inline-card 应分别有名称和描述。 */
+/* 检查 viewbox.html：A/B/C 保持圆形，D 横向拉伸；尺寸指 CSS 像素。 */
+/* 检查公式：分子、分母、上下标应分层排版，再用目标屏幕阅读器检查。 */

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自定义属性与主题 · 复用、继承与作用范围</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>自定义属性与主题</h1>
+<nav aria-label="本章示例"><a href="index.html">复用、继承与作用范围</a> · <a href="invalid.html">回退与计算值无效</a> · <a href="registered.html">注册属性与普通值回退</a> · <a href="themes.html">跟随系统主题</a> · <a href="light.html">固定浅色主题</a> · <a href="dark.html">固定暗色主题</a></nav>
+<main>
+<section>
+<h2>用自定义属性复用颜色与间距</h2>
+<div class="token-list">
+  <article class="token-card"><h3>颜色复用</h3><p>边框与文字使用同一颜色。</p></article>
+  <article class="token-card"><h3>间距复用</h3><p>卡片与列表使用同一基础间距。</p></article>
+</div>
+</section>
+
+<section>
+<h2>继承、局部覆盖与作用范围</h2>
+<div class="scope-default"><p class="scope-text">根颜色</p></div>
+<div class="scope-local"><p class="scope-text">局部颜色 <span>后代继续继承</span></p></div>
+<p class="scope-text scope-sibling">局部组件以外的兄弟</p>
+</section>
+
+<section>
+<h2>依赖值在定义处计算，再继承</h2>
+<div class="alias-parent">
+  <p class="alias-inherited">继承已经计算的别名</p>
+  <p class="alias-rebound">在本元素重新计算别名</p>
+</div>
+</section>
+</main>
+</body>
+</html>

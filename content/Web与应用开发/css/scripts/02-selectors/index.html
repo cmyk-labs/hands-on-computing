@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>选择器</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h1>选择器</h1>
+<nav aria-label="本章页面"><a href="index.html">index.html</a> · <a href="states.html">states.html</a></nav>
+<section id="demo-1">
+<h2>类型、类、ID 与通配选择器</h2>
+<div class="basic">
+  <p id="headline" class="notice urgent">紧急通知</p>
+  <p class="notice">普通通知</p>
+  <span class="notice">行内通知</span>
+</div>
+</section>
+
+<section id="demo-2">
+<h2>属性选择器检查 HTML 属性</h2>
+<p class="attribute-demo" data-state="ready" data-tags="css core"
+   data-file="lesson-core.css" data-kind="NOTE" lang="zh-CN">CSS 文件记录</p>
+<p class="attribute-demo" data-state="waiting" data-tags="css-course"
+   data-file="draft.txt">待整理记录</p>
+</section>
+
+<section id="demo-3">
+<h2>组合器与匹配范围</h2>
+<div class="relations">
+  <h3>阅读安排</h3>
+  <p id="direct-one">直接子段落一</p>
+  <div><p id="nested-one">嵌套段落</p></div>
+  <p id="direct-two">直接子段落二</p>
+</div>
+<p id="outside-one">容器外的段落</p>
+</section>
+
+<section id="demo-4">
+<h2>选择器列表与整条规则失效</h2>
+<div class="list-demo">
+  <h3>阅读列表</h3>
+  <p class="list-target">这一段用来比较有效与无效列表。</p>
+</div>
+</section>
+
+<section id="demo-6">
+<h2>结构伪类按兄弟位置计数</h2>
+<div class="structure-demo">
+  <h3>本周</h3>
+  <p id="struct-a">第一段，也是第二个元素子节点</p>
+  <p id="struct-b">第二段，也是第三个元素子节点</p>
+  <p id="struct-c">第三段，也是第四个元素子节点</p>
+</div>
+<div class="single-demo"><p>唯一的元素子节点</p></div>
+</section>
+
+<section id="demo-7">
+<h2>:not()、:is()、:where() 与 :has()</h2>
+<p class="choice book">书籍</p>
+<p class="choice video muted">视频（暂缓）</p>
+<div class="relational-card">
+  <input id="card-check" type="checkbox"><label for="card-check">加入阅读计划</label>
+</div>
+</section>
+
+<section id="demo-8">
+<h2>伪元素与匹配排错</h2>
+<p class="generated-note">阅读提醒：先保存进度，再关闭页面。</p>
+<p class="first-line-demo">这是用于观察首行的说明文字。缩窄页面后，留意蓝色的文字范围是否随换行改变。</p>
+</section>
+</body>
+</html>

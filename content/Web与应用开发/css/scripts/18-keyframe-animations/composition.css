@@ -1,0 +1,19 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+@keyframes move { from { transform: translateX(0); } to { transform: translateX(160px); } }
+.stage { width: 280px; height: 90px; border-bottom: 1px dotted; }
+.orb { width: 80px; background: #cce8ed; animation: move 2s linear infinite alternate paused; }
+#run:checked ~ .stage .orb { animation-play-state: running; }
+/* 连续播放前先勾选；暂停后再勾选，应从停下的位置继续。 */
+@keyframes fade { from { opacity: 1; } to { opacity: 0.5; } }
+@keyframes turn { from { transform: rotate(0deg); } to { transform: rotate(20deg); } }
+.combined { animation: move 2s linear infinite alternate paused, fade 2s linear infinite alternate paused; }
+.conflict { animation: move 2s linear infinite alternate paused, turn 2s linear infinite alternate paused; }
+/* 默认替换合成下，conflict 后列的 turn 接管 transform；不会自动把位移和旋转相加。 */
+@media (prefers-reduced-motion: reduce) {
+  .token, .runner, .sample, .orb, .layout-box { animation: none; }
+}

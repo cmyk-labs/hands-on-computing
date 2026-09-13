@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>读书记录 · 修正示例</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="inspect.js" defer></script>
+</head>
+<body>
+  <a href="#main">跳到主要内容</a>
+  <header>
+    <p>阅读手记</p>
+    <nav aria-label="示例页面">
+      <a href="broken.html">待修正示例</a>
+      <a href="focus.html">焦点顺序实验</a>
+    </nav>
+    <!-- 在开发者工具的 Accessibility 中检查导航区域名称“示例页面”。 -->
+  </header>
+  <main id="main" tabindex="-1">
+    <h1>读书记录：修正示例</h1>
+    <!-- 从页首用键盘激活跳转链接，检查焦点进入 main；再按 Tab 应进入“书名”输入框。 -->
+    <p lang="en">Read, think, and write.</p>
+    <!-- 检查页面与英语段落的 lang；是否切换朗读语言还需用目标屏幕阅读器确认。 -->
+    <p><label for="book">书名</label><input id="book" name="book" placeholder="例如：小王子"></p>
+    <p><label for="reader">记录人</label><input id="reader" name="reader"></p>
+    <!-- 分别点击“书名”“记录人”，焦点应进入对应输入框；输入后标签仍然可见。 -->
+    <button type="button" data-action="mark">标为已读</button>
+    <p id="action-result" role="status">尚未标记。</p>
+    <!-- 按 Tab 聚焦按钮，分别试 Enter 和空格；每次测试前刷新，应能把提示改为“已标为已读”。 -->
+    <div id="nesting-case">
+      <p id="intro">阅读说明：每天记录一个问题，保留自己的想法。</p>
+    </div>
+  </main>
+  <footer><p>本地教学示例，输入不保存、不提交。</p></footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>open 与非模态对话框</title>
+</head>
+<body>
+  <main>
+    <h1>继续编辑阅读记录</h1>
+    <p><label for="outside-title">对话框外的标题：</label>
+      <input id="outside-title" value="周末阅读"></p>
+    <dialog open aria-labelledby="open-title">
+      <h2 id="open-title">阅读提示</h2>
+      <p>先保存一个问题，稍后再补充。</p>
+      <form method="dialog">
+        <button type="submit" value="understood">知道了</button>
+      </form>
+    </dialog>
+  </main>
+  <!-- 预期：对话框初始可见，外部输入框仍能点击和编辑。 -->
+  <!-- 本例没有 closedby；非模态时缺省不响应 Esc，也不因外部点击关闭。 -->
+  <!-- “知道了”通过 method="dialog" 关闭，页面不应导航或提交数据。 -->
+  <!-- 静态 open 没有记录打开前的焦点，不把关闭后的焦点当作恢复触发按钮的示例。 -->
+</body>
+</html>

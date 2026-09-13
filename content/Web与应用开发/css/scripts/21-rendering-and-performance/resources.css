@@ -1,0 +1,15 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+.font-sample { max-width: 320px; font-family: Georgia, "Times New Roman", serif; line-height: 1.6; }
+/* 这些是本地字体候选，不下载字体；实际命中的字体取决于系统与字符覆盖。 */
+.examples { display: flex; flex-wrap: wrap; gap: 24px; }
+.example { width: 300px; max-width: 100%; }
+.slot { width: 100%; background: #eef2f4; }
+.slot img { display: none; width: 100%; height: auto; }
+.reserved .slot { aspect-ratio: 3 / 1; }
+.examples.is-ready .slot img { display: block; }
+/* 同一延迟触发两组显示；预留区维持宽高比，未预留组会把后续文字向下推。 */

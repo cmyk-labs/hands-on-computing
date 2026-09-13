@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>同一内容，不同 MIME</title>
+</head>
+<body>
+  <h1>同一内容，不同 MIME</h1>
+  <main><div id="box"/><p id="after">后续段落</p></main>
+  <pre id="report">等待浏览器读取。</pre>
+  <p><a href="dom.html">返回实验入口</a></p>
+  <script>
+    const report = {
+      contentType: document.contentType,
+      parentName: document.querySelector("#after").parentElement.localName,
+      compatMode: document.compatMode
+    };
+    document.querySelector("#report").textContent =
+      JSON.stringify(report, null, 2);
+    // HTTP 的 as-html.xhtml：预期 text/html、div、CSS1Compat。
+    // HTTP 的 as-xml.html：预期 application/xhtml+xml、main、CSS1Compat。
+    // 两个模式值相同，不代表用了同一种解析器；同时检查响应类型和父元素。
+  </script>
+</body>
+</html>

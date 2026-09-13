@@ -1,0 +1,14 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+.paint-box { width: 180px; height: 80px; border: 2px solid #246; margin-block: 24px; }
+.overflow-piece { width: 260px; height: 40px; background: #cce8ed; }
+.clipped { contain: paint; }
+.size-shell { min-height: 110px; }
+.size-box { contain: size; width: 180px; border: 2px solid #a35e28; }
+.sized-content { height: 80px; }
+.explicit { min-height: 90px; }
+/* paint裁掉后代外溢；size使自动块尺寸不由后代撑开，最后一组显式预留空间。 */

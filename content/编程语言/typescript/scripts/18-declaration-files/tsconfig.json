@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2025",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": [
+      "ES2025"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": ".",
+    "outDir": "../../.build/18-declaration-files",
+    "noEmitOnError": true,
+    "allowJs": true,
+    "checkJs": false
+  },
+  "files": [
+    "main.ts",
+    "meter/index.js",
+    "host-init.js",
+    "host.d.ts",
+    "ambient.d.ts",
+    "missing-runtime.ts"
+  ]
+}

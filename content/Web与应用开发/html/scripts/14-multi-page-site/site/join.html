@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>参与意向 · 周末读书会</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <p class="site-name">周末读书会</p>
+    <nav aria-label="站点导航">
+      <ul>
+        <li><a href="index.html">阅读目录</a></li>
+        <li><a href="notes/reading.html">阅读记录</a></li>
+        <li><a href="join.html" aria-current="page">参与意向</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <h1>参与意向</h1>
+    <p>填写虚构称呼，选择一个场次，预览你的讨论安排。</p>
+    <p id="preview-note">仅在本机显示提交内容，不保存报名，也不发送邮件。
+       输入会出现在地址栏，请勿填写个人资料。标有“必填”的项目需要完成。</p>
+    <form action="preview" method="get" aria-describedby="preview-note">
+      <fieldset>
+        <legend>称呼与场次</legend>
+        <p>
+          <label for="nickname">称呼（必填）</label>
+          <input id="nickname" name="nickname" type="text" required
+                 maxlength="20" autocomplete="off">
+          <!-- 不填称呼就提交，浏览器应阻止提交并提示补充；点击标签应聚焦称呼框。 -->
+        </p>
+        <p>
+          <label for="session">场次（必填）</label>
+          <select id="session" name="session" required>
+            <option value="">请选择场次</option>
+            <option value="saturday">周六场 · 14:00</option>
+            <option value="sunday">周日场 · 10:00</option>
+          </select>
+          <!-- 只填写称呼、保留“请选择场次”后提交，应停在表单页；选周六场后提交值为 saturday。 -->
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>想讨论的主题（可多选）</legend>
+        <p class="choice">
+          <input id="topic-reading" name="topic" type="checkbox" value="reading">
+          <label for="topic-reading">阅读问题</label>
+        </p>
+        <p class="choice">
+          <input id="topic-notes" name="topic" type="checkbox" value="notes">
+          <label for="topic-notes">笔记整理</label>
+        </p>
+      </fieldset>
+      <!-- 同时勾选两项再提交，应保留 topic=reading 和 topic=notes 两个条目。 -->
+      <p>
+        <label for="question">带来的问题（选填）</label>
+        <textarea id="question" name="question" rows="3" maxlength="120"></textarea>
+      </p>
+      <p>
+        <label for="local-draft">临时备忘（不提交）</label>
+        <input id="local-draft" type="text">
+      </p>
+      <p>
+        <label for="meeting-link">会议链接（尚未提供，不提交）</label>
+        <input id="meeting-link" name="meeting" type="text"
+               value="尚未提供" disabled>
+        <!-- 填写临时备忘后提交：回显中应没有 local-draft 和 meeting 条目。 -->
+      </p>
+      <button type="submit">预览提交内容</button>
+      <!-- 填好必填项后提交，地址应进入 /preview，查询字段应与回显表格一致。 -->
+    </form>
+    <p><a href="index.html#schedule">返回活动安排</a></p>
+  </main>
+  <footer class="site-footer">
+    <p>周末读书会 · 本地练习站</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,25 @@
+/* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
+body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
+
+@layer foundation, theme;
+@layer foundation {
+  #layer-specific, .layer-free { color: maroon; }
+  .layer-important { color: navy !important; }
+}
+@layer theme {
+  .layer-normal, .layer-free { color: teal; }
+  .layer-important { color: teal !important; }
+}
+.layer-normal, .layer-free, .layer-important { border: 1px solid gray; }
+.layer-free { color: purple; }
+.layer-important { color: maroon !important; }
+/* 支持层时依次为 teal、purple、navy；第三段未分层重要声明也输给前层。 */
+
+@layer foundation {
+  .layer-rollback { color: navy; }
+}
+@layer theme {
+  .layer-rollback { color: teal; }
+  .layer-rollback { color: revert-layer; }
+}
+/* 支持 revert-layer 时为 navy；只取消最后一条声明后变为 teal。 */

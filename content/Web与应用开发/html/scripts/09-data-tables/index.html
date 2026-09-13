@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>社区工具站 · 库存</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>社区工具站库存</h1>
+    <p>以下为教学用库存快照，数量单位为件；可借与借出分别统计。</p>
+    <table id="inventory">
+      <caption>工具库存（件）</caption>
+      <thead>
+        <tr>
+          <th scope="col">工具</th>
+          <th scope="col">可借</th>
+          <th scope="col">借出</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">卷尺</th><td>4</td><td>2</td></tr>
+        <tr><th scope="row">钳子</th><td>3</td><td>1</td></tr>
+        <tr><th scope="row">手锯</th><td>2</td><td>0</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><th scope="row">合计</th><td>9</td><td>3</td></tr>
+      </tfoot>
+    </table>
+    <!-- 检查：卷尺的 2 同时对应“卷尺”和“借出”，不能只读出数字。 -->
+    <!-- 合计为 4+3+2=9、2+1+0=3；修改记录时必须同步重新计算。 -->
+    <h2>其他表格示例</h2>
+    <ul>
+      <li><a href="basic.html">最小数据表格</a></li>
+      <li><a href="columns.html">周末借还与列组</a></li>
+      <li><a href="groups.html">分站库存与跨行边界</a></li>
+      <li><a href="complex.html">月度借出与复杂关联</a></li>
+      <li><a href="implicit.html">源代码与隐式行组</a></li>
+    </ul>
+  </main>
+</body>
+</html>

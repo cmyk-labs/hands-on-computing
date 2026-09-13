@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>手动播放短音</title>
+</head>
+<body>
+  <h1>两次轻提示</h1>
+  <p>先将设备音量调低，再按播放；全长四秒，没有人声。</p>
+  <audio src="signal.wav" controls preload="metadata" aria-label="两次轻提示音">
+    此浏览器不支持 audio，请使用下面的文件入口。
+  </audio>
+  <p>文字说明：约 0.25 秒、2.25 秒各有一声短音，其余时间安静。</p>
+  <p><a href="signal.wav" download>下载四秒 WAV 音频</a></p>
+  <p><a href="video.html">查看带画面的同一段内容</a></p>
+  <!-- 预期：打开页面不发声；主动按播放后时间推进并在约四秒处结束。 -->
+  <!-- 用 Tab 找到控件，再用浏览器支持的键盘操作播放和暂停。 -->
+  <!-- 检查 Network 的 signal.wav；preload=metadata 不等于固定的传输量。 -->
+</body>
+</html>

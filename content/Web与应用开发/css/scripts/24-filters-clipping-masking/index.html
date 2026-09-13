@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>滤镜、裁剪与蒙版观察</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>滤镜、裁剪与蒙版观察</h1><nav><a href="shapes.html">文字环绕对照</a></nav><main><section><h2>元素滤镜</h2><div class="samples">
+  <figure><img class="art original" src="art.svg" alt="蓝色圆形和橙色三角形" width="240" height="160"><figcaption>原图</figcaption></figure>
+  <figure><img class="art filtered" src="art.svg" alt="同一几何图案" width="240" height="160"><figcaption>灰度与投影</figcaption></figure>
+</div></section><section><h2>背景滤镜</h2><div class="backdrop-stage">
+  <p class="glass">这段文字保持清楚；观察文字后面的条纹。</p>
+</div></section><section><h2>几何裁剪</h2><div class="clip-frame">
+  <img class="art clipped" src="art.svg" alt="裁剪后的几何图案" width="240" height="160">
+</div>
+<p>文字与操作放在裁剪区域外：<a href="shapes.html">查看文字环绕</a>。</p></section><section><h2>蒙版</h2><div class="samples">
+  <figure><img class="art fade" src="art.svg" alt="逐渐透明的几何图案" width="240" height="160"><figcaption>渐变透明度</figcaption></figure>
+  <figure><img class="art mask-alpha" src="art.svg" alt="几何图案" width="240" height="160"><figcaption>同一蒙版：alpha</figcaption></figure>
+  <figure><img class="art mask-luminance" src="art.svg" alt="几何图案" width="240" height="160"><figcaption>同一蒙版：luminance</figcaption></figure>
+</div></section><section><h2>混合</h2><div class="blend-stage" aria-hidden="true"><div class="blend-mark"></div></div>
+<div class="background-blend" aria-hidden="true"></div>
+<p>两块色样仅用于观察混合；这段说明不参与混合。</p></section></main>
+</body>
+</html>

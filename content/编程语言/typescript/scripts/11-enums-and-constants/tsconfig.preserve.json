@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "outDir": "../../.build/11-enums-and-constants-preserve"
+  }
+}

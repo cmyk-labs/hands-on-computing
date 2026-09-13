@@ -1,0 +1,31 @@
+/* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
+body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
+
+.normal-demo > p { width: 140px; margin: 0; border: 1px solid teal; }
+.plain-inline { width: 200px; height: 80px; padding: 0 6px; border: 1px solid teal; }
+/* 检查：两段仍上下排列；span 不会因为 width: 200px 而变成 200px 宽的普通块。 */
+
+.inline-block-sample { display: inline-block; width: 100px; height: 40px; border: 1px solid teal; }
+.as-block { display: block; width: 160px; border: 1px solid teal; }
+/* 检查：小盒与文字同行并占 102×42px；as-block 在前后产生块级换行。 */
+
+.float-demo { display: flow-root; width: 360px; max-width: 100%; border: 1px solid gray; }
+.float-thumb { float: left; width: 80px; height: 80px; margin-right: 12px; background-color: lightyellow; }
+.story-text, .story-clear { margin: 0; }
+.story-clear { clear: both; border-top: 1px solid teal; }
+/* 检查文字起点位于浮动右侧；clear 块的上边框不高于浮动的底边。 */
+
+.float-stage { display: flow-root; margin-bottom: 16px; }
+.float-shell { width: 240px; border: 1px solid teal; }
+.floating-child { float: left; width: 80px; height: 60px; background-color: lightyellow; }
+.flow-shell { display: flow-root; }
+/* 比较内层边框：普通父块外沿高 2px；flow-root 父块外沿高 62px。 */
+
+.external-stage { display: flow-root; width: 360px; max-width: 100%; }
+.external-float { float: left; width: 80px; height: 60px; margin-right: 12px; background-color: lightyellow; }
+.external-content { display: flow-root; min-height: 60px; border: 1px solid teal; }
+.bfc-margin { display: flow-root; background-color: lightyellow; }
+.bfc-margin > p { margin: 0; }
+.bfc-margin > .bfc-first { margin-top: 24px; margin-bottom: 20px; }
+.bfc-margin > .bfc-second { margin-top: 30px; }
+/* 父框内部顶部保留 24px；两段之间仍折叠成 30px，而不是 50px。 */

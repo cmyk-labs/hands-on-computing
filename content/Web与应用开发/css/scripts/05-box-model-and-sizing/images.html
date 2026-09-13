@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>盒模型与尺寸</title>
+<link rel="stylesheet" href="images.css">
+</head>
+<body>
+<h1>盒模型与尺寸</h1>
+<nav aria-label="本章页面"><a href="index.html">index.html</a> · <a href="margins.html">margins.html</a> · <a href="images.html">images.html</a></nav>
+<section id="demo-8">
+<h2>替换元素与图像自然尺寸</h2>
+<img class="natural-image" src="pattern.svg" width="300" height="150"
+     alt="左边橙色圆形，右边蓝绿色矩形">
+<img class="scaled-image" src="pattern.svg" width="300" height="150"
+     alt="相同比例的缩小图形">
+</section>
+
+<section id="demo-9">
+<h2>object-fit 与 object-position 控制盒内图像</h2>
+<p>依次为 fill、contain、cover 靠左、cover 靠右、none、scale-down：</p>
+<img class="fit-image fit-fill" src="pattern.svg" alt="fill 对照">
+<img class="fit-image fit-contain" src="pattern.svg" alt="contain 对照">
+<img class="fit-image fit-cover-left" src="pattern.svg" alt="cover 靠左对照">
+<img class="fit-image fit-cover-right" src="pattern.svg" alt="cover 靠右对照">
+<img class="fit-image fit-none" src="pattern.svg" alt="none 对照">
+<img class="fit-image fit-down" src="pattern.svg" alt="scale-down 对照">
+</section>
+</body>
+</html>

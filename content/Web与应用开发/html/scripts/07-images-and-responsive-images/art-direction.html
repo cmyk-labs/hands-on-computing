@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小屋的不同构图</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>远看湖景，近看小屋</h1>
+    <p><a href="index.html">返回图像实验</a></p>
+    <figure>
+      <picture>
+        <source media="(max-width: 640px)" type="image/svg+xml"
+                srcset="cabin-480.svg" width="480" height="480">
+        <img id="sample-image" class="scene art-image"
+             src="lake-960.svg" width="960" height="540"
+             alt="一座红色小屋坐落在蓝色湖泊岸边。">
+      </picture>
+      <figcaption>图 2：小屋与湖岸。</figcaption>
+    </figure>
+    <button id="inspect" type="button">读取当前图像</button>
+    <pre id="selection">图像信息等待读取。</pre>
+  </main>
+  <script src="inspect.js"></script>
+  <!-- 检查：在 390px 视口重新加载，应显示 cabin-480.svg 的方形近景。 -->
+  <!-- 在 1000px 视口重新加载，应显示 lake-960.svg 的 16:9 全景。 -->
+  <!-- 这些预期来自本例互斥的 media 分支及各分支的单一资源。 -->
+  <!-- 还需核对图片加载成功、没有拉伸，不能只依据 currentSrc 判定成功。 -->
+</body>
+</html>

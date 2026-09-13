@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2025",
+    "module": "NodeNext",
+    "strict": true,
+    "lib": ["ES2025"],
+    "types": ["node"],
+    "rootDir": ".",
+    "outDir": "../../.build/01-typescript-toolchain",
+    "noEmitOnError": true
+  },
+  "files": ["greeting.ts", "runtime-error.ts"]
+}
