@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>渲染与性能</title>
+  <link rel="stylesheet" href="performance.css">
+</head>
+<body>
+<main>
+<h1>渲染与性能</h1>
+<nav><a href="resources.html">资源与布局偏移</a> · <a href="containment.html">contain 边界</a> · <a href="long.html">长页增强</a> · <a href="baseline.html">长页基线</a></nav>
+<input id="left-mode" name="mode" type="radio" checked><label for="left-mode">left 位移</label>
+<input id="transform-mode" name="mode" type="radio"><label for="transform-mode">transform 位移</label>
+<input id="run" type="checkbox"><label for="run">播放</label>
+<input id="hint" type="checkbox"><label for="hint">仅第一项启用 will-change</label>
+<div class="samples" aria-label="十六个装饰性位移样本"><div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div>
+<div class="row"><div class="mover"></div></div></div>
+<section><input id="fade" type="checkbox"><label for="fade">播放透明度变化</label>
+<div class="fade-box">这段文字始终保留布局占位。</div></section>
+</main>
+</body>
+</html>

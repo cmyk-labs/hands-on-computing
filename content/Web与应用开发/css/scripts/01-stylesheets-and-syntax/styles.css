@@ -1,0 +1,5 @@
+/* 保存后刷新 index.html；段落为深蓝色，字号为 20px。 */
+p {
+  color: navy;
+  font-size: 20px;
+}

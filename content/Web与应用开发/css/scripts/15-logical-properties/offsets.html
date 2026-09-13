@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>逻辑属性与书写模式 · 逻辑定位与属性混用</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>逻辑属性与书写模式</h1>
+<nav aria-label="本章示例"><a href="index.html">方向、尺寸与间距</a> · <a href="vertical.html">竖排字形与布局轴</a> · <a href="offsets.html">逻辑定位与属性混用</a></nav>
+<main>
+<section>
+<h2>逻辑偏移跟随方向，定位参照仍需成立</h2>
+<div class="position-host" dir="ltr"><span class="logical-badge">A</span></div>
+<div class="position-host" dir="rtl"><span class="logical-badge">A</span></div>
+<div class="position-host vertical-right" dir="ltr"><span class="logical-badge">A</span></div>
+</section>
+
+<section>
+<h2>物理属性与逻辑属性混用时的层叠</h2>
+<div class="mix-host" dir="ltr"><p class="mixed-margin">LTR：逻辑声明在后</p></div>
+<div class="mix-host" dir="rtl"><p class="mixed-margin">RTL：两边分别有值</p></div>
+<div class="mix-host" dir="ltr"><p class="physical-last">LTR：物理声明在后</p></div>
+</section>
+</main>
+</body>
+</html>

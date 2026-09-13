@@ -1,0 +1,24 @@
+/* 两个页面都引用此文件；预期正文有留白，标题呈蓝色。 */
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  max-width: 48rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  color: #175cd3;
+}
+
+/* metadata.html 内后写的同名规则会覆盖这一条颜色，边框仍保留。 */
+.note {
+  color: #175cd3;
+  border-left: 4px solid #175cd3;
+  padding-left: 1rem;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

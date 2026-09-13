@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>&lt;base&gt;：片段目标</title>
+  <base href="pages/guide.html">
+</head>
+<body>
+  <h1>&lt;base&gt;：片段目标</h1>
+  <p><a href="#packing">查看指南清单</a></p>
+  <!-- 预期：打开 pages/guide.html#packing，定位指南的标题。 -->
+  <p><a href="../base-fragment.html#packing">定位本页清单</a></p>
+  <h2 id="packing">本页的清单</h2>
+  <!-- 预期：仍在 base-fragment.html，地址以 #packing 结尾。 -->
+  <p><a href="../index.html">返回链接实验导航</a></p>
+</body>
+</html>

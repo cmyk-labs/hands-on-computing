@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>全局属性实验</title>
+</head>
+<body>
+  <h1>语法学习卡片</h1>
+  <!-- intro 和 follow-up 是两个不同的 id；两段共享 note 类。 -->
+  <p id="intro" class="note important" data-topic="syntax" data-level="beginner">
+    学习记录：<span lang="en">Read the source.</span>
+  </p>
+  <p id="follow-up" class="note" title="观察元素属性">检查保存后的页面。</p>
+  <!-- 预期：普通段落沿用中文声明，英文 span 单独声明 en，不会自动翻译。 -->
+  <!-- class 和 data-* 的值可在 Elements 中读取，不自动显示成正文。 -->
+  <p><button type="button" data-disabled="false">自定义数据不会禁用按钮</button></p>
+  <!-- 复习字符引用：这里显示标签文字、与号和版权符号。 -->
+  <p id="literal-text">&lt;p&gt;标签文字&lt;/p&gt; &amp; &copy;</p>
+</body>
+</html>

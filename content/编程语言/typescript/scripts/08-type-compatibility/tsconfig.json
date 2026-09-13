@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2025",
+    "module": "NodeNext",
+    "lib": [
+      "ES2025"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": ".",
+    "outDir": "../../.build/08-type-compatibility",
+    "noEmitOnError": true,
+    "strictFunctionTypes": true
+  },
+  "files": [
+    "main.ts",
+    "method-runtime-error.ts"
+  ]
+}

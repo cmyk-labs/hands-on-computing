@@ -1,0 +1,147 @@
+/* 样式仅由独立网站加载；本例不引入外部字体或资源。 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 760px;
+  margin: 24px auto;
+  padding: 0 20px;
+  color: #243a30;
+  background: #fffdf7;
+  font-family: sans-serif;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: #215942;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+main:focus-visible {
+  outline: 3px solid #974b12;
+  outline-offset: 4px;
+}
+
+.skip-link {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.site-header,
+.site-footer {
+  padding: 12px 0;
+  border-bottom: 1px solid #b8c6ba;
+}
+
+.site-name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  padding: 0;
+  list-style: none;
+}
+
+nav a[aria-current="page"] {
+  font-weight: bold;
+  border-bottom: 3px solid currentColor;
+}
+
+main {
+  margin: 28px 0;
+}
+
+h1,
+h2 {
+  line-height: 1.35;
+}
+
+section {
+  margin: 24px 0;
+}
+
+figure {
+  margin: 16px 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  margin-top: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+}
+
+th,
+td {
+  border: 1px solid #8d9f90;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #edf3ef;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 20px 0;
+  padding: 0 16px;
+  border: 1px solid #8d9f90;
+}
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  display: block;
+}
+
+input:not([type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  font: inherit;
+}
+
+.choice label {
+  display: inline;
+}
+
+button {
+  padding: 10px 20px;
+  font: inherit;
+  color: #fff;
+  background: #315c4d;
+  border: 2px solid #315c4d;
+  cursor: pointer;
+}
+
+/* 检查：宽窗口与约 360 CSS 像素的窄窗口中，内容都能按顺序阅读。 */
+/* 用 Tab 移动时应能辨认焦点；不通过隐藏溢出来掩盖过宽内容。 */

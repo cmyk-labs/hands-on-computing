@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>社区工具站 · 月度借出</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>月度借出记录</h1>
+    <p>教学数据；先按月份分组，每组按工具列行，北站和南站各占一列。</p>
+    <table id="monthly">
+      <caption>六月与七月各站点借出量（件次）</caption>
+      <thead>
+        <tr>
+          <th id="tool-name">工具</th>
+          <th id="station-north">北站</th>
+          <th id="station-south">南站</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th id="month-june" colspan="3">六月</th></tr>
+        <tr>
+          <th id="june-tape" headers="month-june tool-name">卷尺</th>
+          <td headers="month-june june-tape station-north">12</td>
+          <td headers="month-june june-tape station-south">9</td>
+        </tr>
+        <tr>
+          <th id="june-pliers" headers="month-june tool-name">钳子</th>
+          <td headers="month-june june-pliers station-north">8</td>
+          <td headers="month-june june-pliers station-south">6</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr><th id="month-july" colspan="3">七月</th></tr>
+        <tr>
+          <th id="july-tape" headers="month-july tool-name">卷尺</th>
+          <td headers="month-july july-tape station-north">14</td>
+          <td headers="month-july july-tape station-south">10</td>
+        </tr>
+        <tr>
+          <th id="july-pliers" headers="month-july tool-name">钳子</th>
+          <td headers="month-july july-pliers station-north">9</td>
+          <td headers="month-july july-pliers station-south">7</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- 检查：14 是七月、卷尺、北站的借出件次；9 有两处，必须看各自表头。 -->
+    <!-- 每个 headers 标识都应定位到本表 th；六月和七月的“卷尺”id 不同。 -->
+    <!-- 比较源码中的关联，不用“数值位置看着对”代替 headers 检查。 -->
+    <p><a href="index.html">返回库存页</a></p>
+  </main>
+</body>
+</html>

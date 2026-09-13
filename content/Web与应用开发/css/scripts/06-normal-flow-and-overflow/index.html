@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>正常流与溢出</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h1>正常流与溢出</h1>
+<nav aria-label="本章页面"><a href="index.html">index.html</a> · <a href="overflow.html">overflow.html</a> · <a href="visibility.html">visibility.html</a></nav>
+<section id="demo-1">
+<h2>正常流中的块与行内内容</h2>
+<div class="normal-demo">
+  <p id="normal-a">第一块</p>
+  <p id="normal-b">第二块</p>
+</div>
+<p class="inline-line">正文中的 <span class="plain-inline">行内</span> 内容继续沿文字方向排列。</p>
+</section>
+
+<section id="demo-2">
+<h2>display 的外部与内部角色</h2>
+<div class="display-line">
+  文字 <span class="inline-block-sample">独立小盒</span> 后续文字
+  <span class="as-block">改为块盒的 span</span>
+  末尾文字
+</div>
+</section>
+
+<section id="demo-3">
+<h2>float 与 clear：文字环绕和停止环绕</h2>
+<div class="float-demo">
+  <div class="float-thumb">浮动</div>
+  <p class="story-text"><span id="wrap-start">正文</span>从浮动旁开始，继续沿余下空间排版；浮动会挤窄附近的行盒。</p>
+  <p class="story-clear">这一块明确停止环绕。</p>
+</div>
+</section>
+
+<section id="demo-4">
+<h2>BFC 与 flow-root 包含内部浮动</h2>
+<div class="float-stage">
+  <div class="float-shell"><div class="floating-child">普通父块</div></div>
+</div>
+<div class="float-stage">
+  <div class="float-shell flow-shell"><div class="floating-child">BFC父块</div></div>
+</div>
+</section>
+
+<section id="demo-5">
+<h2>BFC 隔开外部浮动与父子外边距</h2>
+<div class="external-stage">
+  <div class="external-float">外部浮动</div>
+  <div class="external-content">完整盒子避开浮动</div>
+</div>
+<div class="bfc-margin">
+  <p class="bfc-first">首个子块</p>
+  <p class="bfc-second">第二个子块</p>
+</div>
+</section>
+</body>
+</html>

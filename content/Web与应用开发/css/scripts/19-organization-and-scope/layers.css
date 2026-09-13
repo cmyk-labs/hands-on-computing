@@ -1,0 +1,19 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+@layer first, second;
+@layer first {
+  #layered { color: maroon; }
+  .unlayered-note { color: maroon; }
+  .important-note { color: maroon !important; }
+}
+@layer second {
+  .layer-note { color: teal; }
+  .important-note { color: teal !important; }
+}
+.unlayered-note { color: navy; }
+/* 第一行teal：后层普通声明优先于前层ID；第二行navy：层外普通声明优先。 */
+/* 第三行maroon：重要声明的层顺序反转；这里的 !important 仅用于规则对照。 */

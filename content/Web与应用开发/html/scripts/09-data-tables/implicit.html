@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>社区工具站 · 隐式行组</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>源码与元素树</h1>
+    <p>教学片段：比较编辑器中的表格源码与开发者工具中的结构。</p>
+    <table id="implicit-table">
+      <caption>可借工具摘录（件）</caption>
+      <tr><th scope="col">工具</th><th scope="col">可借数量</th></tr>
+      <tr><th scope="row">卷尺</th><td>4</td></tr>
+    </table>
+    <!-- 预期：浏览器 Elements 中，两个 tr 共享自动生成的 tbody 父元素。 -->
+    <!-- 源码没有行组标签，DOM 却有；本页没有脚本，也不会凭空出现 thead。 -->
+    <!-- 对照查看网页源代码与 Elements，不把源码文本当成浏览器元素树。 -->
+    <p><a href="index.html">返回库存页</a></p>
+  </main>
+</body>
+</html>

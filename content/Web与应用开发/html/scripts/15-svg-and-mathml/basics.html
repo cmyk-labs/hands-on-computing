@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SVG 与 MathML 基础片段</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>SVG 与 MathML 基础片段</h1>
+    <p><a href="index.html">查看组合页面</a> · <a href="viewbox.html">比较 viewBox</a></p>
+    <section id="embedding">
+      <h2>HTML 中的图形与数字</h2>
+<p>一个圆点：
+  <svg width="60" height="40" role="img">
+    <title>圆点</title>
+    <circle cx="30" cy="20" r="12" fill="#b45309"></circle>
+  </svg>
+</p>
+<p>一个数字：<math><mn>3</mn></math></p>
+<!-- 圆由 SVG 绘制，数字由 MathML 排版，外层段落仍属于 HTML。 -->
+    </section>
+    <section id="tokens">
+      <h2>变量、数字与运算符</h2>
+      <p>令 x 为实数，下面表示 x 加 1。</p>
+<p>行内算式：<math><mi>x</mi><mo>+</mo><mn>1</mn></math>，仍在这句话中。</p>
+<math display="block">
+  <mtext>算式：</mtext><mi>x</mi><mo>+</mo><mn>1</mn>
+</math>
+<!-- 第一条参与文字行；第二条单独成块。标记没有给 x 赋值或求值。 -->
+    </section>
+    <section id="fractions">
+      <h2>分子的分组</h2>
+      <p>先把 x 与 1 相加，再除以 2：</p>
+<math display="block">
+  <mfrac>
+    <mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow>
+    <mn>2</mn>
+  </mfrac>
+</math>
+<!-- x + 1 全在分数线上方；mfrac 的两个直接子元素分别是分子、分母。 -->
+      <p>给 x 加上二分之一：</p>
+<math display="block">
+  <mi>x</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac>
+</math>
+<!-- 只有 1 在分数线上方，x 不属于分子。 -->
+    </section>
+    <section id="scripts">
+      <h2>上下标的附着对象</h2>
+      <p>x 与 1 的和的平方：</p>
+<math display="block">
+  <msup>
+    <mrow><mo>(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow>
+    <mn>2</mn>
+  </msup>
+</math>
+<!-- 上标 2 附着于带括号的整组；mrow 本身不会绘制括号。 -->
+      <p>令 a 为实数序列，n 为从 1 开始的正整数索引；下面表示第 n 项的平方。</p>
+<math display="block">
+  <msup><msub><mi>a</mi><mi>n</mi></msub><mn>2</mn></msup>
+</math>
+<!-- 下标 n 是索引变量；每个 msub、msup 都有两个直接子元素。 -->
+    </section>
+  </main>
+</body>
+</html>

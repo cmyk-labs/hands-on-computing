@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>样式资源与布局偏移</title>
+  <link rel="stylesheet" href="resources.css">
+</head>
+<body>
+<main>
+<h1>样式资源与布局偏移</h1>
+<p><a href="index.html">返回首页</a></p><p class="font-sample">Font metrics: WWW iii 0123456789；字体度量会影响换行。</p><button id="reveal" type="button">等待两秒后显示图片</button>
+<div class="examples">
+  <section class="example unreserved">
+    <h2>未预留空间</h2>
+    <div class="slot"><img src="diagram.svg" width="600" height="200" alt="三个并排矩形"></div>
+    <p class="following">观察这段文字的位置。</p>
+  </section>
+  <section class="example reserved">
+    <h2>预留空间</h2>
+    <div class="slot"><img src="diagram.svg" width="600" height="200" alt="三个并排矩形"></div>
+    <p class="following">观察这段文字的位置。</p>
+  </section>
+</div>
+<script src="delayed-content.js"></script>
+</main>
+</body>
+</html>

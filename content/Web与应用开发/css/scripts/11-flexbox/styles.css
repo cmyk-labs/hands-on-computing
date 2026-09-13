@@ -1,0 +1,73 @@
+body { margin: 24px; font-family: sans-serif; line-height: 1.6; color: #222; background: white; }
+section { margin-bottom: 32px; }
+button { font: inherit; }
+:focus-visible { outline: 3px solid #006666; outline-offset: 3px; }
+.axis { display: flex; width: 320px; max-width: 100%; border: 1px solid #777; margin: 16px 0; }
+.axis span, .inline-axis span { padding: 8px; background: #e0eeee; border: 1px solid #006666; }
+.row-axis { flex-direction: row; }
+.column-axis { flex-direction: column; }
+.reverse-axis { flex-direction: row-reverse; }
+.inline-axis { display: inline-flex; }
+/* 横排且从左到右时，row 主轴向右、column 主轴向下；reverse 反转主轴。
+   inline-flex 让容器自身参与行内排版，内部仍是 Flex 布局。 */
+
+.wrap-demo { display: flex; flex-flow: row wrap; width: 320px; max-width: 100%; gap: 8px; border: 1px solid #777; margin: 16px 0; }
+.wrap-demo span { flex: 0 0 120px; background: #e0eeee; }
+.no-wrap { flex-wrap: nowrap; }
+/* 基准宽 120px、既不增长也不收缩：320px 内只能容纳两项和一个 8px 间隙。
+   nowrap 仍只排一行；本例关闭收缩，因此第三项溢出。 */
+
+.aligned-row { display: flex; width: 320px; height: 120px; border: 1px solid #777; justify-content: space-between; align-items: center; gap: 8px; }
+.aligned-row span { padding: 8px; background: #e0eeee; }
+.self-end { align-self: flex-end; }
+.packed { display: flex; flex-wrap: wrap; width: 260px; height: 200px; border: 1px solid #777; gap: 10px; align-items: flex-start; align-content: space-between; margin-top: 16px; }
+.packed span { flex: 0 0 100px; height: 30px; background: #f5dfb2; }
+/* 上组甲丙位于交叉轴中央，乙单独到底；主轴余量被分到项目之间。
+   下组为两行，每行两项；align-content 将整行分到容器交叉轴两端。 */
+
+.basis-row { display: flex; width: 400px; max-width: 100%; outline: 1px solid #777; }
+.basis-row span { width: 180px; flex-grow: 0; flex-shrink: 0; background: #e0eeee; }
+.basis-explicit { flex-basis: 100px; }
+.basis-auto { flex-basis: auto; }
+.grow-row { display: flex; width: 500px; max-width: 100%; outline: 1px solid #777; margin-top: 20px; }
+.grow-one { flex: 1 1 100px; background: #e0eeee; }
+.grow-two { flex: 2 1 100px; background: #f5dfb2; }
+/* basis 对照宽度为 100px、180px；前者的非 auto 基准用于主轴尺寸分配。
+   grow-row 为 500px 时，两项各从 100px 出发，分到 100px、200px 余量，最终 200px、300px。
+   本组没有 padding、border、gap 和宽度上下限干扰，便于核对计算。 */
+
+.shrink-row { display: flex; width: 300px; outline: 1px solid #777; margin: 20px 0; }
+.shrink-row span { flex-grow: 0; flex-shrink: 1; min-width: 0; }
+.small-base { flex-basis: 200px; background: #e0eeee; }
+.large-base { flex-basis: 400px; background: #f5dfb2; }
+.weighted .small-base { flex-shrink: 2; }
+.locked .small-base { flex-shrink: 0; }
+/* 600px 基准要放进 300px：同为 shrink:1 时，分别减 100px、200px，剩 100px、200px。
+   第二组权重为 2×200 与 1×400，各减 150px，剩 50px、250px。
+   第三组第一项不缩，第二项独自减 300px，剩 200px、100px。 */
+
+.min-row { display: flex; width: 300px; outline: 1px solid #777; margin: 20px 0; }
+.label { flex: 0 0 64px; background: #f5dfb2; }
+.text { flex: 1 1 0; background: #e0eeee; }
+.cut { margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.released .text { min-width: 0; }
+/* protected 的项目保留基于内容的自动最小宽度，可能把整行撑宽。
+   released 才能缩到 236px，内部段落再通过裁剪与省略处理文字。
+   只把项目缩小并不会自动让内部长文本换行或省略。 */
+
+.navigation { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; border: 1px solid #777; padding: 12px; }
+.navigation .help { margin-left: auto; }
+/* 在本例从左到右的 row 主轴中，帮助项左侧 auto 外边距吸收正的剩余空间。
+   缩窄后允许换行，检查链接均可达；没有正余量时 auto 不会制造额外空间。 */
+
+.centered { display: flex; justify-content: center; align-items: center; min-height: 180px; border: 1px solid #777; }
+.cards { display: flex; flex-wrap: wrap; gap: 12px; padding: 0; list-style: none; }
+.cards li { flex: 1 1 12rem; min-width: 0; border: 1px solid #777; padding: 12px; overflow-wrap: anywhere; }
+.cards h3 { margin-top: 0; }
+/* 居中同时作用于两轴；min-height 允许内容增高，不用固定小高度截断内容。
+   卡片以 12rem 内容宽为基准按行分配空间；最后一行的余量在本行重新分配。 */
+
+.visual-order { display: flex; gap: 32px; padding-left: 32px; }
+.visual-order .moved { order: 2; }
+/* 反例：第一步在视觉上移到最后，DOM 与通常的 Tab 顺序仍是第一、第二、第三。
+   实际有顺序的任务应修改 HTML 顺序，而不是用 order 修补结构。 */

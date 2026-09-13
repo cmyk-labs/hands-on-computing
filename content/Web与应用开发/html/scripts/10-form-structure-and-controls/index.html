@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>学习安排：结构与标签</title>
+</head>
+<body>
+  <h1>学习安排：结构与标签</h1>
+<p>只使用虚构的安排名称与地点。</p>
+  <form onsubmit="event.preventDefault()">
+    <fieldset>
+      <legend>安排内容</legend>
+      <p>
+        <label for="plan-title">安排名称</label>
+        <input id="plan-title" name="title" type="text" value="周末阅读">
+      </p>
+      <p>
+        <label>虚构地点 <input id="plan-place" name="place" type="text" value="练习室 A"></label>
+      </p>
+    </fieldset>
+  </form>
+  <!-- 检查：点击“安排名称”，光标应进入第一个输入框；点击“虚构地点”同样可定位。 -->
+  <!-- 在 Elements 核对 for 对应 id；name 分别是 title、place，不是标签关联目标。 -->
+  <!-- 修改输入只改变当前控件状态，不会写回磁盘上的 HTML。 -->
+  <nav aria-label="本章示例">
+    <h2>继续观察</h2>
+    <ul>
+      <li><a href="buttons.html">按钮的类型</a></li>
+      <li><a href="text-controls.html">文字输入</a></li>
+      <li><a href="quantities-and-dates.html">数值与日期时间</a></li>
+      <li><a href="choices.html">复选与单选</a></li>
+      <li><a href="list-controls.html">选择列表与建议</a></li>
+      <li><a href="file-and-hidden.html">文件与隐藏字段</a></li>
+      <li><a href="states.html">默认值与可编辑状态</a></li>
+      <li><a href="results.html">结果、度量与进度</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

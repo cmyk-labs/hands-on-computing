@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>声明式对话框与关闭策略</title>
+</head>
+<body>
+  <main>
+    <h1>阅读提示的关闭方式</h1>
+    <p><label for="background-note">背景记录：</label>
+      <input id="background-note" value="本周想读散文"></p>
+    <p>
+      <button id="open-request" type="button"
+        commandfor="request-dialog" command="show-modal">允许 Esc</button>
+      <button id="open-any" type="button"
+        commandfor="any-dialog" command="show-modal">允许外部点击</button>
+      <button id="open-none" type="button"
+        commandfor="none-dialog" command="show-modal">仅用关闭按钮</button>
+    </p>
+    <dialog id="request-dialog" closedby="closerequest"
+      aria-labelledby="request-title">
+      <h2 id="request-title">允许关闭请求</h2>
+      <p>读完提示后可关闭。</p>
+      <button id="close-request" type="button" autofocus
+        commandfor="request-dialog" command="close">关闭提示</button>
+    </dialog>
+    <dialog id="any-dialog" closedby="any" aria-labelledby="any-title">
+      <h2 id="any-title">允许外部点击</h2>
+      <p>也可以点击对话框外部。</p>
+      <button id="close-any" type="button" autofocus
+        commandfor="any-dialog" command="close">关闭提示</button>
+    </dialog>
+    <dialog id="none-dialog" closedby="none" aria-labelledby="none-title">
+      <h2 id="none-title">保留明确的关闭按钮</h2>
+      <p>此例用于比较关闭条件。</p>
+      <button id="close-none" type="button" autofocus
+        commandfor="none-dialog" command="close">关闭提示</button>
+    </dialog>
+  </main>
+  <!-- 每次只打开一个：初始焦点应在该框的关闭按钮；背景输入框不能编辑。 -->
+  <!-- closerequest：Esc 关闭，点外部不关闭；any：两种操作都可关闭。 -->
+  <!-- none：Esc 和外部点击均不关闭，但内部按钮仍能关闭。 -->
+  <!-- 每种关闭方式分别重开再测；键盘关闭后检查对应打开按钮的焦点轮廓。 -->
+  <!-- 若 commandfor/closedby 不受支持，以上矩阵不成立，需检查浏览器兼容性。 -->
+</body>
+</html>

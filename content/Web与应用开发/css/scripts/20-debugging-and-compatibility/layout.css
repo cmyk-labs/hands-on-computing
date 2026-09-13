@@ -1,0 +1,12 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+.measure { box-sizing: content-box; width: 180px; padding: 12px; border: 3px solid; }
+.flex-demo { display: flex; flex-wrap: wrap; gap: 12px; max-width: 340px; margin-block: 24px; }
+.flex-demo > span { flex: 1 1 100px; background: #cce8ed; }
+.grid-demo { display: grid; grid-template-columns: 1fr 2fr; gap: 12px; max-width: 340px; }
+.grid-demo > span { background: #f6d69b; }
+/* 盒子外宽=180+24+6=210px；Grid的1:2分配作用于扣除gap后的轨道空间。 */

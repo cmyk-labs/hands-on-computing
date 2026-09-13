@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>按显示空间选择图像</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>随布局变化的湖景</h1>
+    <p><a href="index.html">返回图像实验</a></p>
+    <figure>
+      <img id="sample-image" class="scene responsive-image"
+           src="lake-480.svg"
+           srcset="lake-480.svg 480w, lake-960.svg 960w"
+           sizes="(max-width: 640px) calc(100vw - 32px), 480px"
+           width="960" height="540"
+           alt="红色小屋位于蓝色湖泊左岸，远处是连绵的山峰。">
+      <figcaption>构图保持不变，显示空间由 CSS 控制。</figcaption>
+    </figure>
+    <button id="inspect" type="button">读取当前图像</button>
+    <pre id="selection">图像信息等待读取。</pre>
+  </main>
+  <script src="inspect.js"></script>
+  <!-- 检查：390px 视口中显示宽度约 358px，1000px 视口中为 480px。 -->
+  <!-- 在 Elements 临时把 sizes 改成 100vw，再点按钮；CSS 宽度应保持原值。 -->
+  <!-- 候选 URL 可能改变，也可能不变；刷新可恢复文件中的 sizes。 -->
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./core"
+    },
+    {
+      "path": "./app"
+    }
+  ]
+}

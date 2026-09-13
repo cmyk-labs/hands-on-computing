@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "outDir": "../../.build/20-project-config/errors", "noEmit": false },
+  "files": ["type-errors.ts"],
+  "include": []
+}

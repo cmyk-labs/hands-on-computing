@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>出行指南：片段定位</title>
+  <style>
+    body { font-family: sans-serif; line-height: 1.6; max-width: 48rem; margin: 2rem auto; padding: 0 1rem; }
+    .intro { min-height: 90vh; }
+    .packing { min-height: 100vh; }
+    :target { outline: 3px solid #175cd3; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="intro">
+      <h1 id="top">出行指南</h1>
+      <nav aria-label="指南目录">
+        <ul>
+          <li><a href="#packing">跳到出发清单</a></li>
+          <li><a href="#missing-id">定位不存在的标题（反例）</a></li>
+          <li><a href="../index.html">返回链接实验导航</a></li>
+        </ul>
+      </nav>
+      <p>先阅读行程，再检查随身物品。</p>
+    </div>
+    <section class="packing" aria-labelledby="packing">
+      <!-- 预期：点击目录后地址以 #packing 结尾，此标题进入视口并出现轮廓。 -->
+      <h2 id="packing">出发清单</h2>
+      <ul>
+        <li>饮用水</li>
+        <li>纸质路线图</li>
+      </ul>
+      <p><a href="#top">返回指南顶部</a></p>
+      <!-- 反例检查：missing-id 不存在；它不会为已加载的页面制造 HTTP 404。 -->
+    </section>
+  </main>
+</body>
+</html>

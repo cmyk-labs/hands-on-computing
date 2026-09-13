@@ -1,0 +1,74 @@
+body { margin: 24px; font-family: sans-serif; line-height: 1.6; color: #222; background: white; }
+section { margin-bottom: 32px; }
+table { margin: 16px 0; }
+.outside, .inside { width: 240px; padding-left: 32px; list-style-type: square; }
+.outside { list-style-position: outside; }
+.inside { list-style-position: inside; }
+.image-list { list-style-image: url("marker.svg"); list-style-type: square; }
+.outside li::marker { color: #006666; font-size: 1.2em; }
+/* outside 的续行与正文起点对齐；inside 的标记进入首行内容。
+   图像不可用时使用 square；::marker 不支持时仍保留普通列表标记。 */
+
+.topics { counter-reset: topic; }
+.topics h3 { counter-increment: topic; }
+.topics h3::before { content: "专题 " counter(topic) " · "; color: #006666; }
+/* 每个 topics 容器重建 topic 计数器，第二组从 1 开始。
+   删除生成内容后，真实标题仍能表达主题；编号不承担唯一的任务含义。 */
+
+.separate, .collapsed { width: 320px; max-width: 100%; border: 2px solid #333; }
+.separate th, .separate td, .collapsed th, .collapsed td { border: 1px solid #777; padding: 8px; text-align: left; }
+.separate { border-collapse: separate; border-spacing: 8px 4px; }
+.collapsed { border-collapse: collapse; border-spacing: 8px 4px; }
+/* separate 的列间 8px、行间 4px；collapse 中 border-spacing 不起作用。
+   caption、表头和行头保留真实表格语义，不用 div 伪造表格。 */
+
+.table-region { max-width: 100%; overflow-x: auto; }
+.auto-table, .fixed-table { width: 360px; border-collapse: collapse; }
+.auto-table { table-layout: auto; }
+.fixed-table { table-layout: fixed; max-width: 100%; }
+.name-column { width: 100px; }
+.auto-table th, .auto-table td, .fixed-table th, .fixed-table td { border: 1px solid #777; padding: 8px; text-align: left; }
+.fixed-table td { overflow-wrap: anywhere; }
+/* auto 会参考长内容；fixed 先按表宽和列宽安排，长串在单元格内换行。
+   窄视口时检查自动表的区域可滚动，不能把整个页面撑宽。 */
+
+input, select, textarea, button { font: inherit; box-sizing: border-box; }
+.sized-form input, .sized-form select, .sized-form textarea { width: 100%; max-width: 28rem; padding: 8px; border: 2px solid #777; }
+textarea { resize: vertical; }
+input:required { border-left-width: 5px; }
+input:invalid { border-style: dashed; border-color: #9b2600; }
+input:valid { border-style: solid; }
+input[readonly] { background-color: #eee; }
+button:disabled { color: #555; background-color: #eee; border: 1px solid #999; }
+/* 初始必填空值也匹配 :invalid；输入合法邮箱后边框从虚线变为实线。
+   只读输入仍可聚焦和选择；disabled 按钮不参与正常 Tab 导航。 */
+
+.native-check { accent-color: #006666; }
+.custom-check {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  border: 2px solid #006666;
+  background-color: white;
+}
+.custom-check:checked { background-color: #006666; background-image: url("check.svg"); background-size: contain; }
+@media (forced-colors: active) {
+  .custom-check, .custom-check:checked { appearance: auto; background-image: none; }
+}
+/* 点击文字标签或按空格切换；自定义样式仍作用在真实 checkbox 上。
+   强制颜色模式回到原生外观；不能仅用背景颜色表示选中。 */
+
+.example-link:link { color: #005b70; }
+.example-link:visited { color: #67408a; }
+.example-link { text-decoration: underline; text-underline-offset: 0.2em; }
+.example-link:hover { text-decoration-thickness: 3px; }
+.example-link:active { color: #9b2600; }
+a:focus, button:focus, input:focus, select:focus, textarea:focus, .table-region:focus {
+  outline: 3px solid #006666;
+  outline-offset: 3px;
+}
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, .table-region:focus-visible { outline-width: 4px; }
+.action:hover { background-color: #e0eeee; }
+/* Tab 导航时检查轮廓；保留 :focus 作为基础，不支持 :focus-visible 也可见。
+   hover 是悬停状态，不假定触屏有鼠标；访问历史颜色不作脚本读取断言。 */

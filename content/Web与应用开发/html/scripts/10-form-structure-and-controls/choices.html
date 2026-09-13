@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>独立多选与分组单选</title>
+</head>
+<body>
+  <h1>独立多选与分组单选</h1>
+<form onsubmit="event.preventDefault()">
+    <fieldset>
+      <legend>练习方式（可多选）</legend>
+      <p><input id="method-reading" name="method" type="checkbox" value="reading" checked>
+        <label for="method-reading">阅读</label></p>
+      <p><input id="method-coding" name="method" type="checkbox" value="coding">
+        <label for="method-coding">写代码</label></p>
+    </fieldset>
+    <fieldset>
+      <legend>阅读时段（选一项）</legend>
+      <p><input id="period-morning" name="period" type="radio" value="morning" checked>
+        <label for="period-morning">上午</label></p>
+      <p><input id="period-evening" name="period" type="radio" value="evening">
+        <label for="period-evening">晚上</label></p>
+    </fieldset>
+    <fieldset>
+      <legend>阅读材料（另一组，选一项）</legend>
+      <p><input id="material-paper" name="material" type="radio" value="paper" checked>
+        <label for="material-paper">纸质材料</label></p>
+      <p><input id="material-screen" name="material" type="radio" value="screen">
+        <label for="material-screen">屏幕材料</label></p>
+    </fieldset>
+    <p><button type="reset">恢复默认选择</button></p>
+  </form>
+  <!-- 检查：阅读与写代码可同时勾选；点击文字标签也能改变选择。 -->
+  <!-- 选“晚上”应取消“上午”，但不应改变“纸质材料”。 -->
+  <!-- 用 Tab 进入单选组后，用方向键切换；复选框获得焦点后可用空格切换。 -->
+  <!-- 重置应恢复阅读、上午、纸质材料；value 本身不是 true/false 开关。 -->
+  <p><a href="index.html">返回本章入口</a></p>
+</body>
+</html>

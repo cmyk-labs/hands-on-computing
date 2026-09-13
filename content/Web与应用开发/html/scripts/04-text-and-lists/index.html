@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文本与列表：浏览器观察页</title>
+  <style>
+    /* 仅作用于末尾的对照段落，不改变其他示例的默认文本样式。 */
+    .plain-text strong {
+      font-weight: normal;
+    }
+
+    .plain-text em {
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+  <h1>文本与列表</h1>
+  <h2 id="paragraphs">1 段落、换行与主题分隔</h2>
+<!-- 预期：这段英文通常显示为 Read the page.，连续空格和源码换行不保留。 -->
+<p lang="en">Read    the
+page.</p>
+<p>接下来记录活动地点。</p>
+
+<!-- 检查：楼层与房间换行，但仍属于同一个段落。地点为教学示例。 -->
+<p>学习中心二楼<br>204 室</p>
+
+<!-- hr 表示从地点转到课后安排；不是为了画装饰线。 -->
+<hr>
+<p>活动结束后，请整理各自的学习笔记。</p>
+
+  <h2 id="emphasis">2 语气与其他文本标记</h2>
+<!-- 比较两句话：第一句强调由谁复查，第二句强调哪一个版本。 -->
+<p><em>我</em>会复查这份笔记。</p>
+<p>我会复查<em>这份</em>笔记。</p>
+
+<!-- strong 表达重要性；b 只突出本次要留意的关键词。 -->
+<p><strong>修改前请保留原稿副本。</strong></p>
+<p>本次记录的关键词是 <b>文本</b> 和 <b>列表</b>。</p>
+
+<!-- i 标记人物内心话；u 标记故意写错的英文单词。 -->
+<p>我心想：<i>这次应该先读清楚内容。</i></p>
+<p>拼写检查：<u lang="en">recieve</u> 应改为 <span lang="en">receive</span>。</p>
+
+<!-- s 保留失效信息；mark 是与当前搜索相关，不是在给内容增加重要性。 -->
+<p><s>旧安排：周六交流。</s> 当前安排：周日交流。</p>
+<p>搜索“列表”的命中项：文本与<mark>列表</mark>。</p>
+<p><small>附注：日期与地点均为教学示例。</small></p>
+
+  <h2 id="quotations">3 引用与缩写</h2>
+<!-- 原文摘录；检查 DOM：出处段落应是 blockquote 的后续兄弟元素。 -->
+<blockquote cite="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element">
+  <p lang="en">The p element represents a paragraph.</p>
+</blockquote>
+<p>—— WHATWG，<cite>HTML Living Standard</cite>，The p element 小节。</p>
+
+<!-- 预期：浏览器为 q 添加引用标点；cite 属性的 URL 不会自动显示。 -->
+<p>定义中的 <q lang="en" cite="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element">a paragraph</q> 指一个段落。</p>
+
+<!-- 首次给出可见全称；即使没有悬停提示，也能读懂缩写。 -->
+<p>超文本标记语言（HyperText Markup Language，<abbr title="HyperText Markup Language">HTML</abbr>）。</p>
+
+  <h2 id="code">4 代码与预格式化文本</h2>
+<!-- 预期：看到 <p>阅读 & 记录</p> 这段源码，不会生成其中的段落。 -->
+<p>行内代码：<code>&lt;p&gt;阅读 &amp; 记录&lt;/p&gt;</code></p>
+
+<!-- 检查：显示三行源码，中间一行保留两个空格；源码标签不被再次解析。 -->
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;准备笔记&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+<!-- 这只是输入和输出的标记示例，没有运行保存程序。 -->
+<p>输入按键示例：<kbd>Ctrl</kbd> + <kbd>S</kbd>。</p>
+<p>虚构程序的反馈示例：<samp>草稿已保存。</samp></p>
+<p>变量 <var>n</var> 在此表示条目数量，取非负整数。</p>
+
+  <h2 id="annotations">5 上下标与注音</h2>
+<!-- 预期：H₂O 中的 2 是下标，2² 中后一个 2 是上标。 -->
+<p>化学式：H<sub>2</sub>O；幂的写法：2<sup>2</sup>。</p>
+
+<!-- 预期：支持 ruby 时，hàn 位于“汉”的上方附近，回退括号不显示。 -->
+<!-- 在 DOM 中仍可找到 rt 与两侧 rp；不要用空格手工把拼音对齐。 -->
+<p>读音：<ruby>汉<rp>（</rp><rt>hàn</rt><rp>）</rp></ruby>字。</p>
+
+  <h2 id="time">6 日期、时间与时长</h2>
+<!-- 检查：页面显示中文日期；在 DOM 中查看 datetime 才能看到机器可读值。 -->
+<p>示例交流日期：<time datetime="2026-09-12">2026年9月12日</time>。</p>
+<p>开始时间：<time datetime="2026-09-12T14:30:00+08:00">北京时间14:30</time>。</p>
+<p>计划时长：<time datetime="PT45M">45分钟</time>。</p>
+
+<!-- 省略 datetime 的示例：文本自身符合时刻格式，内部没有其他元素。 -->
+<p>值班时刻示例：<time>14:30</time>。</p>
+
+  <h2 id="edits">7 修改痕迹与失效信息</h2>
+<!-- 日期仅是教学数据；datetime 记录此次修订发生于哪一天。 -->
+<p>地点修订：原为 <del datetime="2026-09-10">204 室</del>，
+现为 <ins datetime="2026-09-10">305 室</ins>。</p>
+
+<!-- s 说明旧信息失效，不表示执行了某个删除操作。 -->
+<p><s>旧说明：仍可报名。</s> 当前状态：报名已经截止。</p>
+<!-- 检查：旧文字仍在源码和页面中；这些标记不会把文本从文件中擦除。 -->
+
+  <h2 id="lists">8 有序、无序与嵌套列表</h2>
+<!-- 检查：外层步骤依次为1、2、3；无序的两件物品属于第一步。 -->
+<ol>
+  <li>准备材料
+    <ul>
+      <li>笔记本</li>
+      <li>签字笔</li>
+    </ul>
+  </li>
+  <li>记录讨论内容</li>
+  <li>整理待办事项</li>
+</ol>
+
+<!-- 预期编号：4、8、9；value 重设当前条目，后面的条目从它继续递增。 -->
+<ol start="4">
+  <li>第四条记录</li>
+  <li value="8">接到第八条记录</li>
+  <li>下一条记录</li>
+</ol>
+
+<!-- 预期编号：3、2、1；甲、乙、丙的文本顺序没有改变。 -->
+<ol reversed>
+  <li>甲</li>
+  <li>乙</li>
+  <li>丙</li>
+</ol>
+
+<!-- 预期编号：5、2、1；指定 start 后，value 仍可再次调整计数。 -->
+<ol reversed start="5">
+  <li>第五项</li>
+  <li value="2">第二项</li>
+  <li>第一项</li>
+</ol>
+
+<!-- 预期编号：C、D；start 写整数3，不写字母C。 -->
+<ol type="A" start="3">
+  <li>条款 C</li>
+  <li>条款 D</li>
+</ol>
+
+  <h2 id="descriptions">9 名称与描述</h2>
+<!-- 教学资料卡：两个名称共用一段描述，“记录人”对应两个独立值。 -->
+<dl>
+  <dt>学习手册</dt>
+  <dt>读者指南</dt>
+  <dd>这份示例资料面向初次参加读书会的成员。</dd>
+
+  <dt>记录人</dt>
+  <dd>小林</dd>
+  <dd>小周</dd>
+</dl>
+
+<dl>
+  <dt>参与方式</dt>
+  <dd>
+    <!-- 同一项描述包含两段文字和一个列表，不拆成多个 dd。 -->
+    <p>从下面两种方式中选择一种。</p>
+    <p>两种方式都需要事先阅读材料。</p>
+    <ul>
+      <li>现场交流</li>
+      <li>提交书面问题</li>
+    </ul>
+  </dd>
+</dl>
+<!-- 检查源码：每组先 dt 后 dd；dd 中的 ul 有自己的 li。 -->
+
+  <h2 id="appearance">10 样式改变，语义保留</h2>
+  <!-- 预期：第一段的 strong 通常是粗体，em 通常是斜体。 -->
+  <p>默认样式：<strong>请保留副本。</strong>今天<em>先</em>修改标题。</p>
+  <!-- 预期：第二段取消粗体和斜体；在 DOM 中仍能找到 strong 与 em。 -->
+  <!-- 在 Styles 中临时取消两条 normal 声明，可观察默认外观恢复。 -->
+  <p class="plain-text">调整样式：<strong>请保留副本。</strong>今天<em>先</em>修改标题。</p>
+</body>
+</html>

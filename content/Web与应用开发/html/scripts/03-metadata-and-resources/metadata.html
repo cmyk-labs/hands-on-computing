@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用一个学习页面观察文档标题、编码、视口和资源引入。">
+  <title>元数据实验 | 动手学计算机</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* 相同条件下后出现的颜色声明生效；不会抹掉外部样式的边框。 */
+    .note { color: #9f1239; }
+  </style>
+</head>
+<body>
+  <!-- 检查标签页标题、页面标题和中文文字；description 只出现在元数据中。 -->
+  <h1>我的 HTML 学习页</h1>
+  <p>中文编码检查：你好，世界。</p>
+  <p class="note">本段文字来自页面内样式的深红色，左边框来自外部 CSS。</p>
+  <!-- 手机预设下刷新，预期文字换行且没有横向溢出；不限制用户缩放。 -->
+  <p><a href="loading.html">打开脚本加载实验</a></p>
+</body>
+</html>

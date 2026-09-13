@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>声明式 Shadow DOM</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="declarative.js" defer></script>
+</head>
+<body>
+  <nav aria-label="本章实验">
+    <a href="index.html">模板实例</a> ·
+    <a href="slots.html">插槽与自定义元素</a> ·
+    <a href="declarative.html">声明式 Shadow DOM</a>
+  </nav>
+  <main>
+    <h1>声明式 Shadow DOM</h1>
+    <p>这里使用原生 div 作宿主；脚本只报告状态，不创建这两个影子根。</p>
+    <div id="open-host">
+      <template shadowrootmode="open">
+        <h2>open：解析 HTML 时建立</h2>
+        <p>内部说明：不运行页面脚本也应显示这段文字。</p>
+        <slot name="label">默认标签</slot>
+      </template>
+      <span slot="label">外部提供的开放标签</span>
+    </div>
+    <div id="closed-host">
+      <template shadowrootmode="closed">
+        <h2>closed：同样参与显示</h2>
+        <p>内部说明：closed 不代表内容隐藏，也不提供安全隔离。</p>
+        <slot name="label">默认标签</slot>
+      </template>
+      <span slot="label">外部提供的封闭标签</span>
+    </div>
+
+    <h2>脚本读取结果</h2>
+    <pre id="declarative-status" aria-live="polite">脚本尚未运行；请先观察上面的内容。</pre>
+    <h2>动态添加属性的普通模板</h2>
+    <div id="late-host"></div>
+    <noscript><p>当前未运行脚本；支持本特性的浏览器仍会显示两个影子根。</p></noscript>
+  </main>
+  <!-- 检查：open/closed 内部标题均可见；查看源代码有 template，Elements 中是影子根。 -->
+  <!-- 不支持声明式 Shadow DOM 时，内部标题与说明不显示，light DOM 标签仍可读。 -->
+</body>
+</html>

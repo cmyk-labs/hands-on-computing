@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>源码与 DOM 对照</title>
+</head>
+<body>
+  <h1>源码与 DOM 对照</h1>
+  <nav aria-label="本章实验">
+    <ul>
+      <li><a href="whitespace.html">空白与排版</a></li>
+      <li><a href="xml.html">HTML 与 XML 解析</a></li>
+      <li><a href="as-html.xhtml">MIME：按 HTML 处理（需 HTTP）</a></li>
+      <li><a href="as-xml.html">MIME：按 XML 处理（需 HTTP）</a></li>
+      <li><a href="standards.html">标准模式</a></li>
+      <li><a href="quirks.html">怪异模式</a></li>
+      <li><a href="migration.html">旧式写法迁移</a></li>
+    </ul>
+  </nav>
+  <h2>完整文档中的隐含元素</h2>
+  <pre id="tree">等待脚本读取。</pre>
+  <h2>三组标签对照</h2>
+  <pre id="cases">等待 dom-cases.js 运行。</pre>
+  <script>
+    const source = "<!doctype html><title>阅读记录</title><p>开始学习。</p>";
+    const parsed = new DOMParser().parseFromString(source, "text/html");
+    document.querySelector("#tree").textContent =
+      "源码：\n" + source + "\n\nDOM 序列化：\n" +
+      parsed.documentElement.outerHTML;
+    // 预期：DOM 中有 html、head、body，title 在 head 中，p 在 body 中。
+    // 本例只读取独立 Document；这些解析结果没有被插入当前页面。
+    console.assert(parsed.head.firstElementChild.localName === "title");
+    console.assert(parsed.body.firstElementChild.localName === "p");
+  </script>
+  <script src="dom-cases.js"></script>
+</body>
+</html>

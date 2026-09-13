@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>定位与层叠上下文：遮挡</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>定位与层叠上下文：遮挡</h1>
+<nav><a href="index.html">定位首页</a> · <a href="top-layer.html">顶层示例</a></nav>
+<section>
+<h2>上下文 A 与 B</h2>
+<div class="stack-stage">
+  <div class="context-a">上下文 A：1<div class="high-child">A 的子元素：9999</div></div>
+  <div class="context-b">上下文 B：2</div>
+</div>
+</section>
+
+</body>
+</html>

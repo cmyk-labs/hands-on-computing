@@ -1,0 +1,54 @@
+* { box-sizing: border-box; }
+body { max-width: 70rem; margin: 0 auto; padding: 1rem; font: 1rem/1.6 system-ui, sans-serif; color: #17212b; background: white; }
+h1 { font-size: 2rem; } h2 { font-size: 1.4rem; }
+section { margin-block: 2rem; } a { color: #0645ad; } :focus { outline: 3px solid #0645ad; outline-offset: 3px; }
+.samples { display: flex; flex-wrap: wrap; gap: 1rem; }
+figure { margin: 0; } .art { display: block; max-width: 100%; height: auto; }
+.clip-frame { display: inline-block; border: 1px dashed #333; }
+.blend-stage, .background-blend { max-width: 25rem; margin-block: 1rem; }
+.filtered { filter: grayscale(1) drop-shadow(6px 6px 3px #555); }
+/* 对照原图：灰度作用于原图，后面的投影沿当前不透明轮廓产生，盒子尺寸不变。 */
+
+.backdrop-stage {
+  padding: 2rem;
+  background: repeating-linear-gradient(45deg, #2e597a 0 12px, #d1e4f2 12px 24px);
+}
+.glass { padding: 1rem; color: #17212b; background: #fff; }
+@supports (backdrop-filter: blur(6px)) {
+  .glass { background: rgb(255 255 255 / 85%); backdrop-filter: blur(6px); }
+}
+/* 不支持时保留不透明白底；支持时透出模糊条纹，不模糊这段文字。 */
+
+.clipped { clip-path: circle(40% at 50% 50%); }
+/* 圆心位于参考盒中心；查看外框，裁剪不会让原有240×160盒子变小。 */
+
+.fade { mask: linear-gradient(to right, #000 35%, transparent) center / 100% 100% no-repeat; }
+.mask-alpha, .mask-luminance {
+  mask-image: url("mask.svg");
+  mask-size: 100% 100%;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}
+.mask-alpha { mask-mode: alpha; }
+.mask-luminance { mask-mode: luminance; }
+/* mask.svg 是不透明黑底白圆：alpha保留全部，luminance主要保留白圆范围。 */
+
+.blend-stage { isolation: isolate; background: #9ddbf5; padding: 1rem; }
+.blend-mark { width: 10rem; height: 5rem; background: #f6ad55; mix-blend-mode: multiply; }
+.background-blend {
+  height: 6rem;
+  background-color: #9ddbf5;
+  background-image: linear-gradient(90deg, #f6ad55, #fff);
+  background-blend-mode: multiply;
+}
+/* 第一例混合元素与其背后像素；第二例只混合同一元素自己的背景层。 */
+
+.wrap { display: flow-root; max-width: 36rem; line-height: 1.8; }
+.wrap p { margin: 0; }
+.float-art { float: left; width: 160px; height: 160px; margin: 0 1rem 0 0; object-fit: cover; }
+.shaped .float-art {
+  shape-outside: circle(50%) border-box;
+  shape-margin: 0.75rem;
+  clip-path: circle(50%);
+}
+/* 对照下方矩形浮动：观察每行文字起点；禁用shape-outside后恢复矩形环绕。 */

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>滚动吸附观察</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>滚动吸附观察</h1><nav><a href="animations.html">打开滚动动画</a></nav><main><p>聚焦卡片区域后使用左右方向键，或使用卡片内的链接。长内容区域可用上下方向键。</p><div class="snapper" tabindex="0" role="region" aria-label="三张阅读卡片">
+  <section class="slide" id="slide-one"><h2>一：选择主题</h2><p>先确定今天要回答的问题。</p><a href="#slide-two">下一张</a></section>
+  <section class="slide" id="slide-two"><h2>二：阅读与尝试</h2><p>阅读材料，再做一个小例子。</p><a href="#slide-three">下一张</a></section>
+  <section class="slide" id="slide-three"><h2>三：整理记录</h2><p>记录观察和下一步。</p><a href="#slide-one">返回第一张</a></section>
+</div><h2>长内容与滚动链</h2><div class="reading-box" tabindex="0" role="region" aria-label="长内容滚动示例">
+  <article class="reading-section">
+    <h2>一段较长的内容</h2>
+    <p>这一节故意超过滚动区域高度，用来检查中间文字仍能读到。</p>
+    <p>记录问题，再记录观察；不要让滚动效果把重要内容跳过去。</p>
+    <p>试着使用方向键或 PageDown 继续向下阅读。</p>
+    <p class="middle-marker">中间标记：这句话应该可以完整滚动到可见区域。</p>
+    <p>内容不应因为没有单独的吸附点而变得无法到达。</p>
+    <p>最后一段也保留在正常流中。</p>
+  </article>
+  <article class="reading-section"><h2>下一节</h2><p>在区域边缘继续滚动，比较滚动是否传到外部页面。</p></article>
+</div><p class="footer-space">外部文档保留滚动空间，用来比较滚动到边缘后的行为。</p></main>
+</body>
+</html>

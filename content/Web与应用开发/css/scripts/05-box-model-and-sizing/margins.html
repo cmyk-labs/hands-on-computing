@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>盒模型与尺寸</title>
+<link rel="stylesheet" href="margins.css">
+</head>
+<body>
+<h1>盒模型与尺寸</h1>
+<nav aria-label="本章页面"><a href="index.html">index.html</a> · <a href="margins.html">margins.html</a> · <a href="images.html">images.html</a></nav>
+<section id="demo-4">
+<h2>相邻兄弟的外边距折叠</h2>
+<div class="margin-well">
+  <p class="margin-first">前一段</p>
+  <p class="margin-second">后一段</p>
+</div>
+<div class="margin-well negative-well">
+  <p class="margin-first">前一段</p>
+  <p class="margin-second">后一段：负上边距</p>
+</div>
+</section>
+
+<section id="demo-5">
+<h2>父子与空块的折叠边界</h2>
+<div class="parent-well"><div class="parent-open"><p>父子可折叠</p></div></div>
+<div class="parent-well"><div class="parent-padded"><p>顶部被内边距隔开</p></div></div>
+<div class="empty-well">
+  <div class="empty-block"></div>
+  <p class="after-empty">空块之后</p>
+</div>
+</section>
+</body>
+</html>

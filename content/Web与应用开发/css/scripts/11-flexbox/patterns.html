@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flexbox 布局：常见模式</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Flexbox 布局：常见模式</h1>
+<nav><a href="index.html">轴与对齐</a> · <a href="sizing.html">空间分配</a></nav>
+<section>
+<h2>自动外边距导航</h2>
+<nav class="navigation" aria-label="本章导航演示">
+  <a href="#overview">概览</a><a href="#practice">练习</a><a class="help" href="#help">帮助</a>
+</nav>
+<p id="overview">概览入口</p><p id="practice">练习入口</p><p id="help">帮助入口</p>
+</section>
+<section>
+<h2>居中与弹性列表</h2>
+<div class="centered"><button type="button">居中按钮</button></div>
+<ul class="cards" role="list">
+  <li><h3>选择器</h3><p>检查目标范围。</p></li>
+  <li><h3>层叠</h3><p>检查声明覆盖和继承，补充较长的说明文字。</p></li>
+  <li><h3>布局</h3><p>检查可用空间。</p></li>
+</ul>
+</section>
+<section>
+<h2>视觉顺序反例</h2>
+<ol class="visual-order">
+  <li class="moved"><button id="order-one" type="button">第一步</button></li>
+  <li><button id="order-two" type="button">第二步</button></li>
+  <li><button id="order-three" type="button">第三步</button></li>
+</ol>
+</section>
+
+</body>
+</html>

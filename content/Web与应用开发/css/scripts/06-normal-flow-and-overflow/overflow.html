@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>正常流与溢出</title>
+<link rel="stylesheet" href="overflow.css">
+</head>
+<body>
+<h1>正常流与溢出</h1>
+<nav aria-label="本章页面"><a href="index.html">index.html</a> · <a href="overflow.html">overflow.html</a> · <a href="visibility.html">visibility.html</a></nav>
+<section id="demo-6">
+<h2>overflow 与滚动容器</h2>
+<p>visible：</p>
+<div class="overflow-box overflow-visible"><div class="overflow-content">第一行<br>第二行<br>第三行<br>第四行<br>第五行</div></div>
+<p>auto（可用键盘滚动）：</p>
+<div class="overflow-box overflow-auto" tabindex="0" role="region" aria-label="五行阅读记录"><div class="overflow-content">第一行<br>第二行<br>第三行<br>第四行<br>第五行</div></div>
+<p>scroll：</p>
+<div class="overflow-box overflow-scroll"><div class="overflow-content">第一行<br>第二行<br>第三行<br>第四行<br>第五行</div></div>
+<p>hidden：</p>
+<div class="overflow-box overflow-hidden"><div class="overflow-content">第一行<br>第二行<br>第三行<br>第四行<br>第五行</div></div>
+<p>clip（旧环境回退 hidden）：</p>
+<div class="overflow-box overflow-clip"><div class="overflow-content">第一行<br>第二行<br>第三行<br>第四行<br>第五行</div></div>
+</section>
+
+<section id="demo-7">
+<h2>两个方向不能任意独立组合</h2>
+<div class="mixed-overflow"><div class="wide-content">两方向都有超出的内容</div></div>
+<div class="clip-stage"><div class="clip-shell"><div class="clip-child">浮动</div></div></div>
+<div class="clip-stage"><div class="clip-shell clip-bfc"><div class="clip-child">浮动</div></div></div>
+</section>
+</body>
+</html>

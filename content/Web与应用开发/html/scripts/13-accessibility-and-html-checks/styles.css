@@ -1,0 +1,11 @@
+/* 独立页面的阅读样式；不注入 Notebook。 */
+body { font-family: sans-serif; line-height: 1.7; max-width: 52rem; margin: 1.5rem auto; padding: 0 1rem; }
+header, footer { border-block: 1px solid #b4c0cc; padding-block: 1rem; }
+nav a { margin-inline-end: 1rem; }
+input, button { font: inherit; }
+input { max-width: 100%; box-sizing: border-box; }
+label { display: inline-block; min-width: 5rem; }
+button, .pretend-button { margin: .25rem; padding: .35rem .65rem; }
+.pretend-button { display: inline-block; border: 1px solid #586675; cursor: pointer; }
+:focus { outline: 3px solid #175cd3; outline-offset: 3px; }
+.reverse { display: flex; flex-direction: row-reverse; justify-content: flex-end; flex-wrap: wrap; }

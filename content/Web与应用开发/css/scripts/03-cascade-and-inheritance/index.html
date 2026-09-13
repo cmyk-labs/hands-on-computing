@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>层叠、优先级与继承</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h1>层叠、优先级与继承</h1>
+<nav aria-label="本章页面"><a href="index.html">index.html</a> · <a href="layers.html">layers.html</a></nav>
+<section id="demo-1">
+<h2>先看同一属性的竞争</h2>
+<p class="order-demo">同一段文字的颜色与字号</p>
+</section>
+
+<section id="demo-2">
+<h2>来源、重要性与内联样式</h2>
+<p id="inline-normal" class="importance-demo" style="color: purple;">普通内联颜色</p>
+<p id="inline-important" class="importance-demo" style="color: purple !important;">重要内联颜色</p>
+</section>
+
+<section id="demo-3">
+<h2>选择器优先级怎样比较</h2>
+<div class="specific-panel">
+  <p id="specific-target" class="notice">比较 ID 与多个类的选择器</p>
+</div>
+</section>
+
+<section id="demo-4">
+<h2>函数伪类的特殊计数</h2>
+<p class="is-target">is 参数权重</p>
+<p id="where-target" class="where-target">where 零权重</p>
+</section>
+
+<section id="demo-5">
+<h2>继承不是祖先与子元素比权重</h2>
+<div id="inherit-parent">
+  <span id="inherit-auto">使用父文字颜色</span>
+  <span class="inherit-own">使用自己的文字颜色</span>
+</div>
+</section>
+
+<section id="demo-6">
+<h2>initial、inherit 与 unset</h2>
+<div class="reset-parent">
+  <p class="reset-initial">initial 内边距</p>
+  <p class="reset-inherit">inherit 内边距</p>
+  <p class="reset-unset">unset 颜色与内边距</p>
+</div>
+</section>
+
+<section id="demo-7">
+<h2>revert 回退来源</h2>
+<div class="origin-initial">display: initial</div>
+<div class="origin-revert">display: revert</div>
+</section>
+</body>
+</html>

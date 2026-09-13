@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>声明式 auto 与 hint 弹出层</title>
+</head>
+<body>
+  <main>
+    <h1>阅读记录的补充说明</h1>
+    <p>
+      <button id="open-help" type="button" popovertarget="help-panel">记录帮助</button>
+      <button id="open-example" type="button" popovertarget="example-panel">查看例子</button>
+    </p>
+    <p><label for="outside-input">页面上的笔记：</label>
+      <input id="outside-input" value="仍然可以编辑"></p>
+
+    <section id="help-panel" popover="auto" aria-labelledby="help-title">
+      <h2 id="help-title">记录帮助</h2>
+      <p>写下一个发现，再留下一个问题。</p>
+      <button id="close-help" type="button"
+        popovertarget="help-panel" popovertargetaction="hide">关闭帮助</button>
+      <button id="open-hint" type="button" popovertarget="word-hint">什么是发现？</button>
+    </section>
+    <section id="word-hint" popover="hint" aria-labelledby="hint-title">
+      <h2 id="hint-title">发现</h2>
+      <p>例如：重读一遍后，对同一句话有了不同理解。</p>
+      <button type="button"
+        popovertarget="word-hint" popovertargetaction="hide">关闭词语说明</button>
+    </section>
+    <section id="example-panel" popover="auto" aria-labelledby="example-title">
+      <h2 id="example-title">记录例子</h2>
+      <p>发现：第二遍读懂了转折。问题：为什么先写这个场景？</p>
+      <button type="button"
+        popovertarget="example-panel" popovertargetaction="hide">关闭例子</button>
+    </section>
+  </main>
+  <!-- 用键盘聚焦 open-help 后激活：焦点先留在触发按钮，Tab 再进入 close-help。 -->
+  <!-- 不打开 hint 时，在 close-help 上按 Esc：帮助隐藏，焦点应回到 open-help。 -->
+  <!-- 再打开帮助，点击外部输入框：帮助消失，输入框仍能编辑，说明不是模态。 -->
+  <!-- 先开帮助再开例子：两个独立 auto 不应同时显示。 -->
+  <!-- 在帮助内打开“什么是发现？”：支持 hint 时帮助仍打开；可先关闭词语说明。 -->
+  <!-- 不把嵌套提示关闭后的焦点位置等同于前面的独立 auto 实验。 -->
+</body>
+</html>

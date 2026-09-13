@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>盒模型与尺寸</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h1>盒模型与尺寸</h1>
+<nav aria-label="本章页面"><a href="index.html">index.html</a> · <a href="margins.html">margins.html</a> · <a href="images.html">images.html</a></nav>
+<section id="demo-1">
+<h2>内容、内边距、边框与外边距</h2>
+<div class="edge-box">内容区里的文字</div>
+</section>
+
+<section id="demo-2">
+<h2>box-sizing 改变宽度包含的区域</h2>
+<div class="sizing-demo sizing-content">content-box</div>
+<div class="sizing-demo sizing-border">border-box</div>
+</section>
+
+<section id="demo-3">
+<h2>宽高与最小、最大尺寸</h2>
+<div class="limit-width">width 与 max-width</div>
+<div class="conflict-width">min-width 大于 max-width</div>
+<div class="limit-min-height">最小高度</div>
+<div class="limit-max-height">最大高度</div>
+</section>
+
+<section id="demo-6">
+<h2>固有尺寸与内容尺寸关键字</h2>
+<div class="intrinsic-parent">
+  <p class="intrinsic-min">CSS notebook layout examples</p>
+  <p class="intrinsic-max">CSS notebook layout examples</p>
+  <p class="intrinsic-fit">CSS notebook layout examples</p>
+</div>
+</section>
+
+<section id="demo-7">
+<h2>aspect-ratio 是首选宽高比</h2>
+<div class="ratio-auto">16 / 9 自动高度</div>
+<div class="ratio-fixed">宽高都已指定</div>
+<div class="ratio-min">最小高度改变结果</div>
+</section>
+</body>
+</html>

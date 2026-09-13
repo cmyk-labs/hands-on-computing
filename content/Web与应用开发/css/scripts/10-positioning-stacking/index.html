@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>定位与层叠上下文</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>定位与层叠上下文</h1>
+<nav><a href="scroll.html">滚动定位</a> · <a href="stacking.html">层叠</a> · <a href="top-layer.html">顶层</a></nav>
+<section>
+<h2>正常流与相对偏移</h2>
+<div class="flow-demo">
+  <div class="item static-box">static</div>
+  <div class="item following">后续元素</div>
+</div>
+<div class="flow-demo">
+  <div class="item relative-box">relative</div>
+  <div class="item following">后续元素</div>
+</div>
+</section>
+<section>
+<h2>绝对定位参照</h2>
+<div class="positioned-card">
+  <div class="unpositioned-wrapper"><span class="badge">角标</span></div>
+  <p>卡片正文仍从正常流起点排版。</p>
+</div>
+<div class="positioned-card">
+  <div class="inset-fill">四边缩进形成的内部区域</div>
+</div>
+</section>
+<section>
+<h2>覆盖内容的空间</h2>
+<div class="obstruction">
+  <p class="overlay-label">固定在容器角落的提示</p>
+  <p>放大字体后，仍须检查这段内容是否被提示遮住。</p>
+</div>
+</section>
+
+</body>
+</html>

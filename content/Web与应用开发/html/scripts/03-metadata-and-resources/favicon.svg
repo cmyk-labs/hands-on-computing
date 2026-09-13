@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- 预期：蓝色方块中有白圆；直接打开该文件可检查资源本身。 -->
+  <rect width="32" height="32" rx="6" fill="#175cd3"/>
+  <circle cx="16" cy="16" r="8" fill="white"/>
+</svg>

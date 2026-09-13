@@ -1,0 +1,15 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+.nested-card { border: 1px solid #778899; padding: 16px; }
+.nested-card > .title { color: navy; }
+.nested-card:focus-within { outline: 3px solid #a33b00; }
+/* 上面是平铺回退，支持嵌套并非阅读和键盘操作的前提。 */
+.nested-card {
+  & > .title { text-decoration: underline; }
+  &:focus-within { background-color: #fff0cf; }
+}
+/* &与:focus-within之间无空格，选择卡片自身；& > .title选择直接子元素。 */

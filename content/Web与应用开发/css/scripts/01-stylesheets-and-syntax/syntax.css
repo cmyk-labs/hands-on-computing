@@ -1,0 +1,12 @@
+.border-demo {
+  border: 2px solid teal;
+  /* 在 Computed 中检查：四边均为 2px 实线，颜色为蓝绿色。 */
+}
+
+/* 反例：故意保留错误属性和错误值，用来观察浏览器如何处理。 */
+.invalid-demo {
+  color: teal;
+  colour: red;       /* 属性名拼错：这一声明被忽略。 */
+  color: 20px;      /* color 不能接受长度：这一声明被忽略。 */
+  font-size: 20px;  /* 字号仍生效，文字保持前面的蓝绿色。 */
+}

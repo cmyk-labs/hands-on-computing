@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2025",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "lib": [
+      "ES2025"
+    ],
+    "types": [],
+    "rootDir": "package/src",
+    "outDir": "package/dist",
+    "noEmitOnError": true,
+    "declaration": true,
+    "declarationMap": true
+  },
+  "files": [
+    "package/src/index.ts",
+    "package/src/modern.mts",
+    "package/src/legacy.cts"
+  ]
+}

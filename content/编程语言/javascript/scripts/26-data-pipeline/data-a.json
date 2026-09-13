@@ -1,0 +1,4 @@
+[
+  { "group": "books", "amountCents": 1200, "active": true },
+  { "group": "tools", "amountCents": 900, "active": false }
+]

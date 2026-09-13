@@ -1,0 +1,15 @@
+/* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
+body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
+
+.hide-item { width: 220px; height: 40px; margin: 8px; }
+.hide-none { display: none; }
+.hide-visibility { visibility: hidden; }
+.hide-opacity { opacity: 0; }
+.hide-opacity:focus { opacity: 1; outline: 3px solid navy; }
+/* none 无占位；hidden 与透明按钮仍占位；Tab 跳过前两种，透明按钮聚焦后显现。 */
+
+.contents-box { display: contents; color: navy; border: 4px solid teal; padding: 20px; }
+.contents-child { border: 1px solid gray; }
+.ordinary-hidden { color: maroon; }
+/* 检查：父盒的 teal 边框和 padding 不绘制，子段落仍继承 navy。
+   不给 hidden 元素强设 display:block；本例保留其正常隐藏语义。 */

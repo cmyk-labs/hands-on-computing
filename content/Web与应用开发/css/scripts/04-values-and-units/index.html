@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>值、单位与计算</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h1>值、单位与计算</h1>
+<nav aria-label="本章页面"><a href="index.html">index.html</a></nav>
+<section id="demo-1">
+<h2>值的类型与关键字</h2>
+<p class="value-types">一条声明先确定属性，再选择它接受的值。</p>
+</section>
+
+<section id="demo-2">
+<h2>px、em 与 rem 的参照</h2>
+<div class="font-parent">
+  <div class="em-child">相对父字号
+    <span class="em-grandchild">再放大一次</span>
+  </div>
+  <p class="rem-child">相对根字号</p>
+</div>
+</section>
+
+<section id="demo-3">
+<h2>百分比必须问参照对象</h2>
+<div class="percent-parent">
+  <div class="percent-size">宽度与上内边距</div>
+</div>
+<div class="height-auto"><div class="half-height">父高度 auto</div></div>
+<div class="height-fixed"><div class="half-height">父高度 120px</div></div>
+</section>
+
+<section id="demo-4">
+<h2>视口单位与动态浏览器界面</h2>
+<div class="viewport-width">宽度为 50vw</div>
+<div class="viewport-height">最小高度为 20dvh，旧环境回退 20vh</div>
+</section>
+
+<section id="demo-5">
+<h2>calc() 混合长度与百分比</h2>
+<div class="calc-parent">
+  <div class="calc-width">留出 24px</div>
+  <div class="calc-scale">先加长度再除以 2</div>
+</div>
+</section>
+
+<section id="demo-6">
+<h2>min()、max() 与 clamp() 控制范围</h2>
+<div class="bounded-min">min：宽度不超过 240px</div>
+<div class="bounded-max">max：左右内边距至少 8px</div>
+<div class="bounded-clamp">clamp：160px 至 400px</div>
+</section>
+
+<section id="demo-7">
+<h2>角度和时间也是带单位的值</h2>
+<div class="angle-frame"><div class="angle-sample">转</div></div>
+<button class="time-sample" type="button">悬停或聚焦观察颜色过渡</button>
+</section>
+
+<section id="demo-8">
+<h2>指定值、计算值与使用值</h2>
+<div class="processing-parent">
+  <p class="processing-child">150% 字号与 50% 宽度</p>
+</div>
+</section>
+
+<section id="demo-9">
+<h2>无效值与单位选择</h2>
+<div class="invalid-value">保留解析阶段的无效值反例</div>
+</section>
+</body>
+</html>

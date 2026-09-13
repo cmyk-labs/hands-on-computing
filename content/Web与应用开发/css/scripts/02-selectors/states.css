@@ -1,0 +1,15 @@
+/* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
+body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
+
+.state-panel { border: 2px solid gray; padding: 12px; }
+.state-panel:focus-within { border-color: teal; }
+.state-panel input:focus { outline: 2px solid navy; }
+.state-panel button:focus-visible { outline: 3px solid navy; }
+.state-panel button:hover { background-color: lightyellow; }
+.state-panel button:active { background-color: gold; }
+.state-panel button:disabled { border-style: dashed; }
+.state-panel input:required:invalid { border: 2px solid maroon; }
+#agree:checked + span { font-weight: bold; }
+.state-panel a:link { color: navy; }
+.state-panel a:visited { color: purple; }
+/* 用 Tab 移动焦点、空格切换复选框；保留浏览器原生焦点提示作为回退。 */

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2025",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "lib": [
+      "ES2025"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": ".",
+    "outDir": "./.build",
+    "noEmitOnError": true
+  },
+  "files": [
+    "validation.ts",
+    "main.ts",
+    "validation.test.ts"
+  ]
+}

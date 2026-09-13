@@ -1,0 +1,75 @@
+/* 辅助样式仅提供阅读字号、段落间距与白色画布。 */
+body { margin: 24px; font-family: sans-serif; line-height: 1.6; color: #163333; background-color: white; }
+section { margin-bottom: 32px; }
+p { padding: 8px; }
+.picture, .layers, .gradient { margin: 16px 0; }
+.hex { color: #006666; }
+.rgb { color: rgb(0 102 102); }
+.hsl { color: hsl(180 100% 20%); }
+/* 三段文字应得到相同的 sRGB 颜色；在 Computed 中比较 color。 */
+
+.alpha-area { background-color: #f4d69a; padding: 12px; }
+.alpha-only { background-color: rgb(0 102 102 / 25%); }
+.whole-opacity { background-color: rgb(0 102 102); opacity: 0.25; }
+.whole-opacity strong { opacity: 1; }
+/* 第二段子元素设为 1，也不能抵消父元素整体合成时的透明度。 */
+.current-color { color: #006666; border: 2px solid currentColor; }
+/* 临时修改 color；文字和边框一起变化。 */
+
+.modern, .wide, .mixed, .fallback { background-color: #e0eeee; color: #163333; }
+.modern { background-color: oklch(92% 0.03 190); }
+.wide { background-color: color(display-p3 0.85 0.95 0.9); }
+@supports (background-color: color-mix(in oklab, teal, white)) {
+  .mixed { background-color: color-mix(in oklab, teal 15%, white); }
+}
+/* 不识别新语法时保留基础背景。禁用增强声明后，与 fallback 对照。 */
+
+.picture {
+  width: 240px;
+  height: 100px;
+  border: 8px dashed #555;
+  padding: 12px;
+  background-color: #fff4cb;
+  background-image: url("tile.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+.cover { background-size: cover; }
+.contain { background-size: contain; }
+/* 图片固有比例 2:1，内容区为 2.4:1；cover 裁掉上下，contain 左右留空。
+   内边距和边框缝隙不绘制背景；改 background-clip 为 border-box 再比较。 */
+
+.layers {
+  width: 240px;
+  min-height: 100px;
+  background-color: #fff4cb;
+  background-image: linear-gradient(rgb(255 255 255 / 70%), rgb(255 255 255 / 70%)), url("tile.svg");
+  background-position: center, right bottom;
+  background-size: auto, 80px 40px;
+  background-repeat: no-repeat, repeat;
+}
+/* 第一个图层在最上面；取消第一层后，对比平铺图案的清晰程度。 */
+
+.gradient { width: 240px; height: 80px; background-color: #e0eeee; }
+.linear { background-image: linear-gradient(to right, #d7eeee 0%, #f5dfb2 100%); }
+.radial { background-image: radial-gradient(circle at left center, #f5dfb2, #d7eeee); }
+.stripes { background-image: repeating-linear-gradient(90deg, #d7eeee 0px, #d7eeee 10px, #f5dfb2 10px, #f5dfb2 20px); }
+.conic { background-image: conic-gradient(#d7eeee 0deg, #f5dfb2 180deg, #d7eeee 360deg); }
+/* 90deg 指向右；重复段长 20px，10px 处同位置的两个色标形成硬边。
+   锥形渐变绕中心旋转；不支持时仍保留浅色背景和完整文字。 */
+
+.bordered { border: 4px solid #006666; border-left-style: dashed; }
+.rounded { border: 4px solid #006666; border-radius: 24px / 12px; }
+.shadowed {
+  border: 1px solid #006666;
+  box-shadow: 4px 6px 8px 1px rgb(0 0 0 / 20%), inset 0 0 0 2px #e0eeee;
+}
+/* 圆角横半径 24px、纵半径 12px；阴影依次为右移、下移、模糊、扩展。
+   取消 box-shadow，观察相邻盒的位置不变；阴影不会给布局增加空间。 */
+
+.status { color: #163333; background-color: #fff; border-left: 4px solid #006666; padding: 12px; }
+.warning { border-left-color: #9b5600; }
+/* 在颜色检查器中检查实际前景与背景的对比度；状态同时有文字说明。
+   修改颜色或叠加透明背景后重新检查，不沿用原配色的结论。 */

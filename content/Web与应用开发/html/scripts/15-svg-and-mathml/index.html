@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>图形与公式 · HTML 嵌入练习</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>图形与公式</h1>
+    <p>一张原创几何卡片，两种嵌入方式，再加一组可阅读的公式。</p>
+    <p><a href="basics.html">查看 SVG 与 MathML 基础片段</a></p>
+    <p><a href="viewbox.html">比较 viewBox 的四种展示方式</a></p>
+
+    <section>
+      <h2>外部 SVG 图片</h2>
+      <img id="external-card" src="shapes.svg" width="240" height="120"
+           role="img" alt="浅色矩形中，圆在左、竖线在中、朝右三角形在右。">
+      <p>图像来自同目录中的 shapes.svg。</p>
+      <!-- 检查可访问名称：来源应为这个 img 的 alt，而非文件名。 -->
+      <!-- Elements 中 img 没有 circle 子元素；其内部脚本交互不在本例演示。 -->
+    </section>
+
+    <section>
+      <h2>内联 SVG 图形</h2>
+      <svg id="inline-card" width="240" height="120" viewBox="0 0 240 120"
+           role="img" aria-labelledby="inline-card-title"
+           aria-describedby="inline-card-desc">
+        <title id="inline-card-title">圆、竖线与三角形（内联）</title>
+        <desc id="inline-card-desc">浅色矩形中，圆在左、竖线在中、朝右三角形在右。</desc>
+        <rect x="4" y="4" width="232" height="112" fill="#edf2f4"></rect>
+        <circle class="sample-dot" cx="60" cy="60" r="24"
+                fill="#b45309"></circle>
+        <line x1="120" y1="28" x2="120" y2="92"
+              stroke="#334155" stroke-width="3"></line>
+        <polygon points="166,36 198,60 166,84" fill="#176b4a"></polygon>
+      </svg>
+      <p>圆、线段与三角形直接写在本页中。</p>
+      <!-- 几何属性与外部文件相同，styles.css 会只改变这个内联圆的填充。 -->
+      <!-- Accessibility 中检查名称来自 title，描述来自 desc 的显式引用。 -->
+    </section>
+
+    <section>
+      <h2>一条公式，两个展示位置</h2>
+      <p>令 a 表示实数序列，下标 1、2 指它的前两项；b 为两项之和的一半。</p>
+      <p>行内：
+        <math id="inline-formula">
+          <mi>b</mi><mo>=</mo>
+          <mfrac>
+            <mrow>
+              <msub><mi>a</mi><mn>1</mn></msub>
+              <mo>+</mo>
+              <msub><mi>a</mi><mn>2</mn></msub>
+            </mrow>
+            <mn>2</mn>
+          </mfrac>
+        </math>，句子在公式后继续。
+      </p>
+      <math id="block-formula" display="block">
+        <mi>b</mi><mo>=</mo>
+        <mfrac>
+          <mrow>
+            <msub><mi>a</mi><mn>1</mn></msub>
+            <mo>+</mo>
+            <msub><mi>a</mi><mn>2</mn></msub>
+          </mrow>
+          <mn>2</mn>
+        </mfrac>
+      </math>
+      <!-- 预期：两式分组一致，整项和在分子处；行内样式通常更紧凑。 -->
+      <!-- 逐层展开 DOM，核对每个 mfrac/msub 都有两个直接子元素。 -->
+    </section>
+
+    <section>
+      <h2>给整组添加上标</h2>
+      <p>下面表示 b 的平方等于“前两项之和的一半”的平方；上标 2 指平方。</p>
+      <math id="squared-formula" display="block">
+        <msup><mi>b</mi><mn>2</mn></msup><mo>=</mo>
+        <msup>
+          <mrow>
+            <mo>(</mo>
+            <mfrac>
+              <mrow>
+                <msub><mi>a</mi><mn>1</mn></msub>
+                <mo>+</mo>
+                <msub><mi>a</mi><mn>2</mn></msub>
+              </mrow>
+              <mn>2</mn>
+            </mfrac>
+            <mo>)</mo>
+          </mrow>
+          <mn>2</mn>
+        </msup>
+      </math>
+      <!-- 预期：右侧上标附着到带括号的整个分数，不只附着到分母 2。 -->
+      <!-- 以上是固定标记；页面没有代入数值、求值或检查等式的脚本。 -->
+    </section>
+  </main>
+</body>
+</html>

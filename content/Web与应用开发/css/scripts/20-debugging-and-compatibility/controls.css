@@ -1,0 +1,22 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+.styled-button {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #246;
+  background: #e5f0f4;
+  color: #17212b;
+  padding: 8px 16px;
+}
+.styled-button:disabled { color: #666; }
+/* 前缀仅作为历史目标的示范；标准声明放后面，不代表新页面必须复制此前缀。 */
+input { max-width: 100%; box-sizing: border-box; }
+.long-text { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .styled-button { display: block; margin-block: 12px; }
+}
+/* 在窄视口、200%页面缩放与Tab导航下检查：长文本不撑宽页面，控件焦点未被裁切。 */

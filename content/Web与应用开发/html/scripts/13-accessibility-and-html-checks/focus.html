@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tabindex 与顺序实验</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="focus.js" defer></script>
+</head>
+<body>
+  <h1>tabindex 与顺序实验</h1>
+  <p>重新加载后，从地址栏按 Tab 进入页面，观察顺序。</p>
+  <h2>正数改变顺序：仅作反例</h2>
+  <button type="button" tabindex="2">A：源码在前，数值为2</button>
+  <button type="button" tabindex="1">B：源码在后，数值为1</button>
+  <!-- 重新加载后从地址栏按 Tab 进入页面，先到 B，再到 A，之后才到普通控件。 -->
+  <h2>0 与 -1</h2>
+  <button type="button" id="move-focus">把焦点移到说明段</button>
+  <!-- 这段只用于观察0的行为；真实页面不要给每段静态文字都增加Tab停靠点。 -->
+  <p tabindex="0" id="zero">0：参与顺序导航的观察段落。</p>
+  <p tabindex="-1" id="negative">-1：Tab会跳过；点击上方按钮可以把焦点移到这里。</p>
+  <!-- 用 Tab 对照两段：经过 0，跳过 -1；“把焦点移到说明段”按钮可聚焦 -1。 -->
+  <h2>视觉顺序与源码顺序</h2>
+  <p>下面仅用 row-reverse 制造反例，没有设置 reading-flow 或正数 tabindex。</p>
+  <div class="reverse">
+    <button type="button">第一步：选书</button>
+    <button type="button">第二步：记录</button>
+    <button type="button">第三步：复习</button>
+  </div>
+  <!-- 在能横排三个按钮的窗口中，从左到右看到“复习、记录、选书”；Tab 则按“选书、记录、复习”移动。 -->
+  <p>当前焦点：<span id="focus-name">尚未进入控件。</span></p>
+  <p><a href="fixed.html">返回修正示例</a></p>
+</body>
+</html>

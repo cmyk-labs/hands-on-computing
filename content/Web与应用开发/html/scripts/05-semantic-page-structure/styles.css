@@ -1,0 +1,55 @@
+/* 配套页面的布局样式；标题和区域名称由 HTML 提供。 */
+body {
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 0 20px;
+  color: #253247;
+  background: #fcfbf8;
+  font-family: sans-serif;
+  line-height: 1.7;
+}
+
+.site-header,
+.site-footer {
+  padding: 12px 0;
+  border-bottom: 1px solid #d5dce5;
+}
+
+.site-name {
+  font-weight: bold;
+  color: #245a84;
+}
+
+a {
+  color: #195d88;
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 32px;
+  margin: 24px 0;
+}
+
+aside {
+  padding: 16px;
+  background: #edf2f4;
+}
+
+.record-meta {
+  color: #505c6c;
+}
+
+.category {
+  background: #e5eef3;
+  padding: 2px 6px;
+}
+
+/* 预期：宽视口书单在右侧；不超过 720 CSS 像素时书单在正文后面。 */
+@media (max-width: 720px) {
+  .page-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* 检查：改变窗口宽度后，main/aside 的职责及标题级别仍保持原样。 */
+/* 临时删除页面 link 后样式消失，内容仍可按源代码顺序阅读；刷新恢复。 */

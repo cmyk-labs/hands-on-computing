@@ -1,0 +1,22 @@
+# Python 3.12; conda activate hands-on-computing
+# Notebook 界面、Python 内核及格式与执行检查。
+notebook==7.6.2
+ipykernel==7.3.0
+nbformat==5.11.1
+jupyter-client==8.10.0
+
+# 第 17 章：静态类型检查。
+mypy==2.3.1
+
+# 第 20 章：供 zoneinfo 使用的 IANA 时区数据，兼顾 Windows。
+tzdata==2026.3
+
+# 第 24、25、30 章：测试、代码检查与本地构建。
+pytest==9.1.1
+ruff==0.16.7
+build==1.6.1
+setuptools==83.0.0
+wheel==0.47.0
+
+# 第 36 章：图形绘制、事件与游戏循环。
+pygame==2.6.1

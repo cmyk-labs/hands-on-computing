@@ -1,0 +1,23 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+.action {
+  padding: 12px 20px;
+  background: #d8edf2;
+  transform: translateX(0);
+  transition: transform 800ms ease-out 100ms, background-color 400ms linear;
+}
+.action:hover, .action:focus-visible { transform: translateX(40px); background-color: #f6d69b; }
+/* 在 800ms 内移出且移走焦点：观察过渡从当前值反向，不跳回起点再播放。 */
+.lane { width: 260px; height: 50px; border-bottom: 1px dotted; }
+.dot { width: 80px; background: #cce8ed; transition: transform 2s linear; }
+.bezier { transition-timing-function: cubic-bezier(0.2, 0.8, 0.3, 1); }
+.stepped { transition-timing-function: steps(4, end); }
+#move:checked ~ .lane .dot { transform: translateX(160px); }
+/* 三者时长和终点相同；四步示例每次跳跃 40px，曲线只改变时间到进度的映射。 */
+@media (prefers-reduced-motion: reduce) {
+  .action, .dot, .panel { transition: none; }
+}

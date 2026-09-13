@@ -1,0 +1,55 @@
+/* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
+body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
+
+.basic * { outline: 1px dotted gray; }
+.basic p { color: navy; }
+.notice { background-color: lightyellow; }
+.notice.urgent { border: 2px solid maroon; }
+#headline { font-size: 20px; }
+/* 检查：三个后代都有轮廓和背景；紧急通知额外有边框与 20px 字号。 */
+
+.attribute-demo[data-state] { border: 1px solid gray; }
+.attribute-demo[data-state="ready"] { color: navy; }
+.attribute-demo[data-tags~="css"] { background-color: lightyellow; }
+.attribute-demo[lang|="zh"] { font-weight: bold; }
+.attribute-demo[data-file^="lesson-"][data-file$=".css"] { border-color: teal; }
+.attribute-demo[data-file*="core"] { border-width: 3px; }
+.attribute-demo[data-kind="note" i] { outline: 2px dashed purple; }
+/* 检查第二条：css-course 不匹配完整词 css，因此没有浅黄色背景。 */
+
+.relations p { color: navy; }
+.relations > p { border: 2px solid teal; }
+.relations h3 + p { background-color: lightyellow; }
+.relations h3 ~ p { font-weight: bold; }
+/* 检查：嵌套段落只有蓝色；第二个直接子段落有边框、粗体，但没有黄色背景。 */
+
+.list-demo h3, .list-demo p { color: navy; }
+.list-target { border: 2px solid teal; }
+/* 反例：未知伪类使下面整条规则无效，边框不会变成红色。 */
+.list-target, :unknown-state { border-color: red; }
+:is(.list-target, :unknown-state) { background-color: lightyellow; }
+/* 支持 :is() 的浏览器保留有效分支，段落有黄色背景。 */
+
+.structure-demo > p:first-child { color: red; }
+.structure-demo > p:nth-child(2) { color: navy; }
+.structure-demo > p:nth-of-type(2) { background-color: lightyellow; }
+.structure-demo > p:nth-child(2n+1) { border: 2px solid teal; }
+.structure-demo > p:last-child { font-weight: bold; }
+.single-demo > p:only-child { outline: 1px dashed teal; }
+/* 检查：第一段不是 first-child；第二段有背景和边框；第三段为粗体。 */
+
+.choice:not(.muted) { color: navy; }
+.choice:is(.book, .video) { border: 1px solid teal; }
+:where(.choice) { background-color: lightyellow; }
+.relational-card { border: 2px solid gray; padding: 12px; }
+.relational-card > input:checked + label { font-weight: bold; }
+@supports selector(:has(*)) {
+  .relational-card:has(> input:checked) { border-color: teal; }
+}
+/* 勾选后标签变粗；支持 :has() 时卡片边框也变色，不支持时控件与标签仍可用。 */
+
+.generated-note::before { content: "• "; color: teal; }
+.generated-note::after { content: " •"; color: teal; }
+.first-line-demo { max-width: 320px; }
+.first-line-demo::first-line { color: navy; }
+/* 检查 Elements 中伪元素与真实文本的区别；缩窄视口再观察首行。 */

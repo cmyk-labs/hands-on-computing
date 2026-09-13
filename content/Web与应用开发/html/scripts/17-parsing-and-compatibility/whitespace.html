@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>空白节点与排版</title>
+  <style>
+    /* 样式只作用于独立页面；两个示例仅改变 white-space。 */
+    #normal { white-space: normal; }
+    #preserved { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>空白节点与排版</h1>
+  <h2>常规排版</h2>
+  <p id="normal" lang="en">Read   HTML
+then   compare.</p>
+  <h2>保留空白</h2>
+  <p id="preserved" lang="en">Read   HTML
+then   compare.</p>
+  <h2>两个 span 之间有一个换行文本节点</h2>
+  <div id="nodes"><span>Read</span>
+<span>HTML</span></div>
+  <h2>浏览器读取值</h2>
+  <pre id="report">等待脚本读取。</pre>
+  <p><a href="dom.html">返回实验入口</a></p>
+  <script>
+    const normal = document.querySelector("#normal");
+    const preserved = document.querySelector("#preserved");
+    const nodes = document.querySelector("#nodes");
+    const report = {
+      normalText: normal.textContent,
+      preservedText: preserved.textContent,
+      sameText: normal.textContent === preserved.textContent,
+      childNodes: nodes.childNodes.length,
+      children: nodes.children.length,
+      middleNode: nodes.childNodes[1].nodeName
+    };
+    document.querySelector("#report").textContent =
+      JSON.stringify(report, null, 2);
+    // 预期：sameText 为 true，childNodes 为 3，children 为 2，中间为 #text。
+    // 页面上第一段折叠空白，第二段保留空白；同时核对读取值与视觉效果。
+    console.assert(report.sameText);
+    console.assert(report.childNodes === 3 && report.children === 2);
+  </script>
+</body>
+</html>

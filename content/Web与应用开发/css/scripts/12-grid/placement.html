@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grid 布局 · 自动放置与隐式轨道</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Grid 布局</h1>
+<nav aria-label="本章示例"><a href="index.html">轨道、尺寸与页面区域</a> · <a href="placement.html">自动放置与隐式轨道</a> · <a href="alignment.html">对齐与重叠</a> · <a href="subgrid.html">子网格与独立网格回退</a></nav>
+<main>
+<section>
+<h2>显式、隐式网格与自动放置</h2>
+<div class="packing sparse">
+  <a class="span-two" href="#end">A：跨两列</a>
+  <a class="span-two" href="#end">B：跨两列</a>
+  <a class="small" href="#end">C</a>
+</div>
+<div class="packing dense">
+  <a class="span-two" href="#end">A：跨两列</a>
+  <a class="span-two" href="#end">B：跨两列</a>
+  <a class="small" href="#end">C</a>
+</div>
+<div class="column-flow"><span>1</span><span>2</span><span>3</span></div>
+<p id="end">链接目标：用于检查键盘顺序。</p>
+</section>
+
+<section>
+<h2>auto-fill 与 auto-fit 的空轨道差异</h2>
+<div class="repeat-grid fill"><div>一</div><div>二</div></div>
+<div class="repeat-grid fit"><div>一</div><div>二</div></div>
+</section>
+</main>
+</body>
+</html>

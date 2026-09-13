@@ -1,0 +1,46 @@
+# 总目录索引
+
+这里集中链接正文分类和项目，按需要标明阅读顺序，不复制正文或存放引用的原始资料。
+
+## 正文分类
+
+已建立以下 11 个中文一级分类，每个目录的 README.md 说明收录范围。已有课程列在下方；分类目录存在不代表其中所有计划内容都已完成。
+
+| 分类目录 | 计划收录范围 |
+| --- | --- |
+| [开发环境与工具](../content/开发环境与工具/) | 文件与路径、终端与 Shell、开发环境、Git、依赖与常用工具 |
+| [编程语言](../content/编程语言/) | Python、Java 等语言的语法、特性、对象模型与运行机制 |
+| [数据结构与算法](../content/数据结构与算法/) | 数据结构、排序、搜索、算法与复杂度 |
+| [计算机系统](../content/计算机系统/) | 组成原理、操作系统、内存、进程线程与编译 |
+| [计算机网络](../content/计算机网络/) | TCP/IP、DNS、HTTP、网络通信与排障 |
+| [数据库与存储系统](../content/数据库与存储系统/) | SQL、数据库、索引、事务、缓存、NoSQL 与存储方案 |
+| [Web与应用开发](../content/Web与应用开发/) | Web 前后端、API、移动端、桌面应用与相关框架 |
+| [软件工程](../content/软件工程/) | 测试、调试、设计、重构、架构与性能分析方法 |
+| [基础设施与运维](../content/基础设施与运维/) | Linux 运维、容器、云、部署、CI/CD 与可观测性 |
+| [信息安全](../content/信息安全/) | 认证授权、密码学、网络与应用安全、隐私、安全开发与响应 |
+| [AI原理与应用](../content/AI原理与应用/) | 数学基础、机器学习、深度学习、模型结构与训练；模型调用、多模态、RAG、Agent、评估、微调、推理与部署 |
+
+具体技术与章节按实际任务添加；每个知识点选择一个主要归属，其他位置通过链接引用。目录与依赖规则见[项目协作协议](../AGENTS.md)。
+
+## 已有课程
+
+共 5 套课程、138 篇 Notebook，章节目录包含主线与选修。先按环境说明准备，再打开章节目录选择内容。五份编程规范可独立阅读，入口见下表“代码写法”。
+
+| 技术 | 分类 | 篇数 | 章节目录 | 环境与运行 | 代码写法 |
+| --- | --- | --- | --- | --- | --- |
+| Python | 编程语言 | 36 | [Python 章节](../content/编程语言/python/plan.md) | [环境说明](../content/编程语言/python/README.md) | [编程规范](../content/编程语言/python/Python编程规范.md) |
+| JavaScript | 编程语言 | 30 | [JavaScript 章节](../content/编程语言/javascript/plan.md) | [环境说明](../content/编程语言/javascript/README.md) | [编程规范](../content/编程语言/javascript/JavaScript编程规范.md) |
+| TypeScript | 编程语言 | 29 | [TypeScript 章节](../content/编程语言/typescript/plan.md) | [环境说明](../content/编程语言/typescript/README.md) | [编程规范](../content/编程语言/typescript/TypeScript编程规范.md) |
+| HTML | Web与应用开发 | 17 | [HTML 章节](../content/Web与应用开发/html/plan.md) | [环境说明](../content/Web与应用开发/html/README.md) | [编程规范](../content/Web与应用开发/html/HTML编程规范.md) |
+| CSS | Web与应用开发 | 26 | [CSS 章节](../content/Web与应用开发/css/plan.md) | [环境说明](../content/Web与应用开发/css/README.md) | [编程规范](../content/Web与应用开发/css/CSS编程规范.md) |
+
+## 建议阅读顺序
+
+- Python 入门：按 Python 主线章节学习，再按需要选择进阶专题。
+- Web 前端基础：HTML → CSS → JavaScript → TypeScript。已有相关基础时，按章节前置知识选择起点；浏览器应用与框架专题后续补充。
+
+## 项目
+
+暂无综合实践项目。后续项目放在 projects/，完成后在此添加链接。
+
+[返回中文项目首页](../README.zh-CN.md) · [English](../README.md)

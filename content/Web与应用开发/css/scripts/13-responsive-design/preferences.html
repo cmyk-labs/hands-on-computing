@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>响应式设计与媒体查询 · 输入能力与用户偏好</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>响应式设计与媒体查询</h1>
+<nav aria-label="本章示例"><a href="index.html">流式布局与查询条件</a> · <a href="preferences.html">输入能力与用户偏好</a> · <a href="images.html">图像与窄屏检查</a></nav>
+<main>
+<section>
+<h2>hover、pointer 与键盘入口</h2>
+<a class="input-link" href="#input-target">打开本页目标</a>
+<p id="input-target" tabindex="-1">目标内容始终可用。</p>
+</section>
+
+<section>
+<h2>用户偏好也是响应条件</h2>
+<div class="preference-panel">
+  <p>按偏好调整的内容区域。</p>
+  <a href="#reading-end">跳到阅读结束处</a>
+</div>
+<div class="reading-space">用于观察锚点滚动的阅读空间。</div>
+<p id="reading-end">阅读结束。</p>
+</section>
+</main>
+</body>
+</html>

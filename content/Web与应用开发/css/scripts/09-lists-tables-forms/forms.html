@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>列表、表格与表单样式：表单</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>列表、表格与表单样式：表单</h1>
+<nav><a href="index.html">列表</a> · <a href="tables.html">表格</a></nav>
+<section>
+<h2>尺寸与状态</h2>
+<form class="sized-form" action="forms.html" method="get">
+  <p><label for="email">电子邮箱（必填）</label><br><input id="email" name="email" type="email" required aria-describedby="email-help"></p>
+  <p id="email-help">请输入完整邮箱，例如 reader@example.com；虚线边框表示当前值不符合要求。</p>
+  <p><label for="topic">主题</label><br><select id="topic" name="topic"><option>CSS</option><option>HTML</option></select></p>
+  <p><label for="notes">备注</label><br><textarea id="notes" name="notes" rows="3"></textarea></p>
+  <p><label for="reference">只读编号</label><br><input id="reference" value="NOTE-09" readonly></p>
+  <button type="reset">重置</button>
+  <button type="button" disabled>暂不可用</button>
+</form>
+</section>
+<section>
+<h2>原生与自定义外观</h2>
+<p><label><input class="native-check" type="checkbox">接收更新（原生外观）</label></p>
+<p><label><input class="custom-check" type="checkbox">接收更新（自定义外观）</label></p>
+<fieldset>
+  <legend>阅读方式</legend>
+  <label><input class="native-check" type="radio" name="mode" value="online" checked>在线</label>
+  <label><input class="native-check" type="radio" name="mode" value="offline">离线</label>
+</fieldset>
+</section>
+<section>
+<h2>链接与焦点</h2>
+<p><a class="example-link" href="#destination">阅读本页说明</a></p>
+<button class="action" type="button">可聚焦按钮</button>
+<p id="destination">链接目标：样式保留了可辨认的下划线。</p>
+</section>
+
+</body>
+</html>

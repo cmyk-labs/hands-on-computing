@@ -1,0 +1,94 @@
+:root {
+  --paper: #ffffff;
+  --ink: #17212b;
+  --link: #0645ad;
+  --line: #596573;
+  --error: #a01818;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+}
+.site-header, main, .skip { max-inline-size: 70rem; margin-inline: auto; }
+.skip { display: block; }
+a { color: var(--link); text-underline-offset: 0.2em; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.3rem; }
+main { margin-block: 2rem; }
+article, aside, .card-slot, .card > * { min-inline-size: 0; }
+aside, .card { border: 1px solid var(--line); padding: 1rem; }
+button, input, textarea { font: inherit; color: inherit; }
+button { padding: 0.5em 1em; background: var(--paper); border: 2px solid var(--line); }
+
+
+.site-header, nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+}
+.site-header { justify-content: space-between; }
+/* 缩窄视口：导航允许换行，DOM 顺序仍是内容、目录、表单。 */
+
+.page-layout { display: grid; gap: 1.5rem; }
+.catalog { display: grid; gap: 1rem; }
+@media (min-width: 52rem) {
+  .page-layout { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+  .catalog { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* 达到断点才分两列；基础单列样式适用于更窄的视口。 */
+}
+
+.card { display: grid; gap: 1rem; }
+.card img { max-inline-size: 100%; block-size: auto; }
+@supports (container-type: inline-size) {
+  .card-slot { container-type: inline-size; container-name: card; }
+  @container card (min-width: 24rem) {
+    .card { grid-template-columns: 7rem minmax(0, 1fr); align-items: center; }
+  }
+}
+/* 查询 .card-slot 的内容区宽度，改变其后代 .card；不支持时卡片仍为单列。 */
+
+.long-text, .card, label { overflow-wrap: anywhere; }
+.article-image { display: block; max-inline-size: 100%; block-size: auto; }
+/* 长标识可断行；图片缩小而不拉伸，正文和表单都不固定高度。 */
+
+form { max-inline-size: 40rem; }
+.field { margin-block: 1rem; }
+.field label { display: block; }
+.field input, textarea {
+  inline-size: 100%;
+  min-inline-size: 0;
+  padding: 0.5em;
+  border: 2px solid var(--line);
+  background: var(--paper);
+}
+textarea { resize: vertical; }
+.check { display: block; margin-block: 1rem; }
+input:focus:invalid { border-color: var(--error); }
+/* 必填提示用文字表达；浏览器校验消息仍由原生表单提供。 */
+
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 3px solid var(--link);
+  outline-offset: 3px;
+}
+a:hover { text-decoration-thickness: 0.18em; }
+/* 用 Tab 检查所有链接和控件；不删除原生操作，也不依赖 hover 才显示内容。 */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #17212b;
+    --ink: #f4f7fa;
+    --link: #a9d2ff;
+    --line: #bdc9d6;
+    --error: #ffb4b4;
+    color-scheme: dark;
+  }
+}
+/* 切换系统明暗偏好：文字、背景、链接和控件边界一起检查。 */

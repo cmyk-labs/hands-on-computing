@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>HTML 基本语法</title>
+</head>
+<body>
+  <h1>HTML 基本语法</h1>
+  <h2 id="elements">元素与标签</h2>
+  <!-- strong 在 p 内，先结束 strong，再结束 p。 -->
+  <p>保存前请<strong>检查文件名</strong>。</p>
+  <!-- 默认显示为 Read the source.；源码换行不强制页面换行。 -->
+  <p lang="en">Read
+    the
+    source.</p>
+
+  <h2 id="attributes">属性与引号</h2>
+  <!-- 悬停前两段可比较提示；单引号、双引号都能包围带空格的值。 -->
+  <p title="HTML syntax">语法练习：双引号包围属性值。</p>
+  <p title='HTML syntax'>语法练习：单引号包围属性值。</p>
+  <p title='请先按 "保存"'>请先按“保存”，再刷新页面。</p>
+
+  <h2 id="void">空元素</h2>
+  <!-- 两段均分成两行；第二个 br 的尾随斜杠不产生额外效果。 -->
+  <p>第一行<br>第二行</p>
+  <p>第一行<br />第二行</p>
+
+  <h2 id="nesting">嵌套与内容模型</h2>
+  <!-- 两个 p 同属外层 div；span 在 strong 内，strong 在第一个 p 内。 -->
+  <div>
+    <p>保存前<strong>检查<span>文件名</span></strong>。</p>
+    <p>确认后再刷新页面。</p>
+  </div>
+
+  <h2 id="comments">注释</h2>
+  <!-- 这是给阅读源码的人看的说明。 -->
+  <p>当前版本。</p>
+  <!-- <p>暂不显示的备选文字。</p> -->
+  <!-- 本组正文只有“当前版本。”，源码仍保留备选文字。 -->
+
+  <h2 id="characters">字符引用</h2>
+  <!-- 第一段显示标签文字，不会生成额外的 p 元素。 -->
+  <p>&lt;p&gt;标签文字&lt;/p&gt;</p>
+  <p>比较：3 &lt; 5 &amp; 8 &gt; 6。</p>
+  <!-- 三个版权符号相同；分别使用名称、十进制码位、十六进制码位。 -->
+  <p>&copy; &#169; &#xA9;</p>
+  <p title="请先按 &quot;保存&quot;">请先按“保存”，再刷新页面。</p>
+  <p>显示引用写法本身：&amp;lt;</p>
+  <!-- 2026 与年之间的不换行空格不用于制造缩进。 -->
+  <p>记录日期：2026&nbsp;年。</p>
+</body>
+</html>

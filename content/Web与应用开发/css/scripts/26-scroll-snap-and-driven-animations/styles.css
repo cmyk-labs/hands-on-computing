@@ -1,0 +1,97 @@
+* { box-sizing: border-box; }
+body { max-width: 65rem; margin: 0 auto; padding: 1rem; font: 1rem/1.7 system-ui, sans-serif; color: #17212b; background: #fff; }
+h1 { font-size: 2rem; } h2 { font-size: 1.4rem; }
+a { color: #0645ad; } :focus { outline: 3px solid #0645ad; outline-offset: 3px; }
+.snapper, .reading-box, .local-reader { border: 1px solid #657080; margin-block: 1rem; }
+.slide { padding: 1rem; border: 1px solid #657080; overflow-wrap: anywhere; }
+.reading-box, .local-reader { max-width: 40rem; }
+.local-reader p { margin: 1rem; }
+.story-section { min-height: 70vh; margin-block: 2rem; }
+.footer-space { min-height: 70vh; }
+.snapper {
+  display: flex;
+  gap: 1rem;
+  max-width: 40rem;
+  padding: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.slide { flex: 0 0 calc(100% - 2rem); min-width: 0; scroll-snap-align: start; }
+/* 横向滚动后对齐卡片起点；卡片高度由文字决定，不隐藏滚动条。 */
+
+.snapper { scroll-padding: 1rem; }
+.slide { scroll-margin: 0.25rem; scroll-snap-stop: always; }
+/* 中间卡片起点与可视区边缘留有空间；两种scroll间距都不是实际盒模型间距。 */
+
+.reading-box {
+  height: 14rem;
+  overflow: auto;
+  scroll-snap-type: y proximity;
+  overscroll-behavior: contain;
+}
+.reading-section { scroll-snap-align: start; padding: 1rem; }
+/* 长内容用proximity：在中间停留阅读；到边缘后观察滚动链是否被阻断。 */
+
+.page-meter { display: none; }
+@keyframes fill-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@supports (animation-timeline: scroll(root block)) {
+  .page-meter {
+    display: block;
+    position: fixed;
+    inset: 0 0 auto;
+    height: 0.4rem;
+    background: #0645ad;
+    transform-origin: left;
+    z-index: 1;
+    animation: fill-progress 1ms linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+/* 滚动到文档中段再回顶部：条带随根滚动进度变化，不按经过的秒数自动播放。 */
+
+.local-reader { height: 14rem; overflow: auto; }
+.local-meter { display: none; }
+@supports (scroll-timeline-name: --local) and (animation-timeline: --local) {
+  .local-reader { scroll-timeline-name: --local; scroll-timeline-axis: block; }
+  .local-meter {
+    display: block;
+    position: sticky;
+    top: 0;
+    height: 0.4rem;
+    background: #0b715f;
+    transform-origin: left;
+    animation: fill-progress 1ms linear both;
+    animation-timeline: --local;
+  }
+}
+/* 进度条位于命名滚动容器内部；只滚外部文档不应推进局部进度。 */
+
+.reveal { height: 7rem; background: #0b715f; opacity: 1; }
+@keyframes reveal-tone { from { opacity: 0.25; } to { opacity: 1; } }
+@supports (animation-timeline: view()) and (animation-range: entry 0% entry 100%) {
+  .reveal {
+    animation: reveal-tone 1ms linear both;
+    animation-timeline: view(block 0px);
+    animation-range: entry 0% entry 100%;
+  }
+}
+/* 色块进入视口的过程中变为完全不透明，完全进入后保持；正文没有透明度动画。 */
+
+.named-accent { height: 0.5rem; background: #0645ad; transform-origin: left; }
+@supports (view-timeline-name: --chapter) and (animation-timeline: --chapter) and (animation-range: entry 0% entry 100%) {
+  .view-subject { view-timeline-name: --chapter; view-timeline-axis: block; view-timeline-inset: 0; }
+  .named-accent {
+    animation: fill-progress 1ms linear both;
+    animation-timeline: --chapter;
+    animation-range: entry 0% entry 100%;
+  }
+}
+/* 被观察的是section，发生变换的是内部装饰线；两者不必是同一个元素。 */
+
+@media (prefers-reduced-motion: reduce) {
+  .page-meter, .local-meter { display: none; animation: none; }
+  .reveal, .named-accent { animation: none; opacity: 1; transform: none; }
+  .snapper { scroll-snap-type: x proximity; scroll-behavior: auto; }
+  .slide { scroll-snap-stop: normal; }
+}
+/* 切换减少动画偏好并重新滚动：装饰保持静态，全文和卡片链接仍可读、可操作。 */

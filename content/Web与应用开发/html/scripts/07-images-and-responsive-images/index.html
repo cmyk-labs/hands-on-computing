@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>湖边小屋 · 图像实验</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>湖边小屋</h1>
+    <p>用一张插图记录想去散步的地方。</p>
+    <figure>
+      <img id="informative-image" class="scene" src="lake-480.svg"
+           width="480" height="270"
+           alt="红色小屋位于蓝色湖泊左岸，远处是连绵的山峰。">
+      <figcaption>图 1：湖边小屋，原创场景示意。</figcaption>
+    </figure>
+    <!-- 叶形只作点缀；链接目的地已经由同一链接内的文字说明。 -->
+    <p><a href="art-direction.html"><img src="ornament.svg"
+      width="32" height="32" alt=""> 查看小屋的不同构图</a></p>
+    <nav aria-label="图像实验">
+      <ul>
+        <li><a href="loading.html">观察加载策略</a></li>
+        <li><a href="density.html">比较 1x 与 2x 候选</a></li>
+        <li><a href="responsive.html">比较 w 候选与 sizes</a></li>
+      </ul>
+    </nav>
+  </main>
+  <!-- 预期：图注可见，alt 不作为图片上的字幕显示。 -->
+  <!-- 检查：Elements 的 Accessibility 中检查图像名称与链接名称。 -->
+  <!-- 叶形不应增加需要朗读的名称；实际屏幕阅读器体验需另外检查。 -->
+</body>
+</html>

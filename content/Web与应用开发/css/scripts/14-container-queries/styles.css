@@ -1,0 +1,126 @@
+/* 页面阅读辅助：统一盒尺寸计算、字号与分组间距；各实验规则在下方。 */
+* { box-sizing: border-box; }
+body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; }
+nav { margin-bottom: 24px; }
+nav a { display: inline-block; margin: 0 12px 8px 0; }
+section { margin: 24px 0; }
+h2 { font-size: 20px; }
+button, input, select { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+
+
+.card-host {
+  container: card-space / inline-size;
+  margin-bottom: 16px;
+}
+.wide-host { inline-size: min(700px, 100%); }
+.narrow-host { inline-size: min(280px, 100%); }
+.responsive-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  border: 1px solid teal;
+  padding: 12px;
+}
+.responsive-card > * { min-width: 0; overflow-wrap: anywhere; }
+.card-picture { background-color: #dfefea; padding: 16px; }
+@container card-space (min-width: 480px) {
+  .responsive-card {
+    grid-template-columns: 120px minmax(0, 1fr);
+    /* 同一宽视口下：宽容器图文并排，窄容器仍上下排列。 */
+  }
+}
+
+.two-axis-box {
+  box-sizing: border-box;
+  container-name: panel-size;
+  container-type: size;
+  inline-size: min(420px, 100%);
+  block-size: 180px;
+  border: 2px solid gray;
+  overflow: auto;
+}
+.height-marker { margin: 8px; padding: 8px; border: 3px solid gray; }
+@container panel-size (height >= 160px) {
+  .height-marker { border-color: teal; }
+  /* 180px 为边框盒高度，扣除两边边框后仍满足 160px 的内容盒条件。 */
+}
+
+.self-box {
+  container: solo / inline-size;
+  inline-size: min(500px, 100%);
+  border: 4px solid gray;
+}
+.self-child { margin: 8px; color: black; }
+@container solo (min-width: 300px) {
+  .self-box { border-color: red; }
+  .self-child { color: teal; }
+  /* 宽容器下：外框仍灰色，子段落变蓝绿色；外框不查询自身。 */
+}
+
+.outer-scope {
+  container-name: zone outer-zone;
+  container-type: inline-size;
+  inline-size: min(700px, 100%);
+  border: 1px solid gray;
+}
+.inner-scope {
+  container: zone / inline-size;
+  inline-size: min(260px, 100%);
+  border: 1px solid gray;
+}
+.outer-scope p { padding: 4px; }
+.outer-marker, .nearest-marker, .named-marker { color: black; }
+@container zone (min-width: 500px) {
+  .outer-marker, .nearest-marker { color: teal; }
+}
+@container outer-zone (min-width: 500px) {
+  .named-marker { color: teal; }
+  /* 外层足够宽时，nearest-marker 仍黑色，named-marker 为蓝绿色。 */
+}
+
+.both-conditions { border: 3px solid gray; }
+@container outer-zone (min-width: 500px) {
+  @container zone (max-width: 300px) {
+    .both-conditions {
+      border-style: dashed;
+      /* 外层至少 500px、内层至多 300px 时出现虚线。 */
+    }
+  }
+}
+
+.unit-host {
+  container-type: inline-size;
+  inline-size: min(240px, 100%);
+  margin-bottom: 16px;
+  outline: 1px solid gray;
+}
+.unit-wide { inline-size: min(600px, 100%); }
+.unit-bar { inline-size: 50%; background-color: #dfefea; }
+.unit-text { font-size: 1rem; }
+@container (inline-size >= 0px) {
+  .unit-bar { inline-size: 50cqi; }
+  .unit-text { font-size: clamp(1rem, 4cqi, 2rem); }
+  /* 两条宽度分别为最近容器内容宽度的一半；字号有 rem 上下限。 */
+}
+.no-container-unit {
+  inline-size: 10vw;
+  inline-size: 10cqi;
+  overflow-wrap: anywhere;
+  border: 1px solid teal;
+  /* 支持 cqi 但没有容器时，以小视口行内尺寸计算；前一条是语法不支持回退。 */
+}
+
+.density-host {
+  container-name: density-space;
+  --density: compact;
+}
+.density-list { padding: 16px 32px; border: 2px solid gray; }
+.density-list li { margin-block: 12px; }
+.density-fallback .density-list { padding-block: 8px; }
+.density-fallback .density-list li { margin-block: 4px; }
+@container density-space style(--density: compact) {
+  .density-list { padding-block: 8px; border-color: teal; }
+  .density-list li { margin-block: 4px; }
+  /* 支持时与显式类回退一样紧凑；不支持时内容和列表标记仍在。 */
+}

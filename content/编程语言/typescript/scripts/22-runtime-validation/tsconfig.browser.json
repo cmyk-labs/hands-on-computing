@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2025",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "lib": [
+      "ES2025",
+      "DOM"
+    ],
+    "types": [],
+    "rootDir": ".",
+    "outDir": ".build-browser",
+    "noEmitOnError": true
+  },
+  "files": [
+    "browser.ts"
+  ]
+}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>浮层与位置回退</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>浮层与位置回退</h1><nav><a href="index.html">返回基础示例</a></nav><main><p>按钮位于有裁剪边界的区域中。使用按钮打开说明，再缩小窗口或滚动页面。</p><div class="edge-zone">
+  <button id="help-trigger" type="button" popovertarget="help-panel">打开填写说明</button>
+  <section id="help-panel" popover="auto" aria-labelledby="help-title">
+    <h2 id="help-title">填写说明</h2>
+    <p>标题应简短明确，详细说明放在正文。本面板可用关闭按钮或 Escape 退出。</p>
+    <p>调整窗口，观察面板在边缘附近选择不同位置。</p>
+    <button class="close" type="button" popovertarget="help-panel" popovertargetaction="hide">关闭说明</button>
+  </section>
+</div><p class="after">这里留出滚动空间，用来观察锚点移动。</p></main>
+</body>
+</html>

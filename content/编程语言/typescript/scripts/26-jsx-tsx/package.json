@@ -1,0 +1,11 @@
+{
+  "name": "notebook-jsx-runtime-ts-c",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./jsx-runtime": {
+      "types": "./runtime/jsx-runtime.ts",
+      "default": "./.build/runtime/jsx-runtime.js"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120"
+     viewBox="0 0 240 120" role="img">
+  <title>圆、竖线与三角形</title>
+  <desc>浅色矩形中，左侧是圆，中间是竖线，右侧是朝右的三角形。</desc>
+  <!-- 原创资源：只用四个基本图形，无外部图片、字体或脚本。 -->
+  <rect x="4" y="4" width="232" height="112" fill="#edf2f4"></rect>
+  <circle class="sample-dot" cx="60" cy="60" r="24"
+          fill="#b45309"></circle>
+  <line x1="120" y1="28" x2="120" y2="92"
+        stroke="#334155" stroke-width="3"></line>
+  <polygon points="166,36 198,60 166,84" fill="#176b4a"></polygon>
+  <!-- 预期：竖线两端的横坐标相同；三角形最后一个顶点会连回第一个。 -->
+  <!-- title/desc 的文字不会被绘制到图形内；可见说明应另写在 HTML 中。 -->
+</svg>

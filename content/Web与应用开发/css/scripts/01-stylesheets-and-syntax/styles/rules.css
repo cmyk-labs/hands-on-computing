@@ -1,0 +1,9 @@
+@import url("../styles.css");
+/* 相对于本文件导入上一层 styles.css；段落获得深蓝色和 20px 字号。 */
+
+@media (min-width: 700px) {
+  p {
+    background-color: lightyellow;
+    /* 视口宽度达到 700px 时出现浅黄色背景；缩窄到 700px 以下后不再应用。 */
+  }
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>逻辑属性与书写模式 · 竖排字形与布局轴</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>逻辑属性与书写模式</h1>
+<nav aria-label="本章示例"><a href="index.html">方向、尺寸与间距</a> · <a href="vertical.html">竖排字形与布局轴</a> · <a href="offsets.html">逻辑定位与属性混用</a></nav>
+<main>
+<section>
+<h2>竖排字形朝向与阅读边界</h2>
+<div class="orientation-frame">
+  <p class="vertical-copy mixed-copy" dir="ltr">中文 CSS ABC，标点。</p>
+  <p class="vertical-copy upright-copy" dir="ltr">中文 CSS ABC，标点。</p>
+</div>
+</section>
+
+<section>
+<h2>Grid 和 Flexbox 都需要重新辨认轴</h2>
+<div class="vertical-grid" dir="ltr"><span>A</span><span>B</span></div>
+<div class="vertical-flex" dir="ltr"><span>A</span><span>B</span></div>
+</section>
+</main>
+</body>
+</html>

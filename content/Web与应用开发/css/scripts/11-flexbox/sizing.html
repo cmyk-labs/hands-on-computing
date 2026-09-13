@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flexbox 布局：空间分配</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Flexbox 布局：空间分配</h1>
+<nav><a href="index.html">轴与对齐</a> · <a href="patterns.html">常见模式</a></nav>
+<section>
+<h2>基准与增长</h2>
+<div class="basis-row"><span class="basis-explicit">基准 100</span><span class="basis-auto">基准 auto</span></div>
+<div class="grow-row"><span class="grow-one">增长因子 1</span><span class="grow-two">增长因子 2</span></div>
+</section>
+<section>
+<h2>加权收缩</h2>
+<div class="shrink-row proportional"><span class="small-base">200</span><span class="large-base">400</span></div>
+<div class="shrink-row weighted"><span class="small-base">200 × 2</span><span class="large-base">400 × 1</span></div>
+<div class="shrink-row locked"><span class="small-base">不收缩 200</span><span class="large-base">可收缩 400</span></div>
+</section>
+<section>
+<h2>最小尺寸</h2>
+<div class="min-row protected"><span class="label">文件</span><div class="text"><p class="cut">hands-on-computing-super-long-unbroken-filename.css</p></div></div>
+<div class="min-row released"><span class="label">文件</span><div class="text"><p class="cut">hands-on-computing-super-long-unbroken-filename.css</p></div></div>
+</section>
+
+</body>
+</html>

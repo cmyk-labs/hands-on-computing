@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": ".build-test",
+    "types": [
+      "node"
+    ],
+    "declaration": false,
+    "declarationMap": false
+  },
+  "files": [
+    "package/src/index.ts",
+    "readings.test.ts",
+    "type-tests.ts"
+  ]
+}

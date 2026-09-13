@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>三个按钮的不同职责</title>
+</head>
+<body>
+  <h1>三个按钮的不同职责</h1>
+<form id="button-demo">
+    <p>
+      <label for="button-title">安排名称</label>
+      <input id="button-title" name="title" type="text" value="周末阅读">
+    </p>
+    <button type="button">普通按钮（未绑定动作）</button>
+    <button type="reset">恢复默认安排</button>
+    <button type="submit">观察提交事件</button>
+  </form>
+  <p id="button-status">尚未触发提交事件。</p>
+  <p><a href="index.html">返回本章入口</a></p>
+  <script>
+    const buttonForm = document.getElementById("button-demo");
+    const buttonStatus = document.getElementById("button-status");
+    buttonForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      buttonStatus.textContent = "已触发提交事件；未发送数据。";
+    });
+  </script>
+  <!-- 检查：普通按钮不改输入；reset 恢复“周末阅读”；submit 只更新提示。 -->
+  <!-- 地址应保持不变；该提示是脚本执行的结果，不代表服务器已经接收数据。 -->
+  <!-- 重置表单不会重置普通 p 元素里的提示文字。 -->
+</body>
+</html>

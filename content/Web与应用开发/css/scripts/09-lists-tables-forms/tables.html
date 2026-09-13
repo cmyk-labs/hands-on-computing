@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>列表、表格与表单样式：表格</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>列表、表格与表单样式：表格</h1>
+<nav><a href="index.html">列表</a> · <a href="forms.html">表单</a></nav>
+<section>
+<h2>边框模型</h2>
+<table class="separate">
+  <caption>分离边框</caption>
+  <thead><tr><th scope="col">主题</th><th scope="col">安排</th></tr></thead>
+  <tbody><tr><th scope="row">CSS</th><td>周二</td></tr><tr><th scope="row">HTML</th><td>周四</td></tr></tbody>
+</table>
+<table class="collapsed">
+  <caption>合并边框</caption>
+  <thead><tr><th scope="col">主题</th><th scope="col">安排</th></tr></thead>
+  <tbody><tr><th scope="row">CSS</th><td>周二</td></tr><tr><th scope="row">HTML</th><td>周四</td></tr></tbody>
+</table>
+</section>
+<section>
+<h2>列宽算法</h2>
+<div class="table-region" tabindex="0" role="region" aria-label="自动布局表格，可横向滚动">
+<table class="auto-table">
+  <caption>自动布局</caption>
+  <colgroup><col class="name-column"><col></colgroup>
+  <thead><tr><th scope="col">项目</th><th scope="col">记录</th></tr></thead>
+  <tbody><tr><th scope="row">练习</th><td>engineeringnotebookexamplewithoutspaces</td></tr></tbody>
+</table>
+</div>
+<table class="fixed-table">
+  <caption>固定布局</caption>
+  <colgroup><col class="name-column"><col></colgroup>
+  <thead><tr><th scope="col">项目</th><th scope="col">记录</th></tr></thead>
+  <tbody><tr><th scope="row">练习</th><td>engineeringnotebookexamplewithoutspaces</td></tr></tbody>
+</table>
+</section>
+
+</body>
+</html>

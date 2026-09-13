@@ -1,0 +1,70 @@
+/* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
+body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
+
+.value-types {
+  width: 240px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: rgb(0, 0, 128);
+  margin: 0;
+}
+/* 在开发者工具中检查：本例行高为 30px；长度 240px 与数字 1.5 不能互换。 */
+
+html { font-size: 20px; }
+.font-parent { font-size: 24px; }
+.em-child { font-size: 1.5em; padding-left: 0.5em; }
+.em-grandchild { font-size: 1.5em; }
+.rem-child { font-size: 1.5rem; }
+/* 检查：em-child 字号 36px、左内边距 18px；孙元素 54px；rem-child 为 30px。 */
+
+.percent-parent { width: 320px; max-width: 100%; border: 1px solid gray; }
+.percent-size { width: 50%; padding-top: 10%; background-color: lightyellow; }
+.height-auto, .height-fixed { width: 240px; border: 1px solid teal; }
+.height-fixed { height: 120px; }
+.half-height { height: 50%; background-color: lightyellow; }
+/* 容器宽度为 320px 时：子宽 160px，上内边距 32px。
+   两组高度对照：auto 父框按内容展开；固定父框中子高为 60px。 */
+
+.viewport-width { width: 50vw; background-color: lightyellow; }
+.viewport-height {
+  min-height: 20vh;
+  min-height: 20dvh;
+  border: 1px solid teal;
+}
+/* 调整视口宽高分别观察两组；长内容仍可把 min-height 对应的框撑高。 */
+
+.calc-parent { width: 320px; max-width: 100%; border: 1px solid gray; }
+.calc-width { width: calc(100% - 24px); background-color: lightyellow; }
+.calc-scale { width: calc((100px + 20px) / 2); border: 1px solid teal; }
+/* 父内容宽 320px 时，第一个内容宽 296px；第二个内容宽 60px，不含边框。 */
+
+.bounded-min { width: 100%; max-width: 240px; width: min(100%, 240px); background-color: lightyellow; }
+.bounded-max { padding-left: max(8px, 2vw); padding-right: max(8px, 2vw); border: 1px solid teal; }
+.bounded-clamp { width: 240px; width: clamp(160px, 50vw, 400px); background-color: lightyellow; }
+/* 视口 900px 时 clamp 宽度为 400px；400px 时为 200px；280px 时触及下限 160px。
+   min 与 clamp 前面保留普通声明作旧环境回退；极窄视口仍需检查内容溢出。 */
+
+.angle-frame { padding: 24px; }
+.angle-sample { width: 40px; height: 40px; border: 1px solid teal; transform: rotate(0.125turn); }
+.time-sample { background-color: white; transition-property: background-color; transition-duration: 200ms; }
+.time-sample:hover, .time-sample:focus { background-color: gold; }
+@media (prefers-reduced-motion: reduce) {
+  .time-sample { transition-duration: 0s; }
+}
+/* 检查旋转角度为 45 度；颜色过渡在 200ms 后到达 gold，减少动态效果时直接切换。 */
+
+.processing-parent { width: 320px; max-width: 100%; font-size: 20px; }
+.processing-child { font-size: 150%; width: 50%; margin: 0; background-color: lightyellow; }
+/* 父内容宽 320px 时：Styles 仍显示 150% 与 50%；布局宽度为 160px，字号为 30px。 */
+
+.invalid-value {
+  width: 180px;
+  width: 12;                    /* 反例：非零宽度缺少单位。 */
+  width: calc(20px + 1s);       /* 反例：长度与时间不能相加。 */
+  padding: 8px;
+  padding: -4px;                /* 反例：内边距不接受负值。 */
+  transition-duration: 200ms;
+  transition-duration: 0;      /* 反例：时间的零也需单位。 */
+  border: 1px solid teal;
+}
+/* 检查有效值保留：内容宽 180px、padding 8px、transition-duration 0.2s。 */

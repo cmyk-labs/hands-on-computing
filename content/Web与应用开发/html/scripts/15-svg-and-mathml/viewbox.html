@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SVG 坐标与展示尺寸对照</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>同一个圆，四种展示方式</h1>
+    <p>四幅图的圆心都是 (50, 50)，半径都是 30 个用户单位。</p>
+    <p>每幅图的 viewBox 都是 0 0 100 100。</p>
+
+    <section>
+      <h2>A · 100 × 100</h2>
+      <svg id="size-a" class="viewport-demo" width="100" height="100"
+           viewBox="0 0 100 100" role="img" aria-labelledby="size-a-title">
+        <title id="size-a-title">原尺寸圆形</title>
+        <rect width="100" height="100" fill="#dcecf2"></rect>
+        <circle cx="50" cy="50" r="30" fill="#176b4a"></circle>
+      </svg>
+      <!-- 预期：显示的圆直径为 60 CSS 像素，不含视口边框。 -->
+    </section>
+
+    <section>
+      <h2>B · 200 × 200</h2>
+      <svg id="size-b" class="viewport-demo" width="200" height="200"
+           viewBox="0 0 100 100" role="img" aria-labelledby="size-b-title">
+        <title id="size-b-title">等比例放大两倍的圆形</title>
+        <rect width="100" height="100" fill="#dcecf2"></rect>
+        <circle cx="50" cy="50" r="30" fill="#176b4a"></circle>
+      </svg>
+      <!-- 预期：B 的显示直径为 A 的两倍；源码 r 仍然是 30。 -->
+    </section>
+
+    <section>
+      <h2>C · 200 × 100，保持比例</h2>
+      <svg id="size-c" class="viewport-demo" width="200" height="100"
+           viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"
+           role="img" aria-labelledby="size-c-title">
+        <title id="size-c-title">保持圆形并左右留白</title>
+        <rect width="100" height="100" fill="#dcecf2"></rect>
+        <circle cx="50" cy="50" r="30" fill="#176b4a"></circle>
+      </svg>
+      <!-- 预期：圆直径仍为 60；浅色方块居中，左右各留 50 CSS 像素。 -->
+    </section>
+
+    <section>
+      <h2>D · 200 × 100，不保持比例</h2>
+      <svg id="size-d" class="viewport-demo" width="200" height="100"
+           viewBox="0 0 100 100" preserveAspectRatio="none"
+           role="img" aria-labelledby="size-d-title">
+        <title id="size-d-title">被横向拉伸的圆形</title>
+        <rect width="100" height="100" fill="#dcecf2"></rect>
+        <circle cx="50" cy="50" r="30" fill="#176b4a"></circle>
+      </svg>
+      <!-- 预期：圆显示为宽 120、高 60 CSS 像素的椭圆，背景填满视口。 -->
+      <!-- 在 Elements 比较 C、D：两者坐标相同，只有 preserveAspectRatio 不同。 -->
+    </section>
+    <p><a href="index.html">返回图形与公式页面</a></p>
+  </main>
+</body>
+</html>

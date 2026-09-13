@@ -1,0 +1,30 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+.scope-root { color: darkgreen; }
+:where(.scope-root) > .scoped-text { border-left: 1px solid; padding-left: 12px; }
+/* 明确类名与关系提供基础回退；不依赖 @scope 才能读懂内容。 */
+@scope (.scope-root) to (.stop) {
+  :scope { color: darkgreen; }
+  .scoped-text { border-left: 4px solid; padding-left: 12px; }
+}
+/* stop本身及后代不匹配块内规则，但color仍可从scope-root继承进去。 */
+.probe { color: #333; }
+@scope (.inner) {
+  .probe { color: teal; }
+}
+@scope (.outer) {
+  .probe { color: navy; }
+  .probe.priority { color: maroon; }
+}
+@layer early, late;
+@layer early {
+  @scope (.inner) { #layer-proof { color: maroon; } }
+}
+@layer late {
+  @scope (.outer) { .layer-probe { color: teal; } }
+}
+/* 支持scope时：第一行teal（近），第二行maroon（更具体），第三行teal（后层）。 */

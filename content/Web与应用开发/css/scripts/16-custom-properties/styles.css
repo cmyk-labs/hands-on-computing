@@ -1,0 +1,132 @@
+/* 页面阅读辅助：统一盒尺寸计算、字号与分组间距；各实验规则在下方。 */
+* { box-sizing: border-box; }
+body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; }
+nav { margin-bottom: 24px; }
+nav a { display: inline-block; margin: 0 12px 8px 0; }
+section { margin: 24px 0; }
+h2 { font-size: 20px; }
+button, input, select { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+
+
+:root {
+  --brand: #174f79;
+  --space: 12px;
+}
+.token-list { display: grid; gap: var(--space); }
+.token-card {
+  color: var(--brand);
+  border: 2px solid var(--brand);
+  padding: var(--space);
+}
+.token-card h3 { margin-top: 0; }
+/* 临时修改根元素的 --brand 或 --space，检查两张卡片及 gap 同时变化。 */
+
+.scope-local { --brand: #754300; }
+.scope-text { color: var(--brand); padding: 8px; border: 1px solid currentColor; }
+/* 局部段落及 span 使用棕色；外面的兄弟仍使用根颜色。 */
+
+.missing-fallback {
+  --backup: teal;
+  color: var(--missing, var(--backup, black));
+}
+.cycle-fallback {
+  --a: var(--b);
+  --b: var(--a);
+  color: var(--a, teal);
+  /* 反例：两个名称形成循环，消费处应采用 teal。 */
+}
+.literal-fallback {
+  color: teal;
+  color: var(--missing, teal);
+}
+
+.invalid-parent { color: #174f79; background-color: #f2f2f2; padding: 8px; }
+.literal-invalid {
+  color: teal;
+  color: 16px; /* 有意的反例：无效字面值被忽略，仍是 teal。 */
+}
+.computed-invalid {
+  --wrong: 16px;
+  color: teal;
+  color: var(--wrong, red);
+  /* 反例：不是 red，也不退回 teal；color 继承父元素的深蓝色。 */
+}
+.background-invalid {
+  --wrong: 16px;
+  background-color: gold;
+  background-color: var(--wrong, red);
+  /* 反例：计算背景为 transparent，透出父背景，不代表自身背景被继承。 */
+}
+
+.alias-parent { --source: teal; --alias: var(--source); }
+.alias-inherited, .alias-rebound { --source: #754300; color: var(--alias); }
+.alias-rebound {
+  --alias: var(--source);
+  /* 第一段仍为 teal，第二段根据本地 --source 变为棕色。 */
+}
+
+@property --badge-tone {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: teal;
+}
+.registered-parent { --badge-tone: #754300; }
+.registered-child, .registered-invalid, .registered-inherit {
+  color: var(--badge-tone, orange);
+  border: 1px solid currentColor;
+  padding: 8px;
+}
+.registered-invalid { --badge-tone: 16px; }
+.registered-inherit { --badge-tone: inherit; }
+.plain-parent { --plain-tone: #754300; }
+.plain-fallback {
+  --plain-tone: teal;
+  color: teal;
+  color: var(--plain-tone, teal);
+  /* 支持注册时前三段为 teal、teal、棕色；本回退段明确为 teal。 */
+}
+
+:root {
+  --surface: #ffffff;
+  --text: #17202a;
+  --link: #174f79;
+  --edge: #677789;
+}
+:root[data-theme] body {
+  background-color: var(--surface);
+  color: var(--text);
+}
+:root[data-theme] a { color: var(--link); }
+.theme-panel {
+  padding: var(--space);
+  border: 2px solid var(--edge);
+  background-color: var(--surface);
+  color: var(--text);
+}
+.theme-input { max-width: 100%; }
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] {
+    --surface: #17202a;
+    --text: #f4f7fa;
+    --link: #a8d5ff;
+    --edge: #b6c5d4;
+    /* 仿真 dark：作者前景、背景、链接和边框都切换到对应值。 */
+  }
+}
+
+:root[data-theme="auto"] { color-scheme: light dark; }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface: #17202a;
+  --text: #f4f7fa;
+  --link: #a8d5ff;
+  --edge: #b6c5d4;
+}
+.theme-choices { display: flex; flex-wrap: wrap; gap: 16px; }
+.theme-link:focus-visible, .theme-input:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 3px;
+}
+/* 点击固定浅色后再仿真系统 dark：作者主题和 color-scheme 仍保持 light。 */

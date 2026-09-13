@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>定位与层叠上下文：顶层</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>定位与层叠上下文：顶层</h1>
+<nav><a href="index.html">定位首页</a></nav>
+<section>
+<h2>模态与普通内容</h2>
+<div class="clipped-container">
+  <button id="open-dialog" type="button" hidden>打开模态提示</button>
+  <dialog id="reading-dialog" aria-labelledby="dialog-title">
+    <h2 id="dialog-title">阅读提示</h2>
+    <p>每次练习后保存源文件，再刷新页面检查。</p>
+    <form method="dialog"><button autofocus>关闭</button></form>
+  </dialog>
+</div>
+<div class="ordinary-cover">普通内容：z-index 为 2147483647</div>
+<details><summary>直接阅读提示（无需模态支持）</summary><p>每次练习后保存源文件，再刷新页面检查。</p></details>
+<script src="dialog.js"></script>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* 页面阅读辅助：统一盒尺寸计算、字号与分组间距；各实验规则在下方。 */
+* { box-sizing: border-box; }
+body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; }
+nav { margin-bottom: 24px; }
+nav a { display: inline-block; margin: 0 12px 8px 0; }
+section { margin: 24px 0; }
+h2 { font-size: 20px; }
+button, input, select { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+
+
+.line-grid {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 12px;
+}
+.line-grid > div { border: 1px solid teal; padding: 8px; }
+.wide-item {
+  grid-column: 1 / -1;
+  /* Grid 覆盖层中检查 A 的左右边分别落在列线 1 和 3。 */
+}
+
+.fraction-grid {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) minmax(0, 2fr);
+  gap: 10px;
+}
+.fraction-grid > div { border: 1px solid teal; overflow-wrap: anywhere; }
+.safe-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.safe-grid > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  border: 1px solid teal;
+  /* 缩窄页面：长串换行；不要用隐藏整个页面的溢出来遮住问题。 */
+}
+
+.packing {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 48px;
+  grid-auto-rows: minmax(48px, auto);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.packing > a { border: 1px solid teal; padding: 4px; }
+.span-two { grid-column: span 2; }
+.dense { grid-auto-flow: row dense; }
+/* C 在 dense 组填入首行空位；第二行仍是隐式行。Tab 检查源码顺序。 */
+.column-flow {
+  display: grid;
+  grid-template-rows: repeat(2, 40px);
+  grid-auto-flow: column;
+  grid-auto-columns: 100px;
+  gap: 8px;
+}
+.column-flow > span { border: 1px solid teal; }
+/* 1、2 在首列，3 在第二列；这里的列由隐式网格生成。 */
+
+.repeat-grid {
+  display: grid;
+  gap: 12px;
+  max-width: 700px;
+  margin-bottom: 16px;
+}
+.fill { grid-template-columns: repeat(auto-fill, minmax(min(140px, 100%), 1fr)); }
+.fit { grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr)); }
+.repeat-grid > div {
+  border: 1px solid teal;
+  padding: 8px;
+  /* 宽容器里比较两组项目宽度；Grid 覆盖层显示 fill 保留的空列。 */
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: [sidebar-start] minmax(0, 1fr) [body-start] minmax(0, 2fr) [page-end];
+  grid-template-areas: "header header" "menu body";
+  gap: 12px;
+}
+.page-heading { grid-area: header; }
+.page-menu { grid-area: menu; margin: 0; }
+.page-body { grid-area: body; min-width: 0; }
+.page-grid > * { border: 1px solid teal; padding: 8px; }
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  /* 外层检查区域边界，内层检查按钮换行；Tab 顺序沿 HTML 前进。 */
+}
+
+.alignment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 90px);
+  grid-template-rows: 80px;
+  gap: 12px;
+  height: 200px;
+  border: 1px solid gray;
+  justify-content: center;
+  align-content: center;
+  justify-items: start;
+  align-items: start;
+}
+.alignment-grid > div { padding: 8px; border: 1px solid teal; }
+.own-alignment {
+  justify-self: end;
+  align-self: end;
+  /* A 靠自身格子的起始角，B 靠结束角；整个 192px × 80px 轨道组居中。 */
+}
+
+.overlap-grid { display: grid; min-height: 120px; }
+.overlap-grid > * { grid-column: 1; grid-row: 1; }
+.back-layer { background: #dceeea; padding: 8px; }
+.front-layer {
+  z-index: 1;
+  justify-self: center;
+  align-self: center;
+  margin: 0;
+  padding: 8px;
+  background: white;
+  /* 说明盖在浅色背景上，仍参与网格尺寸计算。 */
+}
+
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.course-card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+  min-width: 0;
+  border: 1px solid teal;
+  padding: 8px;
+}
+.course-card h3, .course-card p { margin: 0; }
+.course-card button { justify-self: start; }
+@supports (grid-template-rows: subgrid) {
+  .use-subgrid > .course-card {
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    /* 比较两卡摘要的顶部坐标；回退对照组的行仍独立计算。 */
+  }
+}

@@ -1,0 +1,23 @@
+/* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
+body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
+
+.overflow-box { width: 240px; height: 48px; border: 1px solid teal; margin-bottom: 16px; }
+.overflow-content { height: 120px; background-color: lightyellow; }
+.overflow-visible { overflow: visible; margin-bottom: 90px; }
+.overflow-auto { overflow: auto; }
+.overflow-scroll { overflow: scroll; }
+.overflow-hidden { overflow: hidden; }
+.overflow-clip { overflow: hidden; overflow: clip; }
+.overflow-auto:focus { outline: 3px solid navy; }
+/* 比较可见区域和可滚动性；visible 组额外留空以免越界文字盖住下一组。
+   聚焦 auto 区域后用方向键或 End，检查最后一行能否出现。 */
+
+.mixed-overflow { width: 200px; height: 48px; overflow-x: hidden; overflow-y: visible; border: 1px solid teal; }
+.wide-content { width: 320px; height: 120px; background-color: lightyellow; }
+.clip-stage { display: flow-root; margin: 16px 0; }
+.clip-shell { width: 240px; border: 1px solid teal; overflow: hidden; overflow: clip; }
+.clip-child { float: left; width: 80px; height: 60px; background-color: lightyellow; }
+.clip-bfc { display: flow-root; }
+/* mixed-overflow 的 overflow-y 计算为 auto。
+   支持 clip 时：普通 clip-shell 外沿仅 2px；加 flow-root 后为 62px。
+   回退 hidden 时两者都建立BFC，不能把回退当成与 clip 完全相同。 */

@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "isolatedModules": true,
+    "preserveConstEnums": true
+  },
+  "files": [
+    "type-errors.ts"
+  ]
+}

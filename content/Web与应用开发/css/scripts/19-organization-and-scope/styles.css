@@ -1,0 +1,5 @@
+@layer base, components, pages;
+@import url("base.css") layer(base);
+@import url("components.css") layer(components);
+@import url("page.css") layer(pages);
+/* 先声明层次再导入；同层后续追加规则不会改变该层首次出现的位置。 */

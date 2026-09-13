@@ -1,0 +1,40 @@
+/* 所有规则只由本章独立页面加载，不注入 Notebook 输出。 */
+body {
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 0 16px;
+  color: #223544;
+  background: #fafbf7;
+  font-family: sans-serif;
+  line-height: 1.7;
+}
+a { color: #165d80; }
+figure { margin: 20px 0; }
+figcaption { margin-top: 8px; }
+.scene {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.density-image { width: 240px; }
+.responsive-image { width: 480px; }
+.art-image { width: 100%; max-width: 720px; }
+.load-spacer {
+  min-height: 220vh;
+  padding-top: 32px;
+}
+#selection {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  padding: 12px;
+  background: #e7eff0;
+}
+button {
+  padding: 8px 12px;
+  font: inherit;
+}
+@media (max-width: 640px) {
+  .responsive-image { width: calc(100vw - 32px); }
+}
+/* 检查 index.html：缩窄窗口后图片不越出容器，宽高仍保持 16:9。 */
+/* responsive.html 在宽视口为 480px；修改 sizes 不会重写这里的宽度。 */

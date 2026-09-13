@@ -1,0 +1,7 @@
+{
+  "name": "ts-b-config-demo",
+  "private": true,
+  "type": "module",
+  "imports": { "#value": "./value.js" },
+  "exports": { "./value": "./value.js" }
+}

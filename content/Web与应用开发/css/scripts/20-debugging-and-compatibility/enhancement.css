@@ -1,0 +1,22 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+.cards { display: block; }
+.card { border: 1px solid #778899; padding: 16px; margin-block: 12px; }
+@supports (display: grid) and (gap: 12px) {
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .card { margin: 0; }
+  @media (max-width: 600px) {
+    .cards { grid-template-columns: minmax(0, 1fr); }
+  }
+}
+/* 禁用整个增强块，内容仍纵向排列；600px及以下的增强分支也只有一列。 */
+.fallback-color { color: navy; color: 20px; }
+.action-link:focus { outline: 3px solid #a33b00; outline-offset: 3px; }
+@supports selector(:focus-visible) {
+  .action-link:focus-visible { background: #fff0cf; }
+}
+/* color:20px是刻意的解析期无效值；焦点轮廓在不支持selector()的浏览器仍存在。 */

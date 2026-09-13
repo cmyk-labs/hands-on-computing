@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2025",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "lib": [
+      "ES2025"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": ".",
+    "outDir": "./.build",
+    "noEmitOnError": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "notebook-jsx-runtime-ts-c"
+  },
+  "files": [
+    "main.tsx",
+    "runtime/jsx-runtime.ts"
+  ]
+}

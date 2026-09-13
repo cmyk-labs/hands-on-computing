@@ -1,0 +1,26 @@
+/* 仅由本章独立页面加载；不注入 Notebook 输出区域。 */
+body {
+  max-width: 880px;
+  margin: 24px auto;
+  padding: 0 20px;
+  color: #263447;
+  background: #fcfbf8;
+  font-family: sans-serif;
+  line-height: 1.7;
+}
+
+nav { margin-bottom: 24px; }
+a { color: #195d88; }
+button { margin: 4px; padding: 8px 12px; font: inherit; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 16px; background: #edf2f4; }
+.card, #outside, #open-host, #closed-host { border: 1px solid #8993a1; margin: 16px 0; padding: 16px; }
+
+/* 页面选择器不进入影子树；被分发的 p 仍是 light DOM，仍匹配这里的 p。 */
+h2 { color: #216e39; }
+p { color: #8c3b1b; }
+
+/* 宿主本身在页面树中，能匹配外部规则；内部未指定 color 的段落会继承此色。 */
+study-card, #open-host, #closed-host { color: #145b69; }
+
+/* 检查 slots.html：页面 h2 绿色，影子树 h2 紫色；内部说明青色，分发正文棕色。 */
+/* 内部标题下的虚线来自 ::slotted；字体仍从 body 经宿主继承，样式并非完全隔绝。 */

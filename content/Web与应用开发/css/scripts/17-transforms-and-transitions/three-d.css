@@ -1,0 +1,11 @@
+body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
+main { max-width: 760px; }
+section { margin-block: 28px; }
+button, input, select { font: inherit; }
+a { color: #064b93; }
+:focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
+.scene { width: 220px; height: 160px; margin: 30px; perspective: 500px; perspective-origin: center; }
+.plane { width: 180px; height: 120px; border: 2px solid #246; transform: rotateY(35deg); transform-style: preserve-3d; }
+.face { width: 140px; height: 80px; background: #cce8ed; transform: translateZ(40px); backface-visibility: hidden; }
+.flat .plane { transform-style: flat; }
+/* 比较 face 是否保留相对 plane 的深度；可临时把 rotateY 改为 180deg 观察背面。 */

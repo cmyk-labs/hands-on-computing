@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>链接与 URL 实验导航</title>
+  <style>
+    body { font-family: sans-serif; line-height: 1.6; max-width: 48rem; margin: 2rem auto; padding: 0 1rem; }
+    li { margin-block: 0.5rem; }
+  </style>
+</head>
+<body>
+  <h1>链接与 URL 实验导航</h1>
+  <h2>基本链接</h2>
+  <p><a href="pages/guide.html">打开出行指南</a></p>
+  <p><a>扩展阅读尚未提供</a></p>
+  <nav aria-label="链接实验">
+    <h2>路径与片段</h2>
+    <p><a href="./pages/guide.html">打开指南（当前目录）</a></p>
+    <p><a href="/scripts/06-links-and-urls/pages/guide.html">打开指南（站点根路径）</a></p>
+    <p><a href="http://127.0.0.1:8006/scripts/06-links-and-urls/pages/guide.html">打开指南（绝对 URL）</a></p>
+    <!-- 上述路径与基本链接都指向同一个指南页。 -->
+    <p><a href="pages/guide.html#packing">打开指南中的出发清单</a></p>
+    <h2>打开方式与基准</h2>
+    <ul>
+      <li><a href="actions.html">查看邮件、电话与下载链接</a></li>
+      <li><a href="target.html">比较新窗口与来源信息</a></li>
+      <li><a href="url-lab.html">查看 URL 组成与查询参数</a></li>
+      <li><a href="base.html">&lt;base&gt;：基准目录</a></li>
+      <li><a href="base-target.html">&lt;base&gt;：默认打开位置</a></li>
+      <li><a href="base-fragment.html">&lt;base&gt;：片段目标</a></li>
+    </ul>
+    <h2>路径排查</h2>
+    <ul>
+      <!-- 反例：文件不存在；预期服务器返回404，而不是片段定位失败。 -->
+      <li><a href="pages/missing-guide.html">不存在的文件（404 反例）</a></li>
+      <!-- 大小写错误在本机可能仍能加载；不能据此认定部署后也可用。 -->
+      <li><a href="pages/Guide.html">错误大小写路径（平台差异）</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

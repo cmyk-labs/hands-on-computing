@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>响应式设计与媒体查询 · 流式布局与查询条件</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>响应式设计与媒体查询</h1>
+<nav aria-label="本章示例"><a href="index.html">流式布局与查询条件</a> · <a href="preferences.html">输入能力与用户偏好</a> · <a href="images.html">图像与窄屏检查</a></nav>
+<main>
+<section>
+<h2>先让布局流动，再添加断点</h2>
+<div class="fluid-layout">
+  <article><h3>基础</h3><p>先保证正文在窄窗口里能够顺序阅读。</p></article>
+  <article><h3>实践</h3><p>保存、刷新，再逐渐改变窗口宽度。</p></article>
+</div>
+</section>
+
+<section>
+<h2>视口与页面缩放</h2>
+<p class="viewport-sample">保留缩放能力，正文仍可换行。</p>
+</section>
+
+<section>
+<h2>@media、逻辑组合与范围语法</h2>
+<p class="range-sample">区间查询标记</p>
+<p class="logic-sample">屏幕宽视口或打印介质标记</p>
+<p class="not-sample">整个查询的否定标记</p>
+<p class="or-sample">窄于 640px 或达到 960px 的标记</p>
+</section>
+
+<section>
+<h2>方向、分辨率与尺寸单位</h2>
+<p class="orientation-sample">视口方向标记</p>
+<p class="resolution-sample">输出密度标记</p>
+</section>
+</main>
+</body>
+</html>

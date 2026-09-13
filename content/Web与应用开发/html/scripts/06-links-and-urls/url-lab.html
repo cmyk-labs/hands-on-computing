@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>URL 与查询参数观察</title>
+  <style>
+    body { font-family: sans-serif; line-height: 1.6; max-width: 48rem; margin: 2rem auto; padding: 0 1rem; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+    details { margin-block: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>URL 与查询参数观察</h1>
+  <p><a href="?topic=html&amp;mode=read#details">查看 html 查询参数</a></p>
+  <p><a href="?topic=HTML%20links&amp;mode=read#details">查看含空格的参数</a></p>
+  <p><a href="?topic=A%26B&amp;mode=read#details">查看含 &amp; 的参数</a></p>
+  <p><a href="?topic=C%2B%2B&amp;mode=read#details">查看含加号的参数</a></p>
+  <h2 id="details">当前参数</h2>
+  <pre id="query-values"></pre>
+  <details>
+    <summary>查看 URL 组成</summary>
+    <pre id="url-parts"></pre>
+  </details>
+  <details>
+    <summary>补充：基准 URL 末尾的斜杠</summary>
+    <pre id="resolved-url"></pre>
+  </details>
+  <p><a href="index.html">返回链接实验导航</a></p>
+  <script>
+    // 四条链接的 topic 分别为 html、HTML links、A&B、C++；mode 均为 read。
+    // Network 中的页面请求包含查询字符串，不包含 #details。
+    const currentUrl = new URL(window.location.href);
+    document.querySelector("#query-values").textContent = [
+      "topic = " + (currentUrl.searchParams.get("topic") ?? "未设置"),
+      "mode = " + (currentUrl.searchParams.get("mode") ?? "未设置")
+    ].join("\n");
+    document.querySelector("#url-parts").textContent = [
+      "完整 URL = " + currentUrl.href,
+      "方案（scheme）= " + currentUrl.protocol.slice(0, -1),
+      "主机（host）= " + currentUrl.hostname,
+      "端口（port）= " + currentUrl.port,
+      "路径（path）= " + currentUrl.pathname,
+      "查询字符串（query）= " + currentUrl.search.slice(1),
+      "片段（fragment）= " + currentUrl.hash.slice(1)
+    ].join("\n");
+
+    // 只计算地址，不请求资源；比较目录基准末尾是否带斜杠。
+    const guideUrl = new URL("pages/guide.html#packing", document.baseURI);
+    document.querySelector("#resolved-url").textContent = [
+      "当前页面的基准 URL = " + document.baseURI,
+      "pages/guide.html#packing → " + guideUrl.href,
+      "基准 pages/ + guide.html → " + new URL("guide.html", new URL("pages/", document.baseURI)).href,
+      "基准 pages + guide.html → " + new URL("guide.html", new URL("pages", document.baseURI)).href
+    ].join("\n");
+  </script>
+</body>
+</html>

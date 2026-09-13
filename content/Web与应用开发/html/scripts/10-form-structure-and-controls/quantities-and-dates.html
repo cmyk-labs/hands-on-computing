@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数量、偏好与时间安排</title>
+</head>
+<body>
+  <h1>数量、偏好与时间安排</h1>
+<form onsubmit="event.preventDefault()">
+    <fieldset>
+      <legend>数量与偏好</legend>
+      <p><label for="article-count">文章数（篇）</label>
+        <input id="article-count" name="article_count" type="number" value="3"></p>
+      <p><label for="interest-level">兴趣等级（0～5）</label>
+        <input id="interest-level" name="interest_level" type="range" min="0" max="5" value="3"></p>
+      <p><label for="mark-color">标记颜色</label>
+        <input id="mark-color" name="mark_color" type="color" value="#336699"></p>
+    </fieldset>
+    <fieldset>
+      <legend>日期与时间</legend>
+      <p><label for="reading-date">阅读日期</label>
+        <input id="reading-date" name="reading_date" type="date" value="2026-09-20"></p>
+      <p><label for="reading-time">开始时间</label>
+        <input id="reading-time" name="reading_time" type="time" value="09:30"></p>
+      <p><label for="local-start">日期与时间（不含时区）</label>
+        <input id="local-start" name="local_start" type="datetime-local" value="2026-09-20T09:30"></p>
+      <p><label for="plan-month">计划月份</label>
+        <input id="plan-month" name="plan_month" type="month" value="2026-09"></p>
+      <p><label for="plan-week">计划周（ISO 周编号）</label>
+        <input id="plan-week" name="plan_week" type="week" value="2026-W38"></p>
+    </fieldset>
+    <p><button type="reset">恢复默认安排</button></p>
+  </form>
+  <!-- 在 Chrome 或 Edge 中逐个打开选择器；不要求面板外观或日期顺序完全一致。 -->
+  <!-- 检查：用方向键调节已聚焦的滑块；选择颜色只改变该控件，不会自动给页面配色。 -->
+  <!-- 日期与时间是独立字段；修改 date 不会自动同步 datetime-local。 -->
+  <!-- 用恢复按钮核对默认状态；没有月份/周选择面板时，另记实际浏览器的支持情况。 -->
+  <p><a href="index.html">返回本章入口</a></p>
+</body>
+</html>

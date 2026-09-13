@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grid 布局 · 对齐与重叠</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Grid 布局</h1>
+<nav aria-label="本章示例"><a href="index.html">轨道、尺寸与页面区域</a> · <a href="placement.html">自动放置与隐式轨道</a> · <a href="alignment.html">对齐与重叠</a> · <a href="subgrid.html">子网格与独立网格回退</a></nav>
+<main>
+<section>
+<h2>项目对齐与轨道整体对齐</h2>
+<div class="alignment-grid">
+  <div>A</div><div class="own-alignment">B</div>
+</div>
+</section>
+
+<section>
+<h2>在同一格内重叠</h2>
+<div class="overlap-grid">
+  <div class="back-layer">背景区域</div>
+  <p class="front-layer">同一格内的说明</p>
+</div>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iframe 来源与权限对照</title>
+</head>
+<body>
+  <h1>同一张卡片的五种嵌入条件</h1>
+  <p>滚动到每个框架，比较卡片文字；随后用按钮观察父页面读取子页面。</p>
+  <section>
+    <h2>A 同源，不加 sandbox</h2>
+    <iframe id="same" src="frame.html" title="A：同源普通卡片"
+            width="320" height="250" loading="eager"
+            allow="fullscreen 'none'; camera 'none'; microphone 'none'"></iframe>
+    <!-- 预期：脚本执行，卡片能读取父页面标题；fullscreenEnabled 为 false。 -->
+  </section>
+  <section>
+    <h2>B 同一个 URL，空 sandbox</h2>
+    <iframe id="locked" src="frame.html" title="B：启用全部沙箱限制的卡片"
+            width="320" height="250" loading="lazy" sandbox=""
+            allow="fullscreen 'none'; camera 'none'; microphone 'none'"></iframe>
+    <!-- 预期：卡片可显示，但初始“脚本未执行”等文字保持不变。 -->
+  </section>
+  <section>
+    <h2>C 同一个 URL，只放开脚本</h2>
+    <iframe id="scripts" src="frame.html" title="C：仅允许脚本的卡片"
+            width="320" height="250" loading="lazy" sandbox="allow-scripts"
+            allow="fullscreen 'none'; camera 'none'; microphone 'none'"></iframe>
+    <!-- 预期：脚本执行，但卡片读取父页面遭遇 SecurityError。 -->
+  </section>
+  <section>
+    <h2>D 同一个 URL，只保留来源</h2>
+    <iframe id="origin" src="frame.html" title="D：保留来源但不执行脚本的卡片"
+            width="320" height="250" loading="lazy" sandbox="allow-same-origin"
+            allow="fullscreen 'none'; camera 'none'; microphone 'none'"></iframe>
+    <!-- 预期：子页面脚本不执行；父页面仍可通过下面的按钮读取它的标题。 -->
+  </section>
+  <section>
+    <h2>E 不同端口，允许脚本并保留原来源</h2>
+    <iframe id="cross" src="http://127.0.0.1:8108/frame.html"
+            title="E：8108 端口的跨源卡片" width="320" height="250"
+            loading="lazy" sandbox="allow-scripts allow-same-origin"
+            allow="fullscreen 'none'; camera 'none'; microphone 'none'"></iframe>
+    <!-- 预期：脚本执行但读父页面失败；allow-same-origin 保留的是 8108 来源。 -->
+    <!-- 不要把此 src 改为同源后继续保留这两个 sandbox 关键字。 -->
+  </section>
+  <button id="inspect" type="button">读取各框架标题</button>
+  <pre id="results" aria-live="polite">尚未检查</pre>
+  <p><a href="objects.html">认识 object 与 embed</a> ·
+     <a href="video.html">返回视频</a></p>
+  <script>
+    document.querySelector("#inspect").addEventListener("click", () => {
+      const results = [];
+      for (const frame of document.querySelectorAll("iframe")) {
+        try {
+          const title = frame.contentWindow.document.title;
+          results.push(frame.id + "：" +
+            (title || "尚未载入卡片，请滚动后重试"));
+        } catch (error) {
+          if (error.name !== "SecurityError") throw error;
+          results.push(frame.id + "：SecurityError（DOM 读取被阻止）");
+        }
+      }
+      document.querySelector("#results").textContent = results.join("\n");
+    });
+    // 五个框架加载后，按钮应读到 same/origin 的“本地嵌入卡片”。
+    // locked/scripts/cross 应拒绝父页面读取；不要把这个错误当成 HTTP 失败。
+    // Console 中 B、D 的脚本执行受阻提示属于预期；其他错误仍需排查。
+  </script>
+</body>
+</html>

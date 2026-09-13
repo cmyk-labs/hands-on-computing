@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>社区工具站 · 周末借还</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>周末借还记录</h1>
+    <p>教学数据；同一工具可重复周转，借出和归还是期间发生量，不是库存。</p>
+    <table id="weekend">
+      <caption>周末各工具借出与归还（件次）</caption>
+      <colgroup><col class="tool-column"></colgroup>
+      <colgroup span="2" class="saturday-columns"></colgroup>
+      <colgroup span="2" class="sunday-columns"></colgroup>
+      <thead>
+        <tr>
+          <th rowspan="2" scope="col">工具</th>
+          <th colspan="2" scope="colgroup">周六</th>
+          <th colspan="2" scope="colgroup">周日</th>
+        </tr>
+        <tr>
+          <th scope="col">借出</th><th scope="col">归还</th>
+          <th scope="col">借出</th><th scope="col">归还</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">卷尺</th><td>4</td><td>3</td><td>2</td><td>2</td></tr>
+        <tr><th scope="row">钳子</th><td>3</td><td>2</td><td>1</td><td>2</td></tr>
+      </tbody>
+    </table>
+    <!-- 预期：五列、两层列表头；周六与周日各横跨借出和归还两列。 -->
+    <!-- 检查：卷尺行的 3 表示周六归还 3 件次；不是周日借出。 -->
+    <!-- Elements 中第二个表头 tr 只有四个 th，因为工具已跨入这一行。 -->
+    <p><a href="index.html">返回库存页</a></p>
+  </main>
+</body>
+</html>

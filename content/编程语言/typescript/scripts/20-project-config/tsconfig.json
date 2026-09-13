@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2025",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": [
+      "ES2025"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": ".",
+    "outDir": "../../.build/20-project-config",
+    "noEmitOnError": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "isolatedModules": true,
+    "sourceMap": true,
+    "skipLibCheck": false,
+    "paths": {
+      "@lesson/value": [
+        "./value.ts"
+      ]
+    }
+  },
+  "files": [
+    "main.ts",
+    "alias-only.ts",
+    "sourcemap-error.ts"
+  ],
+  "extends": "./tsconfig.base.json",
+  "include": [
+    "included/**/*.ts"
+  ],
+  "exclude": [
+    "included/excluded.ts"
+  ]
+}

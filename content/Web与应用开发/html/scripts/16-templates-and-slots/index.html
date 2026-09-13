@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>模板实例：学习笔记</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="clone.js" defer></script>
+</head>
+<body>
+  <nav aria-label="本章实验">
+    <a href="index.html">模板实例</a> ·
+    <a href="slots.html">插槽与自定义元素</a> ·
+    <a href="declarative.html">声明式 Shadow DOM</a>
+  </nav>
+  <main>
+    <h1>模板实例：学习笔记</h1>
+    <p>先添加两份笔记，再修改模板说明，最后添加第三份。</p>
+    <button type="button" id="add-note">添加一份笔记</button>
+    <button type="button" id="change-template">修改模板说明</button>
+    <pre id="template-status" aria-live="polite">等待 clone.js 运行。</pre>
+    <div id="notes"></div>
+
+    <!-- 这份普通 template 不直接显示；后代不放 id，避免多次克隆后重名。 -->
+    <template id="note-template">
+      <article class="card">
+        <h2 class="note-title">待命名笔记</h2>
+        <p class="note-description">第一版阅读目标</p>
+        <button type="button" class="finish-note">标记完成</button>
+      </article>
+    </template>
+    <noscript><p>本页需要 JavaScript 克隆模板；模板自身不会显示笔记。</p></noscript>
+  </main>
+  <!-- 检查：初始无卡片；添加两次后出现两份独立笔记。 -->
+  <!-- “修改模板说明”不应改变旧卡片，只影响此后克隆的说明。 -->
+</body>
+</html>

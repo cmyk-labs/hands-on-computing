@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>字体与文本排版</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>字体与文本排版</h1>
+<nav><a href="wrapping.html">空白与换行示例</a></nav>
+<section>
+<h2>字体族</h2>
+<p class="reading">阅读笔记 Reading notes <strong>重点内容</strong></p>
+<p class="serif">衬线字体 Serif sample</p>
+<p class="mono">等宽字体 Code 012345</p>
+</section>
+<section>
+<h2>行高继承</h2>
+<div class="unitless">父元素 16px
+  <p>子元素 24px：无单位行高随字号变化。</p>
+</div>
+<div class="percentage">父元素 16px
+  <p>子元素 24px：继承父元素已计算的行高。</p>
+</div>
+</section>
+<section>
+<h2>对齐与装饰</h2>
+<p class="aligned">把段落里的行内文字居中。</p>
+<p class="decorated">装饰线穿过 <span>后代文字</span>。</p>
+<p class="spacing" lang="en">Read a little every day.</p>
+</section>
+<section>
+<h2>加载字体</h2>
+<p class="web-font">Reading notes 012345 —— 中文使用回退字体。</p>
+<p class="system-font">Reading notes 012345 —— 系统字体对照。</p>
+</section>
+<section>
+<h2>可变字体</h2>
+<p class="variable light">Variable typography 012345</p>
+<p class="variable heavy">Variable typography 012345</p>
+<p><span class="variable width-normal">Variable typography</span></p>
+<p><span class="variable width-narrow">Variable typography</span></p>
+</section>
+
+</body>
+</html>

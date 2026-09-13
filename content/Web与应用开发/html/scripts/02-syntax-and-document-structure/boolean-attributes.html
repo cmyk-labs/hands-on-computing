@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>布尔属性实验</title>
+</head>
+<body>
+  <h1>布尔属性实验</h1>
+  <!-- 前三种是合规写法；预期三个按钮都被禁用。 -->
+  <p><button type="button" disabled>只写属性名</button></p>
+  <p><button type="button" disabled="">属性值为空</button></p>
+  <p><button type="button" disabled="disabled">属性值等于属性名</button></p>
+  <!-- 故意保留反例：false 不是合规布尔属性值，但属性仍存在。 -->
+  <p><button type="button" disabled='false'>反例：值为 false</button></p>
+  <!-- 预期：只有第五个按钮可通过 Tab 获得焦点；按钮没有绑定动作。 -->
+  <p><button type="button">没有 disabled 属性</button></p>
+</body>
+</html>
