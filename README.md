@@ -3,7 +3,7 @@
 </p> -->
 
 <p align="center">
-  <img src="docs/assets/banner.png" width="1200" alt="Hands-On Computing: from programming fundamentals to AI engineering. Understand the principles, learn by doing.">
+  <img src="docs/assets/banner2.png" width="1200" alt="Hands-On Computing: from programming fundamentals to AI engineering. Understand the principles, learn by doing.">
 </p>
 
 <h1 align="center">Hands-On Computing: From Programming Fundamentals to AI Engineering</h1>

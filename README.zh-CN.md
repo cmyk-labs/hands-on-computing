@@ -3,7 +3,7 @@
 </p> -->
 
 <p align="center">
-  <img src="docs/assets/banner.png" width="1200" alt="动手学计算机：从编程基础到 AI 工程，理解原理，动手实践">
+  <img src="docs/assets/banner2.png" width="1200" alt="动手学计算机：从编程基础到 AI 工程，理解原理，动手实践">
 </p>
 
 <h1 align="center">《动手学计算机》 从编程基础到 AI 工程</h1>
