@@ -1,9 +1,17 @@
 <!-- <p align="center">
-  <img src="docs/assets/logo.png" width="180" alt="Hands-On Computing logo">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-en-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/logo-en-light.png">
+    <img src="docs/assets/logo-en-light.png" width="180" alt="Hands-On Computing logo">
+  </picture>
 </p> -->
 
 <p align="center">
-  <img src="docs/assets/banner2.png" width="1200" alt="Hands-On Computing: from programming fundamentals to AI engineering. Understand the principles, learn by doing.">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-en-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/banner-en-light.png">
+    <img src="docs/assets/banner-en-light.png" width="1200" alt="Hands-On Computing: from programming fundamentals to AI engineering. Understand the principles, learn by doing.">
+  </picture>
 </p>
 
 <h1 align="center">Hands-On Computing: From Programming Fundamentals to AI Engineering</h1>
@@ -52,16 +60,16 @@ Start with the [getting started guide](docs/START_HERE.md), then use the [curric
 
 | Course | Overview | Links |
 | --- | --- | --- |
-| **Python** | Start with types, functions, and objects; explore the standard library, type hints, testing, and packaging, then move on to concurrency, runtime internals, and performance analysis. | [Contents](content/编程语言/python/plan.md) · [Coding guidelines](content/编程语言/python/Python编程规范.md) |
-| **JavaScript** | Learn language fundamentals, scope, closures, prototypes, and modules, then work with promises, asynchronous scheduling, automated testing, and project organization. | [Contents](content/编程语言/javascript/plan.md) · [Coding guidelines](content/编程语言/javascript/JavaScript编程规范.md) |
-| **TypeScript** | Build on JavaScript with type inference, narrowing, generics, and type manipulation; practice runtime validation, type testing, and package distribution. | [Contents](content/编程语言/typescript/plan.md) · [Coding guidelines](content/编程语言/typescript/TypeScript编程规范.md) |
+| **Python** | Start with types, functions, and objects; explore the standard library, type hints, testing, and packaging, then move on to concurrency, runtime internals, and performance analysis. | [Contents](content/编程语言/python/plan.md) |
+| **JavaScript** | Learn language fundamentals, scope, closures, prototypes, and modules, then work with promises, asynchronous scheduling, automated testing, and project organization. | [Contents](content/编程语言/javascript/plan.md) |
+| **TypeScript** | Build on JavaScript with type inference, narrowing, generics, and type manipulation; practice runtime validation, type testing, and package distribution. | [Contents](content/编程语言/typescript/plan.md) |
 
 ### Web and Application Development
 
 | Course | Overview | Links |
 | --- | --- | --- |
-| **HTML** | Learn document structure and semantics, links, images, tables, forms, and native interactions; apply accessibility checks in a website project with multiple pages. | [Contents](content/Web与应用开发/html/plan.md) · [Coding guidelines](content/Web与应用开发/html/HTML编程规范.md) |
-| **CSS** | Start with selectors, the cascade, and the box model; practice Flexbox, Grid, responsive layouts, themes, and animation through page styling exercises. | [Contents](content/Web与应用开发/css/plan.md) · [Coding guidelines](content/Web与应用开发/css/CSS编程规范.md) |
+| **HTML** | Learn document structure and semantics, links, images, tables, forms, and native interactions; apply accessibility checks in a website project with multiple pages. | [Contents](content/Web与应用开发/html/plan.md) |
+| **CSS** | Start with selectors, the cascade, and the box model; practice Flexbox, Grid, responsive layouts, themes, and animation through page styling exercises. | [Contents](content/Web与应用开发/css/plan.md) |
 
 ## 🤝 Contributing
 
