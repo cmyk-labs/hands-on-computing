@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+  <main>
+    <h1>{{ title }}</h1>
+    <p>选择一条记录查看详情。</p>
+    <ul>
+      {% for record in records %}
+      <li><a href="{{ url_for('record_detail', record_id=record.id) }}">{{ record.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </main>
+</body>
+</html>

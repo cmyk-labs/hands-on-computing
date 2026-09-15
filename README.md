@@ -70,6 +70,7 @@ Start with the [getting started guide](docs/START_HERE.md), then use the [curric
 | --- | --- | --- |
 | **HTML** | Learn document structure and semantics, links, images, tables, forms, and native interactions; apply accessibility checks in a website project with multiple pages. | [Contents](content/Web与应用开发/html/plan.md) |
 | **CSS** | Start with selectors, the cascade, and the box model; practice Flexbox, Grid, responsive layouts, themes, and animation through page styling exercises. | [Contents](content/Web与应用开发/css/plan.md) |
+| **FastAPI** | Start with HTTP APIs and data validation; learn dependency injection, asynchronous processing, databases, authentication, authorization, and testing through an integrated API exercise. | [Contents](content/Web与应用开发/FastAPI/plan.md) |
 
 ## 🤝 Contributing
 

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>有限 SSE 事件</title>
+  </head>
+  <body>
+    <main>
+      <h1>有限 SSE 事件</h1>
+      <p>接收三个事件后关闭，或在首个事件后提前关闭。每次开始会清空上一次结果。</p>
+      <button id="receive-all" type="button">接收3个事件</button>
+      <button id="receive-first" type="button">首个事件后关闭</button>
+      <button id="stop" type="button">停止接收</button>
+      <p id="status" role="status">尚未连接</p>
+      <pre id="output" aria-label="收到的事件"></pre>
+      <p><a href="/state" target="_blank" rel="noopener">查看服务端状态</a></p>
+    </main>
+    <script>
+      const output = document.querySelector('#output');
+      const status = document.querySelector('#status');
+      let source = null;
+
+      function finish(connection, message) {
+        connection.close();
+        if (source === connection) {
+          status.textContent = message;
+        }
+      }
+
+      function appendEvent(event) {
+        const payload = JSON.parse(event.data);
+        if (!Number.isInteger(payload.step) || typeof payload.text !== 'string') {
+          throw new Error('事件数据格式不正确');
+        }
+        output.textContent += `${event.type} #${event.lastEventId}: ${payload.text}\n`;
+      }
+
+      function start(stopAfterFirst) {
+        source?.close();
+        output.textContent = '';
+        status.textContent = '正在连接';
+        const connection = new EventSource('/events');
+        source = connection;
+
+        function receive(event) {
+          try {
+            appendEvent(event);
+          } catch {
+            finish(connection, '事件格式错误，已关闭连接');
+            return;
+          }
+          if (event.type === 'done') {
+            finish(connection, '3 个事件已接收，连接已关闭');
+          } else if (stopAfterFirst) {
+            finish(connection, '首个事件已接收，已提前关闭');
+          }
+        }
+
+        connection.addEventListener('update', receive);
+        connection.addEventListener('done', receive);
+        connection.addEventListener('error', () => finish(connection, '连接出错，已停止接收'));
+      }
+
+      document.querySelector('#receive-all').addEventListener('click', () => start(false));
+      document.querySelector('#receive-first').addEventListener('click', () => start(true));
+      document.querySelector('#stop').addEventListener('click', () => {
+        if (source) {
+          finish(source, '已手动关闭连接');
+        }
+      });
+      window.addEventListener('pagehide', () => source?.close());
+    </script>
+  </body>
+</html>

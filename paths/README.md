@@ -24,7 +24,7 @@
 
 ## 已有课程
 
-共 5 套课程、138 篇 Notebook，章节目录包含主线与选修。先按环境说明准备，再打开章节目录选择内容。五份编程规范可独立阅读，入口见下表“代码写法”。
+共 6 套课程、161 篇 Notebook，篇数只统计已有正文，章节目录还可包含待编写的规划。先按环境说明准备，再打开章节目录选择内容。六份编程规范可独立阅读，入口见下表“代码写法”。
 
 | 技术 | 分类 | 篇数 | 章节目录 | 环境与运行 | 代码写法 |
 | --- | --- | --- | --- | --- | --- |
@@ -33,11 +33,13 @@
 | TypeScript | 编程语言 | 29 | [TypeScript 章节](../content/编程语言/typescript/plan.md) | [环境说明](../content/编程语言/typescript/README.md) | [编程规范](../content/编程语言/typescript/TypeScript编程规范.md) |
 | HTML | Web与应用开发 | 17 | [HTML 章节](../content/Web与应用开发/html/plan.md) | [环境说明](../content/Web与应用开发/html/README.md) | [编程规范](../content/Web与应用开发/html/HTML编程规范.md) |
 | CSS | Web与应用开发 | 26 | [CSS 章节](../content/Web与应用开发/css/plan.md) | [环境说明](../content/Web与应用开发/css/README.md) | [编程规范](../content/Web与应用开发/css/CSS编程规范.md) |
+| FastAPI | Web与应用开发 | 23 | [FastAPI 章节](../content/Web与应用开发/FastAPI/plan.md) | [环境说明](../content/Web与应用开发/FastAPI/README.md) | [FastAPI 编程规范](../content/Web与应用开发/FastAPI/FastAPI编程规范.md) · [Python 编程规范](../content/编程语言/python/Python编程规范.md) |
 
 ## 建议阅读顺序
 
 - Python 入门：按 Python 主线章节学习，再按需要选择进阶专题。
 - Web 前端基础：HTML → CSS → JavaScript → TypeScript。已有相关基础时，按章节前置知识选择起点；浏览器应用与框架专题后续补充。
+- FastAPI：按[课程规划](../content/Web与应用开发/FastAPI/plan.md)选择主线或选修主题；测试文件入口、客户端生成步骤和本地服务的环境限制见各章与[运行说明](../content/Web与应用开发/FastAPI/README.md)。
 
 ## 项目
 

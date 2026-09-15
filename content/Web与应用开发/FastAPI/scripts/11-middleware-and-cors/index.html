@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FastAPI 跨域实验</title>
+  </head>
+  <body>
+    <main>
+      <h1>FastAPI 跨域实验</h1>
+      <p>当前页面源：<output id="origin"></output></p>
+      <p>API 地址：http://127.0.0.1:8110</p>
+      <p>
+        对照入口：
+        <a href="http://127.0.0.1:8111/index.html">允许页面</a> ·
+        <a href="http://localhost:8111/index.html">拒绝页面</a>
+      </p>
+      <h2>发送请求</h2>
+      <p>配合 Network 与 API 日志观察；在允许页面读取服务器计数。</p>
+      <button type="button" data-action="simple">简单 GET</button>
+      <button type="button" data-action="json">JSON POST</button>
+      <button type="button" data-action="credentials">演示凭据</button>
+      <button type="button" data-action="stats">读取服务器计数</button>
+      <p>凭据实验在允许页面运行，只使用短期测试 Cookie，结束时自动删除。</p>
+      <h2>本次结果</h2>
+      <pre id="result" aria-live="polite">点击按钮开始。</pre>
+      <noscript><p>这些请求按钮需要启用 JavaScript。</p></noscript>
+    </main>
+    <script>
+      const API_URL = 'http://127.0.0.1:8110';
+      const result = document.querySelector('#result');
+      const buttons = document.querySelectorAll('button[data-action]');
+      document.querySelector('#origin').textContent = location.origin;
+
+      async function request(path, options = {}) {
+        const response = await fetch(API_URL + path, {
+          ...options,
+          signal: AbortSignal.timeout(5000),
+        });
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        return {
+          status: response.status,
+          requestId: response.headers.get('X-Request-ID'),
+          data: await response.json(),
+        };
+      }
+
+      async function credentialsDemo() {
+        let omitted;
+        let included;
+        try {
+          await request('/cookie', {method: 'POST', credentials: 'include'});
+          omitted = await request('/credentials', {credentials: 'omit'});
+          included = await request('/credentials', {credentials: 'include'});
+        } finally {
+          // 即使某一步失败，也尝试删除本次使用的演示 Cookie。
+          await request('/cookie', {method: 'DELETE', credentials: 'include'});
+        }
+        const afterDelete = await request('/credentials', {credentials: 'include'});
+        return {
+          omit: omitted,
+          include: included,
+          cookieCleared: !afterDelete.data.demo_cookie_received,
+        };
+      }
+
+      for (const button of buttons) {
+        button.addEventListener('click', async () => {
+          for (const control of buttons) {
+            control.disabled = true;
+          }
+          result.textContent = '请求中…';
+          try {
+            let output;
+            if (button.dataset.action === 'simple') {
+              output = await request('/simple');
+            } else if (button.dataset.action === 'json') {
+              output = await request('/json', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({message: 'hello'}),
+              });
+            } else if (button.dataset.action === 'credentials') {
+              output = await credentialsDemo();
+            } else {
+              output = await request('/stats');
+            }
+            result.textContent = JSON.stringify(output, null, 2);
+          } catch (error) {
+            result.textContent = `${error.name}: ${error.message}\n` +
+              '无法读取响应。请查看 Network 和 Console，区分网络与 CORS 失败。';
+          } finally {
+            for (const control of buttons) {
+              control.disabled = false;
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

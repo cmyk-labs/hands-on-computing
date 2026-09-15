@@ -1,0 +1,11 @@
+body {
+  max-width: 44rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.record-note {
+  overflow-wrap: anywhere;
+}
