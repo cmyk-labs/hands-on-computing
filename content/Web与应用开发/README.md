@@ -1,1 +1,3 @@
 本目录收录 HTML、CSS、浏览器应用等 Web 前端内容，Web 后端、浏览器与服务端交互、HTTP API 与接口设计、认证与会话在应用中的使用、FastAPI、Django、Spring 等应用框架、移动端与桌面应用开发，以及应用的工程组织、配置、构建和对外服务方式。
+
+FastAPI 课程：[章节目录与规划](FastAPI/plan.md) · [环境与运行](FastAPI/README.md)。

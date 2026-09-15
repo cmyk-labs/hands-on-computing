@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WebSocket：两条连接与断开清理</title>
+  </head>
+  <body>
+    <main>
+      <h1>WebSocket：两条连接与断开清理</h1>
+      <p>本地演示用户 Alice 和 Bob。每条连接最多往返 3 条文本消息，每条最多 80 个字符；消息不会保存。</p>
+      <noscript>此实验需要启用 JavaScript 才能建立 WebSocket 连接。</noscript>
+      <p id="status" role="status">活动连接数：等待查询</p>
+      <button type="button" id="refresh">刷新连接数</button>
+      <button type="button" id="reject">无身份连接测试</button>
+      <button type="button" id="clear-session">清除演示身份</button>
+      <p>
+        <label for="message">发送文本</label>
+        <input id="message" type="text" value="你好" maxlength="80">
+      </p>
+      <fieldset>
+        <legend>连接 A（Alice）</legend>
+        <button type="button" id="connect-A">连接 A</button>
+        <button type="button" id="send-A" disabled>发送 A</button>
+        <button type="button" id="close-A" disabled>断开 A</button>
+        <button type="button" id="long-A" disabled>发送超长消息 A</button>
+      </fieldset>
+      <fieldset>
+        <legend>连接 B（Bob）</legend>
+        <button type="button" id="connect-B">连接 B</button>
+        <button type="button" id="send-B" disabled>发送 B</button>
+        <button type="button" id="close-B" disabled>断开 B</button>
+      </fieldset>
+      <h2>消息和连接事件</h2>
+      <ul id="messages" aria-live="polite"></ul>
+    </main>
+    <script type="module">
+      const sockets = {A: null, B: null};
+      const messages = document.querySelector('#messages');
+      const status = document.querySelector('#status');
+      let pendingLabel = null;
+      let rejectedSocket = null;
+
+      function log(message) {
+        const item = document.createElement('li');
+        item.textContent = message;
+        messages.append(item);
+      }
+
+      function renderButtons() {
+        for (const label of ['A', 'B']) {
+          const socket = sockets[label];
+          document.querySelector(`#connect-${label}`).disabled = pendingLabel !== null || socket !== null;
+          document.querySelector(`#send-${label}`).disabled = socket?.readyState !== WebSocket.OPEN;
+          document.querySelector(`#close-${label}`).disabled = socket === null;
+        }
+        document.querySelector('#long-A').disabled = sockets.A?.readyState !== WebSocket.OPEN;
+        document.querySelector('#reject').disabled = pendingLabel !== null;
+        document.querySelector('#clear-session').disabled = pendingLabel !== null;
+      }
+
+      async function refreshCount() {
+        try {
+          const response = await fetch('/connections', {signal: AbortSignal.timeout(3000)});
+          if (!response.ok) {
+            throw new Error('连接数请求失败');
+          }
+          const data = await response.json();
+          status.textContent = `活动连接数：${data.active}`;
+        } catch {
+          status.textContent = '连接数量暂不可用，请确认本地服务仍在运行。';
+        }
+      }
+
+      function socketUrl() {
+        const url = new URL('/ws', location.href);
+        url.protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+        return url;
+      }
+
+      async function connect(label, user) {
+        pendingLabel = label;
+        renderButtons();
+        try {
+          // 演示接口设置 HttpOnly Cookie；JavaScript 不读取或显示凭据。
+          const response = await fetch(`/demo-session/${user}`, {
+            method: 'POST', signal: AbortSignal.timeout(3000),
+          });
+          if (!response.ok) {
+            throw new Error('演示身份准备失败');
+          }
+          const socket = new WebSocket(socketUrl());
+          sockets[label] = socket;
+          renderButtons();
+          socket.addEventListener('open', () => {
+            pendingLabel = null;
+            renderButtons();
+            log(`${label} 已打开（${user}）`);
+            refreshCount();
+          });
+          socket.addEventListener('message', (event) => log(`${label} 收到：${event.data}`));
+          socket.addEventListener('error', () => log(`${label} 连接失败，请检查服务与演示身份。`));
+          socket.addEventListener('close', (event) => {
+            sockets[label] = null;
+            if (pendingLabel === label) {
+              pendingLabel = null;
+            }
+            renderButtons();
+            log(`${label} 已关闭，关闭码：${event.code}`);
+            refreshCount();
+          });
+        } catch {
+          pendingLabel = null;
+          renderButtons();
+          log(`${label} 连接准备失败，请确认本地服务仍在运行。`);
+        }
+      }
+
+      function send(label, text) {
+        const socket = sockets[label];
+        if (socket?.readyState !== WebSocket.OPEN) {
+          log(`${label} 尚未打开，不能发送。`);
+          return;
+        }
+        socket.send(text);
+      }
+
+      async function clearSession() {
+        const response = await fetch('/demo-session', {
+          method: 'DELETE', signal: AbortSignal.timeout(3000),
+        });
+        if (!response.ok) {
+          throw new Error('演示身份清理失败');
+        }
+      }
+
+      async function tryWithoutIdentity() {
+        pendingLabel = 'rejected';
+        renderButtons();
+        try {
+          await clearSession();
+          rejectedSocket = new WebSocket(socketUrl());
+          rejectedSocket.addEventListener('error', () => log('无身份连接失败：握手未建立。'));
+          rejectedSocket.addEventListener('close', (event) => {
+            pendingLabel = null;
+            rejectedSocket = null;
+            renderButtons();
+            log(`无身份连接已结束，浏览器关闭码：${event.code}`);
+            refreshCount();
+          });
+        } catch {
+          pendingLabel = null;
+          renderButtons();
+          log('无身份测试未能开始，请确认本地服务仍在运行。');
+        }
+      }
+
+      for (const [label, user] of [['A', 'alice'], ['B', 'bob']]) {
+        document.querySelector(`#connect-${label}`).addEventListener('click', () => connect(label, user));
+        document.querySelector(`#send-${label}`).addEventListener('click', () => {
+          send(label, document.querySelector('#message').value);
+        });
+        document.querySelector(`#close-${label}`).addEventListener('click', () => sockets[label]?.close(1000));
+      }
+      document.querySelector('#long-A').addEventListener('click', () => send('A', 'x'.repeat(81)));
+      document.querySelector('#refresh').addEventListener('click', refreshCount);
+      document.querySelector('#reject').addEventListener('click', tryWithoutIdentity);
+      document.querySelector('#clear-session').addEventListener('click', async () => {
+        try {
+          await clearSession();
+          log('演示身份已清除；已有连接仍需主动断开。');
+        } catch {
+          log('清理未完成，请确认本地服务仍在运行。');
+        }
+      });
+      window.addEventListener('pagehide', () => {
+        for (const socket of Object.values(sockets)) {
+          socket?.close(1000);
+        }
+        rejectedSocket?.close(1000);
+      });
+      refreshCount();
+    </script>
+  </body>
+</html>

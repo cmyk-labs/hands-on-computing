@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ record.title }} · 学习记录</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+  <main>
+    <p><a href="{{ url_for('record_list') }}">返回列表</a></p>
+    <h1>{{ record.title }}</h1>
+    <p>记录编号：{{ record.id }}</p>
+    <p class="record-note">{{ record.note }}</p>
+  </main>
+</body>
+</html>

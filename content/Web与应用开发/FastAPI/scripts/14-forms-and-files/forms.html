@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>表单与文件</title>
+  </head>
+  <body>
+    <main>
+      <h1>表单与文件</h1>
+      <p>提交后显示 JSON 响应。上传内容只读取和返回，不另外保存为业务文件。</p>
+      <h2>普通表单</h2>
+      <form action="/form-note" method="post">
+        <label for="form-title">标题</label>
+        <input id="form-title" name="title" maxlength="30" required>
+        <button type="submit">提交标题</button>
+      </form>
+      <h2>上传小文本</h2>
+      <p>请选择 .txt 文件，内容采用 UTF-8 编码，最多 1024 字节。标题最多 30 个字符。</p>
+      <form action="/upload-note" method="post" enctype="multipart/form-data">
+        <label for="upload-title">文件标题</label>
+        <input id="upload-title" name="title" maxlength="30" required>
+        <label for="upload-file">UTF-8 文本文件</label>
+        <input id="upload-file" type="file" name="upload" accept=".txt,text/plain" required>
+        <button type="submit">上传并读取</button>
+      </form>
+      <h2>下载</h2>
+      <p><a href="/example/download">下载示例文本</a></p>
+    </main>
+  </body>
+</html>
