@@ -1,0 +1,11 @@
+line_id,order_id,category,quantity,unit_cents
+L1,O1,book,2,500
+L2,O1,food,1,300
+L3,O2,book,1,700
+L4,O3,food,3,200
+L4,O3,food,3,200
+L5,O9,book,1,900
+L6,O2,food,1,bad
+L7,,book,1,100
+L8,O3,book,,400
+L9,O3,book,1,12.5

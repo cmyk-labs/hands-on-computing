@@ -1,0 +1,12 @@
+# Python 3.12; conda activate hands-on-computing
+# 课程运行依赖；包含文件交换、展示与表达式实验所用引擎。
+numpy==2.5.3
+pandas==3.0.6
+notebook==7.6.2
+ipykernel==7.3.0
+tzdata==2026.3
+pyarrow==25.0.1
+openpyxl==3.1.5
+Jinja2==3.1.6
+matplotlib==3.11.2
+numexpr==2.14.2

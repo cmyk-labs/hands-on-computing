@@ -1,0 +1,5 @@
+# Python 3.12; conda activate hands-on-computing
+# 课程运行依赖；环境说明见 README.md。
+numpy==2.5.3
+notebook==7.6.2
+ipykernel==7.3.0

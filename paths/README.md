@@ -18,13 +18,13 @@
 | [软件工程](../content/软件工程/) | 测试、调试、设计、重构、架构与性能分析方法 |
 | [基础设施与运维](../content/基础设施与运维/) | Linux 运维、容器、云、部署、CI/CD 与可观测性 |
 | [信息安全](../content/信息安全/) | 认证授权、密码学、网络与应用安全、隐私、安全开发与响应 |
-| [AI原理与应用](../content/AI原理与应用/) | 数学基础、机器学习、深度学习、模型结构与训练；模型调用、多模态、RAG、Agent、评估、微调、推理与部署 |
+| [AI原理与应用](../content/AI原理与应用/) | 数值计算与数据处理基础、数学基础、机器学习、深度学习、模型结构与训练；模型调用、多模态、RAG、Agent、评估、微调、推理与部署 |
 
 具体技术与章节按实际任务添加；每个知识点选择一个主要归属，其他位置通过链接引用。目录与依赖规则见[项目协作协议](../AGENTS.md)。
 
 ## 已有课程
 
-共 6 套课程、161 篇 Notebook，篇数只统计已有正文，章节目录还可包含待编写的规划。先按环境说明准备，再打开章节目录选择内容。六份编程规范可独立阅读，入口见下表“代码写法”。
+已有 8 套课程的正文或已完成章节，共 213 篇 Notebook；NumPy、pandas 各 26 章正文及执行输出已收录，重点章节附示意图与 date/ 配套 CSV、Excel；2026-09-21 修订的 22 章已重新执行，具体范围与未验证事项见各自环境说明。篇数只统计实际存在的正文。先按环境说明准备，再打开章节目录选择内容。六份编程规范可独立阅读，入口见下表“代码写法”。
 
 | 技术 | 分类 | 篇数 | 章节目录 | 环境与运行 | 代码写法 |
 | --- | --- | --- | --- | --- | --- |
@@ -34,12 +34,15 @@
 | HTML | Web与应用开发 | 17 | [HTML 章节](../content/Web与应用开发/html/plan.md) | [环境说明](../content/Web与应用开发/html/README.md) | [编程规范](../content/Web与应用开发/html/HTML编程规范.md) |
 | CSS | Web与应用开发 | 26 | [CSS 章节](../content/Web与应用开发/css/plan.md) | [环境说明](../content/Web与应用开发/css/README.md) | [编程规范](../content/Web与应用开发/css/CSS编程规范.md) |
 | FastAPI | Web与应用开发 | 23 | [FastAPI 章节](../content/Web与应用开发/FastAPI/plan.md) | [环境说明](../content/Web与应用开发/FastAPI/README.md) | [FastAPI 编程规范](../content/Web与应用开发/FastAPI/FastAPI编程规范.md) · [Python 编程规范](../content/编程语言/python/Python编程规范.md) |
+| NumPy 数值计算 | AI原理与应用 | 26 | [章节规划](../content/AI原理与应用/NumPy/plan.md) | [环境说明](../content/AI原理与应用/NumPy/README.md) | [Python 编程规范](../content/编程语言/python/Python编程规范.md) |
+| pandas 数据处理 | AI原理与应用 | 26 | [章节规划](../content/AI原理与应用/pandas/plan.md) | [环境说明](../content/AI原理与应用/pandas/README.md) | [Python 编程规范](../content/编程语言/python/Python编程规范.md) |
 
 ## 建议阅读顺序
 
 - Python 入门：按 Python 主线章节学习，再按需要选择进阶专题。
 - Web 前端基础：HTML → CSS → JavaScript → TypeScript。已有相关基础时，按章节前置知识选择起点；浏览器应用与框架专题后续补充。
 - FastAPI：按[课程规划](../content/Web与应用开发/FastAPI/plan.md)选择主线或选修主题；测试文件入口、客户端生成步骤和本地服务的环境限制见各章与[运行说明](../content/Web与应用开发/FastAPI/README.md)。
+- AI 数据基础：建议按 NumPy → pandas 学习数值计算与数据处理，分别从[数组创建与形状](../content/AI原理与应用/NumPy/01-数组创建与形状.ipynb)和[Series与DataFrame](../content/AI原理与应用/pandas/01-Series与DataFrame.ipynb)进入。两门课程保持小例子、必要边界和方法选择练习的写法，主线与选读扩展范围见各自章节目录。 NumPy 引用固定到 2.5 文档系列，pandas 各章补充 v3.0.6 文档或 API 源码对照；数值类型、零维数组与布尔筛选的版本边界在正文说明。
 
 ## 项目
 
