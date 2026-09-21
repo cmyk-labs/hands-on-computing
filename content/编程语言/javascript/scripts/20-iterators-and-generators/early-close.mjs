@@ -1,3 +1,7 @@
+// 所属章节：20-迭代器与生成器
+// 演示知识点：for...of break 触发关闭与手动消费的结束责任
+// 运行命令：node scripts/20-iterators-and-generators/early-close.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：关闭事件依次为 关闭:循环、关闭:循环,关闭:手动 true
 const events = [];
 function* items(label) {
   try {

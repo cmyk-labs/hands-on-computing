@@ -1,3 +1,7 @@
+// 所属章节：30-显式资源管理
+// 演示知识点：DisposableStack 的 use、adopt、defer、move 与逆序释放
+// 运行命令：node scripts/30-resource-management/stacks.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 defer,adopt:fd-7,use
 import assert from "node:assert/strict";
 const events = [];
 const setup = new DisposableStack();

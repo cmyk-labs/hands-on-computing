@@ -1,4 +1,8 @@
 <!doctype html>
+<!-- 所属章节：21-渲染与性能
+     演示知识点：contain: paint 裁剪后代溢出、contain: size 的自动尺寸不由后代撑开及显式预留对照
+     运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；浏览器打开 http://127.0.0.1:8101/scripts/21-rendering-and-performance/containment.html
+     期望结果：绘制隔离组溢出被裁剪；尺寸隔离盒高度不由 80px 子内容撑开，显式 min-height 组预留 90px -->
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">

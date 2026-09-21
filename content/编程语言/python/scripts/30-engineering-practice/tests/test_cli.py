@@ -1,4 +1,8 @@
-"""检查命令行结果、配置优先级和失败时的输出边界。"""
+"""所属章节：30-综合工程实践
+演示知识点：CLI 成功输出、失败不输出残缺 JSON、配置优先级与无效配置边界的测试
+运行命令：PYTHONPATH=scripts/30-engineering-practice/src python -m pytest -q scripts/30-engineering-practice/tests/test_cli.py（工作目录 content/编程语言/python）
+期望结果：17 项测试通过
+"""
 
 import json
 from pathlib import Path

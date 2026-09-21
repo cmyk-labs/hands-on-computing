@@ -1,3 +1,7 @@
+// 所属章节：27-装饰器
+// 演示知识点：装饰器求值、应用、初始化与调用顺序断言
+// 运行命令：npm run run:27（工作目录 content/编程语言/typescript）
+// 期望结果：events 与行内注释顺序一致，greet 输出 Hi Ada
 import assert from "node:assert/strict";
 import { events, trace, register, trimField } from "./decorators.js";
 @register

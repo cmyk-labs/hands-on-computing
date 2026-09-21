@@ -1,3 +1,7 @@
+// 所属章节：07-函数与参数
+// 演示知识点：声明与表达式、默认参数与 rest、arguments、箭头函数、参数按值传递、回调与 IIFE、递归、标签模板
+// 运行命令：node scripts/07-functions-and-parameters/main.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各片段示例值，与行内注释一致
 function rectangleArea(width, height) {
   return width * height;
 }

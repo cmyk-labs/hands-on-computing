@@ -1,4 +1,8 @@
-"""预览本章媒体与来源对照，固定媒体类型；仅绑定本机。"""
+"""所属章节：08-音视频与嵌入内容
+演示知识点：预览本章媒体与来源对照，固定字幕与媒体响应类型，仅绑定本机 127.0.0.1
+运行命令：python scripts/08-media-and-embedded-content/serve.py --port 8008（工作目录 content/Web与应用开发/html）
+期望结果：以本章目录为服务根目录返回页面与媒体，终端 Ctrl+C 停止并释放端口
+"""
 
 import argparse
 import functools

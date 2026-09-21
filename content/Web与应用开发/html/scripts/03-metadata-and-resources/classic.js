@@ -1,3 +1,7 @@
+// 所属章节：03-元数据与资源引入
+// 演示知识点：head 中经典脚本立即执行，提供 record 日志函数并对照模块外作用域
+// 运行命令：python -m http.server 8003 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；随 loading.html 加载，页面入口 http://127.0.0.1:8003/scripts/03-metadata-and-resources/loading.html
+// 期望结果：classic-head 记录末尾元素=false，load 时机最后显示“模块外 typeof moduleOnly = undefined”
 // 日志属于本次页面加载，刷新后重新开始；不会写回磁盘。
 const loadingEvents = [];
 

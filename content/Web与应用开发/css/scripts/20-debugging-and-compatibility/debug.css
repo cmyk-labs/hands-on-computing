@@ -1,3 +1,7 @@
+/* 所属章节：20-调试与兼容处理
+   演示知识点：类声明被 ID 覆盖、类名未匹配、color: 20px 解析期无效、行内盒 width 不适用四种失效情形
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/20-debugging-and-compatibility/index.html
+   期望结果：notice 为 navy、missing 无样式、无效段 teal、行内盒宽度不生效，供 DevTools 分辨原因 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

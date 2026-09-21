@@ -1,3 +1,7 @@
+// 所属章节：25-综合工程实践
+// 演示知识点：Reading 结构守卫、解析规范化、泛型 mapValues 与异步 loadReadings 模块
+// 运行命令：npm run build:25（工作目录 content/编程语言/typescript）
+// 期望结果：生成 dist 实现与 index.d.ts 声明
 export interface Reading { sensor: string; value: number }
 export type Result<T> = { ok: true; value: T }
   | { ok: false; code: "input" | "source"; message: string };

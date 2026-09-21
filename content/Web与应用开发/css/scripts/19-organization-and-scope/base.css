@@ -1,3 +1,7 @@
+/* 所属章节：19-样式组织与作用域
+   演示知识点：基础层职责——统一盒模型与控件字体，保留列表标记、标题语义和焦点轮廓
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；经 styles.css 导入，页面入口 http://127.0.0.1:8101/scripts/19-organization-and-scope/index.html
+   期望结果：页面元素盒模型统一，正文列表标记与键盘焦点行为不被清除 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

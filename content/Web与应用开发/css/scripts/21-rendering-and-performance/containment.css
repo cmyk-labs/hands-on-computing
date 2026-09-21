@@ -1,3 +1,7 @@
+/* 所属章节：21-渲染与性能
+   演示知识点：contain: paint 裁掉后代外溢、contain: size 使自动尺寸与后代解耦、显式 min-height 预留
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/21-rendering-and-performance/containment.html
+   期望结果：四组盒子的裁剪与占位行为和行内注释一致 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

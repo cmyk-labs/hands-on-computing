@@ -1,3 +1,7 @@
+// 所属章节：09-泛型与类型参数
+// 演示知识点：显式实参不匹配、T 用作值、默认实参、约束不满足、const 参数只读写入、集合元素类型、async 返回 Promise、生成器协议与变体标注错误的类型错误反例
+// 运行命令：npm run errors:09（工作目录 content/编程语言/typescript）
+// 期望结果：类型检查非零退出，具体错误逐条见行内注释；不生成或执行 JavaScript
 export {};
 
 function same<T>(value: T): T { return value; }

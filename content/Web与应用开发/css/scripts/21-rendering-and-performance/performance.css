@@ -1,3 +1,7 @@
+/* 所属章节：21-渲染与性能
+   演示知识点：move-left 与 move-transform 关键帧对照、默认暂停的播放开关、仅首项启用的 will-change 提示及减少运动关闭
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/21-rendering-and-performance/index.html
+   期望结果：每次只播放一种位移模式且距离相同，供性能面板比较渲染成本 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

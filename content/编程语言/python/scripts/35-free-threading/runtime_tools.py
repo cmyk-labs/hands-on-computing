@@ -1,4 +1,8 @@
-"""为 Notebook 临时准备官方 Windows 运行包并收集独立进程结果。"""
+"""所属章节：35-自由线程实践
+演示知识点：下载并校验固定版本 NuGet 运行包、受控解压与实验子进程的启动和清理
+运行命令：PYTHONPATH=scripts/35-free-threading python -m pytest -q scripts/35-free-threading/tests/test_runtime_tools.py（工作目录 content/编程语言/python）
+期望结果：5 项测试通过，解压检查使用内存归档、不联网
+"""
 
 import hashlib
 import io

@@ -1,4 +1,7 @@
-"""第 22 章的独立服务；通过 Uvicorn 导入启动。"""
+"""所属章节：22-OpenAPI 扩展与客户端生成
+演示知识点：把正文逐步定义的最终接口与文档扩展合并：operation_id、标签、404 Problem 响应模型、x-owner 扩展与 custom_openapi 注入 x-course
+运行命令：python -m uvicorn app:app --app-dir scripts/22-openapi-and-client --host 127.0.0.1 --port 8220（工作目录 content/Web与应用开发/FastAPI）
+期望结果：服务发布的 /openapi.json 与正文 app.openapi() 一致，GET /records/1 返回记录、其他编号返回 404"""
 
 from fastapi import FastAPI, HTTPException
 from fastapi.openapi.utils import get_openapi

@@ -1,4 +1,8 @@
-"""核对计算边界、并发结果和固定交错的清理。"""
+"""所属章节：35-自由线程实践
+演示知识点：区间与 workers 边界、固定交错计数、测量轮次完整性的测试
+运行命令：PYTHONPATH=scripts/35-free-threading python -m pytest -q scripts/35-free-threading/tests/test_experiment.py（工作目录 content/编程语言/python）
+期望结果：19 项测试通过
+"""
 
 import pytest
 

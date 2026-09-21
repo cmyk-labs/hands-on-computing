@@ -1,4 +1,8 @@
-"""用可导入的顶层函数演示 spawn 进程池与异常回传。"""
+"""所属章节：26-线程与进程
+演示知识点：spawn 进程池 map 保序提交、可序列化任务与 Future 业务异常回传
+运行命令：python scripts/26-threads-and-processes/pool_demo.py（工作目录 content/编程语言/python）
+期望结果：输出 {'totals': [5, 14, 30], 'error': 'ValueError'}
+"""
 
 import concurrent.futures
 import json

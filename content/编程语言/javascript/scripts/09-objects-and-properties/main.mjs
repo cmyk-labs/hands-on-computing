@@ -1,3 +1,7 @@
+// 所属章节：09-对象与属性
+// 演示知识点：属性简写与动态键、访问器与描述符、原型查找、键序与枚举、解构展开与浅拷贝、seal/freeze、__proto__ 边界、structuredClone 与转移 ArrayBuffer
+// 运行命令：node scripts/09-objects-and-properties/main.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各片段示例值，与行内注释一致
 const title = "属性练习";
 const dynamicKey = "unit-name";
 const id = Symbol("id");

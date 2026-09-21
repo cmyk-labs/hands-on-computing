@@ -1,3 +1,7 @@
+// 所属章节：19-声明合并与模块扩充
+// 演示知识点：接口与重载合并、类、函数、枚举与命名空间合并、模块扩充与全局扩充
+// 运行命令：npm run run:19（工作目录 content/编程语言/typescript）
+// 期望结果：按正文顺序输出各示例值，与正文行内注释一致
 interface Stamp { code: number }
 const Stamp: Stamp = { code: 19 };
 console.log(Stamp.code);

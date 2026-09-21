@@ -1,3 +1,7 @@
+// 所属章节：02-常用类型与类型推断
+// 演示知识点：原始类型标注与 let/const 推断、类型位置与值位置、unique symbol、空值联合、unknown 收窄、void/never、object/Object/{} 与数组回调推断
+// 运行命令：npm run run:02（工作目录 content/编程语言/typescript）
+// 期望结果：按正文顺序输出各示例值，与正文行内注释一致
 let count = 1; // 推断为 number
 const courseName = "TypeScript"; // 推断为字符串字面量类型 "TypeScript"
 let title: string = "课程";

@@ -1,3 +1,7 @@
+// 所属章节：29-内存管理与性能分析
+// 演示知识点：真实采集 CPU profile、统计热点节点并删除临时文件
+// 运行命令：node scripts/29-memory-performance/profile-check.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出前五个热点节点、CPU profile parsed 与 profile cleaned
 import { rm } from "node:fs/promises";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";

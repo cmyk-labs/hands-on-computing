@@ -1,3 +1,7 @@
+/* 所属章节：15-逻辑属性与书写模式
+   演示知识点：三页面共用规则：书写模式与方向、逻辑尺寸、逻辑边距与边框、竖排字形与布局轴、逻辑偏移与属性混用及阅读辅助样式
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随各页面加载，页面入口 http://127.0.0.1:8101/scripts/15-logical-properties/index.html
+   期望结果：各页面按方向与书写模式呈现规则，具体数值与规则内注释一致 */
 /* 页面阅读辅助：统一盒尺寸计算、字号与分组间距；各实验规则在下方。 */
 * { box-sizing: border-box; }
 body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; }

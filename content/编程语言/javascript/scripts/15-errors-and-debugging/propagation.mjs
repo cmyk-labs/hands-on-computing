@@ -1,3 +1,7 @@
+// 所属章节：15-异常处理与调试
+// 演示知识点：异常沿调用栈同步传播、catch 重新抛出与 finally 清理
+// 运行命令：node scripts/15-errors-and-debugging/propagation.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各示例值，与行内注释一致
 const events = [];
 function inner() { throw new RangeError("数量不足"); }
 function middle() {

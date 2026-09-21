@@ -1,2 +1,6 @@
+/* 所属章节：19-样式组织与作用域
+   演示知识点：页面层职责——.notes-page 限定页面内容宽度并调整卡片间距
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；经 styles.css 导入，页面入口 http://127.0.0.1:8101/scripts/19-organization-and-scope/index.html
+   期望结果：页面内容宽度上限 680px，卡片上下外边距 16px */
 .notes-page { max-width: 680px; }
 .notes-page .note-card { margin-block: 16px; }

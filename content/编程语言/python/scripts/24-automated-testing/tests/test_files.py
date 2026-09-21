@@ -1,4 +1,8 @@
-"""在每个测试的临时目录中读取文件并检查真实输出。"""
+"""所属章节：24-自动化测试
+演示知识点：tmp_path 临时文件与 capsys 捕获输出，检查真实文件读取到报告的组合行为
+运行命令：PYTHONPATH=scripts/24-automated-testing python -m pytest -q scripts/24-automated-testing/tests/test_files.py（工作目录 content/编程语言/python）
+期望结果：4 项测试通过
+"""
 
 from pathlib import Path
 

@@ -1,3 +1,7 @@
+// 所属章节：28-Proxy、Reflect 与元编程
+// 演示知识点：get/set 拦截、Reflect 转发默认语义与 receiver 传递
+// 运行命令：node scripts/28-metaprogramming/intercept.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 get:doubled,get:count 与 receiver and validation checked
 import assert from "node:assert/strict";
 const events = [];
 const target = { count: 2, get doubled() { return this.count * 2; } };

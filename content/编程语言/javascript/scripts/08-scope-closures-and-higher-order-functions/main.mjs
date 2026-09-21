@@ -1,3 +1,7 @@
+// 所属章节：08-作用域、闭包与高阶函数
+// 演示知识点：词法作用域与 var/let 边界、声明提升与暂时性死区、闭包捕获、高阶函数与组合、循环中的闭包
+// 运行命令：node scripts/08-scope-closures-and-higher-order-functions/main.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各片段示例值，与行内注释一致
 const moduleTitle = "模块";
 var moduleLegacy = 1;
 function showScope(parameter) {

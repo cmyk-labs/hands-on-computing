@@ -1,3 +1,7 @@
+// 所属章节：15-模板字面量类型
+// 演示知识点：动作不在联合、模板不匹配为 never、回调值与 getter 返回类型反例
+// 运行命令：npm run errors:15（工作目录 content/编程语言/typescript）
+// 期望结果：类型检查非零退出，具体错误逐条见行内注释；不生成或执行 JavaScript
 import { listener, type EventName, type ChangedKey, type Getters, type Model } from "./main.js";
 const wrong: EventName = "lesson:save"; // save 不在动作联合中。
 const unmatched: ChangedKey<"hours"> = "hours"; // 模板不匹配，结果为 never。

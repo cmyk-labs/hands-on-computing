@@ -1,3 +1,7 @@
+/* 所属章节：16-模板与插槽
+   演示知识点：本章页面排版与影子树样式作用域对照：页面选择器影响 light DOM 与宿主、不进入影子树
+   运行命令：python -m http.server 8016 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；随各页面加载，页面入口 http://127.0.0.1:8016/scripts/16-templates-and-slots/index.html
+   期望结果：slots.html 页面 h2 绿色而影子树 h2 紫色，内部说明青色、分发正文棕色，字体仍从 body 继承 */
 /* 仅由本章独立页面加载；不注入 Notebook 输出区域。 */
 body {
   max-width: 880px;

@@ -1,3 +1,7 @@
+// 所属章节：26-JSX 与 TSX
+// 演示知识点：标签、属性、children 与组件返回类型反例
+// 运行命令：npm run errors:26（工作目录 content/编程语言/typescript）
+// 期望结果：类型检查非零退出，具体错误逐条见行内注释；不生成或执行 JavaScript
 import type { JSX, Child } from "./runtime/jsx-runtime.js";
 function Badge(props: { title: string; children?: string }): JSX.Element {
   return <span>{props.title}</span>;

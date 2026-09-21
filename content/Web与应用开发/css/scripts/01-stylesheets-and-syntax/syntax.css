@@ -1,3 +1,7 @@
+/* 所属章节：01-样式表与基本语法
+   演示知识点：border 简写属性，以及拼错属性名、错误值等无效声明反例
+   运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/01-stylesheets-and-syntax/syntax.html（工作目录 content/Web与应用开发/css）
+   期望结果：四边呈 2px 蓝绿色实线；无效声明被忽略，文字保持蓝绿色、20px 字号 */
 .border-demo {
   border: 2px solid teal;
   /* 在 Computed 中检查：四边均为 2px 实线，颜色为蓝绿色。 */

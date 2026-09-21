@@ -1,3 +1,7 @@
+/* 所属章节：09-列表、表格与表单样式
+   演示知识点：本章三页全部样式：list-style 与 ::marker、counter、border-collapse、table-layout、控件状态伪类、appearance 自定义与 focus-visible
+   运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/09-lists-tables-forms/index.html（工作目录 content/Web与应用开发/css）
+   期望结果：三页示例样式与行内注释一致，强制颜色模式回退原生外观 */
 body { margin: 24px; font-family: sans-serif; line-height: 1.6; color: #222; background: white; }
 section { margin-bottom: 32px; }
 table { margin: 16px 0; }

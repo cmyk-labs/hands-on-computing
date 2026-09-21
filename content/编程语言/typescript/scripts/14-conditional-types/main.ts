@@ -1,3 +1,7 @@
+// 所属章节：14-条件类型与 infer
+// 演示知识点：条件分支选择、infer 提取数组元素与函数签名、分布式条件与 never、重载推断与递归条件类型
+// 运行命令：npm run run:14（工作目录 content/编程语言/typescript）
+// 期望结果：正常退出，各段预期输出与行内注释一致
 export type Constrained<T extends { code: number }> = T["code"];
 export type CodeOf<T> = T extends { code: number } ? T["code"] : "absent";
 const present: CodeOf<{ code: 201 }> = 201;

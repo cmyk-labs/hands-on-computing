@@ -1,1 +1,5 @@
-"""本地教学插件；导入包不会自动加载全部入口。"""
+"""所属章节：33-插件机制
+演示知识点：本地教学插件包的入口标记，导入包本身不自动加载任何插件子模块
+运行命令：PYTHONPATH=scripts/33-plugin-system/src python -c "import study_formatters"（工作目录 content/编程语言/python）
+期望结果：无输出、退出状态 0，不触发子模块加载
+"""

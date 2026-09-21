@@ -1,4 +1,8 @@
-"""方向键收集金色方块；R 重来，Esc 或关闭窗口退出。"""
+"""所属章节：36-Pygame 图形与游戏
+演示知识点：完整游戏循环（输入、更新、碰撞计分、绘制）与有限运行入口、资源清理；交互模式 R 重来、Esc 退出
+运行命令：SDL_VIDEODRIVER=dummy python scripts/36-pygame/collect_game.py --frames 8 --dt 0.025（工作目录 content/编程语言/python）
+期望结果：输出 JSON 报告 frames=8、score=0、position=[40.0, 200.0] 且 display_closed 为 true
+"""
 
 import argparse
 import json

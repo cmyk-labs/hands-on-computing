@@ -1,3 +1,7 @@
+// 所属章节：18-声明文件与第三方类型
+// 演示知识点：本地打包 meter、离线安装并跟踪声明解析与消费者输出
+// 运行命令：node scripts/18-declaration-files/pack-check.mjs（工作目录 content/编程语言/typescript）
+// 期望结果：输出 installed-consumer 读数:12 与 installed-types true，随后清理临时目录
 import { rm } from "node:fs/promises";
 import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, cpSync } from "node:fs";
 import { dirname, resolve, relative, isAbsolute, sep } from "node:path";

@@ -1,3 +1,7 @@
+// 所属章节：17-JSON 与数据转换
+// 演示知识点：解析后的后序遍历、按返回值删除字段与恢复大整数
+// 运行命令：node scripts/17-json/reviver.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 true false、遍历顺序 id,drop,keep,nested,<root> 等值
 const visited = [];
 const value = JSON.parse('{"id":"9007199254740993","nested":{"drop":1,"keep":2}}', (key, item) => {
   visited.push(key === "" ? "<root>" : key);

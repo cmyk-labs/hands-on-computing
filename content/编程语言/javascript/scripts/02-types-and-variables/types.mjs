@@ -1,3 +1,7 @@
+// 所属章节：02-类型与变量
+// 演示知识点：typeof 与基本类型、声明方式差异、动态类型与对象引用
+// 运行命令：node scripts/02-types-and-variables/types.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各示例值，与行内注释一致
 console.log(typeof undefined); // undefined
 console.log(typeof null); // object：历史遗留结果，null 仍是原始值
 console.log(typeof true); // boolean

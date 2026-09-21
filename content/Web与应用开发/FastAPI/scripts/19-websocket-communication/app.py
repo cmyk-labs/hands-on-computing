@@ -1,4 +1,7 @@
-"""只供本地 WebSocket 教学：两用户、有限回声与连接计数。"""
+"""所属章节：19-WebSocket 通信
+演示知识点：把本篇的身份检查、有限回声和连接计数用于真实服务：演示 Cookie 依赖在 accept 前校验，/ws 每连接最多三条回声，/connections 计数
+运行命令：python -m uvicorn app:app --app-dir scripts/19-websocket-communication --host 127.0.0.1 --port 8190 --workers 1 --ws websockets-sansio --no-access-log（工作目录 content/Web与应用开发/FastAPI）
+期望结果：三条消息后服务端以 1000 关闭，无身份或非允许源握手返回 1008，超长消息返回 1009，连接计数随开闭增减"""
 
 from pathlib import Path
 from secrets import token_urlsafe

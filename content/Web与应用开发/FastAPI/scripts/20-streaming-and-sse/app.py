@@ -1,4 +1,7 @@
-"""有限文本流与 SSE，由 Uvicorn 导入运行。"""
+"""所属章节：20-流式响应与 SSE
+演示知识点：组合本章的文本流、SSE、状态与页面路由：StreamingResponse 分三段输出文本，EventSourceResponse 产生三个 SSE 事件，/state 返回计数
+运行命令：python -m uvicorn app:app --app-dir scripts/20-streaming-and-sse --host 127.0.0.1 --port 8200（工作目录 content/Web与应用开发/FastAPI）
+期望结果：/stream 依次输出 part 1～3，/events 依次产生 update、update、done 三个事件，结束后服务端打印生成器已退出"""
 
 import asyncio
 from collections.abc import AsyncIterator

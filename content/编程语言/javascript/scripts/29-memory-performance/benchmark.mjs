@@ -1,3 +1,7 @@
+// 所属章节：29-内存管理与性能分析
+// 演示知识点：等价断言、交替预热与七轮重复计时
+// 运行命令：node scripts/29-memory-performance/benchmark.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出采样与中位数 JSON、批次时长及 equivalent results; 7 trials complete
 import assert from "node:assert/strict";
 import { performance } from "node:perf_hooks";
 import { scanGroups, onePass } from "./algorithms.mjs";

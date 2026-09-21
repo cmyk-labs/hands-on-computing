@@ -1,3 +1,7 @@
+// 所属章节：12-类型操作符与索引访问类型
+// 演示知识点：缺失键不满足约束、索引不存在的属性、值当作类型、选出类型不匹配的反例
+// 运行命令：npm run errors:12（工作目录 content/编程语言/typescript）
+// 期望结果：类型检查非零退出，具体错误逐条见行内注释；不生成或执行 JavaScript
 import { readField, type Course } from "./main.js";
 const item: Course = { title: "键", hours: 1 };
 readField(item, "missing"); // 对象没有这个键，不能满足 K 的约束。

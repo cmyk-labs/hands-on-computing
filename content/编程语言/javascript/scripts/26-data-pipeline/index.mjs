@@ -1,3 +1,7 @@
+// 所属章节：26-综合工程实践
+// 演示知识点：过滤停用行、按组累计总额并排序的纯汇总函数
+// 运行命令：npm run demo:26（工作目录 content/编程语言/javascript）
+// 期望结果：自身无输出，汇总结果由 demo 与测试断言
 import { validateRows } from "./validate.mjs";
 export { validateRows };
 

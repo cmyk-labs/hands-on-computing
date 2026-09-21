@@ -1,4 +1,8 @@
-"""统计 UTF-8 文件，保持输入顺序并支持线程批处理。"""
+"""所属章节：30-综合工程实践
+演示知识点：UTF-8 文件行数、词数与字符数统计口径、解码失败异常链与线程批处理保序
+运行命令：PYTHONPATH=scripts/30-engineering-practice/src python -c "from io import StringIO; from study_file_report.core import summarize; print(summarize(StringIO('one two\nthree')))"（工作目录 content/编程语言/python）
+期望结果：输出 (2, 3, 13)，即 2 行、3 词、13 字符（含换行）
+"""
 
 from collections.abc import Iterable, Sequence
 from concurrent.futures import ThreadPoolExecutor

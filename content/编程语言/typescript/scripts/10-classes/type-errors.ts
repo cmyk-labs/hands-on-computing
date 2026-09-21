@@ -1,3 +1,7 @@
+// 所属章节：10-类与类型检查
+// 演示知识点：初始化检查、private/protected/readonly、抽象类、implements 与 override 的类型错误反例
+// 运行命令：npm run errors:10（工作目录 content/编程语言/typescript）
+// 期望结果：类型检查非零退出，具体错误逐条见行内注释；不生成或执行 JavaScript
 export {};
 
 class InstanceOnly { title = "类"; }

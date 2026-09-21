@@ -1,3 +1,7 @@
+// 所属章节：15-异常处理与调试
+// 演示知识点：自定义错误子类与 options.cause 原因链
+// 运行命令：node scripts/15-errors-and-debugging/error-cause.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各示例值，与行内注释一致
 class ConfigError extends Error {
   constructor(message, options) {
     super(message, options);

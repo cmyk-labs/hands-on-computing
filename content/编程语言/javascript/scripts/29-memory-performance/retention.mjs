@@ -1,3 +1,7 @@
+// 所属章节：29-内存管理与性能分析
+// 演示知识点：闭包持有大数组与显式清空缓存的引用
+// 运行命令：node scripts/29-memory-performance/retention.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 reachable through closure 1000 与 cache references removed
 import assert from "node:assert/strict";
 function createReader(rows) {
   return () => rows.length;

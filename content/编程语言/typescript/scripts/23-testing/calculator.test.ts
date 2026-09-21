@@ -1,3 +1,7 @@
+// 所属章节：23-自动化测试与类型检查
+// 演示知识点：同步值与异常、异步完成与拒绝的行为断言
+// 运行命令：npm run run:23（工作目录 content/编程语言/typescript）
+// 期望结果：node --test 全部通过
 import test from "node:test";
 import assert from "node:assert/strict";
 import { divide, divideAsync } from "./calculator.js";

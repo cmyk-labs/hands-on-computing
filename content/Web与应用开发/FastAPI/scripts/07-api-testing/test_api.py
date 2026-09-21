@@ -1,4 +1,7 @@
-"""本章参数化与异步测试的小型文件，使用 python -m pytest 运行。"""
+"""所属章节：07-接口自动化测试
+演示知识点：本章参数化与异步测试的小型文件：create_record_app 工厂、test_known_responses 参数化两组用例与 test_async_lookup 异步查询，使用 pytest 从文件收集
+运行命令：python -B -m pytest -q -p no:cacheprovider scripts/07-api-testing/test_api.py（工作目录 content/Web与应用开发/FastAPI）
+期望结果：共收集 3 个用例（两组参数加一个异步）全部通过，返回码为 0"""
 import pytest
 from fastapi import FastAPI, HTTPException
 from fastapi.testclient import TestClient

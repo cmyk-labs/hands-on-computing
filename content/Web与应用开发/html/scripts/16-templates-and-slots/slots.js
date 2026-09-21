@@ -1,3 +1,7 @@
+// 所属章节：16-模板与插槽
+// 演示知识点：插槽分配实验：切换 slot 名称、编辑已分配节点的后代文字、移动节点与 slotchange 计数
+// 运行命令：python -m http.server 8016 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；随 slots.html 加载，浏览器打开 http://127.0.0.1:8016/scripts/16-templates-and-slots/slots.html
+// 期望结果：改 slot 后 parentNode 不变而 assignedSlot 变为 null，移动正文进出卡片时 slotchange 计数增加
 "use strict";
 
 // card.js 先按 defer 脚本的文档顺序注册元素，此处才查询它们的影子根。

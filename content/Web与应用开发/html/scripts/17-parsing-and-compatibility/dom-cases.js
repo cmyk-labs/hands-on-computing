@@ -1,3 +1,7 @@
+// 所属章节：17-HTML 解析与兼容
+// 演示知识点：三组固定解析用例：li 结束标签与 tbody 的合法省略、段落结束后多余结束标签的恢复
+// 运行命令：python scripts/17-parsing-and-compatibility/preview_server.py（工作目录 content/Web与应用开发/html）；随 dom.html 加载，浏览器打开 http://127.0.0.1:8017/dom.html
+// 期望结果：三项“符合预期”均为 true，第三例恢复出两个同级 p 且 div 不是第一个 p 的子元素
 const cases = [
   {
     name: "合法省略 li 结束标签",

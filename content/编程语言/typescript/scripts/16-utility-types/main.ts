@@ -1,3 +1,7 @@
+// 所属章节：16-工具类型
+// 演示知识点：Partial、Record、Pick、Omit 等属性工具，Exclude、NonNullable 等联合工具，函数与 Promise 推断工具，NoInfer 与 ThisType
+// 运行命令：npm run run:16（工作目录 content/编程语言/typescript）
+// 期望结果：正常退出，各段预期输出与行内注释一致
 export type Account = { id: number; name: string; profile: { city: string } };
 const patch: Partial<Account> = { name: "阿青" };
 const required: Required<{ name?: string }> = { name: "阿青" };

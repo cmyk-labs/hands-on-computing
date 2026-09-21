@@ -1,3 +1,7 @@
+// 所属章节：24-类型声明生成与包分发
+// 演示知识点：本地打包、离线安装、声明解析与双模块格式消费者核对
+// 运行命令：npm run run:24（工作目录 content/编程语言/typescript）
+// 期望结果：输出安装入口、声明与消费者结果，最后输出 pack 24 OK
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { mkdtempSync, readFileSync, realpathSync } from "node:fs";

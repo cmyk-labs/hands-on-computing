@@ -1,3 +1,7 @@
+// 所属章节：26-综合工程实践
+// 演示知识点：实际读写两份输入、比对汇总结果并清理临时目录
+// 运行命令：npm run demo:26（工作目录 content/编程语言/javascript）
+// 期望结果：输出汇总数组与 report written read back and cleaned
 import assert from "node:assert/strict";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { resolve, relative, isAbsolute } from "node:path";

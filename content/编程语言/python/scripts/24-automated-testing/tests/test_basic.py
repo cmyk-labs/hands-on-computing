@@ -1,4 +1,8 @@
-"""用直接断言和精确的异常断言检查公开行为。"""
+"""所属章节：24-自动化测试
+演示知识点：直接 assert 断言与 pytest.raises 精确异常断言检查公开行为
+运行命令：PYTHONPATH=scripts/24-automated-testing python -m pytest -q scripts/24-automated-testing/tests/test_basic.py（工作目录 content/编程语言/python）
+期望结果：2 项测试通过
+"""
 
 import pytest
 

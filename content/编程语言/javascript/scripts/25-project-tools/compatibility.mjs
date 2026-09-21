@@ -1,3 +1,7 @@
+// 所属章节：25-项目组织与工程工具
+// 演示知识点：toSorted 与排序拷贝等价、eval 与 Function 的动态作用域差异
+// 运行命令：node scripts/25-project-tools/compatibility.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 6、undefined 与 compatibility checked
 import assert from "node:assert/strict";
 function sortedCopy(values) {
   return [...values].sort((left, right) => left - right);

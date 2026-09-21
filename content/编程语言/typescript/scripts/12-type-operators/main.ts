@@ -1,3 +1,7 @@
+// 所属章节：12-类型操作符与索引访问类型
+// 演示知识点：keyof、typeof、索引访问类型、数组与元组元素提取、泛型键与返回值对应的 readField
+// 运行命令：npm run run:12（工作目录 content/编程语言/typescript）
+// 期望结果：正常退出，各段预期输出与行内注释一致
 export type Course = { title: string; hours: number };
 type CourseKey = keyof Course;
 const selected: CourseKey = "title";

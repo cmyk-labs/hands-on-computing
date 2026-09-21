@@ -1,3 +1,7 @@
+/* 所属章节：06-正常流与溢出
+   演示知识点：visible/auto/scroll/hidden/clip 对照、overflow-x/y 组合的计算值，以及 clip 不建立 BFC 的差异
+   运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/06-normal-flow-and-overflow/overflow.html（工作目录 content/Web与应用开发/css）
+   期望结果：auto 区域可键盘滚动，mixed-overflow 计算为 auto，clip 组外沿差异与注释一致 */
 /* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
 body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
 

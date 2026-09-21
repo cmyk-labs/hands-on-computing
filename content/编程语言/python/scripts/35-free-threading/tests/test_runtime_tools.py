@@ -1,4 +1,8 @@
-"""检查运行包解压的完整性与目标目录边界。"""
+"""所属章节：35-自由线程实践
+演示知识点：运行包 SHA-256 校验、仅提取 tools 目录与路径越界拒绝的测试
+运行命令：PYTHONPATH=scripts/35-free-threading python -m pytest -q scripts/35-free-threading/tests/test_runtime_tools.py（工作目录 content/编程语言/python）
+期望结果：5 项测试通过
+"""
 
 import hashlib
 import io

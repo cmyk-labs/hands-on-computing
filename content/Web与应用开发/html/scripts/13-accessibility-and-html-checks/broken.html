@@ -1,4 +1,8 @@
 <!doctype html>
+<!-- 所属章节：13-可访问性与 HTML 检查
+     演示知识点：故意反例：缺少页面语言、重复 id、错误嵌套、role 按钮缺键盘行为及 404 样式表
+     运行命令：python -m http.server 8013 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；浏览器打开 http://127.0.0.1:8013/scripts/13-accessibility-and-html-checks/broken.html
+     期望结果：点击“记录人”聚焦的却是第一个输入框，div 按钮用 Enter/空格不触发，Network 中 missing.css 为 404 -->
 <!-- 故意反例：缺少页面语言、重复 id、错误嵌套和不完整的按钮行为。 -->
 <html>
 <head>

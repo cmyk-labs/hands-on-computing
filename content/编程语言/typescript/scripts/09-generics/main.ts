@@ -1,3 +1,7 @@
+// 所属章节：09-泛型与类型参数
+// 演示知识点：泛型函数与显式类型实参、默认实参、约束、const 类型参数与元组推断、Promise/Map/Set、同步与异步迭代、in/out 变体标注
+// 运行命令：npm run run:09（工作目录 content/编程语言/typescript）
+// 期望结果：按正文顺序输出各示例值，与正文行内注释一致
 export {};
 function identity<T>(value: T): T { return value; }
 function pair<T>(left: T, right: T): [T, T] { return [left, right]; }

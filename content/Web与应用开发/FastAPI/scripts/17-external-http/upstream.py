@@ -1,4 +1,7 @@
-"""有限的本地上游；使用 Uvicorn 导入，不自行启动进程。"""
+"""所属章节：17-外部 HTTP 服务调用
+演示知识点：提供本章讲解的成功、500 错误和延迟文本接口，供客户端做真实网络实验：GET /records/{record_id}（可延迟）、/failure 与流式 /slow-text
+运行命令：python -m uvicorn upstream:upstream --app-dir scripts/17-external-http --host 127.0.0.1 --port 8170（工作目录 content/Web与应用开发/FastAPI）
+期望结果：同一客户端顺序请求两条记录复用相同对端端口，/failure 返回 500，/slow-text 分段输出 ready、done 并在结束时打印生成器关闭"""
 
 import asyncio
 from collections.abc import AsyncIterator

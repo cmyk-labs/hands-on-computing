@@ -1,4 +1,8 @@
-"""发现指定目录中的可信文本插件，分开处理加载与调用。"""
+"""所属章节：33-插件机制
+演示知识点：入口点插件的发现、元数据校验、加载与调用边界，PluginError 保留异常原因链
+运行命令：python -m pytest -q scripts/33-plugin-system/test_plugin_host.py（工作目录 content/编程语言/python）
+期望结果：17 项测试通过
+"""
 
 import importlib.metadata
 import re

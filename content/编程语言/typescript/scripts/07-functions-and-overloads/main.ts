@@ -1,3 +1,7 @@
+// 所属章节：07-函数类型与重载
+// 演示知识点：函数类型与调用/构造签名、可选默认剩余参数与元组展开、函数重载、this 参数与 void 返回视图
+// 运行命令：npm run run:07（工作目录 content/编程语言/typescript）
+// 期望结果：按正文顺序输出各示例值，与正文行内注释一致
 export {};
 type Formatter = (value: number) => string;
 const format: Formatter = (amount) => amount.toFixed(1);

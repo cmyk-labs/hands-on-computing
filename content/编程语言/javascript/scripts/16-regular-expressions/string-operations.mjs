@@ -1,3 +1,7 @@
+// 所属章节：16-正则表达式
+// 演示知识点：match、matchAll、replace（命名组与函数替换）与 split
+// 运行命令：node scripts/16-regular-expressions/string-operations.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 JS,TS、JS=12,TS=8 0 等值，与正文行内注释一致
 const text = "JS:12 TS:8";
 const pattern = /(?<name>[A-Z]+):(?<hours>\d+)/g;
 console.log(text.match(/[A-Z]+/g).join(","));

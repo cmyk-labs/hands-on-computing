@@ -1,3 +1,7 @@
+// 所属章节：22-async 与 await
+// 演示知识点：并发上限、空输入、失败后排空与 AbortController 取消
+// 运行命令：node scripts/22-async-await/limited-demo.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 limit=2 ordered empty failure-drained 与 cancelled and observed
 import assert from "node:assert/strict";
 import { setImmediate as yieldTurn } from "node:timers/promises";
 import { mapLimited } from "./limited.mjs";

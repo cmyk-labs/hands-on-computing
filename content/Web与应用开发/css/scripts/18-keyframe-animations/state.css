@@ -1,3 +1,7 @@
+/* 所属章节：18-关键帧动画
+   演示知识点：状态选择器绑定一次性动画、负延迟把动画停在中点、宽度与缩放动画的布局差异及减少运动下保留状态样式
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/18-keyframe-animations/state.html
+   期望结果：width 盒以 120px 推开邻居、scaleX 盒保留 80px 布局宽度；关闭提示动画后已完成配色仍在 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

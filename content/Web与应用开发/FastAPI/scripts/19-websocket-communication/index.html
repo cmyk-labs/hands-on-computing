@@ -1,4 +1,8 @@
 <!doctype html>
+<!-- 所属章节：19-WebSocket 通信
+演示知识点：用原生 WebSocket API 操作两条连接，显示消息、关闭码和连接数量，并测试超长消息与无身份连接
+运行命令：python -m uvicorn app:app --app-dir scripts/19-websocket-communication --host 127.0.0.1 --port 8190 --workers 1 --ws websockets-sansio --no-access-log，浏览器打开 http://127.0.0.1:8190（工作目录 content/Web与应用开发/FastAPI）
+期望结果：连接 A、B 收到回声并显示关闭码，超长消息以 1009 结束，无身份连接握手失败，活动连接数实时更新 -->
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">

@@ -1,3 +1,7 @@
+// 所属章节：28-Proxy、Reflect 与元编程
+// 演示知识点：Symbol.iterator、toStringTag、toPrimitive、hasInstance 协议的最小实现
+// 运行命令：node scripts/28-metaprogramming/protocols.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 [object LessonRange]、12 cm 12 与 protocols checked
 import assert from "node:assert/strict";
 const range = {
   *[Symbol.iterator]() { yield 2; yield 3; },

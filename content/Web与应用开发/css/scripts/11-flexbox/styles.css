@@ -1,3 +1,7 @@
+/* 所属章节：11-Flexbox 布局
+   演示知识点：本章三页全部 Flexbox 样式：flex-direction、flex-flow 与 gap、justify/align/self/content、flex 基准增长收缩与 min-width:0
+   运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/11-flexbox/index.html（工作目录 content/Web与应用开发/css）
+   期望结果：三页空间分配与对齐结果与行内注释一致 */
 body { margin: 24px; font-family: sans-serif; line-height: 1.6; color: #222; background: white; }
 section { margin-bottom: 32px; }
 button { font: inherit; }

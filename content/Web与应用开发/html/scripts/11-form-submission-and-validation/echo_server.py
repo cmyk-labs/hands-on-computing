@@ -1,4 +1,8 @@
-"""为第 11 章提供本机页面和请求回显，不保存提交数据或上传文件。"""
+"""所属章节：11-表单提交与原生校验
+演示知识点：本机页面服务与 GET/POST 请求回显：保留重复字段和空值、限定文件清单与 64 KiB 请求体上限；不保存提交数据或上传文件、不解析 multipart、不做业务校验
+运行命令：python scripts/11-form-submission-and-validation/echo_server.py（工作目录 content/Web与应用开发/html）；浏览器打开 http://127.0.0.1:8011/submission.html
+期望结果：终端打印 http://127.0.0.1:8011/submission.html，提交后回显页显示方法、Content-Type、字段条目与原始请求体
+"""
 
 import html
 import http.server

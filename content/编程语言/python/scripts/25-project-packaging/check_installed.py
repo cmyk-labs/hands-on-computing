@@ -1,4 +1,8 @@
-"""在源码目录外核对指定安装目录中的包、元数据和命令入口。"""
+"""所属章节：25-项目组织与打包
+演示知识点：核对 wheel 安装位置、分发元数据、输入边界与 console_scripts 入口加载；<安装目录> 为 pip --target 安装本章 wheel 的目录
+运行命令：PYTHONPATH=<安装目录> python scripts/25-project-packaging/check_installed.py <安装目录>（工作目录 content/编程语言/python）
+期望结果：输出“安装位置、元数据、输入边界与入口加载均通过”
+"""
 
 import argparse
 import contextlib

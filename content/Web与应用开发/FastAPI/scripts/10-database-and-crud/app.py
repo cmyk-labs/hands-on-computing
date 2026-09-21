@@ -1,4 +1,7 @@
-"""为数据库章节的进程重启实验提供创建和读取接口。"""
+"""所属章节：10-数据库与增删改查
+演示知识点：为数据库章节的进程重启实验提供创建和读取接口：create_app 按 FASTAPI_DATABASE_PATH 创建 SQLite Engine，POST /records 落库、GET /records/{record_id} 读取
+运行命令：python -m uvicorn app:create_app --factory --app-dir scripts/10-database-and-crud --host 127.0.0.1 --port 8100（工作目录 content/Web与应用开发/FastAPI）
+期望结果：重启服务后再次 GET 已创建记录仍返回数据，已提交记录不随进程退出丢失"""
 
 from contextlib import asynccontextmanager
 import os

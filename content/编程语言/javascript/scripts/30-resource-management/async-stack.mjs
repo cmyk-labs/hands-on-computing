@@ -1,3 +1,7 @@
+// 所属章节：30-显式资源管理
+// 演示知识点：AsyncDisposableStack 逆序等待释放与幂等 disposeAsync
+// 运行命令：node scripts/30-resource-management/async-stack.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 defer start,defer end,adopt:token,resource start,resource end
 import assert from "node:assert/strict";
 const events = [];
 const stack = new AsyncDisposableStack();

@@ -1,3 +1,7 @@
+// 所属章节：22-async 与 await
+// 演示知识点：同步生成器产出拒绝值时 for await 的两条清理路径
+// 运行命令：node scripts/22-async-await/sync-close.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 rejection cleanup,closed、paused cleanup 与 resumed cleanup,closed
 import assert from "node:assert/strict";
 
 const events = [];

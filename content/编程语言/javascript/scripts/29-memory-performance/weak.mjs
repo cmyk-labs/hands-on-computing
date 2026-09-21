@@ -1,3 +1,7 @@
+// 所属章节：29-内存管理与性能分析
+// 演示知识点：WeakRef 解引用、FinalizationRegistry 登记与撤销
+// 运行命令：node scripts/29-memory-performance/weak.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 deref same job and unregister checked；不等待最终清理回调
 import assert from "node:assert/strict";
 let target = { name: "preview" };
 const reference = new WeakRef(target);

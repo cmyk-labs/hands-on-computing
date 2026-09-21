@@ -1,4 +1,8 @@
-"""预览本章页面，并为同一内容提供 HTML 与 XML 两种响应类型。"""
+"""所属章节：17-HTML 解析与兼容
+演示知识点：以本章目录为根的预览服务，并为 /as-html.xhtml、/as-xml.html 两个固定地址提供同一文件的 HTML 与 XML 两种 Content-Type 响应
+运行命令：python scripts/17-parsing-and-compatibility/preview_server.py（工作目录 content/Web与应用开发/html）；浏览器打开 http://127.0.0.1:8017/dom.html
+期望结果：终端打印 http://127.0.0.1:8017/dom.html，两个实验地址分别以 text/html 和 application/xhtml+xml 返回同一 mime-probe.xhtml
+"""
 
 import functools
 import http.server

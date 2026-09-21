@@ -1,4 +1,8 @@
-"""在独立 Python 子进程中运行教学测试并检查实际报告。"""
+"""所属章节：24-自动化测试
+演示知识点：以子进程运行 pytest 并精确核对退出状态与通过、失败数量的测试辅助模块
+运行命令：PYTHONPATH=scripts/24-automated-testing python -m pytest -q scripts/24-automated-testing/tests（工作目录 content/编程语言/python）
+期望结果：全套 27 项测试通过
+"""
 
 import os
 from pathlib import Path

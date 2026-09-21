@@ -1,3 +1,7 @@
+// 所属章节：15-模板字面量类型
+// 演示知识点：模板拼接联合、infer 提取片段、大小写内置别名、getters 键重映射与事件监听回调
+// 运行命令：npm run run:15（工作目录 content/编程语言/typescript）
+// 期望结果：正常退出，各段预期输出与行内注释一致
 export type Domain = "lesson" | "quiz";
 type Action = "open" | "close";
 export type EventName = `${Domain}:${Action}`;

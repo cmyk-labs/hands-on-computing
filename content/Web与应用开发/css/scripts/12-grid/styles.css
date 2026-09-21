@@ -1,3 +1,7 @@
+/* 所属章节：12-Grid 布局
+   演示知识点：本章四页实验规则：grid-template-*、gap、auto-flow、对齐系列、同格重叠与 subgrid 回退，及阅读辅助样式
+   运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/12-grid/index.html（工作目录 content/Web与应用开发/css）
+   期望结果：四页轨道与放置结果与行内注释一致 */
 /* 页面阅读辅助：统一盒尺寸计算、字号与分组间距；各实验规则在下方。 */
 * { box-sizing: border-box; }
 body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; }

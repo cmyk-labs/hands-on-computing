@@ -1,3 +1,7 @@
+// 所属章节：17-JSON 与数据转换
+// 演示知识点：toJSON 与 replacer 的执行顺序、Date 序列化与 BigInt 字符串化
+// 运行命令：node scripts/17-json/custom-representation.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：toJSON 先于 replacer 执行；Date 转 ISO 字符串；BigInt 输出 {"id":"9007199254740993"}
 const stages = [];
 const item = {
   title: "JS",

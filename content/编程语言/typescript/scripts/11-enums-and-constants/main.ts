@@ -1,3 +1,7 @@
+// 所属章节：11-枚举与常量
+// 演示知识点：数字与字符串枚举、成员对象与反向映射、计算成员、const enum 内联、字面量联合与常量对象替代
+// 运行命令：npm run run:11（工作目录 content/编程语言/typescript）
+// 期望结果：按正文顺序输出各示例值，与正文行内注释一致
 export {};
 enum Phase { Queued, Running = 3, Done }
 enum Alias { First = 1, Second = 1 }

@@ -1,4 +1,8 @@
-"""每个测试获得独立的可变输入，互不依赖执行顺序。"""
+"""所属章节：24-自动化测试
+演示知识点：fixture 为每个测试提供独立可变输入，互不依赖执行顺序
+运行命令：PYTHONPATH=scripts/24-automated-testing python -m pytest -q scripts/24-automated-testing/tests/test_fixtures.py（工作目录 content/编程语言/python）
+期望结果：2 项测试通过，test_original 不会读到 test_append 添加的 5
+"""
 
 import pytest
 

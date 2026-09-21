@@ -1,3 +1,7 @@
+/* 所属章节：17-变换与过渡
+   演示知识点：translate 百分比相对参考盒、变换顺序与原点、独立变换属性的 @supports 切换及阅读辅助样式
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/17-transforms-and-transitions/index.html
+   期望结果：各盒位移与缩放数值和规则内行内注释一致 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

@@ -1,3 +1,7 @@
+// 所属章节：07-函数类型与重载
+// 演示知识点：返回值与构造签名不匹配、默认参数后的必需参数、展开联合元素数组、可选回调参数、重载匹配、this 与 void 返回的类型错误反例
+// 运行命令：npm run errors:07（工作目录 content/编程语言/typescript）
+// 期望结果：类型检查非零退出，具体错误逐条见行内注释；不生成或执行 JavaScript
 export {};
 
 const wrongReturn: (value: number) => string = (value) => value; // 返回 number，不能满足 string 契约。

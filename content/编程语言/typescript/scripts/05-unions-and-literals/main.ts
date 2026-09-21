@@ -1,3 +1,7 @@
+// 所属章节：05-联合类型、交叉类型与字面量
+// 演示知识点：联合与交叉类型、判别式联合、字面量类型与拓宽、as const、satisfies 与不可靠断言的对比
+// 运行命令：npm run run:05（工作目录 content/编程语言/typescript）
+// 期望结果：按正文顺序输出各示例值，与正文行内注释一致
 export {};
 function measure(value: string | readonly string[]): number { return value.length; }
 function normalize(value: string | number): string {

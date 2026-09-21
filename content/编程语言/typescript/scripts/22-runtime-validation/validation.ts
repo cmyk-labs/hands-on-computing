@@ -1,3 +1,7 @@
+// 所属章节：22-外部数据与运行时校验
+// 演示知识点：结构守卫、断言函数、业务约束与 JSON 解析结果类型
+// 运行命令：npm run run:22（工作目录 content/编程语言/typescript）
+// 期望结果：run:22 正常退出，测试全部通过
 export interface Order { name: string; quantity: number }
 export type Result =
   | { ok: true; value: Order }

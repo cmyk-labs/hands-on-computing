@@ -1,3 +1,7 @@
+/* 所属章节：04-值、单位与计算
+   演示知识点：px/em/rem 与百分比参照、vw/dvh 视口单位、calc()/min()/max()/clamp()、角度时间及无效值反例
+   运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/04-values-and-units/index.html（工作目录 content/Web与应用开发/css）
+   期望结果：各组计算值与行内注释一致，无效声明被忽略 */
 /* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
 body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
 

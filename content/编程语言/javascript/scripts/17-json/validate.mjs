@@ -1,3 +1,7 @@
+// 所属章节：17-JSON 与数据转换
+// 演示知识点：解析之后按字段约定校验并抛出带说明的 TypeError
+// 运行命令：node scripts/17-json/validate.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：合法输入输出 {"title":"JS","minutes":30}，两份非法输入各打印一条错误消息
 function parseLesson(text) {
   const value = JSON.parse(text);
   if (value === null || typeof value !== "object" || Array.isArray(value)) {

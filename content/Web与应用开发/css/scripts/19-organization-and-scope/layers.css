@@ -1,3 +1,7 @@
+/* 所属章节：19-样式组织与作用域
+   演示知识点：@layer first/second 的声明顺序、层外声明的层叠位置、!important 使重要声明层顺序反转
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/19-organization-and-scope/layers.html
+   期望结果：三行文字颜色依次为 teal、navy、maroon，与行内注释一致 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

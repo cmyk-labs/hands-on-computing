@@ -1,3 +1,7 @@
+// 所属章节：13-映射类型
+// 演示知识点：映射保留 readonly、去 ? 后缺属性、显式 undefined 与被过滤键的反例
+// 运行命令：npm run errors:13（工作目录 content/编程语言/typescript）
+// 期望结果：类型检查非零退出，具体错误逐条见行内注释；不生成或执行 JavaScript
 import type { Copy, Complete, Optional, PublicStored } from "./main.js";
 const preserved: Copy<{ readonly id: number }> = { id: 1 };
 preserved.id = 2; // 映射保留了 readonly。

@@ -1,3 +1,7 @@
+// 所属章节：16-正则表达式
+// 演示知识点：嵌套量词的回溯行为与限定输入长度、简化模式消除回溯
+// 运行命令：node scripts/16-regular-expressions/backtracking.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 aaa true true 等三组值，65 字符超长输入被拒绝（true false）
 const ambiguous = /^(a+)+$/;
 const simpler = /^a+$/;
 for (const input of ["aaa", "aaaa!"]) {

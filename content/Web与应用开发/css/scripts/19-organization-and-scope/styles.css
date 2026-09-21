@@ -1,3 +1,7 @@
+/* 所属章节：19-样式组织与作用域
+   演示知识点：@layer 声明 base、components、pages 层次，@import … layer() 分层导入三个职责文件
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；由 index.html 引入，页面入口 http://127.0.0.1:8101/scripts/19-organization-and-scope/index.html
+   期望结果：先声明层次再导入，三份职责文件按层顺序参与层叠 */
 @layer base, components, pages;
 @import url("base.css") layer(base);
 @import url("components.css") layer(components);

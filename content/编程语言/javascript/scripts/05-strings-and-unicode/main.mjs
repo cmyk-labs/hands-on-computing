@@ -1,3 +1,7 @@
+// 所属章节：05-字符串与 Unicode
+// 演示知识点：索引与截取、查找替换与大小写、模板字面量与转义、码元与码点、normalize 规范化、URI 编解码
+// 运行命令：node scripts/05-strings-and-unicode/main.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各片段示例值，与行内注释一致
 const text = "JavaScript";
 console.log(text.length, text[0], text.at(-1), text[99]);
 console.log(text.charAt(99) === "");

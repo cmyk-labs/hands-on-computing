@@ -1,3 +1,7 @@
+// 所属章节：02-常用类型与类型推断
+// 演示知识点：推断后改赋他型、类型用作值、符号身份、strict 空值、未收窄 unknown、never、object/Object/{}、包装对象与调用不存在方法的类型错误反例
+// 运行命令：npm run errors:02（工作目录 content/编程语言/typescript）
+// 期望结果：类型检查非零退出，具体错误逐条见行内注释；不生成或执行 JavaScript
 let inferredCount = 1;
 inferredCount = "1"; // TS2322：推断为 number 后不能再赋 string
 

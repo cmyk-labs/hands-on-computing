@@ -1,3 +1,7 @@
+/* 所属章节：01-样式表与基本语法
+   演示知识点：以相对 URL 导入上一层样式表，并用 @media 按视口宽度应用条件规则
+   运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/01-stylesheets-and-syntax/rules.html（工作目录 content/Web与应用开发/css）
+   期望结果：段落获得深蓝色和 20px 字号，视口达到 700px 时出现浅黄色背景 */
 @import url("../styles.css");
 /* 相对于本文件导入上一层 styles.css；段落获得深蓝色和 20px 字号。 */
 

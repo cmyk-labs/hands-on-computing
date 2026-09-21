@@ -1,4 +1,8 @@
 <!doctype html>
+<!-- 所属章节：11-中间件与浏览器跨域
+演示知识点：发起跨域请求并显示响应与请求标识：Fetch 调用 8110 API 的简单 GET、JSON POST、凭据实验与服务器计数
+运行命令：python -m uvicorn app:app --app-dir scripts/11-middleware-and-cors --host 127.0.0.1 --port 8110，python -m http.server 8111 --bind 127.0.0.1 --directory scripts/11-middleware-and-cors，浏览器打开 http://127.0.0.1:8111/index.html（工作目录 content/Web与应用开发/FastAPI）
+期望结果：127.0.0.1 页面显示 JSON 响应与请求标识，localhost 页面无法读取响应，凭据实验结束后演示 Cookie 被删除 -->
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">

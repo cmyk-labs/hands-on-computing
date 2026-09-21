@@ -1,3 +1,7 @@
+/* 所属章节：01-页面运行与代码书写
+   演示知识点：roles.html 的页面样式：无衬线字体、正文限宽与蓝色大标题
+   运行命令：python -m http.server 8000 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；随 roles.html 加载，页面入口 http://127.0.0.1:8000/scripts/01-pages-and-code/roles.html
+   期望结果：正文限宽居中显示，h1 呈蓝色 */
 /* 预期：页面使用无衬线字体，正文宽度受限，大标题呈蓝色。 */
 body {
   font-family: sans-serif;

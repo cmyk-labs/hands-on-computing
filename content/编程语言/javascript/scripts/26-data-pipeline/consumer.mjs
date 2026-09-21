@@ -1,3 +1,7 @@
+// 所属章节：26-综合工程实践
+// 演示知识点：安装消费者中以包名导入并断言模块解析来源
+// 运行命令：npm run pack:26（工作目录 content/编程语言/javascript）
+// 期望结果：输出 installed import source verified
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
 import { resolve } from "node:path";

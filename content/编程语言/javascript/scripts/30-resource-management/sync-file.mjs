@@ -1,3 +1,7 @@
+// 所属章节：30-显式资源管理
+// 演示知识点：真实文件句柄封装为 Symbol.dispose 的同步释放
+// 运行命令：node scripts/30-resource-management/sync-file.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 body,marker disposed,file closed 与 synchronous file cleaned
 import { rm } from "node:fs/promises";
 import assert from "node:assert/strict";
 import { openSync, closeSync, writeFileSync, readFileSync, fstatSync, mkdtempSync } from "node:fs";

@@ -1,4 +1,8 @@
-"""在独立进程中剖析固定整数编号筛选，避免混入 Notebook 内核调用。"""
+"""所属章节：29-性能分析与优化
+演示知识点：cProfile 剖析固定筛选负载并用 pstats 按累计时间排序打印调用报告，不生成文件
+运行命令：python scripts/29-performance-analysis/profile_selection.py（工作目录 content/编程语言/python）
+期望结果：首行输出“选中总数：2400”，随后为调用次数与累计时间报告
+"""
 
 import cProfile
 import pstats

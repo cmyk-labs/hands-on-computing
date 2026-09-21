@@ -1,3 +1,7 @@
+/* 所属章节：13-可访问性与 HTML 检查
+   演示知识点：本章独立页面阅读样式：可见焦点轮廓与 flex row-reverse 视觉重排反例
+   运行命令：python -m http.server 8013 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；随各页面加载，页面入口 http://127.0.0.1:8013/scripts/13-accessibility-and-html-checks/fixed.html
+   期望结果：聚焦控件显示蓝色轮廓，reverse 区按钮视觉左右颠倒而文档与 Tab 顺序不变 */
 /* 独立页面的阅读样式；不注入 Notebook。 */
 body { font-family: sans-serif; line-height: 1.7; max-width: 52rem; margin: 1.5rem auto; padding: 0 1rem; }
 header, footer { border-block: 1px solid #b4c0cc; padding-block: 1rem; }

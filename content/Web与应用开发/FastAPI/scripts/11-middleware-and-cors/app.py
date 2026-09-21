@@ -1,4 +1,7 @@
-"""本地 CORS 实验 API；由 Uvicorn 导入并运行。"""
+"""所属章节：11-中间件与浏览器跨域
+演示知识点：本地 CORS 实验 API：HTTP 中间件分配请求标识、请求计数与临时 Cookie 接口，CORSMiddleware 包裹应用并只允许 8111 页面源
+运行命令：python -m uvicorn app:app --app-dir scripts/11-middleware-and-cors --host 127.0.0.1 --port 8110（工作目录 content/Web与应用开发/FastAPI）
+期望结果：允许源页面可读取响应与 X-Request-ID，localhost 页面被 CORS 拒绝，预检不进入 POST 路由"""
 import logging
 from uuid import uuid4
 

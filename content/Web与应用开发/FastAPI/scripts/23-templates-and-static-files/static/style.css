@@ -1,3 +1,8 @@
+/* 所属章节：23-模板与静态资源
+演示知识点：限制行宽、设置行距并允许长文本换行的列表与详情页样式
+运行命令：python -m uvicorn app:app --app-dir scripts/23-templates-and-static-files --host 127.0.0.1 --port 8230，浏览器打开 http://127.0.0.1:8230/（工作目录 content/Web与应用开发/FastAPI）
+期望结果：页面限宽居中、行距 1.6，转义样本文本在 .record-note 内换行而不撑开布局 */
+
 body {
   max-width: 44rem;
   margin: 2rem auto;

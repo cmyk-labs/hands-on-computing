@@ -1,3 +1,7 @@
+/* 所属章节：19-样式组织与作用域
+   演示知识点：:where 与类名的基础回退、@scope … to (.stop) 下边界、inner/outer 接近度与层顺序对照
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/19-organization-and-scope/scope.html
+   期望结果：范围内段落带左边框、下边界内段落不带但颜色仍继承，三行探针依次 teal、maroon、teal */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

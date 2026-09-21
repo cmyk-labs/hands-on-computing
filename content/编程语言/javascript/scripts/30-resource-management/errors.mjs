@@ -1,3 +1,7 @@
+// 所属章节：30-显式资源管理
+// 演示知识点：同步与异步释放链的 SuppressedError 复合异常断言
+// 运行命令：node scripts/30-resource-management/errors.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 sync error chain first/second/body 与 async error chain cleanup/body
 import assert from "node:assert/strict";
 assert.throws(() => {
   using item = { [Symbol.dispose]() {} };

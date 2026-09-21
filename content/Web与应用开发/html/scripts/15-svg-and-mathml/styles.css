@@ -1,3 +1,7 @@
+/* 所属章节：15-SVG 与 MathML 嵌入
+   演示知识点：本章页面排版、viewport-demo 视口边框与内联圆形配色；页面选择器不进入外部 img 内部
+   运行命令：python -m http.server 8015 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；随各页面加载，页面入口 http://127.0.0.1:8015/scripts/15-svg-and-mathml/index.html
+   期望结果：index.html 内联圆显示蓝色而外部 SVG 的圆保持棕橙，viewbox 演示区显示边框 */
 /* 本文件只由独立 HTML 页面加载。 */
 body {
   max-width: 880px;

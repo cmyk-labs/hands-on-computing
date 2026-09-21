@@ -1,3 +1,7 @@
+// 所属章节：27-装饰器
+// 演示知识点：方法包装、字段初始化与类初始化装饰器的求值与应用
+// 运行命令：npm run run:27（工作目录 content/编程语言/typescript）
+// 期望结果：主入口 events 顺序断言全部通过
 export const events: string[] = [];
 export function trace(label: string) {
   events.push("evaluate " + label);

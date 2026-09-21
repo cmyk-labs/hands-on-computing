@@ -1,4 +1,8 @@
 <!doctype html>
+<!-- 所属章节：16-自定义属性与主题
+     演示知识点：var() 缺失与循环依赖的回退、语法不支持的普通声明回退，以及替换后类型错误触发的计算值无效
+     运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；浏览器打开 http://127.0.0.1:8101/scripts/16-custom-properties/invalid.html
+     期望结果：缺失与循环两段采用 teal 回退；类型错误段不取 red 也不退回 teal，color 继承父级深蓝、背景计算为 transparent 透出父背景 -->
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">

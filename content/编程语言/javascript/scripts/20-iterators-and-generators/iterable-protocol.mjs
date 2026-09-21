@@ -1,3 +1,7 @@
+// 所属章节：20-迭代器与生成器
+// 演示知识点：手写 Symbol.iterator 实现可重复遍历的整数区间
+// 运行命令：node scripts/20-iterators-and-generators/iterable-protocol.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：两次展开均输出 2,3,4，游标逐次推进到 done
 function range(start, end) {
   return {
     [Symbol.iterator]() {

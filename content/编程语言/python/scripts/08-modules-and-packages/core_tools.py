@@ -1,4 +1,8 @@
-"""提供成绩筛选函数，并演示模块被导入与直接运行的区别。"""
+"""所属章节：08-模块与包
+演示知识点：成绩筛选函数与模块级阈值 threshold，演示模块导入、程序入口 __name__ 与直接运行的区别
+运行命令：python scripts/08-modules-and-packages/core_tools.py（工作目录 content/编程语言/python）
+期望结果：输出 [80, 90]，直接运行时入口 main 以默认阈值 60 筛选固定成绩
+"""
 
 threshold = 60
 

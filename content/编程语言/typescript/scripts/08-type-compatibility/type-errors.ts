@@ -1,3 +1,7 @@
+// 所属章节：08-类型兼容性
+// 演示知识点：缺少必需成员、嵌套不兼容、新鲜字面量多余属性、strictFunctionTypes 下函数参数与函数属性严格检查、参数个数不足的类型错误反例
+// 运行命令：npm run errors:08（工作目录 content/编程语言/typescript）
+// 期望结果：类型检查非零退出，具体错误逐条见行内注释；不生成或执行 JavaScript
 export {};
 
 type NeedBoth = { title: string; minutes: number };

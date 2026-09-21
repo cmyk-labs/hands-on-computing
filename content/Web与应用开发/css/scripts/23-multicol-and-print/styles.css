@@ -1,3 +1,7 @@
+/* 所属章节：23-多列布局与打印分页
+   演示知识点：屏幕多列的列宽、跨列、填列、分片与溢出规则，以及打印媒体查询和 @page 页盒设置
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随各页面加载，页面入口 http://127.0.0.1:8101/scripts/23-multicol-and-print/index.html
+   期望结果：屏幕与打印预览行为和各规则行内注释一致 */
 * { box-sizing: border-box; }
 body { margin: 0 auto; padding: 1rem; max-width: 70rem; font: 1rem/1.6 system-ui, sans-serif; color: #17212b; background: #fff; }
 h1 { font-size: 2rem; } h2 { font-size: 1.4rem; } h3 { font-size: 1.1rem; }

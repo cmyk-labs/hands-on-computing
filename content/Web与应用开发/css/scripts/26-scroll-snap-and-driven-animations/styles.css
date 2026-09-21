@@ -1,3 +1,7 @@
+/* 所属章节：26-滚动吸附与滚动驱动动画
+   演示知识点：滚动吸附类型与 scroll 间距设置、@supports 内的滚动与视图时间线动画、animation-range 范围及减少动画回退
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随各页面加载，页面入口 http://127.0.0.1:8101/scripts/26-scroll-snap-and-driven-animations/index.html
+   期望结果：支持时各进度动画跟随滚动而非时间推进，减少动画时装饰保持静态且滚动仍可操作 */
 * { box-sizing: border-box; }
 body { max-width: 65rem; margin: 0 auto; padding: 1rem; font: 1rem/1.7 system-ui, sans-serif; color: #17212b; background: #fff; }
 h1 { font-size: 2rem; } h2 { font-size: 1.4rem; }

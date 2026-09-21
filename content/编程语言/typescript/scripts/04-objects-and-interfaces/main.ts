@@ -1,3 +1,7 @@
+// 所属章节：04-对象类型、类型别名与接口
+// 演示知识点：接口与类型别名、extends 继承与结构兼容、可选属性与 undefined 的区别、readonly 视图、索引签名、递归类型与多余属性
+// 运行命令：npm run run:04（工作目录 content/编程语言/typescript）
+// 期望结果：按正文顺序输出各示例值，与正文行内注释一致
 export {};
 interface Named { title: string; }
 type NamedAlias = { title: string };

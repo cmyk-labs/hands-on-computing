@@ -1,3 +1,7 @@
+// 所属章节：23-执行模型与异步调度
+// 演示知识点：点击事件中同步代码、微任务与定时器回调的顺序
+// 运行命令：python -m http.server 8102 --bind 127.0.0.1，经 http://127.0.0.1:8102/scripts/23-execution-model/index.html 以模块加载（工作目录 content/编程语言/javascript）
+// 期望结果：Console 输出 sync start,sync end,promise,microtask,timer
 const button = document.querySelector("#run");
 const output = document.querySelector("#output");
 button.addEventListener("click", () => {

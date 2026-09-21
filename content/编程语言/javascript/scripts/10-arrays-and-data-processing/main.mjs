@@ -1,3 +1,7 @@
+// 所属章节：10-数组与数据处理
+// 演示知识点：数组构造与稀疏性、增删与 splice、查找判断、解构与展开、map/filter/reduce、flat/groupBy/toSorted 等变换方法、共享引用与回调中修改数组
+// 运行命令：node scripts/10-arrays-and-data-processing/main.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各片段示例值，与行内注释一致
 const values = [10, 20];
 console.log(Array.isArray(values), values[0], values.at(-1), values[-1]);
 values[4] = 50;

@@ -1,3 +1,7 @@
+// 所属章节：13-原型与原型链
+// 演示知识点：原型上共享可变引用的边界、构造函数独立状态与组合行为
+// 运行命令：node scripts/13-prototypes/sharing-and-composition.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各示例值，与行内注释一致
 const sharedPrototype = { tags: [] };
 const left = Object.create(sharedPrototype);
 const right = Object.create(sharedPrototype);

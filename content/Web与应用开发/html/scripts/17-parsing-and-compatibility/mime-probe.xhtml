@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!-- 所属章节：17-HTML 解析与兼容
+     演示知识点：同一文件按 text/html 与 application/xhtml+xml 两种 Content-Type 处理的解析差异
+     运行命令：python scripts/17-parsing-and-compatibility/preview_server.py（工作目录 content/Web与应用开发/html）；浏览器打开 http://127.0.0.1:8017/as-html.xhtml 与 http://127.0.0.1:8017/as-xml.html
+     期望结果：as-html 报告 contentType 为 text/html、#after 父元素为 div；as-xml 报告 application/xhtml+xml、父元素为 main -->
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
 <head>
   <meta charset="utf-8"/>

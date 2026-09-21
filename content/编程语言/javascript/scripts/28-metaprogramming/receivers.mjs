@@ -1,3 +1,7 @@
+// 所属章节：28-Proxy、Reflect 与元编程
+// 演示知识点：类私有字段与 Map 内部槽对代理接收者的限制
+// 运行命令：node scripts/28-metaprogramming/receivers.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：代理访问抛 TypeError，绑定原对象可用；输出 private brand and Map receiver checked
 import assert from "node:assert/strict";
 class Vault {
   #value = 7;

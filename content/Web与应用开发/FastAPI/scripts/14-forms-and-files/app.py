@@ -1,4 +1,7 @@
-"""本章原生表单页面与小文本接口，由 Uvicorn 导入。"""
+"""所属章节：14-表单与文件处理
+演示知识点：本章原生表单页面与小文本接口：Form 字段约束、.txt 上传校验（1024 字节、UTF-8）、finally 中关闭文件、示例下载与页面路由
+运行命令：python -m uvicorn app:app --app-dir scripts/14-forms-and-files --host 127.0.0.1 --port 8140（工作目录 content/Web与应用开发/FastAPI）
+期望结果：提交标题与上传 example.txt 返回含 filename、bytes、text 的 JSON，超限或非 UTF-8 文件返回 4xx"""
 
 from pathlib import Path
 from typing import Annotated

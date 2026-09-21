@@ -1,4 +1,7 @@
-"""本地响应后文件工作实验；由 Uvicorn 导入。"""
+"""所属章节：18-响应后的后台任务
+演示知识点：本地响应后文件工作实验：BackgroundTasks 注册由 /release 放行的文件任务，/jobs/await 对照等待式执行，/state 查询任务状态
+运行命令：python -m uvicorn app:app --app-dir scripts/18-background-tasks --host 127.0.0.1 --port 8180（工作目录 content/Web与应用开发/FastAPI）
+期望结果：POST /jobs/background 立即返回 202，/release 后 /state 变为 done 且文本为“后台文件工作完成”，失败路径 status 为 failed"""
 from contextlib import asynccontextmanager
 import logging
 from pathlib import Path

@@ -1,3 +1,7 @@
+// 所属章节：23-执行模型与异步调度
+// 演示知识点：分批计算并在 setImmediate 处让出执行机会
+// 运行命令：node scripts/23-execution-model/yield.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 500500 callback after 250
 import assert from "node:assert/strict";
 import { setImmediate as yieldTurn } from "node:timers/promises";
 let processed = 0;

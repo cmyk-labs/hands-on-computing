@@ -1,4 +1,8 @@
-"""解析命令行输入并输出学习分钟数合计。"""
+"""所属章节：25-项目组织与打包
+演示知识点：命令行入口把库函数的业务错误转换为 argparse 用法错误与对应退出状态
+运行命令：PYTHONPATH=scripts/25-project-packaging/src python -m study_minutes.cli 20 0 55（工作目录 content/编程语言/python）
+期望结果：输出“合计：75 分钟”，退出状态 0；负数输入报 error 并以 2 退出
+"""
 
 import argparse
 

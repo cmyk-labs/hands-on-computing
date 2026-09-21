@@ -1,3 +1,7 @@
+// 所属章节：29-内存管理与性能分析
+// 演示知识点：固定重名节点、不同调用路径与未知样本 ID 的断言
+// 运行命令：node scripts/29-memory-performance/profile-summary.test.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 same names and distinct paths kept separate 与 unknown sample rejected
 import assert from "node:assert/strict";
 import { summarizeSamples } from "./profile-summary.mjs";
 

@@ -1,3 +1,7 @@
+// 所属章节：03-运算与类型转换
+// 演示知识点：算术与自增自减、优先级、显式与隐式转换、短路求值、空值合并与赋值、可选链、相等判断、位运算
+// 运行命令：node scripts/03-operators-and-conversion/main.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各片段示例值，与行内注释一致
 const x = 7;
 const y = 2;
 console.log(x + y, x - y, x * y, x / y, x % y, x ** y);

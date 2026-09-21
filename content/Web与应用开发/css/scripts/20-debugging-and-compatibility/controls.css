@@ -1,3 +1,7 @@
+/* 所属章节：20-调试与兼容处理
+   演示知识点：前缀声明在前标准在后的写法、:disabled 状态样式、overflow-wrap: anywhere 与 600px 窄视口调整
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/20-debugging-and-compatibility/controls.html
+   期望结果：窄视口按钮纵向排列，长文本换行，检查点与行内注释一致 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

@@ -1,4 +1,8 @@
-"""重建本章原创媒体；需要调用者提供已有的 FFmpeg，不下载资源。"""
+"""所属章节：08-音视频与嵌入内容
+演示知识点：可选工具——标准库合成音频并调用已有 FFmpeg 重建本章媒体与封面，不下载资源
+运行命令：python scripts/08-media-and-embedded-content/generate_media.py --ffmpeg <FFmpeg 命令>（工作目录 content/Web与应用开发/html；正文未要求运行，<FFmpeg 命令>为本地已有的 FFmpeg 可执行命令或路径，参数说明见 --help）
+期望结果：覆盖生成 signal.wav、signal.mp4、signal.webm 与 poster.png
+"""
 
 import argparse
 import math

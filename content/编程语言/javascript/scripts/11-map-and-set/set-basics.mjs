@@ -1,3 +1,7 @@
+// 所属章节：11-Map 与 Set
+// 演示知识点：Set 去重、成员判断、entries 键值相同与遍历
+// 运行命令：node scripts/11-map-and-set/set-basics.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各示例值，与行内注释一致
 const topics = new Set(["函数", "集合", "函数"]);
 console.log(topics.add("模块") === topics, topics.size, topics.has("集合"));
 console.log([...topics].join(","));

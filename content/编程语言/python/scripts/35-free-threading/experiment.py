@@ -1,4 +1,8 @@
-"""在独立 CPython 3.14 进程中比较 GIL 状态、共享更新和固定负载。"""
+"""所属章节：35-自由线程实践
+演示知识点：CPython 3.14 下的 GIL 状态与 _csv 导入观察、丢失更新与锁、固定负载计时，完整对照由 runtime_tools 以 3.14 运行包启动
+运行命令：PYTHONPATH=scripts/35-free-threading python -c "from experiment import square_total; print(square_total((0, 4)), square_total((3, 6)))"（工作目录 content/编程语言/python）
+期望结果：输出 14 50，即 0²+1²+2²+3² 与 3²+4²+5²
+"""
 
 import argparse
 import json

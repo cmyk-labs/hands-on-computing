@@ -1,3 +1,7 @@
+// 所属章节：22-外部数据与运行时校验
+// 演示知识点：结构边界、业务边界与解析失败层次测试
+// 运行命令：npm run run:22（工作目录 content/编程语言/typescript）
+// 期望结果：node --test 全部通过
 import test from "node:test";
 import assert from "node:assert/strict";
 import { isOrder, assertOrder, validOrder, parseOrder } from "./validation.js";

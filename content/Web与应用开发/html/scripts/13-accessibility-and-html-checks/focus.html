@@ -1,4 +1,8 @@
 <!doctype html>
+<!-- 所属章节：13-可访问性与 HTML 检查
+     演示知识点：tabindex 取值实验：正数改变顺序（反例）、0 参与导航、-1 仅程序聚焦及视觉顺序重排反例
+     运行命令：python -m http.server 8013 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；浏览器打开 http://127.0.0.1:8013/scripts/13-accessibility-and-html-checks/focus.html
+     期望结果：正数组先到 B 再到 A，Tab 经过 0 段落、跳过 -1 段落，row-reverse 区视觉与 Tab 顺序相反 -->
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">

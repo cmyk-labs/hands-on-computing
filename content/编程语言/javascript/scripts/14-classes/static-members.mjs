@@ -1,3 +1,7 @@
+// 所属章节：14-类与继承
+// 演示知识点：静态字段、静态块与静态方法及其初始化顺序
+// 运行命令：node scripts/14-classes/static-members.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各示例值，与行内注释一致
 const events = [];
 class Catalog {
   static prefix = (events.push("字段"), "JS");

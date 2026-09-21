@@ -1,4 +1,9 @@
-/* CPython 3.12 教学扩展；每个错误路径保留 Python 异常。 */
+/*
+所属章节：34-C 扩展
+演示知识点：CPython 3.12 教学扩展，非负整数加法（溢出前检查）与元组元素引用（借用转强引用）、方法表与模块初始化，错误路径保留 Python 异常
+运行命令：PYTHONPATH=<扩展安装目录> python -c "import study_c_api; print(study_c_api.add_nonnegative(20, 55), study_c_api.tuple_item(('C', 'Python'), 1))"（工作目录 content/编程语言/python）
+期望结果：输出 75 Python；<扩展安装目录> 为 pip --target 安装本章构建 wheel 的目录
+*/
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
 #include <limits.h>

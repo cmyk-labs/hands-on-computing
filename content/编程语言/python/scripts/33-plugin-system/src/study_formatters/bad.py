@@ -1,4 +1,8 @@
-"""提供不可调用对象与受控调用失败，用于观察宿主边界。"""
+"""所属章节：33-插件机制
+演示知识点：不可调用对象 not_a_function 与受控抛出 ValueError 的拒绝插件，观察宿主边界
+运行命令：PYTHONPATH=scripts/33-plugin-system/src python -c "from study_formatters.bad import reject_text; reject_text('hello')"（工作目录 content/编程语言/python）
+期望结果：抛出 ValueError：演示插件拒绝文本：'hello'
+"""
 
 not_a_function = 42
 

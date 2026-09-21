@@ -1,3 +1,7 @@
+// 所属章节：22-async 与 await
+// 演示知识点：await 暂停时机、return await 捕获与 finally 清理顺序
+// 运行命令：node scripts/22-async-await/flow.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 8 start,caller,resume、read failed cleanup 与 forwarded
 const events = [];
 async function compute() {
   events.push("start");

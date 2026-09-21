@@ -1,4 +1,8 @@
 <!doctype html>
+<!-- 所属章节：03-元数据与资源引入
+     演示知识点：经典、defer、async 与模块脚本的执行时机对照，含内联 defer 反例与 noscript 回退
+     运行命令：python -m http.server 8003 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；浏览器打开 http://127.0.0.1:8003/scripts/03-metadata-and-resources/loading.html
+     期望结果：日志区记录本次执行顺序，classic-head 与内联反例末尾元素=false，两个 defer 与模块为 true 且 defer-first 在前 -->
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">

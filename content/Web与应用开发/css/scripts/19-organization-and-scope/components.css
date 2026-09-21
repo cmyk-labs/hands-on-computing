@@ -1,3 +1,7 @@
+/* 所属章节：19-样式组织与作用域
+   演示知识点：组件层职责——note-card 的 BEM 类名约定、--featured 变体与原生 disabled 状态
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；经 styles.css 导入，页面入口 http://127.0.0.1:8101/scripts/19-organization-and-scope/index.html
+   期望结果：精选卡片边框加粗为 3px，禁用按钮呈置灰不可用样式 */
 .note-card { border: 1px solid #778899; padding: 16px; }
 .note-card__title { margin-block: 0 8px; font-size: 1.25rem; }
 .note-card--featured { border-width: 3px; }

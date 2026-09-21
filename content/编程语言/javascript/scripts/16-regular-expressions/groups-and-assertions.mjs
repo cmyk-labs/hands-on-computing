@@ -1,3 +1,7 @@
+// 所属章节：16-正则表达式
+// 演示知识点：命名捕获与反向引用、非捕获分组、先行/后顾断言与单词边界
+// 运行命令：node scripts/16-regular-expressions/groups-and-assertions.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：首行输出 go-go go 0，其余断言判定与正文行内注释一致
 const pair = /^(?<word>[a-z]+)-\k<word>$/;
 const matched = pair.exec("go-go");
 if (matched) console.log(matched[0], matched.groups.word, matched.index);

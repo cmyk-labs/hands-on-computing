@@ -1,3 +1,7 @@
+// 所属章节：26-综合工程实践
+// 演示知识点：真实 npm pack、离线安装、运行消费者并清理
+// 运行命令：npm run pack:26（工作目录 content/编程语言/javascript）
+// 期望结果：输出 tarball files 4、installed import source verified 与 pack install consumer cleaned
 import { rm } from "node:fs/promises";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";

@@ -1,3 +1,7 @@
+// 所属章节：16-模板与插槽
+// 演示知识点：检测 shadowRootMode 接口与影子根状态，对照动态补 shadowrootmode 属性不触发声明式解析
+// 运行命令：python -m http.server 8016 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；随 declarative.html 加载，浏览器打开 http://127.0.0.1:8016/scripts/16-templates-and-slots/declarative.html
+// 期望结果：状态区依次输出 true、true、true、0、0、true、true，动态加属性的模板仍是普通 template
 "use strict";
 
 const openHost = document.querySelector("#open-host");

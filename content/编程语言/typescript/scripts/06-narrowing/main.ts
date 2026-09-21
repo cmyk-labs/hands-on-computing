@@ -1,3 +1,7 @@
+// 所属章节：06-类型收窄与控制流分析
+// 演示知识点：null/undefined 与真值检查、typeof/in/instanceof 收窄、赋值与分析顺序、switch 穷尽与 never、类型谓词与 asserts 守卫
+// 运行命令：npm run run:06（工作目录 content/编程语言/typescript）
+// 期望结果：按正文顺序输出各示例值，与正文行内注释一致
 import assert from "node:assert/strict";
 function textSize(value: string | null | undefined): number {
   if (value === null || value === undefined) return -1;

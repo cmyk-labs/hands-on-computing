@@ -1,3 +1,7 @@
+// 所属章节：27-二进制数据与类型化数组
+// 演示知识点：可调整缓冲区的长度跟踪、越界恢复、截断与 transfer 分离
+// 运行命令：node scripts/27-binary-data/resize-transfer.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 1,2,0,0、moved 1,2,0,0 与 detached and resize policies checked
 import assert from "node:assert/strict";
 const buffer = new ArrayBuffer(4, { maxByteLength: 8 });
 const tracking = new Uint8Array(buffer);

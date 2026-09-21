@@ -1,3 +1,7 @@
+// 所属章节：25-综合工程实践
+// 演示知识点：tarball 打包、离线安装、声明解析与消费者运行核对
+// 运行命令：npm run pack:25（工作目录 content/编程语言/typescript）
+// 期望结果：输出安装入口与声明信息，最后输出 pack 25 OK
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { mkdtempSync, readFileSync, realpathSync } from "node:fs";

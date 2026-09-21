@@ -1,4 +1,8 @@
-"""在独立脚本中演示 spawn、进程数据隔离和队列清理。"""
+"""所属章节：26-线程与进程
+演示知识点：spawn 启动方式、进程间列表副本隔离、进程队列通信与退出清理
+运行命令：python scripts/26-threads-and-processes/process_demo.py（工作目录 content/编程语言/python）
+期望结果：输出 JSON：start_method 为 spawn，parent 为 [15, 20]，child 为 [15, 20, 30]，exitcode 为 0
+"""
 
 import json
 import multiprocessing

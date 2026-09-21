@@ -1,3 +1,7 @@
+// 所属章节：22-async 与 await
+// 演示知识点：循环串行 await、Promise.all 并发与 forEach 不等待回调
+// 运行命令：node scripts/22-async-await/organization.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：串行与并发顺序不同；forEach returned 0 后 joined 1,2
 const order = [];
 async function work(id) {
   order.push(`start${id}`);

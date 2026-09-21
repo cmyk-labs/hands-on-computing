@@ -1,4 +1,8 @@
-"""隔离环境变量的默认、覆盖与无效输入。"""
+"""所属章节：24-自动化测试
+演示知识点：monkeypatch 隔离环境变量的默认值、覆盖、无效输入与作用域恢复
+运行命令：PYTHONPATH=scripts/24-automated-testing python -m pytest -q scripts/24-automated-testing/tests/test_environment.py（工作目录 content/编程语言/python）
+期望结果：7 项测试通过，父进程环境变量保持不变
+"""
 
 import pytest
 

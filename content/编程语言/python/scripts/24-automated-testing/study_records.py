@@ -1,4 +1,8 @@
-"""校验学习分钟数并计算总量，提供可执行的文档示例。"""
+"""所属章节：24-自动化测试
+演示知识点：分钟数校验与求和、环境变量读取及 doctest 可执行文档示例，作为本章被测公开行为
+运行命令：PYTHONPATH=scripts/24-automated-testing python -c "import study_records; print(study_records.total_minutes([25, 5]))"（工作目录 content/编程语言/python）
+期望结果：输出 30，空列表返回 0
+"""
 
 import os
 

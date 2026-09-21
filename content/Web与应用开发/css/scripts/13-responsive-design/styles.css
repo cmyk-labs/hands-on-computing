@@ -1,3 +1,7 @@
+/* 所属章节：13-响应式设计与媒体查询
+   演示知识点：本章三页实验规则：流式网格与断点、范围语法与逻辑组合、输入能力与偏好查询、图像适配与窄屏溢出，及阅读辅助样式
+   运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/13-responsive-design/index.html（工作目录 content/Web与应用开发/css）
+   期望结果：三页条件样式与行内注释一致 */
 /* 页面阅读辅助：统一盒尺寸计算、字号与分组间距；各实验规则在下方。 */
 * { box-sizing: border-box; }
 body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; }

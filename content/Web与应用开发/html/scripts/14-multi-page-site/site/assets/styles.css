@@ -1,3 +1,7 @@
+/* 所属章节：14-多页面网站实践
+   演示知识点：站点共用样式：导航当前页标记、表单与表格布局、焦点轮廓及窄窗口适配
+   运行命令：python scripts/14-multi-page-site/preview_server.py（工作目录 content/Web与应用开发/html）；随各页面加载，页面入口 http://127.0.0.1:8014/index.html
+   期望结果：宽窗口与约 360 CSS 像素窄窗口内容都能按顺序阅读，Tab 移动时焦点轮廓可辨认 */
 /* 样式仅由独立网站加载；本例不引入外部字体或资源。 */
 * {
   box-sizing: border-box;

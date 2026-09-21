@@ -1,3 +1,7 @@
+// 所属章节：26-综合工程实践
+// 演示知识点：计算边界、单次读取属性边界与真实文件集成测试
+// 运行命令：npm run test:26（工作目录 content/编程语言/javascript）
+// 期望结果：七项测试全部通过
 import test from "node:test";
 import assert from "node:assert/strict";
 import { mkdtemp, writeFile, readFile, access, rm } from "node:fs/promises";

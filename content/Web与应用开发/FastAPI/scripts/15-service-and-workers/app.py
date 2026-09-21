@@ -1,4 +1,7 @@
-"""用 PID、计数和一个临时资源观察 Uvicorn 服务进程。"""
+"""所属章节：15-服务运行与多进程部署
+演示知识点：用 PID、计数和一个临时资源观察 Uvicorn 服务进程：lifespan 创建并释放临时文件，GET /state 查询、POST /tick 递增进程内计数
+运行命令：python -m uvicorn app:app --app-dir scripts/15-service-and-workers --host 127.0.0.1 --port 8150 --workers 1 --log-level info --timeout-graceful-shutdown 5（工作目录 content/Web与应用开发/FastAPI）
+期望结果：三次 POST /tick 属于同一 PID 且计数为 1、2、3，重启后计数归零，日志按 PID 记录 startup、shutdown 与资源关闭"""
 from contextlib import asynccontextmanager
 import logging
 import os

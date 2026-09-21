@@ -1,3 +1,7 @@
+// 所属章节：10-类与类型检查
+// 演示知识点：实例与构造侧、初始化、访问修饰符、参数属性、继承与 override、泛型类、#私有字段与混入
+// 运行命令：npm run run:10（工作目录 content/编程语言/typescript）
+// 期望结果：按正文顺序输出各示例值，与正文行内注释一致
 export {};
 class Note {
   static category = "学习";

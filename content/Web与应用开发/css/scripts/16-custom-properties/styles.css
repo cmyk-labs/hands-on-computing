@@ -1,3 +1,7 @@
+/* 所属章节：16-自定义属性与主题
+   演示知识点：六页面共用规则：令牌复用与继承、回退与计算值无效、@property 注册、三套主题令牌与 color-scheme 及阅读辅助样式
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随各页面加载，页面入口 http://127.0.0.1:8101/scripts/16-custom-properties/index.html
+   期望结果：各页面按上述规则呈现，具体取值与规则内注释一致 */
 /* 页面阅读辅助：统一盒尺寸计算、字号与分组间距；各实验规则在下方。 */
 * { box-sizing: border-box; }
 body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; }

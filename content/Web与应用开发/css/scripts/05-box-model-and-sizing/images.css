@@ -1,3 +1,7 @@
+/* 所属章节：05-盒模型与尺寸
+   演示知识点：替换元素自然尺寸与按比例缩放，六种 object-fit 及 object-position
+   运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/05-box-model-and-sizing/images.html（工作目录 content/Web与应用开发/css）
+   期望结果：前两图显示为 300×150 与 150×75，六个适配盒外沿均为 154×124 */
 /* 页面基础排版；各观察区使用自己的类名，不统一重置盒模型。 */
 body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5; }
 

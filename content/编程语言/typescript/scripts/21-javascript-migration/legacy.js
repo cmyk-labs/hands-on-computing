@@ -1,3 +1,7 @@
+// 所属章节：21-JavaScript 迁移与 JSDoc
+// 演示知识点：@import、@typedef、@satisfies、@callback、@template 等 JSDoc 类型注释
+// 运行命令：npm run run:21（工作目录 content/编程语言/typescript）
+// 期望结果：run:21 正常退出，行为测试全部通过
 /** @import { Product } from "./model.js" */
 /** @typedef {{ mode: "gross" | "net", rate: number }} Policy */
 /** @type {Product} */

@@ -1,3 +1,7 @@
+/* 所属章节：25-锚点定位
+   演示知识点：@supports 内的锚点关联与 anchor()/anchor-size() 增强、仅 Popover 可用时的居中浮层回退、position-try-fallbacks 与 @position-try 候选、都不支持时的静态展示
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随各页面加载，页面入口 http://127.0.0.1:8101/scripts/25-anchor-positioning/index.html
+   期望结果：各层级按浏览器支持情况逐级生效，行为与规则内注释一致 */
 * { box-sizing: border-box; }
 body { max-width: 65rem; margin: 0 auto; padding: 1rem; font: 1rem/1.6 system-ui, sans-serif; color: #17212b; background: #fff; }
 h1 { font-size: 2rem; } h2 { font-size: 1.3rem; }

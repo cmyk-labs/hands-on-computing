@@ -1,3 +1,7 @@
+/* 所属章节：18-关键帧动画
+   演示知识点：@keyframes 百分比关键帧、animation 简写的时长轮次与填充、复选框切换 animation-play-state 及减少运动关闭
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/18-keyframe-animations/index.html
+   期望结果：勾选播放一次并停在末帧，取消后暂停在当前位置 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

@@ -1,3 +1,7 @@
+/* 所属章节：09-数据表格
+   演示知识点：本章共用表格样式：边框合并、单元格间距与对齐、列组背景层次
+   运行命令：python -m http.server 8009 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；随各页面加载，页面入口 http://127.0.0.1:8009/scripts/09-data-tables/index.html
+   期望结果：表格边框合并、数字列右对齐，周末表周六两列浅蓝、周日两列浅黄、首列浅灰 */
 /* 样式仅由本章独立页面加载，不注入 Notebook 输出。 */
 body {
   font-family: sans-serif;

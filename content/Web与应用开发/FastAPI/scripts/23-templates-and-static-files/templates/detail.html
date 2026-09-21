@@ -1,4 +1,8 @@
 <!doctype html>
+<!-- 所属章节：23-模板与静态资源
+演示知识点：完整详情页模板：显示记录编号、内容与“返回列表”链接，外部文本经 Jinja2 自动转义按文字呈现
+运行命令：python -m uvicorn app:app --app-dir scripts/23-templates-and-static-files --host 127.0.0.1 --port 8230，浏览器打开 http://127.0.0.1:8230/（工作目录 content/Web与应用开发/FastAPI）
+期望结果：编号 2 的尖括号、script 和 b 都作为文字出现，无弹窗、无加粗，点击“返回列表”回到列表页 -->
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">

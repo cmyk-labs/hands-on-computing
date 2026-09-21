@@ -1,3 +1,7 @@
+/* 所属章节：07-图像与响应式图像
+   演示知识点：本章各页面的版式、图像卡片宽度与加载观察留白
+   运行命令：python -m http.server 8007 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；随各页面加载，页面入口 http://127.0.0.1:8007/scripts/07-images-and-responsive-images/index.html
+   期望结果：density 卡片宽 240px、responsive 卡片宽 480px，窄视口图片不越出容器 */
 /* 所有规则只由本章独立页面加载，不注入 Notebook 输出。 */
 body {
   max-width: 960px;

@@ -1,4 +1,8 @@
-"""组合命令行参数、TOML 配置、诊断日志与 JSON 结果。"""
+"""所属章节：30-综合工程实践
+演示知识点：命令行参数、TOML 配置与日志级别的组合及优先级，失败时不输出残缺 JSON
+运行命令：PYTHONPATH=scripts/30-engineering-practice/src python -m study_file_report 输入文件（工作目录 content/编程语言/python）
+期望结果：输出 JSON 统计结果；配置或文件错误输出诊断并以 1 退出，用法错误为 2
+"""
 
 import argparse
 import json

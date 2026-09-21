@@ -1,3 +1,7 @@
+// 所属章节：21-Promise
+// 演示知识点：all、allSettled、any、race 的结果规则、空输入与函数直传
+// 运行命令：node scripts/21-promises/combine.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 all [1,2]、AggregateError A,B、race pending true 等各组合结果
 const first = Promise.withResolvers();
 const second = Promise.withResolvers();
 Promise.all([first.promise, second.promise]).then((values) => {

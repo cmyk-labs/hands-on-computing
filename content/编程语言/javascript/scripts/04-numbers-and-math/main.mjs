@@ -1,3 +1,7 @@
+// 所属章节：04-数值与数学运算
+// 演示知识点：数字写法与进制、安全整数与浮点误差、Infinity 与 NaN、解析函数、Math 函数与舍入、toFixed/toPrecision/toExponential、BigInt 运算与 Math.random
+// 运行命令：node scripts/04-numbers-and-math/main.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各片段示例值，与行内注释一致
 console.log(0b1010, 0o12, 0xA, 10);
 console.log(1_024, 1.25e3, 1.25e-2);
 console.log((255).toString(16), (10).toString(2));

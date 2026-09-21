@@ -1,4 +1,7 @@
-"""本地固定学习记录：HTML 模板与静态资源。"""
+"""所属章节：23-模板与静态资源
+演示知识点：组合本篇已讲解的页面路由、固定数据与静态资源：Jinja2Templates 渲染列表与详情页，挂载 /static，另提供 /api/records
+运行命令：python -m uvicorn app:app --app-dir scripts/23-templates-and-static-files --host 127.0.0.1 --port 8230（工作目录 content/Web与应用开发/FastAPI）
+期望结果：/ 列出两条记录链接，/records/999 返回 404 与“记录不存在”，/api/records 返回两条 JSON 记录"""
 
 from pathlib import Path
 

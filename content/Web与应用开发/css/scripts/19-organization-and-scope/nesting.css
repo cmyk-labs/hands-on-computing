@@ -1,3 +1,7 @@
+/* 所属章节：19-样式组织与作用域
+   演示知识点：& > .title 与 &:focus-within 的原生嵌套写法及其等效平铺回退
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/19-organization-and-scope/nesting.html
+   期望结果：不支持嵌套的浏览器仍呈现边框与焦点轮廓，支持时追加下划线与背景 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

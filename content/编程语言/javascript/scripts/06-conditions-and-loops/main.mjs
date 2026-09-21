@@ -1,3 +1,7 @@
+// 所属章节：06-条件与循环
+// 演示知识点：if/else 与 switch 匹配穿透、for/while/do-while、break/continue 与标签、for...in 与 for...of 的区别
+// 运行命令：node scripts/06-conditions-and-loops/main.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各片段示例值，与行内注释一致
 const score = 86;
 let grade;
 if (score >= 90) {

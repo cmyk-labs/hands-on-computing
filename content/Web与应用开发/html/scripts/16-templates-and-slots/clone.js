@@ -1,3 +1,7 @@
+// 所属章节：16-模板与插槽
+// 演示知识点：cloneNode(true) 克隆模板内容、在副本上改标题与绑定监听器、修改模板 content 与状态统计
+// 运行命令：python -m http.server 8016 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；随 index.html 加载，浏览器打开 http://127.0.0.1:8016/scripts/16-templates-and-slots/index.html
+// 期望结果：添加笔记后副本片段为空而模板 content 仍有一个 article，监听器不随克隆复制、只在副本生效
 "use strict";
 
 const noteTemplate = document.querySelector("#note-template");

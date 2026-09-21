@@ -1,3 +1,7 @@
+/* 所属章节：08-字体与文本排版
+   演示知识点：本章两页全部样式：字体族与行高继承、文本装饰与间距、换行控制、@font-face 与 font-variation-settings
+   运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/08-fonts-and-text/index.html（工作目录 content/Web与应用开发/css）
+   期望结果：Roboto 本地加载后 300/750 字重、100/75 宽度差异可见，其余示例与注释一致 */
 body { margin: 24px; font-family: sans-serif; line-height: 1.6; color: #222; background: white; }
 section { margin-bottom: 32px; }
 .reading { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; font-size: 1rem; font-weight: 400; }

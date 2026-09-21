@@ -1,3 +1,7 @@
+// 所属章节：27-二进制数据与类型化数组
+// 演示知识点：多视图共享缓冲区、subarray 与 slice 的区别、数值类型转换
+// 运行命令：node scripts/27-binary-data/views.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 3 3 2、shared 80 copied 70、1,255 与 255,0 等
 import assert from "node:assert/strict";
 const buffer = new ArrayBuffer(8);
 const bytes = new Uint8Array(buffer);

@@ -1,4 +1,8 @@
 <!doctype html>
+<!-- 所属章节：20-流式响应与 SSE
+演示知识点：原生 EventSource 页面，可正常接收三个事件或在首个事件后提前关闭，并提供服务端状态链接
+运行命令：python -m uvicorn app:app --app-dir scripts/20-streaming-and-sse --host 127.0.0.1 --port 8200，浏览器打开 http://127.0.0.1:8200/（工作目录 content/Web与应用开发/FastAPI）
+期望结果：完整接收显示“3 个事件已接收，连接已关闭”，提前或手动关闭后 /state 的 active 归零、closed 递增 -->
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">

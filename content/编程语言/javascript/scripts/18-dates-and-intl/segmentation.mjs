@@ -1,3 +1,7 @@
+// 所属章节：18-日期、时间与国际化
+// 演示知识点：Segmenter 的字素簇切分与词级分段
+// 运行命令：node scripts/18-dates-and-intl/segmentation.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：组合字符与 emoji 计为一个字素簇；词分段过滤出 Read|two|chapters
 const text = "e\u0301😀";
 const graphemes = [...new Intl.Segmenter("en", {
   granularity: "grapheme"

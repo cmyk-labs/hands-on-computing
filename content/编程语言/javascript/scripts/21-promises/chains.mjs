@@ -1,3 +1,7 @@
+// 所属章节：21-Promise
+// 演示知识点：链式传值、catch 恢复与 finally 抛错替换拒绝原因
+// 运行命令：node scripts/21-promises/chains.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：输出 chain 7、recovered、cleanup failed 与 missing return true
 Promise.resolve(2)
   .then((value) => value * 3)
   .then((value) => Promise.resolve(value + 1))

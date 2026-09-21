@@ -1,3 +1,7 @@
+// 所属章节：13-映射类型
+// 演示知识点：同构映射、readonly 与 ? 修饰符增减、键重映射改名、never 过滤与精确可选属性
+// 运行命令：npm run run:13（工作目录 content/编程语言/typescript）
+// 期望结果：正常退出，各段预期输出与行内注释一致
 export type Flags<T> = { [P in keyof T]: boolean };
 type Form = { title: string; hours: number };
 const flags: Flags<Form> = { title: true, hours: false };

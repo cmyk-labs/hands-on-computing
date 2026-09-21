@@ -1,3 +1,7 @@
+/* 所属章节：03-元数据与资源引入
+   演示知识点：metadata.html 与 loading.html 共用的阅读样式
+   运行命令：python -m http.server 8003 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；随两页加载，页面入口 http://127.0.0.1:8003/scripts/03-metadata-and-resources/metadata.html
+   期望结果：两页正文限宽居中，metadata.html 中同名颜色声明被页内样式覆盖而边框保留 */
 /* 两个页面都引用此文件；预期正文有留白，标题呈蓝色。 */
 body {
   font-family: sans-serif;

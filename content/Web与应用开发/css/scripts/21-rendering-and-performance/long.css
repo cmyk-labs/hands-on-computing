@@ -1,3 +1,7 @@
+/* 所属章节：21-渲染与性能
+   演示知识点：@supports 内 .optimized .entry 的 content-visibility: auto 与 contain-intrinsic-size: auto 480px
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；由 long.html 与 baseline.html 共用，页面入口 http://127.0.0.1:8101/scripts/21-rendering-and-performance/long.html
+   期望结果：支持时 long 页跳过屏外条目渲染，baseline 页不受影响；480px 仅为初始估计 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

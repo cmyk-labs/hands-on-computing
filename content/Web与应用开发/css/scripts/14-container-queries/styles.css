@@ -1,3 +1,7 @@
+/* 所属章节：14-容器查询
+   演示知识点：四页面共用规则：容器类型与命名、卡片与双轴查询、嵌套条件、容器单位、样式查询及阅读辅助样式
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随各页面加载，页面入口 http://127.0.0.1:8101/scripts/14-container-queries/index.html
+   期望结果：各页面按自身容器呈现规则，具体行为与规则内注释一致 */
 /* 页面阅读辅助：统一盒尺寸计算、字号与分组间距；各实验规则在下方。 */
 * { box-sizing: border-box; }
 body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; }

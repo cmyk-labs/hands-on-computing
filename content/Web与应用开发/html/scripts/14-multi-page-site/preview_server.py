@@ -1,4 +1,8 @@
-"""提供本章静态页面与 GET 字段回显；不保存输入或执行报名操作。"""
+"""所属章节：14-多页面网站实践
+演示知识点：以 site 目录为根的静态站点服务与 /preview GET 字段回显（保留重复字段和空值）；不保存输入或执行报名操作
+运行命令：python scripts/14-multi-page-site/preview_server.py（工作目录 content/Web与应用开发/html）；浏览器打开 http://127.0.0.1:8014/index.html
+期望结果：终端打印预览地址，站点页面与资源可访问，/preview 以表格回显本次 GET 字段
+"""
 
 import functools
 import html

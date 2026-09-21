@@ -1,3 +1,7 @@
+// 所属章节：20-迭代器与生成器
+// 演示知识点：生成器惰性启动、逐个产出、结束值与每次新建
+// 运行命令：node scripts/20-iterators-and-generators/generator-basics.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：创建时不执行；输出 Map false 等四步结果与 Map,Set
 const events = [];
 function* lessons() {
   events.push("开始");

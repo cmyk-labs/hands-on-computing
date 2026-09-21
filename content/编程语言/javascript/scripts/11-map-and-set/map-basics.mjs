@@ -1,3 +1,7 @@
+// 所属章节：11-Map 与 Set
+// 演示知识点：Map 的 set/get/has/delete/clear 与缺失值，普通属性不属于键
+// 运行命令：node scripts/11-map-and-set/map-basics.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：按正文顺序输出各示例值，与行内注释一致
 const hours = new Map([["语法", 2], ["集合", 3]]);
 console.log(hours.set("语法", 4) === hours, hours.size, hours.get("语法"));
 hours.set("待安排", undefined);

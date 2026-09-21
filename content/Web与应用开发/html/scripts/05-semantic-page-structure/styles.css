@@ -1,3 +1,7 @@
+/* 所属章节：05-语义化页面结构
+   演示知识点：同一页面的双栏布局与窄视口单栏切换
+   运行命令：python -m http.server 8005 --bind 127.0.0.1（工作目录 content/Web与应用开发/html）；随 index.html 加载，页面入口 http://127.0.0.1:8005/scripts/05-semantic-page-structure/index.html
+   期望结果：宽视口书单在正文右侧，视口不超过 720px 时书单移到正文后方 */
 /* 配套页面的布局样式；标题和区域名称由 HTML 提供。 */
 body {
   max-width: 960px;

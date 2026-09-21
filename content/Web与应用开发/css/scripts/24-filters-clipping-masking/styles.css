@@ -1,3 +1,7 @@
+/* 所属章节：24-滤镜、裁剪与蒙版
+   演示知识点：filter、@supports 下的 backdrop-filter 与不透明白底回退、clip-path、mask 渐变与 mask-mode 两种模式、元素混合与背景层混合、shape-outside 环绕
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随各页面加载，页面入口 http://127.0.0.1:8101/scripts/24-filters-clipping-masking/index.html
+   期望结果：各效果行为与规则内行内注释一致 */
 * { box-sizing: border-box; }
 body { max-width: 70rem; margin: 0 auto; padding: 1rem; font: 1rem/1.6 system-ui, sans-serif; color: #17212b; background: white; }
 h1 { font-size: 2rem; } h2 { font-size: 1.4rem; }

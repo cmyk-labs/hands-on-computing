@@ -1,3 +1,7 @@
+// 所属章节：05-联合类型、交叉类型与字面量
+// 演示知识点：联合未收窄调用、交叉冲突为 never、字面量拼写、判别分支缺数据、属性拓宽、只读赋值与 satisfies 拒绝不兼容值的类型错误反例
+// 运行命令：npm run errors:05（工作目录 content/编程语言/typescript）
+// 期望结果：类型检查非零退出，具体错误逐条见行内注释；不生成或执行 JavaScript
 export {};
 
 function wrongUnion(value: string | number): string {

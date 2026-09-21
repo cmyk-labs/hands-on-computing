@@ -1,3 +1,7 @@
+// 所属章节：21-JavaScript 迁移与 JSDoc
+// 演示知识点：迁移前后复用的 node:test 行为测试
+// 运行命令：npm run run:21（工作目录 content/编程语言/typescript）
+// 期望结果：node --test 全部通过
 import test from "node:test";
 import assert from "node:assert/strict";
 import { total, identity } from "./legacy.js";

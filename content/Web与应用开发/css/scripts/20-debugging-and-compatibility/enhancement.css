@@ -1,3 +1,7 @@
+/* 所属章节：20-调试与兼容处理
+   演示知识点：@supports (display: grid) 与嵌套媒体查询的增强、无效声明不覆盖有效颜色、@supports selector(:focus-visible)
+   运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/20-debugging-and-compatibility/enhancement.html
+   期望结果：基础纵向排列始终可用，增强分支按支持情况叠加两列或一列 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }

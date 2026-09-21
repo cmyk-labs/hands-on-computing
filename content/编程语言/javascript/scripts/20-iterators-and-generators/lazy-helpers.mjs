@@ -1,3 +1,7 @@
+// 所属章节：20-迭代器与生成器
+// 演示知识点：map、filter、take 的惰性拉取与 drop、flatMap 组合
+// 运行命令：node scripts/20-iterators-and-generators/lazy-helpers.mjs（工作目录 content/编程语言/javascript）
+// 期望结果：构建链时拉取 0 次；消费时打印 数据源关闭 与 20,30 3 等
 let pulled = 0;
 let closed = false;
 const source = {
