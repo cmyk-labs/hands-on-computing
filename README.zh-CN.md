@@ -70,7 +70,7 @@
 | --- | --- | --- |
 | **NumPy** | 覆盖数组创建、类型转换、索引筛选与重复位置更新、形状变换、视图副本与内存布局、广播与通用函数、统计聚合、排序查找与集合、随机采样、向量矩阵与张量、数值精度、线性方程与矩阵分解、数据读写与内存映射、性能与迭代、字符串与结构化数组、日期时间、掩码数组、离散数值计算、多项式、傅里叶变换、数组互操作与类型标注及综合实践。 | [目录](content/AI原理与应用/NumPy/plan.md) |
 | **pandas** | 覆盖 Series 与 DataFrame、索引对齐、筛选赋值与写时复制、类型转换、缺失与重复值、统计排序与函数应用、文本与分类数据、分组聚合、连接拼接与比较、重塑与多级索引、日期时间与时区、重采样与窗口、CSV、JSON、SQL、Excel 与列式文件、数据质量与复现、内存与分块、Arrow 互操作、稀疏数据、表格展示、表达式计算及综合实践。 | [目录](content/AI原理与应用/pandas/plan.md) |
-| **Python 数据可视化** | 覆盖图形选择与视觉编码、比较与组成占比、变化与统计分布、变量关系与不确定性、层级与流向，以及 Matplotlib、Seaborn 科研绘图、Plotly、Altair、Bokeh 交互与导出和 Vega-Lite 图表规范与 Vega-Embed 网页嵌入。 | [目录](content/AI原理与应用/python-data-visualization/plan.md) |
+| **数据可视化** | 覆盖图形选择与视觉编码、比较与组成占比、变化与统计分布、变量关系与不确定性、层级与流向，以及 Matplotlib、Seaborn 科研绘图、Plotly、Altair、Bokeh 交互与导出和 Vega-Lite 图表规范与 Vega-Embed 网页嵌入。 | [目录](content/AI原理与应用/data-visualization/plan.md) |
 | **数学基础** | 覆盖数学表达、线性代数与矩阵分解、微积分与矩阵求导、极值与凸性、概率统计推断、信息量、数值稳定性与蒙特卡洛计算、数学建模与 PCA 选学，以及变量变换、贝叶斯推断和 MCMC 扩展。 | [目录](content/AI原理与应用/mathematical-foundations/plan.md) |
 
 ### Web与应用开发

@@ -1,4 +1,4 @@
-# Python 数据可视化
+# 数据可视化
 
 本课程介绍常用图表怎样绘制和调整，使用 Matplotlib、Seaborn、Plotly、Altair、Bokeh，以及 Vega-Lite、Vega-Embed 特例扩展，覆盖比较、组成占比、变化、分布、关系、不确定性、层级与流向图形，并学习静态与交互导出。章节安排见 [plan.md](plan.md)，教学约定见 [AGENTS.md](AGENTS.md)，代码参考 [Python 编程规范](../../编程语言/python/Python编程规范.md)。
 
@@ -68,7 +68,7 @@ conda activate hands-on-computing
 Step 4：从项目根目录进入课程目录。
 
 ```bash
-cd content/AI原理与应用/python-data-visualization
+cd content/AI原理与应用/data-visualization
 ```
 
 Step 5：沿用项目现有安装源安装依赖。
@@ -94,7 +94,7 @@ conda activate hands-on-computing
 Step 2：从项目根目录进入课程目录。
 
 ```bash
-cd content/AI原理与应用/python-data-visualization
+cd content/AI原理与应用/data-visualization
 ```
 
 Step 3：启动 Notebook。

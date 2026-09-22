@@ -1,4 +1,4 @@
-# Python 数据可视化教学补充协议
+# 数据可视化教学补充协议
 
 适用于本目录及子目录。编写前读取[项目协议](../../../AGENTS.md)、[Notebook 编写协议](../../../docs/notebook-protocol.md)和 [Python 编程规范](../../编程语言/python/Python编程规范.md)。章节范围见 [plan.md](plan.md)，环境与运行见 [README.md](README.md)。
 
