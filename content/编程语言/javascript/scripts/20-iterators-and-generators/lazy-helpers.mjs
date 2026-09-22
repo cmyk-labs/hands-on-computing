@@ -4,6 +4,7 @@
 // 期望结果：构建链时拉取 0 次；消费时打印 数据源关闭 与 20,30 3 等
 let pulled = 0;
 let closed = false;
+// pulled 统计实际拉取次数，closed 保存数据源被关闭后的状态。
 const source = {
   next() {
     if (closed) return { done: true };
@@ -16,12 +17,14 @@ const source = {
     return { done: true };
   }
 };
+// 建链时不取数据；toArray 才逐个拉取，take 收到两个结果后关闭源。
 const selected = Iterator.from(source)
   .map(value => value * 10)
   .filter(value => value >= 20)
   .take(2);
 console.log(pulled);
 console.log(selected.toArray().join(","), pulled);
+// 已消费的迭代器不重置；再次收集只能得到空结果。
 console.log(selected.toArray().length);
 console.log(Iterator.from([1, 2, 3]).drop(1)
   .flatMap(value => [value, -value]).toArray().join(","));

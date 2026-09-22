@@ -19,9 +19,12 @@ async def identify_request(request: Request, call_next):
     """给实际应用请求分配标识，记录方法、路径与返回状态。"""
     request_id = uuid4().hex
     request.state.request_id = request_id
+    # 预期：每次请求记录方法、路径和本次 id；id 的具体值随请求变化。
     logger.info("request %s %s id=%s", request.method, request.url.path, request_id)
+    # 请求先向内传递；取得响应后再补上同一个请求标识。
     response = await call_next(request)
     response.headers["X-Request-ID"] = request_id
+    # 预期：返回时记录实际状态码，与上面的请求日志使用同一 id。
     logger.info("response status=%s id=%s", response.status_code, request_id)
     return response
 

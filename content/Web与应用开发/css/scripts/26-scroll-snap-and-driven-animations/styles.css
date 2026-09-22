@@ -51,7 +51,8 @@ a { color: #0645ad; } :focus { outline: 3px solid #0645ad; outline-offset: 3px; 
     animation-timeline: scroll(root block);
   }
 }
-/* 滚动到文档中段再回顶部：条带随根滚动进度变化，不按经过的秒数自动播放。 */
+/* 支持时间线且未要求减少运动时：页面顶部 scaleX(0)，底部 scaleX(1)。
+   往回滚动时条带缩短，停住滚动后不会随经过的秒数继续增长。 */
 
 .local-reader { height: 14rem; overflow: auto; }
 .local-meter { display: none; }
@@ -90,7 +91,8 @@ a { color: #0645ad; } :focus { outline: 3px solid #0645ad; outline-offset: 3px; 
     animation-range: entry 0% entry 100%;
   }
 }
-/* 被观察的是section，发生变换的是内部装饰线；两者不必是同一个元素。 */
+/* 支持时间线且未要求减少运动时：section 进入视口期间，内部装饰线从零伸展到全宽。
+   被观察的是 section，发生变换的是内部装饰线。 */
 
 @media (prefers-reduced-motion: reduce) {
   .page-meter, .local-meter { display: none; animation: none; }

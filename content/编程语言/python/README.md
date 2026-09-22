@@ -11,12 +11,14 @@ Step 1：首次使用时按 [Conda 官方说明](https://docs.conda.io/projects/
 Step 2：创建 Python 环境；已有同名环境时跳过。
 
 ```bash
+# 完成后环境列表中新增 hands-on-computing；安装日志和依赖明细随解析结果变化。
 conda create -n hands-on-computing python=3.12
 ```
 
 Step 3：激活环境；每次打开新终端都执行。
 
 ```bash
+# 终端提示当前环境为 hands-on-computing，成功激活通常没有额外输出。
 conda activate hands-on-computing
 ```
 
@@ -25,12 +27,14 @@ conda activate hands-on-computing
 Step 1：从项目根目录进入 Python 目录。
 
 ```bash
+# 切换到课程目录；成功时通常没有输出。
 cd content/编程语言/python
 ```
 
 Step 2：安装课程依赖；首次使用或清单变更后执行。
 
 ```bash
+# 安装成功或显示 Requirement already satisfied；具体下载日志随环境变化。
 python -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
@@ -39,10 +43,13 @@ python -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/s
 Step 1：在已激活环境、工作目录为 content/编程语言/python 的终端启动 Notebook。
 
 ```bash
+# 终端显示本地 Notebook 访问地址；端口与令牌由本次启动决定。
 python -m notebook
 ```
 
 Step 2：打开章节，选择该环境的 Python 3 (ipykernel)，重启内核后从上到下运行。
+
+标明“预期异常”的单元用于直接观察原始错误；看到指定异常后继续下一单元，其他异常应先排查。
 
 Step 3：结束后在终端按 Ctrl+C，并按提示确认停止。
 
@@ -57,6 +64,7 @@ Step 2：选择“使用 C++ 的桌面开发”，保留 MSVC x64/x86 构建工�
 Step 3：安装完成后重新打开 Conda 终端，激活课程环境。
 
 ```bash
+# 终端提示当前环境为 hands-on-computing，成功激活通常没有额外输出。
 conda activate hands-on-computing
 ```
 

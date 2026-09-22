@@ -39,6 +39,7 @@ async def delayed_lines() -> AsyncIterator[bytes]:
         await asyncio.sleep(1.0)
         yield b"done\n"
     finally:
+        # 预期：流结束或客户端取消后，服务端显示 slow_text: generator closed。
         print("slow_text: generator closed", flush=True)
 
 

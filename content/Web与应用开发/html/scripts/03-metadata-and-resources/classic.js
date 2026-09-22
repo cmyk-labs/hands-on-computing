@@ -10,6 +10,7 @@ function record(label) {
   const line = label + " | 末尾元素=" + endExists
     + " | readyState=" + document.readyState;
   loadingEvents.push(line);
+  // 第一行为 classic-head | 末尾元素=false | readyState=loading；async 行的位置可变。
   console.log(line);
 
   // head 执行时日志区域也可能尚未解析，先记录，等区域出现后统一显示。
@@ -23,11 +24,11 @@ function record(label) {
 record("classic-head");
 
 document.addEventListener("DOMContentLoaded", () => {
-  record("DOMContentLoaded");
+  record("DOMContentLoaded"); // → DOMContentLoaded | 末尾元素=true | readyState=interactive
 });
 
 window.addEventListener("load", () => {
-  record("load");
+  record("load"); // → load | 末尾元素=true | readyState=complete
   // module-main.js 已显示其局部变量；此经典脚本仍不能读取那个变量。
   // 预期为 undefined；必须同时看到“模块内变量可读”才能据此比较作用域。
   document.getElementById("scope-result").textContent =

@@ -71,6 +71,7 @@ def main(argv: list[str] | None = None) -> int:
         if workers < 1:
             raise ValueError("workers 必须大于零")
     except (OSError, ValueError) as error:
+        # stderr 以“配置错误：”开头并附具体原因；stdout 保持为空。
         print(f"配置错误：{error}", file=sys.stderr)
         return 1
 
@@ -86,11 +87,14 @@ def main(argv: list[str] | None = None) -> int:
         try:
             results = analyze_batch(arguments.paths, workers=workers)
         except (OSError, ValueError) as error:
+            # stderr 以“分析失败：”开头；失败时不输出部分 JSON 结果。
             print(f"分析失败：{error}", file=sys.stderr)
             return 1
+        # INFO 级别下显示完成文件数与线程数；默认 WARNING 级别不显示。
         logger.info("完成 %d 个文件，workers=%d", len(results), workers)
 
         # 3. 全部成功后才输出一个完整 JSON 值，日志只进入标准错误流。
+        # JSON 列表保持输入次序，每项含 path、lines、words、characters。
         print(
             json.dumps([asdict(item) for item in results], ensure_ascii=False)
         )

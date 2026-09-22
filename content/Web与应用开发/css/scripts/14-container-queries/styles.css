@@ -13,12 +13,14 @@ button, input, select { font: inherit; }
 a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
 
 
+/* 1. 在父容器声明查询名称和尺寸轴，宽窄两组只改变父容器宽度。 */
 .card-host {
   container: card-space / inline-size;
   margin-bottom: 16px;
 }
 .wide-host { inline-size: min(700px, 100%); }
 .narrow-host { inline-size: min(280px, 100%); }
+/* 2. 卡片先保留单列基础布局，查询规则只调整容器内的卡片。 */
 .responsive-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -28,6 +30,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 }
 .responsive-card > * { min-width: 0; overflow-wrap: anywhere; }
 .card-picture { background-color: #dfefea; padding: 16px; }
+/* 3. 条件查看 card-space 的宽度，而不是整个浏览器视口。 */
 @container card-space (min-width: 480px) {
   .responsive-card {
     grid-template-columns: 120px minmax(0, 1fr);
@@ -35,6 +38,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   }
 }
 
+/* 双轴查询另设有明确宽高的容器，用于观察高度条件。 */
 .two-axis-box {
   box-sizing: border-box;
   container-name: panel-size;
@@ -50,6 +54,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   /* 180px 为边框盒高度，扣除两边边框后仍满足 160px 的内容盒条件。 */
 }
 
+/* 反例：容器不能用自己的尺寸查询来为自己设置这些样式。 */
 .self-box {
   container: solo / inline-size;
   inline-size: min(500px, 100%);
@@ -62,6 +67,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   /* 宽容器下：外框仍灰色，子段落变蓝绿色；外框不查询自身。 */
 }
 
+/* nested：两个祖先共用 zone 名称，outer-zone 专门标识外层。 */
 .outer-scope {
   container-name: zone outer-zone;
   container-type: inline-size;
@@ -93,6 +99,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   }
 }
 
+/* units：保持子元素规则相同，只改变其最近查询容器的宽度。 */
 .unit-host {
   container-type: inline-size;
   inline-size: min(240px, 100%);
@@ -115,6 +122,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   /* 支持 cqi 但没有容器时，以小视口行内尺寸计算；前一条是语法不支持回退。 */
 }
 
+/* style-query：比较自定义属性条件与显式类名提供的紧凑样式。 */
 .density-host {
   container-name: density-space;
   --density: compact;

@@ -6,6 +6,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { mean } from "./mean.mjs";
 
+// 第一组同时检查返回值和输入未被修改，避免只验证计算结果。
 test("mean: values and no mutation", () => {
   const values = [-2, 0, 8];
   assert.equal(mean(values), 2);
@@ -15,6 +16,7 @@ test("mean: empty and singleton", () => {
   assert.equal(mean([]), null);
   assert.equal(mean([0]), 0);
 });
+// 分别改变输入结构与元素类型；throws 检查同步调用产生的异常。
 test("mean: invalid inputs", () => {
   for (const value of [null, "[]", [NaN], [Infinity], ["2"], new Array(1)]) {
     assert.throws(() => mean(value), {
@@ -22,6 +24,7 @@ test("mean: invalid inputs", () => {
     });
   }
 });
+// 单个数有限不保证求和仍有限，因此把溢出作为独立边界。
 test("mean: sum overflow", () => {
   for (const value of [Number.MAX_VALUE, -Number.MAX_VALUE]) {
     assert.throws(() => mean([value, value]), {

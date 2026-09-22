@@ -22,6 +22,7 @@
     const htmlList = parser.parseFromString(missingEnd, "text/html");
     const badXml = parser.parseFromString(missingEnd, "application/xml");
     const xmlError = badXml.querySelector("parsererror");
+    // htmlList 中有两个 li；xmlError 非 null，具体错误文字随浏览器变化。
     const fixedXml = parser.parseFromString(
       "<ul><li>阅读</li><li>整理</li></ul>", "application/xml"
     );
@@ -34,7 +35,7 @@
       repairedXmlHasNoError: fixedError === null,
       repairedItemCount: fixedXml.querySelectorAll("li").length
     }, null, 2);
-    // 预期 XML 失败被显式核对；修复后的 XML 必须通过，后续示例才能继续。
+    // 预期 xmlFailedAsExpected=true、repairedXmlHasNoError=true、repairedItemCount=2。
     // 不要求不同浏览器的错误文字完全相同，只核对错误存在与修复结果。
     if (xmlError === null || fixedError !== null) {
       throw new Error("XML 反例或修复未达到预期，请检查实际结果。");

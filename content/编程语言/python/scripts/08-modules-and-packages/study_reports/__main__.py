@@ -20,6 +20,7 @@ def main():
         .read_text(encoding="utf-8")
         .strip()
     )
+    # 传入 60、80、100 时为“成绩摘要：3 人，平均分 80.0”。
     print(f"{caption}：{summary['count']} 人，平均分 {summary['average']}")
 
 

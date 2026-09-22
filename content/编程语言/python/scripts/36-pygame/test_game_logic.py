@@ -158,6 +158,7 @@ def test_finite_loop_moves_scores_saves_and_closes(
     tmp_path: Path,
 ) -> None:
     """只替代物理键盘状态；循环、事件、碰撞、绘图与清理真实执行。"""
+    # 固定键盘输入，其余游戏循环和 SDL 绘制都真实执行。
     keys = {
         pygame.K_RIGHT: True,
         pygame.K_LEFT: False,
@@ -173,6 +174,7 @@ def test_finite_loop_moves_scores_saves_and_closes(
     assert not report["running"]
     assert report["display_closed"]
     assert not pygame.font.get_init()
+    # 状态检查后再读实际图片，在玩家和新目标内部各取一个像素。
     rendered = pygame.image.load(image_path)
     assert rendered.get_size() == (640, 400)
     assert tuple(rendered.get_at((131, 201)))[:3] == (90, 215, 196)

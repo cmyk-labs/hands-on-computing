@@ -6,6 +6,7 @@ import assert from "node:assert/strict";
 import { setImmediate as yieldTurn } from "node:timers/promises";
 import { mapLimited } from "./limited.mjs";
 
+// 1. active 记录当前任务数，peak 记录最高值；finally 使失败时也能减回去。
 let active = 0;
 let peak = 0;
 const values = await mapLimited([1, 2, 3, 4, 5], 2, async (value) => {
@@ -20,6 +21,7 @@ assert.equal(active, 0);
 assert.deepEqual(await mapLimited([], 2, () => 1), []);
 await assert.rejects(mapLimited([1], 0, () => 1), /limit must be positive/);
 
+// 2. 首项故意失败，第二项完成，第三项应始终没有被领取。
 let drained = false;
 const started = [];
 await assert.rejects(mapLimited([1, 2, 3], 2, async (value) => {
@@ -32,6 +34,7 @@ assert.deepEqual(started, [1, 2]);
 assert.equal(drained, true);
 console.log("limit=2 ordered empty failure-drained"); // → limit=2 ordered empty failure-drained
 
+// 3. 取消是另一项宿主能力：先接住拒绝，再发出取消信号。
 const controller = new AbortController();
 const operation = yieldTurn("unused", { signal: controller.signal });
 const rejection = assert.rejects(operation, { name: "AbortError" });

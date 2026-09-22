@@ -118,6 +118,7 @@ def observe_build_and_extension() -> dict[str, object]:
     """观察构建能力、真实 GIL 状态与导入标准库 C 扩展后的状态。"""
     if sys.version_info[:2] != (3, 14):
         raise RuntimeError("构建对照需要本章指定的 CPython 3.14")
+    # 先记录导入前状态，再导入 csv，最后观察 C 扩展是否改变 GIL 状态。
     before_import = sys._is_gil_enabled()
     was_loaded = "_csv" in sys.modules
     import csv
@@ -145,6 +146,7 @@ def main() -> None:
     )
     parser.add_argument("--items-per-job", type=int, default=100000)
     parser.add_argument("--repeats", type=int, default=3)
+    # 每次先记录构建状态；scenario 决定额外运行哪个对照实验。
     arguments = parser.parse_args()
     report = {"state": observe_build_and_extension()}
     if arguments.scenario in ("counter", "all"):
@@ -153,6 +155,7 @@ def main() -> None:
         report["benchmark"] = benchmark(
             arguments.items_per_job, arguments.repeats
         )
+    # JSON 始终含 state；含 counter 时应为 unlocked=1、locked=2，benchmark 的耗时随运行变化。
     print(json.dumps(report, ensure_ascii=False))
 
 

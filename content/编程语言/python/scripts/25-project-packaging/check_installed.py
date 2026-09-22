@@ -2,7 +2,7 @@
 演示知识点：核对 wheel 安装位置、分发元数据、输入边界与 console_scripts 入口加载；<安装目录> 为 pip --target 安装本章 wheel 的目录
 运行命令：PYTHONPATH=<安装目录> python scripts/25-project-packaging/check_installed.py <安装目录>（工作目录 content/编程语言/python）
 期望结果：输出“安装位置、元数据、输入边界与入口加载均通过”
-"""
+"""  # noqa: E501 -- 文件头保留完整运行命令。
 
 import argparse
 import contextlib
@@ -51,6 +51,7 @@ def main() -> None:
         status = entry.load()(["20", "0", "55"])
     assert status == 0
     assert captured.getvalue() == "合计：75 分钟\n"
+    # 前面的检查全部通过后显示这条确认；任一断言失败则不会到达此行。
     print("安装位置、元数据、输入边界与入口加载均通过")
 
 

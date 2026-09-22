@@ -60,6 +60,7 @@ def test_cli_overrides_config(
         '[analysis]\nworkers = 2\nlog_level = "ERROR"\n',
         encoding="utf-8",
     )
+    # 文件给出 workers=2、ERROR；命令行明确覆盖为 1、INFO。
     arguments = [
         str(path),
         "--config",
@@ -69,6 +70,7 @@ def test_cli_overrides_config(
         "--log-level",
         "INFO",
     ]
+    # 连续调用两次，每次仍只有一条日志，说明处理器没有累积。
     for _ in range(2):
         assert main(arguments) == 0
         captured = capsys.readouterr()

@@ -15,6 +15,7 @@ const emptySlot = document.querySelector("#empty-card").shadowRoot.querySelector
 const spaceSlot = document.querySelector("#space-card").shadowRoot.querySelector("slot:not([name])");
 let slotChanges = 0;
 
+// 同时展示 DOM 归属与插槽分配，读者可分开观察“移动节点”和“改变分配”。
 function showSlotStatus() {
   document.querySelector("#slot-status").textContent = [
     "标题的 DOM 父节点仍是 first-card：" + (titleNode.parentNode === firstCard),
@@ -30,6 +31,7 @@ function showSlotStatus() {
   ].join("\n");
 }
 
+// 先监听分配变化，再绑定按钮；事件到达后刷新计数。
 for (const slot of firstCard.shadowRoot.querySelectorAll("slot")) {
   slot.addEventListener("slotchange", () => {
     slotChanges += 1;
@@ -37,6 +39,7 @@ for (const slot of firstCard.shadowRoot.querySelectorAll("slot")) {
   });
 }
 
+// 修改 slot 属性只改变匹配关系，不把标题节点搬入影子树。
 document.querySelector("#toggle-title").addEventListener("click", () => {
   titleNode.slot = titleNode.slot === "title" ? "missing" : "title";
   showSlotStatus();
@@ -48,6 +51,7 @@ document.querySelector("#edit-detail").addEventListener("click", () => {
   // 预期：已分配的 p 没被替换，只改其后代文字，slotchange 计数不增加。
 });
 
+// 这组按钮真正移动正文节点，与上方只改 slot 的实验形成对照。
 document.querySelector("#move-body").addEventListener("click", () => {
   if (bodyNode.parentNode === firstCard) {
     outside.appendChild(bodyNode);

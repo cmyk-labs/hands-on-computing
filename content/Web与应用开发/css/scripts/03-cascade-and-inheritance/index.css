@@ -10,7 +10,7 @@ body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5;
 /* 检查：20px 字号仍保留；只在本例其他比较条件相同后，后面的 navy 胜出。 */
 
 .importance-demo { color: navy !important; }
-/* 第一段：作者重要规则覆盖普通内联；第二段：重要内联优先于同来源的重要规则。 */
+/* 第一段为 navy：作者重要规则覆盖普通内联；第二段为 purple：重要内联优先。 */
 
 #specific-target { color: navy; }
 .specific-panel p.notice { color: maroon; }

@@ -95,6 +95,7 @@ class EchoHandler(http.server.BaseHTTPRequestHandler):
             "Query entries:",
             json.dumps(query_pairs, ensure_ascii=False, indent=2),
         ]
+        # 只有 URL 编码表单转成字段条目；multipart 在下面仅显示原始体。
         media_type = content_type.split(";", 1)[0].strip().lower()
         if media_type == "application/x-www-form-urlencoded":
             try:
@@ -134,6 +135,7 @@ class EchoHandler(http.server.BaseHTTPRequestHandler):
         self._send(page.encode("utf-8"), "text/html; charset=utf-8")
 
     def _send(self, content: bytes, content_type: str) -> None:
+        # 长度按编码后的字节计算；先发送响应头，再发送页面字节。
         self.send_response(200)
         self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(content)))

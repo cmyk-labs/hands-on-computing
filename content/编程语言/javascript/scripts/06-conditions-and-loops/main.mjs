@@ -20,6 +20,7 @@ if (input === "") {
 // 通过
 // 需要输入
 
+// 第一组让 read 与 preview 共用动作；write 用独立块限定局部变量。
 const command = "preview";
 let action;
 switch (command) {
@@ -36,6 +37,7 @@ switch (command) {
     action = "未知命令";
 }
 console.log(action);
+// 第二组故意贯穿；第三组对比字符串与数值是否能匹配。
 let trail = "";
 switch (1) {
   case 1:
@@ -113,6 +115,7 @@ console.log(cursor, kept);
 // 135
 // 4 3
 
+// break search 同时离开两层循环，保存找到的第一个行列位置。
 let found = "无";
 search: for (let row = 0; row < 3; row += 1) {
   for (let col = 0; col < 3; col += 1) {
@@ -123,6 +126,7 @@ search: for (let row = 0; row < 3; row += 1) {
   }
 }
 console.log(found);
+// continue rows 跳过本行剩余列，直接开始下一行。
 let cells = "";
 rows: for (let row = 0; row < 2; row += 1) {
   for (let col = 0; col < 3; col += 1) {
@@ -131,6 +135,7 @@ rows: for (let row = 0; row < 2; row += 1) {
   }
 }
 console.log(cells.trim());
+// 标签也能命名普通块；break finish 离开该块。
 let marker = "开始";
 finish: {
   marker = "结束";

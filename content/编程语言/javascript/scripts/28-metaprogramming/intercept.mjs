@@ -8,15 +8,18 @@ const target = { count: 2, get doubled() { return this.count * 2; } };
 const proxy = new Proxy(target, {
   get(object, key, receiver) {
     events.push(`get:${String(key)}`);
+    // 连同 receiver 一起转发，让 getter 中的 this 仍指向这次访问的接收者。
     return Reflect.get(object, key, receiver);
   },
   set(object, key, value, receiver) {
+    // 这个分支就是 set 拦截的用途：只限制 count，其他属性照常转发。
     if (key === "count" && (!Number.isInteger(value) || value < 0)) {
       throw new RangeError("count must be nonnegative integer");
     }
     return Reflect.set(object, key, value, receiver);
   },
 });
+// 写入先经过 set；随后读 doubled 时，getter 又读取代理上的 count。
 proxy.count = 4;
 assert.equal(proxy.doubled, 8);
 console.log(events.join(",")); // → get:doubled,get:count；getter 的 this 是代理

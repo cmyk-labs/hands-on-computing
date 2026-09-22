@@ -2,7 +2,7 @@
 演示知识点：源码树中运行包测试，检查求和公开行为、无效输入与 CLI 退出语义
 运行命令：PYTHONPATH=scripts/25-project-packaging/src python -m pytest -q scripts/25-project-packaging/tests/test_minutes.py（工作目录 content/编程语言/python）
 期望结果：12 项测试通过
-"""
+"""  # noqa: E501 -- 文件头保留完整运行命令。
 
 import pytest
 

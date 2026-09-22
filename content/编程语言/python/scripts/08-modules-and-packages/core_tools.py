@@ -16,6 +16,7 @@ def passing_scores(scores, minimum=None):
 
 def main():
     """输出一组固定成绩的筛选结果。"""
+    # [80, 90]；直接运行文件才调用 main。
     print(passing_scores([50, 80, 90]))
 
 

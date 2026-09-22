@@ -27,33 +27,33 @@
 
       function finish(connection, message) {
         connection.close();
+        // 旧连接的异步回调不能覆盖新连接的状态文字。
         if (source === connection) {
+          // 预期：显示本次连接完成、提前关闭、手动关闭或错误提示，旧连接不覆盖新状态。
           status.textContent = message;
         }
       }
 
       function appendEvent(event) {
         const payload = JSON.parse(event.data);
-        if (!Number.isInteger(payload.step) || typeof payload.text !== 'string') {
-          throw new Error('事件数据格式不正确');
-        }
+        // 预期：完整接收依次显示 update #1、update #2、done #3，各行含对应完成步骤。
         output.textContent += `${event.type} #${event.lastEventId}: ${payload.text}\n`;
       }
 
       function start(stopAfterFirst) {
+        // 新一轮接收前关闭旧连接，避免两个事件流同时更新页面。
         source?.close();
+        // 预期：重新开始时清空上一次事件列表。
         output.textContent = '';
+        // 预期：显示正在连接，随后由事件回调更新状态。
         status.textContent = '正在连接';
         const connection = new EventSource('/events');
         source = connection;
 
         function receive(event) {
-          try {
-            appendEvent(event);
-          } catch {
-            finish(connection, '事件格式错误，已关闭连接');
-            return;
-          }
+          // 固定服务生成 JSON，解析错误直接暴露给浏览器控制台。
+          appendEvent(event);
+          // 正常完成与首个事件后提前停止，使用同一个关闭入口。
           if (event.type === 'done') {
             finish(connection, '3 个事件已接收，连接已关闭');
           } else if (stopAfterFirst) {

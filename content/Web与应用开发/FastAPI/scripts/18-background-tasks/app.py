@@ -17,10 +17,12 @@ logger = logging.getLogger('uvicorn.error')
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     with TemporaryDirectory(prefix='fastapi18-service-') as folder:
+        # 路径、放行信号和状态属于本应用实例，临时目录跟随生命周期。
         app.state.path = Path(folder) / 'note.txt'
         app.state.gate = threading.Event()
         app.state.status = 'idle'
         yield
+    # 预期：正常退出后日志显示教学临时目录已删除：True。
     logger.info('教学临时目录已删除：%s', not Path(folder).exists())
 
 
@@ -28,6 +30,7 @@ app = FastAPI(lifespan=lifespan)
 
 
 def finish_file(fail: bool = False):
+    # 等待 /release 放行；fail 分支故意把目录当文件，演示后台失败状态。
     try:
         if not app.state.gate.wait(10):
             raise TimeoutError('未收到继续信号')
@@ -36,6 +39,7 @@ def finish_file(fail: bool = False):
             stream.write('后台文件工作完成')
     except (OSError, TimeoutError):
         app.state.status = 'failed'
+        # 预期：故意触发文件错误或等待超时时显示警告，任务状态为 failed。
         logger.warning('文件任务失败')
     else:
         app.state.status = 'done'
@@ -47,6 +51,7 @@ async def background_job(tasks: BackgroundTasks, fail: bool = False):
         raise HTTPException(409, '已有待完成任务')
     app.state.gate.clear()
     app.state.status = 'waiting'
+    # 此处只登记工作，响应发送后才执行；等待式端点则直接 await 工作完成。
     tasks.add_task(finish_file, fail)
     return {'status': 'accepted'}
 

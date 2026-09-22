@@ -29,6 +29,7 @@
   <script>
     const source = "<!doctype html><title>阅读记录</title><p>开始学习。</p>";
     const parsed = new DOMParser().parseFromString(source, "text/html");
+    // 本例 parsed 的 html 下有 head 和 body；head 中是 title，body 中是 p。
     document.querySelector("#tree").textContent =
       "源码：\n" + source + "\n\nDOM 序列化：\n" +
       parsed.documentElement.outerHTML;

@@ -56,6 +56,7 @@ async def get_demo_user(
     websocket: WebSocket,
     session: Annotated[str | None, Cookie(alias="fastapi_ws_demo")] = None,
 ) -> str:
+    # 依赖在 accept 之前完成来源与演示身份检查。
     if websocket.headers.get("origin") != allowed_origin:
         raise WebSocketException(code=1008)
     user = session_users.get(session)
@@ -70,11 +71,13 @@ DemoUser = Annotated[str, Depends(get_demo_user)]
 @app.websocket("/ws")
 async def managed_echo(websocket: WebSocket, user: DemoUser):
     """每条连接最多三条文字消息，任何退出路径都移除连接。"""
+    # 接受后才计入活动集合；接收、发送与关闭都属于同一连接。
     await websocket.accept()
     connections.add(websocket)
     try:
         for number in range(1, 4):
             message = await websocket.receive()
+            # 接收消息可能表示断开；其余分支限定本例支持的文本协议。
             if message["type"] == "websocket.disconnect":
                 return
             if "text" not in message:
@@ -87,6 +90,7 @@ async def managed_echo(websocket: WebSocket, user: DemoUser):
     except WebSocketDisconnect:
         pass  # 发送时也可能遇到对端断开，仍执行 finally。
     finally:
+        # 所有退出路径都释放集合中的引用。
         connections.discard(websocket)
 
 

@@ -3,6 +3,7 @@
 // 运行命令：node scripts/17-json/validate.mjs（工作目录 content/编程语言/javascript）
 // 期望结果：合法输入输出 {"title":"JS","minutes":30}，两份非法输入各打印一条错误消息
 function parseLesson(text) {
+  // 先让 JSON.parse 检查语法，再按本节约定检查对象和字段。
   const value = JSON.parse(text);
   if (value === null || typeof value !== "object" || Array.isArray(value)) {
     throw new TypeError("学习记录必须是对象");
@@ -16,6 +17,7 @@ function parseLesson(text) {
   return { title: value.title, minutes: value.minutes };
 }
 console.log(JSON.stringify(parseLesson('{"title":"JS","minutes":30}')));
+// 这两个反例专门展示校验边界；只捕获预期类型，其他异常直接传播。
 for (const input of ['null', '{"title":"JS","minutes":-1}']) {
   try { parseLesson(input); }
   catch (error) {

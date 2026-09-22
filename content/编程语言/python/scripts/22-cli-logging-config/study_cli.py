@@ -23,14 +23,17 @@ def main() -> int:
     # 1. argparse 接收真正的命令行参数，语法或取值错误退出为 2。
     args = make_parser().parse_args()
     if not args.title.strip():
+        # 空白标题仅向 stderr 输出这条诊断，随后以状态 1 退出。
         print("生成标签失败：title 不能为空白", file=sys.stderr)
         return 1
 
     # 2. 参数已解析，按输出格式生成最终结果。
     labels = [args.title] * args.count
     if args.format == "json":
+        # 标题“Python 学习”、count=2 时为 ["Python 学习", "Python 学习"]。
         print(json.dumps(labels, ensure_ascii=False))
     else:
+        # text 格式每个标签占一行；count=2 时打印两行相同标题。
         print("\n".join(labels))
     return 0
 

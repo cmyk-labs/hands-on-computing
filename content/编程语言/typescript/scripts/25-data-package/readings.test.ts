@@ -5,6 +5,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { isReading, parseReadings, mapValues, loadReadings } from "./package/src/index.js";
+// 第一组确认有效输入、空结果和去除首尾空格后的公开返回值。
 test("有效、空数组及规范化", () => {
   assert.deepEqual(parseReadings([]), { ok: true, value: [] });
   assert.deepEqual(parseReadings([{ sensor: " a ", value: 0, extra: true }]),
@@ -12,16 +13,19 @@ test("有效、空数组及规范化", () => {
   assert.deepEqual(mapValues([{ value: 2 }], item => item.value * 2), [4]);
 });
 test("无效和稀疏输入", () => {
+  // 带同名字段的值可满足结构谓词，但仍可能不满足普通数据的业务约定。
   for (const item of [Object.assign([], { sensor: "a", value: 1 }),
     Object.assign(() => {}, { sensor: "a", value: 1 }), { sensor: " ", value: NaN }]) {
     assert.equal(isReading(item), true);
     assert.equal(parseReadings([item]).ok, false);
   }
+  // 稀疏数组含空位；与显式非法元素一起检查解析入口。
   for (const value of [null, {}, [null], Array(1), [{ sensor: "", value: 1 }],
     [{ sensor: "a", value: NaN }], [{ sensor: "a", value: Infinity }], [{ sensor: "a", value: "2" }]]) {
     assert.equal(parseReadings(value).ok, false);
   }
 });
+// 来源成功、Error 拒绝和非 Error 拒绝分开观察；所有异步结果都要等待。
 test("异步来源与任意拒绝值", async () => {
   assert.deepEqual(await loadReadings(async () => []), { ok: true, value: [] });
   assert.deepEqual(await loadReadings(async () => { throw new Error("离线"); }),

@@ -34,6 +34,7 @@ def main() -> None:
         else:
             raise AssertionError("负上界没有按预期失败")
     # with 已等待工作进程并关闭池；不将这个小例子当作跑分。
+    # JSON 为 {"totals": [5, 14, 30], "error": "ValueError"}。
     print(json.dumps({"totals": totals, "error": error_name}))
 
 

@@ -16,6 +16,7 @@
     <p>教学数据；先按月份分组，每组按工具列行，北站和南站各占一列。</p>
     <table id="monthly">
       <caption>六月与七月各站点借出量（件次）</caption>
+      <!-- 列表头提供站点标识；下方每个月分别建立自己的工具行表头。 -->
       <thead>
         <tr>
           <th id="tool-name">工具</th>
@@ -27,6 +28,7 @@
         <tr><th id="month-june" colspan="3">六月</th></tr>
         <tr>
           <th id="june-tape" headers="month-june tool-name">卷尺</th>
+          <!-- headers 依次列出月份、工具、站点对应的 th id。 -->
           <td headers="month-june june-tape station-north">12</td>
           <td headers="month-june june-tape station-south">9</td>
         </tr>
@@ -37,6 +39,7 @@
         </tr>
       </tbody>
       <tbody>
+        <!-- 七月另设 id，避免把名称相同的卷尺关联到六月。 -->
         <tr><th id="month-july" colspan="3">七月</th></tr>
         <tr>
           <th id="july-tape" headers="month-july tool-name">卷尺</th>

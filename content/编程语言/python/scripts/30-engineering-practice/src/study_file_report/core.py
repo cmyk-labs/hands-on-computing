@@ -22,6 +22,7 @@ class FileStats:
 
 def summarize(lines: Iterable[str]) -> tuple[int, int, int]:
     """消费文本行，返回行数、空白分隔项数量和字符数。"""
+    # 逐行累计，字符数包含原换行，词数只按空白分隔。
     line_count = word_count = character_count = 0
     for line in lines:
         line_count += 1
@@ -44,9 +45,8 @@ def analyze_batch(
     paths: Sequence[Path], *, workers: int = 1
 ) -> list[FileStats]:
     """按输入顺序分析文件；失败时传播异常，不返回部分结果。"""
-    if workers < 1:
-        raise ValueError("workers 必须大于零")
     if workers == 1:
         return [analyze_file(path) for path in paths]
+    # map 按输入顺序产出；收集完成后才返回，失败不会交回半份结果。
     with ThreadPoolExecutor(max_workers=workers) as pool:
         return list(pool.map(analyze_file, paths))

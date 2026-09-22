@@ -9,6 +9,7 @@ import { resolve, relative, isAbsolute } from "node:path";
 import { summarizeRows, validateRows } from "./index.mjs";
 import { createReport } from "./io.mjs";
 
+// 1. 固定小数据观察过滤、同额排序和输入不变。
 test("summary: groups filter sort and purity", () => {
   const rows = [
     { group: " b ", amountCents: 100, active: true },
@@ -23,6 +24,7 @@ test("summary: groups filter sort and purity", () => {
   assert.equal(JSON.stringify(rows), before);
   assert.notEqual(validateRows(rows)[0], rows[0]);
 });
+// 2. 空数组和零是有效值；结构、字段和金额范围分别验证。
 test("summary: empty zero and invalid boundaries", () => {
   assert.deepEqual(summarizeRows([]), []);
   assert.equal(summarizeRows([{ group: "zero", amountCents: 0, active: true }])[0].totalCents, 0);
@@ -36,6 +38,7 @@ test("summary: empty zero and invalid boundaries", () => {
     { ...valid, amountCents: Number.MAX_SAFE_INTEGER }, valid,
   ]), /group total exceeds safe integer/);
 });
+// 3. 访问器在多次读取时改变值，用来确认每个原始字段只读取一次。
 for (const [field, laterValue] of [["group", ""], ["amountCents", -1], ["active", false]]) {
   test(`summary: read ${field} once`, () => {
     const row = { group: " a ", amountCents: 10, active: true };
@@ -49,6 +52,7 @@ for (const [field, laterValue] of [["group", ""], ["amountCents", -1], ["active"
   });
 }
 
+// 4. 临时文件测试真实 I/O；成功时读回，失败时确认没有创建报告。
 test("report: real write and grouped failures", async () => {
   const root = import.meta.dirname;
   const directory = await mkdtemp(resolve(root, "js-c-test-"));
@@ -58,6 +62,7 @@ test("report: real write and grouped failures", async () => {
     await writeFile(input, '[{"group":"a","amountCents":20,"active":true}]', "utf8");
     assert.deepEqual(await createReport([input], output), [{ group: "a", count: 1, totalCents: 20 }]);
     assert.equal(JSON.parse(await readFile(output, "utf8"))[0].totalCents, 20);
+    // 两个缺失文件同时失败，AggregateError 应保留两个原始 ENOENT。
     const absentOutput = resolve(directory, "absent.json");
     await assert.rejects(createReport([resolve(directory, "missing-a.json"), resolve(directory, "missing-b.json")], absentOutput), (error) => {
       assert.ok(error instanceof AggregateError);
@@ -69,13 +74,14 @@ test("report: real write and grouped failures", async () => {
     await writeFile(input, "{", "utf8");
     await assert.rejects(createReport([input], absentOutput), (error) => error.errors[0].cause instanceof SyntaxError);
     await writeFile(input, "{}", "utf8");
-    await assert.rejects(createReport([input], absentOutput), (error) => error.errors[0].cause.message === "file must contain an array");
+    await assert.rejects(createReport([input], absentOutput), (error) => error.errors[0].cause.message === "rows must be an array");
   } finally {
     const child = relative(root, directory);
     assert.ok(child.startsWith("js-c-test-") && !isAbsolute(child) && !child.includes(".."));
     await rm(directory, { recursive: true });
   }
 });
+// 5. 文件能解析但字段不合法时，也应一次汇总两个文件的原因。
 test("report: collect field errors from both input files", async () => {
   const root = import.meta.dirname;
   const directory = await mkdtemp(resolve(root, "js-c-test-"));

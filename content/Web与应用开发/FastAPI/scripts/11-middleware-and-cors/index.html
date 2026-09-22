@@ -34,6 +34,7 @@
       const API_URL = 'http://127.0.0.1:8110';
       const result = document.querySelector('#result');
       const buttons = document.querySelectorAll('button[data-action]');
+      // 预期：显示本页的协议、主机与端口，127.0.0.1 和 localhost 是不同的源。
       document.querySelector('#origin').textContent = location.origin;
 
       async function request(path, options = {}) {
@@ -75,6 +76,7 @@
           for (const control of buttons) {
             control.disabled = true;
           }
+          // 预期：点击后先显示请求中，等待期间按钮禁用。
           result.textContent = '请求中…';
           try {
             let output;
@@ -91,8 +93,10 @@
             } else {
               output = await request('/stats');
             }
+            // 预期：允许来源显示 200、请求 id 与响应数据；凭据对照为 omit=false、include=true、cookieCleared=true。
             result.textContent = JSON.stringify(output, null, 2);
           } catch (error) {
+            // 预期：拒绝来源或网络失败显示错误提示；具体错误文字由浏览器决定。
             result.textContent = `${error.name}: ${error.message}\n` +
               '无法读取响应。请查看 Network 和 Console，区分网络与 CORS 失败。';
           } finally {

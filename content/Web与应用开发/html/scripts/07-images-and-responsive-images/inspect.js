@@ -9,6 +9,8 @@ const selectionText = document.querySelector("#selection");
 
 inspectButton.addEventListener("click", () => {
   const bounds = sampleImage.getBoundingClientRect();
+  // 点击后固定显示四行：候选 URL、宽度、高度、DPR；尺寸保留一位小数。
+  // URL 与尺寸取决于当前页面、视口和候选选择，DPR 取决于设备与浏览器设置。
   selectionText.textContent = [
     "当前候选 URL：" + sampleImage.currentSrc,
     "显示宽度：" + bounds.width.toFixed(1) + " CSS px",

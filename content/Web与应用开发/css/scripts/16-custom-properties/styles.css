@@ -13,6 +13,7 @@ button, input, select { font: inherit; }
 a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
 
 
+/* 基础令牌在根元素定义，卡片复用颜色与间距。 */
 :root {
   --brand: #174f79;
   --space: 12px;
@@ -30,6 +31,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .scope-text { color: var(--brand); padding: 8px; border: 1px solid currentColor; }
 /* 局部段落及 span 使用棕色；外面的兄弟仍使用根颜色。 */
 
+/* 比较缺失、循环与显式后备值；下组再观察计算值无效。 */
 .missing-fallback {
   --backup: teal;
   color: var(--missing, var(--backup, black));
@@ -70,6 +72,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   /* 第一段仍为 teal，第二段根据本地 --source 变为棕色。 */
 }
 
+/* registered：注册类型和继承方式，与未注册属性作对照。 */
 @property --badge-tone {
   syntax: "<color>";
   inherits: false;
@@ -91,6 +94,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   /* 支持注册时前三段为 teal、teal、棕色；本回退段明确为 teal。 */
 }
 
+/* 主题先给出浅色令牌，下面分别处理系统偏好和固定选择。 */
 :root {
   --surface: #ffffff;
   --text: #17202a;
@@ -109,6 +113,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   color: var(--text);
 }
 .theme-input { max-width: 100%; }
+/* 只让 auto 跟随系统；显式 light / dark 由后面的规则确定。 */
 @media (prefers-color-scheme: dark) {
   :root[data-theme="auto"] {
     --surface: #17202a;
@@ -119,6 +124,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   }
 }
 
+/* color-scheme 控制浏览器原生配色，作者颜色仍由上面的令牌提供。 */
 :root[data-theme="auto"] { color-scheme: light dark; }
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] {

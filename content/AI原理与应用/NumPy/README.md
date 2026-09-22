@@ -70,10 +70,12 @@ python -m notebook
 
 Step 4：打开章节，选择该环境的 Python 3 (ipykernel)，重启内核后从上到下运行。
 
+标明“预期异常”的单元会直接显示原始报错；阅读注释中的原因与实际异常类型后，继续运行下一单元。其他单元应正常执行。
+
 Step 5：完成后在启动 Notebook 的终端按 Ctrl+C，并按提示确认停止。
 
 文件读写示例使用自制小数据；[测量 CSV](date/19-measurements.csv) 保留在 date/，供综合实践直接读取，其余临时文件按章关闭和清理。内存布局、高级索引、病态方程和频谱示意图位于 image/，正文就地引用，阅读图片不需要安装绘图库。数值、形状、类型和内存共享的成功条件按章给出。互操作扩展仅验证本地 CPU 数组，未验证 GPU 框架、静态类型检查器或编译扩展。
 
 操作依据：[NumPy 安装](https://numpy.org/install/)、[Conda 环境管理](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html)、[pip 依赖清单](https://pip.pypa.io/en/stable/reference/requirements-file-format/)、[Jupyter 安装](https://jupyter.org/install)。
 
-2026-09-21 复验：修订的 06、09、14、15、16、19、20、21、25 章共 9 份 Notebook 已在上述环境从空内核顺序执行，保存真实输出；常量列、相邻大整数与浮点数、数值退化拒绝及 CSV 往返检查通过。全课程 Notebook 格式、代码语法与本地链接检查通过。首次全新安装和上述未覆盖平台仍未复验。
+综合实践明确约定输入范围，用常量列、相邻浮点数、大整数转换与数值退化示例观察精度边界；函数聚焦计算过程，超出约定的输入不再逐项包装报错。首次全新安装和上述未覆盖平台未复验。

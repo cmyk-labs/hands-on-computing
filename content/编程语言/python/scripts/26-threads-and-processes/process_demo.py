@@ -41,6 +41,7 @@ def main() -> None:
             raise TimeoutError("统计子进程在 10 秒内没有退出")
         if process.exitcode != 0:
             raise RuntimeError(f"统计子进程异常退出：{process.exitcode}")
+        # JSON 中 start_method=spawn、parent=[15, 20]、child=[15, 20, 30]、exitcode=0。
         print(json.dumps({
             "start_method": context.get_start_method(),
             "parent": parent_minutes,

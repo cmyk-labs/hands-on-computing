@@ -95,4 +95,5 @@ a:hover { text-decoration-thickness: 0.18em; }
     color-scheme: dark;
   }
 }
-/* 切换系统明暗偏好：文字、背景、链接和控件边界一起检查。 */
+/* 切到 dark 后：背景 #17212b、文字 #f4f7fa、链接 #a9d2ff、边界 #bdc9d6。
+   原生控件采用 dark 配色；其具体外观由浏览器绘制。 */

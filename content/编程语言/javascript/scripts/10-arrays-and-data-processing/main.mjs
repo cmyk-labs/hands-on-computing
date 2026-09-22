@@ -172,6 +172,7 @@ console.log(Object.hasOwn(sparse.toReversed(), 2), [1, , [2, , 3]].flat().join("
 // false true true
 // true 1,2,3
 
+// 先比较只复制外层数组和同时复制对象元素，观察共享引用在哪一层。
 const sourceRows = [{ count: 1 }];
 const shallow = sourceRows.slice();
 shallow[0].count = 4;
@@ -179,11 +180,13 @@ console.log(shallow !== sourceRows, shallow[0] === sourceRows[0], sourceRows[0].
 const separate = sourceRows.map(row => ({ ...row }));
 separate[0].count = 8;
 console.log(sourceRows[0].count, separate[0].count);
+// fill 重复放入同一个对象；Array.from 的回调每次创建新对象。
 const repeated = new Array(2).fill({ count: 0 });
 repeated[0].count = 1;
 const independent = Array.from({ length: 2 }, () => ({ count: 0 }));
 independent[0].count = 1;
 console.log(repeated[1].count, independent[1].count);
+// 有意在回调中改输入：第二项的新值会被读取，新追加的第三项不在原访问范围。
 const changing = [1, 2];
 const observed = changing.map((value, index) => {
   if (index === 0) {

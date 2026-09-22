@@ -6,17 +6,20 @@ import { readFile, writeFile } from "node:fs/promises";
 import { summarizeRows, validateRows } from "./index.mjs";
 
 export async function createReport(inputPaths, outputPath) {
+  // 1. 每个文件各自读取和校验；allSettled 用于一次收集多个文件的失败。
   const results = await Promise.allSettled(inputPaths.map(async (path) => {
     try {
       const rows = JSON.parse(await readFile(path, "utf8"));
-      if (!Array.isArray(rows)) throw new TypeError("file must contain an array");
       return validateRows(rows);
     } catch (cause) {
+      // 添加文件路径作为上下文，cause 保留原始异常。
       throw new Error(`input ${path} failed`, { cause });
     }
   }));
+  // 2. 有任何输入失败就停止写出，避免把不完整输入当作完整报告。
   const errors = results.filter((item) => item.status === "rejected").map((item) => item.reason);
   if (errors.length > 0) throw new AggregateError(errors, "input files failed");
+  // 3. 全部输入成功后合并记录，再汇总并等待文件写入完成。
   const rows = results.flatMap((item) => item.value);
   const report = summarizeRows(rows);
   await writeFile(outputPath, JSON.stringify(report, null, 2) + "\n", "utf8");

@@ -47,6 +47,7 @@
 
       function log(message) {
         const item = document.createElement('li');
+        // 预期：每次调用追加一条纯文本日志，HTML 标签不会被当作元素解析。
         item.textContent = message;
         messages.append(item);
       }
@@ -70,8 +71,10 @@
             throw new Error('连接数请求失败');
           }
           const data = await response.json();
+          // 预期：仅本页操作时，两条连接打开后为 2，依次关闭后为 1、0。
           status.textContent = `活动连接数：${data.active}`;
         } catch {
+          // 预期：状态请求失败时显示此提示，恢复服务后可点击刷新重试。
           status.textContent = '连接数量暂不可用，请确认本地服务仍在运行。';
         }
       }
@@ -102,6 +105,7 @@
             log(`${label} 已打开（${user}）`);
             refreshCount();
           });
+          // 预期：显示 A/B、回声用户、number=1～3 和发出的文本；各连接独立计数。
           socket.addEventListener('message', (event) => log(`${label} 收到：${event.data}`));
           socket.addEventListener('error', () => log(`${label} 连接失败，请检查服务与演示身份。`));
           socket.addEventListener('close', (event) => {
@@ -110,6 +114,7 @@
               pendingLabel = null;
             }
             renderButtons();
+            // 预期：正常完成或主动断开为 1000，超长消息为 1009；网络异常可能为 1006。
             log(`${label} 已关闭，关闭码：${event.code}`);
             refreshCount();
           });
@@ -149,6 +154,7 @@
             pendingLabel = null;
             rejectedSocket = null;
             renderButtons();
+            // 预期：握手被拒后浏览器通常显示 1006，不等同于应用内测试中的 1008。
             log(`无身份连接已结束，浏览器关闭码：${event.code}`);
             refreshCount();
           });

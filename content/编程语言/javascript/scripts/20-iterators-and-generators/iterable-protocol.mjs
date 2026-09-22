@@ -5,9 +5,11 @@
 function range(start, end) {
   return {
     [Symbol.iterator]() {
+      // 计数器属于这次创建的迭代器，两次遍历不会共用进度。
       let current = start;
       return {
         next() {
+          // 结束以 done 判断；上界 end 不作为有效元素返回。
           if (current >= end) return { value: undefined, done: true };
           return { value: current++, done: false };
         }
@@ -16,6 +18,7 @@ function range(start, end) {
   };
 }
 const values = range(2, 5);
+// 保留一个手动迭代器，再创建新迭代器展开；比较两者各自的进度。
 const iterator = values[Symbol.iterator]();
 console.log(JSON.stringify(iterator.next()));
 console.log([...values].join(","), [...values].join(","));

@@ -5,6 +5,8 @@
 import { moduleLabel } from "./module-message.js";
 
 const moduleOnly = "模块内变量可读";
+// 本页未使用 async 或顶层 await，日志为：
+// module-main：已读取导入的文字 | 末尾元素=true | readyState=interactive
 record("module-main：" + moduleLabel);
 
 // 本例模块没有 async；预期 end 已存在，且这段文字成功写入页面。

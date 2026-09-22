@@ -7,11 +7,13 @@ import assert from "node:assert/strict";
 import { loadMean } from "./mean.mjs";
 
 test("loadMean: injected reader", async (t) => {
+  // 替换读文件边界，固定输入；调用记录用来检查依赖被调用的方式。
   const readText = t.mock.fn(async () => "[2,6]");
   assert.equal(await loadMean(readText), 4);
   assert.equal(readText.mock.callCount(), 1);
   assert.deepEqual(readText.mock.calls[0].arguments, []);
 });
+// 三种失败来自读取、JSON 语法和业务输入；每个 rejects 都要等待。
 test("loadMean: read and parse rejection", async () => {
   await assert.rejects(loadMean(async () => { throw new Error("disk failed"); }), /disk failed/);
   await assert.rejects(loadMean(async () => "{"), SyntaxError);
@@ -23,6 +25,7 @@ test("loadMean: method boundary", async (t) => {
   t.mock.method(reader, "read", async () => "[4,8]");
   assert.equal(await loadMean(() => reader.read()), 6);
   assert.equal(reader.read.mock.callCount(), 1);
+  // 在同一测试中恢复，才能直接观察原方法已经重新生效。
   t.mock.restoreAll();
   assert.equal(reader.read, original);
 });

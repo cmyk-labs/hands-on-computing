@@ -24,6 +24,7 @@ async def text_chunks() -> AsyncIterator[bytes]:
             if number < 3:
                 await asyncio.sleep(0.1)
     finally:
+        # 预期：文本流结束或取消后，在服务端显示文本生成器已退出。
         print("文本生成器已退出", flush=True)
 
 
@@ -34,11 +35,13 @@ def stream_text() -> StreamingResponse:
 
 @app.get("/events", response_class=EventSourceResponse)
 async def events() -> AsyncIterator[ServerSentEvent]:
+    # 当前活动流与累计启动次数分开统计，提前关闭也在 finally 中归还。
     state["active"] += 1
     state["started"] += 1
     try:
         for step in range(1, 4):
             state["produced"] += 1
+            # 第三个事件用 done 告知页面主动关闭有限任务。
             yield ServerSentEvent(
                 data={"step": step, "text": f"完成步骤 {step}"},
                 event="done" if step == 3 else "update",
@@ -50,6 +53,7 @@ async def events() -> AsyncIterator[ServerSentEvent]:
     finally:
         state["active"] -= 1
         state["closed"] += 1
+        # 预期：完整接收或提前断开后，在服务端显示 SSE 生成器已退出。
         print("SSE 生成器已退出", flush=True)
 
 

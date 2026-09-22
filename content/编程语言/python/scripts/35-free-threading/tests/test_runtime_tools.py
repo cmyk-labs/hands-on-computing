@@ -25,6 +25,7 @@ def test_extracts_only_expected_runtime_tree(tmp_path: Path) -> None:
     """保留运行文件内容，包元数据不进入可执行目录。"""
     from runtime_tools import extract_runtime
 
+    # 归档中故意混入包元数据，检查提取结果只保留运行目录。
     payload = package_bytes(
         {
             "tools/python.exe": b"not executed",

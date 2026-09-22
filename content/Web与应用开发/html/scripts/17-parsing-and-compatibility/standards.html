@@ -20,7 +20,7 @@
       hasDoctype: document.doctype !== null,
       compatMode: document.compatMode
     }, null, 2);
-    // 有 DOCTYPE 时预期 CSS1Compat；无 DOCTYPE 时预期 BackCompat。
+    // 三个字段依次为 text/html、true、CSS1Compat；有 DOCTYPE，采用标准模式。
     // 两页看起来可能相同，不能仅凭外观判断模式。
   </script>
 </body>

@@ -11,6 +11,8 @@ input.addEventListener("input", (event: Event) => {
   const target = event.currentTarget;
   if (!(target instanceof HTMLInputElement)) return;
   const quantity = target.valueAsNumber;
+  // 输入 1 或 100 后分别显示“数量有效：1”“数量有效：100”。
+  // 清空，或输入 0、1.5、101 后显示“请输入 1–100 的整数”。
   output.textContent = Number.isSafeInteger(quantity) && quantity >= 1 && quantity <= 100
     ? "数量有效：" + quantity : "请输入 1–100 的整数";
 });

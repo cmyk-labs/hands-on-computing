@@ -7,4 +7,4 @@ const unknownOrder: unknown = { name: "a" };
 unknownOrder.name; // TS18046：先检查 unknown。
 const result = parseOrder("null");
 console.log(result.value); // TS2339：失败分支没有 value。
-try { throw "failed"; } catch (error: unknown) { console.log(error.message); }
+try { throw "failed"; } catch (error: unknown) { console.log(error.message); } // TS18046；仅检查，不运行。

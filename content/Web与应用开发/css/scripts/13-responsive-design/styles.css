@@ -13,6 +13,7 @@ button, input, select { font: inherit; }
 a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
 
 
+/* index：先提供单列基础布局，达到断点后再改成两列。 */
 .fluid-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -39,6 +40,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   /* 放大页面至 200%：检查文字可读、内容未被固定高度裁掉。 */
 }
 
+/* 查询语法对照：四组元素分别观察范围、逗号、not 和 or 条件。 */
 .range-sample, .logic-sample, .not-sample, .or-sample {
   border: 3px solid gray;
   padding: 8px;
@@ -70,6 +72,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   /* 结合设备像素比仿真观察边框；本例不据此声称图像更清晰。 */
 }
 
+/* preferences：先保证链接可点击和可聚焦，再按输入能力增强。 */
 .input-link {
   display: inline-block;
   padding: 12px 16px;
@@ -85,6 +88,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 }
 /* Tab 聚焦并按 Enter：即使不满足 hover 条件，仍能到达链接目标。 */
 
+/* 用户偏好分开处理：明暗配色、对比度、强制颜色和减少运动。 */
 .preference-panel {
   background-color: #ffffff;
   color: #17202a;
@@ -94,6 +98,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .preference-panel a { color: inherit; }
 .reading-space { min-height: 80vh; }
 html { scroll-behavior: auto; }
+/* 只有用户未要求减少运动时才启用平滑滚动。 */
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
@@ -108,6 +113,7 @@ html { scroll-behavior: auto; }
 }
 /* 仿真 reduce 后检查根元素的 scroll-behavior 为 auto，并实际点击锚点。 */
 
+/* images：同一素材分别保持完整比例和填满固定高度的裁剪框。 */
 .image-host { max-width: 800px; }
 .fluid-image {
   display: block;
@@ -124,6 +130,7 @@ html { scroll-behavior: auto; }
   /* 比较源图的三色区域：固定框可能裁边；上图保持完整比例。 */
 }
 
+/* 长地址允许换行；确需保留代码排版的区域单独滚动。 */
 .overflow-check { max-width: 48rem; min-width: 0; }
 .long-address { overflow-wrap: anywhere; }
 .code-scroll {

@@ -4,4 +4,4 @@
 // 期望结果：输出 installed-consumer 读数:12 与 installed-types true
 import { Meter, label } from "ts-b-meter";
 const meter = new Meter(10);
-console.log("installed-consumer", label(meter.add(2)));
+console.log("installed-consumer", label(meter.add(2))); // → installed-consumer 读数:12

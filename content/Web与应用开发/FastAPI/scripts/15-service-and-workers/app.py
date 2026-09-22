@@ -23,10 +23,13 @@ async def lifespan(app: FastAPI):
     try:
         with journal:
             journal.write(f"pid={os.getpid()}\n")
+            # 预期：本 worker 启动时记录其 pid 和当前 LABEL；pid 每次可能不同。
             logger.info("startup pid=%d label=%s", os.getpid(), LABEL)
             yield
+            # 预期：正常关闭时记录与本次 startup 相同的 pid。
             logger.info("shutdown pid=%d", os.getpid())
     finally:
+        # 预期：closed=True，资源已关闭；pid 仍对应同一 worker。
         logger.info("closed=%s pid=%d", journal.closed, os.getpid())
 
 
@@ -46,6 +49,7 @@ async def read_state(request: Request):
 async def tick(request: Request):
     """只增加当前 worker 的内存计数。"""
     request.app.state.count += 1
+    # 预期：同一 pid 的 count 从 1 逐次递增；不同 worker 分别计数。
     logger.info("tick pid=%d count=%d", os.getpid(), request.app.state.count)
     return {
         "pid": os.getpid(), "count": request.app.state.count, "label": LABEL,

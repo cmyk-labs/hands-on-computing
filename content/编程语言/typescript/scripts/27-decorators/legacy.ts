@@ -9,5 +9,5 @@ function mark(_target: object, key: string | symbol | undefined, index: number):
 class Legacy {
   greet(@mark name: string): string { return "Hi " + name; }
 }
-console.log(new Legacy().greet("Ada"), legacyEvents.join(","));
+console.log(new Legacy().greet("Ada"), legacyEvents.join(",")); // → Hi Ada greet:0
 export {};

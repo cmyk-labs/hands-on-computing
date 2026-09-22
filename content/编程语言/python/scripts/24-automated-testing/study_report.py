@@ -19,4 +19,5 @@ def report_from_file(path: Path) -> str:
 
 def print_total(minutes: list[int]) -> None:
     """向 CLI 的标准输出写入最终汇总结果。"""
+    # 测试传入 [10, 20] 时完整 stdout 为“合计 30 分钟”加一个换行。
     print(f"合计 {study_records.total_minutes(minutes)} 分钟")

@@ -2,10 +2,12 @@
 // 演示知识点：执行器结果一次性采用、thenable 采用与执行器抛错
 // 运行命令：node scripts/21-promises/states.mjs（工作目录 content/编程语言/javascript）
 // 期望结果：输出 executor | after resolve | sync end | value=7 与 thenable 9
+// 先记录同步执行器，再观察采用 inner 结果后的回调顺序。
 const events = [];
 const inner = Promise.withResolvers();
 const outer = new Promise((resolve, reject) => {
   events.push("executor");
+  // 此处采用另一个 Promise；后续 reject 不会再改变已采用的结果。
   resolve(inner.promise);
   reject(new Error("ignored"));
   events.push("after resolve");
@@ -17,6 +19,7 @@ outer.then((value) => {
 events.push("sync end");
 inner.resolve(7);
 
+// 普通对象只要有可调用的 then，也可被 Promise.resolve 采用。
 const thenable = {
   then(resolve, reject) {
     resolve(9);

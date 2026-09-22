@@ -10,20 +10,24 @@ const directory = await mkdtemp(resolve(root, "js-c-async-"));
 try {
   const path = resolve(directory, "note.txt");
   let savedHandle;
+  // 这个块界定文件寿命；写入与离开块时的异步关闭都要等待。
   {
     await using file = await open(path, "w");
     savedHandle = file;
     await file.writeFile("async saved", "utf8");
   }
+  // 块外再读回文件，并用保留的句柄观察已关闭状态。
   assert.equal(await readFile(path, "utf8"), "async saved");
   await assert.rejects(savedHandle.stat(), { code: "EBADF" });
   console.log("write awaited and handle closed"); // → write awaited and handle closed
+  // 对照：没有 asyncDispose 时，await using 也可以采用同步 dispose。
   const events = [];
   {
     await using fallback = { [Symbol.dispose]() { events.push("sync fallback"); } };
   }
   assert.deepEqual(events, ["sync fallback"]);
 } finally {
+  // 句柄关闭后清理本次目录；这里的 finally 不吞掉原始异常。
   const child = relative(root, directory);
   assert.ok(child.startsWith("js-c-async-") && !isAbsolute(child) && !child.includes(".."));
   await rm(directory, { recursive: true });

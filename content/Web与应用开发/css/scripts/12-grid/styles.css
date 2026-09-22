@@ -13,6 +13,7 @@ button, input, select { font: inherit; }
 a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
 
 
+/* index：先观察轨道和跨列项目，再比较比例分配与长内容。 */
 .line-grid {
   display: grid;
   grid-template-columns: 120px minmax(0, 1fr);
@@ -43,6 +44,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   /* 缩窄页面：长串换行；不要用隐藏整个页面的溢出来遮住问题。 */
 }
 
+/* placement：固定列数，比较普通自动放置、dense 填空和按列放置。 */
 .packing {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -65,6 +67,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .column-flow > span { border: 1px solid teal; }
 /* 1、2 在首列，3 在第二列；这里的列由隐式网格生成。 */
 
+/* 两组使用相同内容与最小列宽，仅切换 auto-fill / auto-fit。 */
 .repeat-grid {
   display: grid;
   gap: 12px;
@@ -79,6 +82,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   /* 宽容器里比较两组项目宽度；Grid 覆盖层显示 fill 保留的空列。 */
 }
 
+/* 命名区域负责页面外层布局；actions 单独用 Flexbox 排列按钮。 */
 .page-grid {
   display: grid;
   grid-template-columns: [sidebar-start] minmax(0, 1fr) [body-start] minmax(0, 2fr) [page-end];
@@ -96,6 +100,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   /* 外层检查区域边界，内层检查按钮换行；Tab 顺序沿 HTML 前进。 */
 }
 
+/* alignment：先设置整组轨道的位置，再设置项目在各自格子内的位置。 */
 .alignment-grid {
   display: grid;
   grid-template-columns: repeat(2, 90px);
@@ -115,6 +120,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   /* A 靠自身格子的起始角，B 靠结束角；整个 192px × 80px 轨道组居中。 */
 }
 
+/* 把两项放到同一格，观察项目重叠和 z-index。 */
 .overlap-grid { display: grid; min-height: 120px; }
 .overlap-grid > * { grid-column: 1; grid-row: 1; }
 .back-layer { background: #dceeea; padding: 8px; }
@@ -128,6 +134,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   /* 说明盖在浅色背景上，仍参与网格尺寸计算。 */
 }
 
+/* subgrid：基础卡片各自计算行高，下方再为对照组共享父网格行。 */
 .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .course-card {
   display: grid;

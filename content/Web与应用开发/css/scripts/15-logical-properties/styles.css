@@ -28,7 +28,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .direction-sample { border: 1px solid teal; padding: 8px; text-align: start; }
 .css-rtl {
   direction: rtl;
-  /* 比较行内起点，不把 RTL 理解成对 ABC 或数字逐字符反转。 */
+  /* 第一段靠左；其余三段靠右，ABC 和 123 内部仍按原顺序阅读。 */
 }
 
 .logical-size {
@@ -54,7 +54,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   padding-inline: 16px;
   border-inline-start: 6px solid teal;
   text-align: start;
-  /* 比较边框和 20px 外边距是否随 dir 切换起始侧。 */
+  /* LTR 的 6px 边框和 20px 外边距在左；RTL 时两者都移到右侧。 */
 }
 
 .orientation-frame { max-width: 100%; overflow: auto; }
@@ -98,7 +98,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   inset-inline-end: 8px;
   padding: 4px;
   background-color: #dfefea;
-  /* 量偏移时以包含块内边缘为参照，外框还有 1px 边框。 */
+  /* 三个 A 依次靠右上、左上、右下，两条对应边均偏移 8px。
+     偏移以包含块内边缘为参照，外框还有 1px 边框。 */
 }
 
 .mix-host { border: 1px solid gray; margin: 12px 0; }

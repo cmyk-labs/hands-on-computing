@@ -4,6 +4,7 @@
 // 期望结果：events 与行内注释顺序一致，greet 输出 Hi Ada
 import assert from "node:assert/strict";
 import { events, trace, register, trimField } from "./decorators.js";
+// 类定义阶段求值并应用装饰器；两个方法装饰器从内向外组合。
 @register
 class Greeter {
   @trimField name = " Ada ";
@@ -11,9 +12,11 @@ class Greeter {
   @trace("inner")
   greet(prefix: string): string { return prefix + this.name; }
 }
+// 实例化触发初始化器和字段初始化，随后调用包装后的 greet。
 const greeter = new Greeter();
 assert.equal(greeter.greet("Hi "), "Hi Ada");
 assert.equal(greeter.name, "Ada");
+// 把定义、实例化、调用三个阶段放在同一记录中核对先后。
 assert.deepEqual(events, [
   "evaluate outer", "evaluate inner", "apply inner:greet", "apply outer:greet",
   "apply field name", "class class:Greeter", "class ready Greeter", "init inner", "init outer",

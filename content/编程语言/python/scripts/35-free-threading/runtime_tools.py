@@ -9,6 +9,7 @@ import io
 import json
 import platform
 import subprocess
+import sys
 import zipfile
 from collections.abc import Iterator
 from contextlib import contextmanager
@@ -19,6 +20,7 @@ from urllib.request import urlopen
 
 def extract_runtime(payload: bytes, expected_sha256: str, target: Path) -> Path:
     """核对下载内容并检查全部路径后，提取运行所需 tools 目录。"""
+    # 先核对下载内容，再检查所有归档路径，避免检查过程中就写入文件。
     if hashlib.sha256(payload).hexdigest() != expected_sha256:
         raise ValueError("运行包 SHA-256 与本章固定值不符")
     if target.exists():
@@ -43,6 +45,7 @@ def extract_runtime(payload: bytes, expected_sha256: str, target: Path) -> Path:
         names = {member.filename for member in members}
         if "tools/python.exe" not in names:
             raise ValueError("运行包缺少 tools/python.exe")
+        # 只提取前面筛选的 tools 目录，包元数据不进入运行目录。
         target.mkdir()
         archive.extractall(target, members=members)
     return target / "tools/python.exe"
@@ -66,6 +69,7 @@ def temporary_runtimes() -> Iterator[dict[str, Path]]:
     with TemporaryDirectory(prefix="python35-") as directory:
         root = Path(directory)
         runtimes = {}
+        # 两个构建使用同一版本，各自展开到独立目录，不改变系统解释器配置。
         for label, (package, digest) in packages.items():
             url = (
                 "https://api.nuget.org/v3-flatcontainer/"
@@ -74,6 +78,7 @@ def temporary_runtimes() -> Iterator[dict[str, Path]]:
             with urlopen(url, timeout=45) as response:
                 payload = response.read()
             runtimes[label] = extract_runtime(payload, digest, root / label)
+        # 调用方在 with 内启动实验；离开 with 后解释器文件一起清理。
         yield runtimes
 
 
@@ -110,6 +115,7 @@ def run_experiment(
         check=True,
         timeout=90,
     )
-    if completed.stderr:
-        raise RuntimeError(f"实验进程产生诊断：{completed.stderr}")
+    # 退出失败由 check=True 传播；诊断原样显示，不把警告等同于失败。
+    # 无诊断时不显示文本；存在兼容警告时原样写入宿主 stderr。
+    print(completed.stderr, end="", file=sys.stderr)
     return json.loads(completed.stdout)

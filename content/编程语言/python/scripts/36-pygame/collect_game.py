@@ -122,6 +122,7 @@ def main() -> None:
 
     # 2. 运行后输出简短状态，供 Notebook 核对完成与清理。
     report = run_game(args.frames, args.dt, args.snapshot)
+    # 正文无输入运行 8 帧：score=0、position=[40.0, 200.0]、running=false、display_closed=true。
     print(json.dumps(report))
 
 

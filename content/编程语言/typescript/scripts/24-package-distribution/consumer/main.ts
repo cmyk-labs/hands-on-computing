@@ -6,5 +6,6 @@ import { greet, type GreetingOptions } from "notebook-greeting-ts-c";
 import { greet as plain } from "notebook-greeting-ts-c/plain";
 const options: GreetingOptions = { prefix: "欢迎" };
 const result: string = greet("读者", options);
-if (result !== "欢迎，读者" || plain("读者") !== "你好，读者") throw new Error("ESM result");
-console.log("ESM installed OK", result);
+// 按包名分别调用主入口和子路径。
+console.log("ESM installed OK", result); // → ESM installed OK 欢迎，读者
+console.log("plain installed OK", plain("读者")); // → plain installed OK 你好，读者

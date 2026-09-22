@@ -22,6 +22,7 @@ const profile = {
   ],
   samples: [4, 4, 5, 6, 7, 8],
 };
+// 按 ID 核对五行结果：相同名称或相同位置不能把不同调用节点合并。
 const rows = summarizeSamples(profile);
 assert.deepEqual(rows.map(({ id, samples }) => [id, samples]), [[4, 2], [5, 1], [6, 1], [7, 1], [8, 1]]);
 assert.equal(rows.filter((row) => row.functionName === "work").length, 3);
@@ -30,9 +31,9 @@ assert.deepEqual(rows[0], {
   id: 4, functionName: "work", scriptId: "1", url: "file:///fixture-a.mjs",
   lineNumber: 10, columnNumber: 0, samples: 2,
 });
+// 节点位置也要保留，避免统计后只剩一个无法定位的函数名。
 assert.equal(rows[2].url, "file:///fixture-b.mjs");
 console.log("same names and distinct paths kept separate"); // → same names and distinct paths kept separate
-assert.throws(() => summarizeSamples({ ...profile, samples: [99] }), {
-  name: "AssertionError", message: "sample must reference a known node",
-});
+// 损坏的样本找不到节点时，底层属性访问异常直接暴露。
+assert.throws(() => summarizeSamples({ ...profile, samples: [99] }), TypeError);
 console.log("unknown sample rejected"); // → unknown sample rejected

@@ -33,8 +33,8 @@ try {
   runNode([compiler, "-p", work, "--pretty", "false"]);
   const output = runNode([resolve(work, "out/consumer.js")]);
   if (output.trim() !== "installed-consumer 读数:12") throw new Error(output);
-  process.stdout.write(output);
-  console.log("installed-types", true);
+  process.stdout.write(output); // → installed-consumer 读数:12（转发消费者的一行输出）
+  console.log("installed-types", true); // → installed-types true
 } finally {
   const child = relative(scratch, work);
   if (isAbsolute(child) || child.startsWith("..") || !child.startsWith(".tmp-ts-b-declarations-") || child.includes(sep)) throw new Error("临时清理路径越界");

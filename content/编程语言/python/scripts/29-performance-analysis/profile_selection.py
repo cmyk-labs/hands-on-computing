@@ -41,8 +41,9 @@ def main() -> None:
     )
 
     # 3. 打印结果用于核对调用次数与数据规模，不写入性能报告文件。
-    print(f"选中总数：{selected_count}")
+    print(f"选中总数：{selected_count}")  # 选中总数：2400。
     report = pstats.Stats(profiler).strip_dirs()
+    # 表按累计耗时排序；批处理调用一次、筛选调用三次，实际耗时不固定。
     report.sort_stats(pstats.SortKey.CUMULATIVE).print_stats(6)
 
 

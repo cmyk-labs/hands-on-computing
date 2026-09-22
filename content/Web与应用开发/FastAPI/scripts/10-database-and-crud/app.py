@@ -35,6 +35,7 @@ class RecordPublic(SQLModel):
 
 def create_app() -> FastAPI:
     """读取本章指定的数据库路径，创建应用；导入模块不会监听端口。"""
+    # 引擎随应用创建，数据库文件路径由本章启动环境传入。
     database_path = Path(os.environ["FASTAPI_DATABASE_PATH"]).resolve()
     engine = create_engine(
         f"sqlite:///{database_path.as_posix()}",
@@ -43,6 +44,7 @@ def create_app() -> FastAPI:
 
     @asynccontextmanager
     async def lifespan(app: FastAPI):
+        # 启动时建表，应用退出时释放引擎持有的连接资源。
         try:
             SQLModel.metadata.create_all(engine)
             yield
@@ -61,6 +63,7 @@ def create_app() -> FastAPI:
         session: Annotated[Session, Depends(get_session)],
     ):
         record = Record.model_validate(payload)
+        # 写入并提交后刷新，取得数据库生成的编号。
         session.add(record)
         session.commit()
         session.refresh(record)

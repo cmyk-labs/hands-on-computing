@@ -5,15 +5,18 @@
 const events = [];
 class Base {
   base = (events.push("基类字段"), 1);
+  // 有意在基类构造中调用可覆盖方法，观察子类字段此时尚未就绪。
   constructor() { events.push("基类构造:" + this.describe()); }
   describe() { return "base"; }
   set count(value) { events.push("setter:" + value); }
 }
 class Child extends Base {
   detail = (events.push("子类字段"), "ready");
+  // 字段定义创建自有属性，不调用基类原型上同名的 setter。
   count = 2;
   constructor() {
     events.push("super前");
+    // super 完成基类初始化后，再初始化子类字段，才继续下一行。
     super();
     events.push("super后:" + this.detail);
   }

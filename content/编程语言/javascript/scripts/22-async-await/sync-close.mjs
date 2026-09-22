@@ -10,6 +10,7 @@ function* items(pauseInFinally = false) {
     yield Promise.reject(new Error("item rejected"));
   } finally {
     events.push("cleanup");
+    // 专门构造清理过程再次暂停的对照，观察关闭尝试与清理完成的区别。
     if (pauseInFinally) yield "paused";
     events.push("closed");
   }
@@ -18,12 +19,14 @@ async function consume(iterator) {
   for await (const value of iterator) events.push(value);
 }
 
+// 第一组：清理中没有暂停，一次关闭尝试即可执行到 closed。
 const source = items();
 await assert.rejects(() => consume(source), { name: "Error", message: "item rejected" });
 assert.deepEqual(events, ["cleanup", "closed"]);
 assert.deepEqual(source.next(), { value: undefined, done: true });
 console.log("rejection", events.join(",")); // → rejection cleanup,closed
 
+// 第二组：finally 中再次 yield；随后显式 next 才推进剩余清理。
 events.length = 0;
 const suspended = items(true);
 await assert.rejects(() => consume(suspended), { name: "Error", message: "item rejected" });

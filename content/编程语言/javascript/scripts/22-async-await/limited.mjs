@@ -3,21 +3,26 @@
 // 运行命令：node scripts/22-async-await/limited-demo.mjs（工作目录 content/编程语言/javascript）
 // 期望结果：自身无输出，行为由 limited-demo.mjs 断言
 export async function mapLimited(items, limit, worker) {
+  // 至少要有一个消费者；非法上限会使任务根本无法领取。
   if (!Number.isInteger(limit) || limit < 1) throw new RangeError("limit must be positive");
+  // 结果按输入下标保存，完成顺序不会打乱返回数组。
   const results = new Array(items.length);
-  let nextIndex = 0;
+  let next = 0;
   let failed = false;
   let firstError;
   async function consume() {
-    while (!failed && nextIndex < items.length) {
-      const index = nextIndex++;
+    while (!failed && next < items.length) {
+      // 在 await 前领取唯一索引；多个消费者共享 next，不重复领取。
+      const index = next++;
       try {
         results[index] = await worker(items[index]);
       } catch (error) {
+        // 记住首个失败并停止领取新任务；已开始的任务仍由各消费者等待。
         if (!failed) { failed = true; firstError = error; }
       }
     }
   }
+  // 固定数量的消费者循环取任务；先等待已启动任务结束，再向外抛错。
   await Promise.all(Array.from({ length: Math.min(limit, items.length) }, consume));
   if (failed) throw firstError;
   return results;

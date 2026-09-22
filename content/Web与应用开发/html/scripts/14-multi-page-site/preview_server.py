@@ -90,6 +90,7 @@ class PreviewHandler(http.server.SimpleHTTPRequestHandler):
 
 def create_server() -> http.server.ThreadingHTTPServer:
     """绑定本机 8014 端口，只以本章 site 目录作为静态服务根目录。"""
+    # 静态文件限定在 site；处理器继承现成文件服务，仅增加 /preview 回显。
     site_dir = Path(__file__).resolve().parent / "site"
     handler = functools.partial(PreviewHandler, directory=str(site_dir))
     return http.server.ThreadingHTTPServer(("127.0.0.1", 8014), handler)
@@ -97,6 +98,7 @@ def create_server() -> http.server.ThreadingHTTPServer:
 
 def main() -> None:
     """在终端启动预览，Ctrl+C 结束后关闭监听端口。"""
+    # 上下文管理器负责关闭监听端口；终端中断只用于结束预览。
     with create_server() as server:
         print("预览地址：http://127.0.0.1:8014/index.html")
         try:

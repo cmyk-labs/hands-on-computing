@@ -10,11 +10,13 @@ import { createReport } from "./io.mjs";
 const temporaryRoot = import.meta.dirname;
 const directory = await mkdtemp(resolve(temporaryRoot, "js-c-data-"));
 try {
+  // 1. 把输出放在本次临时目录，输入仍从脚本旁的两份固定数据读取。
   const outputPath = resolve(directory, "summary.json");
   const report = await createReport([
     new URL("./data-a.json", import.meta.url),
     new URL("./data-b.json", import.meta.url),
   ], outputPath);
+  // 2. 返回值与磁盘读回值都应是同一份完整报告。
   const expected = [
     { group: "tools", count: 1, totalCents: 2500 },
     { group: "books", count: 2, totalCents: 2000 },
@@ -23,6 +25,7 @@ try {
   assert.deepEqual(JSON.parse(await readFile(outputPath, "utf8")), expected);
   console.log(JSON.stringify(report)); // → tools 共 2500 分，books 共 2000 分且有两条记录
 } finally {
+  // 3. 不论写入或断言是否失败，最后都清理本次目录。
   const child = relative(temporaryRoot, directory);
   assert.ok(child.startsWith("js-c-data-") && !isAbsolute(child) && !child.includes(".."));
   await rm(directory, { recursive: true });
