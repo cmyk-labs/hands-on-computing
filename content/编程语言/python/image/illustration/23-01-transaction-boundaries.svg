@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="340" viewBox="0 0 1000 340" role="img" aria-labelledby="title desc">
+<title id="title">提交与回滚的边界</title><desc id="desc">之后回滚删除 web 的事务，不会撤销前一个事务已经提交的 python = 60。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">提交与回滚的边界</text>
+<rect x="40.0" y="120" width="200.0" height="105" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="140.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">已提交</text>
+<text x="140.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">python = 30</text>
+<rect x="280.0" y="120" width="200.0" height="105" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="380.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">未提交修改</text>
+<text x="380.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">UPDATE → 45</text>
+<path d="M240.0,172 L277.0,172" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="520.0" y="120" width="200.0" height="105" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="620.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">rollback</text>
+<text x="620.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">恢复为 30</text>
+<path d="M480.0,172 L517.0,172" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="760.0" y="120" width="200.0" height="105" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="860.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">新事务提交</text>
+<text x="860.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">UPDATE → 60</text>
+<path d="M720.0,172 L757.0,172" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="315" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">之后回滚删除 web 的事务，不会撤销前一个事务已经提交的 python = 60。</text>
+</g></svg>

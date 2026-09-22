@@ -34,6 +34,7 @@
 
 ## Notebook 与最小示例
 
+- 辅助学习示意图放在 `image/illustration/`，实际成图与截图放在 `image/`；Notebook 图形输出不要求另存。制作、编号、扩展名与跨章复用遵循[通用图示要求](../../../docs/notebook-protocol.md#图示的制作与整合)。
 - Notebook 是唯一教学正文。CSS 与 HTML 使用带 css、html 语言标记的 Markdown 代码块；不为显示样式加入 Python 包装、%%html、%%writefile 或要求读者先生成页面。
 - 配套文件按需放在 scripts/二位序号-英文主题/，例如 scripts/01-stylesheets-and-syntax/。头部按通用协议写“配套脚本：”并列出页面、样式和资源的路径及用途；不创建无用途的占位文件。
 - 配套样式文件头按通用协议用 /* */ 注释块标注四项信息；页面文件的文件头按 HTML 补充协议写在 doctype 之后。

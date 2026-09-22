@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470" role="img" aria-labelledby="title desc">
+<title id="title">游戏每一帧：输入 → 状态 → 画面</title><desc id="desc">Clock.tick、事件、状态更新、绘图和flip组成循环。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">游戏每一帧：输入 → 状态 → 画面</text>
+<rect x="40" y="115" width="200" height="105" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="140.0" y="146" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">计时与事件</text>
+<text x="140.0" y="175" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">tick / event.get</text>
+<rect x="280" y="115" width="200" height="105" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="380.0" y="146" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">读取按键</text>
+<text x="380.0" y="175" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">方向与重置</text>
+<path d="M240,167 L276,167" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="520" y="115" width="200" height="105" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="620.0" y="146" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">更新状态</text>
+<text x="620.0" y="175" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">位置 / 碰撞 / 分数</text>
+<path d="M480,167 L516,167" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="760" y="115" width="200" height="105" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="860.0" y="146" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">绘制并提交</text>
+<text x="860.0" y="175" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">draw / display.flip</text>
+<path d="M720,167 L756,167" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M860,220 L860,295 L140,295 L140,220" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="460" y="283" font-size="16" text-anchor="start" font-weight="400" fill="#20365F">下一帧</text>
+<rect x="335" y="345" width="330" height="60" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500.0" y="376" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">收到退出事件 → 结束并清理</text>
+<path d="M140,220 L140,375 L335,375" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="445" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">程序先处理退出条件；本例有限帧模式通过投递 QUIT 触发同一退出路径。</text>
+</g></svg>

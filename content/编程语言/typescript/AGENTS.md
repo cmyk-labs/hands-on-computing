@@ -27,6 +27,7 @@
 
 ## Notebook 与配套文件
 
+- 辅助学习示意图放在 `image/illustration/`，实际成图与截图放在 `image/`；Notebook 图形输出不要求另存。制作、编号、扩展名与跨章复用遵循[通用图示要求](../../../docs/notebook-protocol.md#图示的制作与整合)。
 - Notebook 是唯一教学正文。TypeScript 使用带 typescript 语言标记的 Markdown 代码块，JSX 示例使用 tsx，JavaScript、JSON 和命令分别使用对应标记；不添加 Python 包装或文件生成魔法命令。
 - 头部沿用学习目标、具体前置知识及“配套脚本：”要求，列出 scripts/二位序号-英文主题/ 下的源码、配置或声明文件及用途。给出从技术目录出发的检查命令，相关小例子可放在同一文件，不机械拆分文件。
 - 配套源码的文件头按通用协议用 // 注释块标注四项信息；tsconfig、锁文件与 .build/ 生成产物不写。反例文件的期望结果注明类型检查非零退出，具体错误仍逐条写在行内注释。

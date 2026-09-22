@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img" aria-labelledby="title desc">
+<title id="title">默认实例属性读取：按优先级寻找结果</title><desc id="desc">先沿 MRO 定位类成员，再比较数据描述器、实例项和普通类成员。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">默认实例属性读取：按优先级寻找结果</text>
+<rect x="70" y="82" width="860" height="70" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500.0" y="113" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">① 数据描述器</text>
+<text x="500.0" y="142" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">类成员有 __get__，且类型定义 __set__ 或 __delete__</text>
+<path d="M500,152 L500,169" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="70" y="169" width="860" height="70" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500.0" y="200" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">② 实例字典</text>
+<text x="500.0" y="229" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">若存在同名项，使用实例保存的值</text>
+<path d="M500,239 L500,256" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="70" y="256" width="860" height="70" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500.0" y="287" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">③ 其他类成员</text>
+<text x="500.0" y="316" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">非数据描述器调用 __get__；普通类成员直接返回</text>
+<path d="M500,326 L500,343" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="70" y="343" width="860" height="70" rx="14" fill="#F5F7FC" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500.0" y="374" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">④ 未找到</text>
+<text x="500.0" y="403" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">默认读取抛出 AttributeError；属性语法可触发 __getattr__</text>
+<text x="40" y="455" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">向下箭头表示上一层不适用；前提是采用 object.__getattribute__ 的默认规则。</text>
+</g></svg>

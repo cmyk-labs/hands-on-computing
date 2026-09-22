@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="420" viewBox="0 0 1040 420" role="img" aria-labelledby="title desc">
+<title id="title">优先级按列比较，前一列胜出就停止</title><desc id="desc">同等更早层叠条件下，ID 的 (1,0,0) 胜过 (0,2,1)，后两列不用相加。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526787"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#20365F;font-size:22px} .small{font-size:18px;fill:#526787}.label{font-size:23px;font-weight:600}</style>
+<rect width="1040" height="420" fill="white"/>
+<text x="32" y="46" text-anchor="start" style="font-size:30px;font-weight:700;fill:#20365F">优先级按列比较，前一列胜出就停止</text>
+<text x="560" y="108" text-anchor="middle" style="font-size:21px;font-weight:600;fill:#20365F">A：ID</text>
+<text x="715" y="108" text-anchor="middle" style="font-size:21px;font-weight:600;fill:#20365F">B：类等</text>
+<text x="870" y="108" text-anchor="middle" style="font-size:21px;font-weight:600;fill:#20365F">C：类型等</text>
+<text x="32" y="187" text-anchor="start" style="font-size:23px;font-weight:400;fill:#20365F">#specific-target</text>
+<rect x="500" y="148" width="120" height="64" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<text x="560.0" y="188.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">1</text>
+<rect x="655" y="148" width="120" height="64" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="715.0" y="188.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">0</text>
+<rect x="810" y="148" width="120" height="64" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="870.0" y="188.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">0</text>
+<text x="32" y="279" text-anchor="start" style="font-size:23px;font-weight:400;fill:#20365F">.specific-panel p.notice</text>
+<rect x="500" y="240" width="120" height="64" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<text x="560.0" y="280.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">0</text>
+<rect x="655" y="240" width="120" height="64" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="715.0" y="280.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">2</text>
+<rect x="810" y="240" width="120" height="64" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="870.0" y="280.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">1</text>
+<text x="345" y="346" text-anchor="start" style="font-size:22px;font-weight:400;fill:#20365F">先比较 A：1 &gt; 0，因此第一条获胜；不计算“总分”。</text>
+<text x="32" y="390" text-anchor="start" style="font-size:18px;font-weight:400;fill:#526787">前提：来源、重要性、封装上下文、元素附着方式与层等更早条件已经相同。</text>
+</svg>

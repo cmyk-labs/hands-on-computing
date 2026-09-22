@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+<title id="title">成功结果与业务错误走不同出口</title><desc id="desc">公开响应过滤内部字段，缺失记录则由HTTPException返回404。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">成功结果与业务错误走不同出口</text>
+<rect x="40" y="165" width="245" height="90" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="162.5" y="196" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">查找 record_id</text>
+<text x="162.5" y="225" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">records 中是否存在</text>
+<rect x="370" y="80" width="280" height="105" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="510.0" y="111" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">找到内部字典</text>
+<text x="510.0" y="140" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">id / title / private_note</text>
+<rect x="725" y="80" width="235" height="105" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="842.5" y="111" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">RecordOutput</text>
+<text x="842.5" y="140" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">公开 id / title</text>
+<rect x="370" y="270" width="280" height="95" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="510.0" y="301" font-size="19" text-anchor="middle" font-weight="600" fill="#20365F">raise HTTPException</text>
+<text x="510.0" y="330" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">状态码 404</text>
+<rect x="725" y="270" width="235" height="95" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="842.5" y="301" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">错误响应</text>
+<text x="842.5" y="330" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">detail：记录不存在</text>
+<path d="M285,185 L370,132" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="327.5" y="148.5" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">存在</text>
+<path d="M285,233 L370,315" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="327.5" y="264.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">不存在</text>
+<path d="M650,132 L725,132" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M650,315 L725,315" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="415" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">过滤响应不会删除内部字典的字段；HTTPException 应抛出，不作为普通对象返回。</text>
+</g></svg>

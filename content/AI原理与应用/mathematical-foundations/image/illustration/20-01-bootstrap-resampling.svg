@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img" aria-labelledby="title desc">
+<title id="title">bootstrap：从原位置有放回地抽取 n 次</title>
+<desc id="desc">原样本四个位置值为二二四八。各位置概率四分之一，抽样可重复，示意三组位置及均值四五二。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="485" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">bootstrap：从原位置有放回地抽取 n 次</text>
+<text x="205" y="100" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">固定原样本：n = 4</text>
+<rect x="55" y="125" width="75" height="46" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="92.5" y="155.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0</text>
+<rect x="130" y="125" width="75" height="46" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="167.5" y="155.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">1</text>
+<rect x="205" y="125" width="75" height="46" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="242.5" y="155.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">2</text>
+<rect x="280" y="125" width="75" height="46" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="317.5" y="155.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">3</text>
+<rect x="55" y="171" width="75" height="46" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="92.5" y="201.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">2</text>
+<rect x="130" y="171" width="75" height="46" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="167.5" y="201.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">2</text>
+<rect x="205" y="171" width="75" height="46" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="242.5" y="201.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">4</text>
+<rect x="280" y="171" width="75" height="46" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="317.5" y="201.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">8</text>
+<text x="205" y="245" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">每个位置概率 1/4</text>
+<text x="205" y="280" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">值 2 的总概率 2/4</text>
+<line x1="375" y1="194" x2="455" y2="194" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="590" y="90" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">位置 → 对应读数</text>
+<rect x="470" y="116" width="290" height="70" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="615.0" y="158.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">3, 0, 1, 2 → 8, 2, 2, 4</text>
+<line x1="772" y1="151" x2="821" y2="151" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="833" y="116" width="125" height="70" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="895.5" y="158.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">均值 4</text>
+<rect x="470" y="207" width="290" height="70" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="615.0" y="249.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">3, 3, 0, 1 → 8, 8, 2, 2</text>
+<line x1="772" y1="242" x2="821" y2="242" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="833" y="207" width="125" height="70" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="895.5" y="249.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">均值 5</text>
+<rect x="470" y="298" width="290" height="70" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="615.0" y="340.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">0, 1, 0, 0 → 2, 2, 2, 2</text>
+<line x1="772" y1="333" x2="821" y2="333" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="833" y="298" width="125" height="70" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="895.5" y="340.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">均值 2</text>
+<text x="500" y="420" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">每组仍有 4 个观测；重复抽样产生的是均值集合，不是新的实测数据。</text>
+<text x="500" y="458" text-anchor="middle" font-size="17" fill="#536B8D" font-weight="400">数值是下面三组教学抽样的示意；不把重复的 2 去重后重新分配概率。</text>
+</g>
+</svg>

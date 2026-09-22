@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="450" viewBox="0 0 1000 450" role="img" aria-labelledby="title desc">
+<title id="title">分块求均值：合并总和与有效计数</title>
+<desc id="desc">三块数据分别为十和二十、两个缺失、九十，总和一百二十，有效计数三，全体均值四十。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="450" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">分块求均值：合并总和与有效计数</text>
+<rect x="45" y="98" width="280" height="95" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="185.0" y="138.0" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">块 1：[10, 20]</text>
+<text x="185.0" y="167.0" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">sum = 30；count = 2</text>
+<path d="M185 193 L185 225 L500 225 L500 254" fill="none" stroke="#536B8D" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="360" y="98" width="280" height="95" rx="12" fill="#F3F0FF" stroke="#8B78C7" stroke-width="1.8"/>
+<text x="500.0" y="138.0" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">块 2：[NA, NA]</text>
+<text x="500.0" y="167.0" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">sum = 0；count = 0</text>
+<path d="M500 193 L500 225 L500 225 L500 254" fill="none" stroke="#536B8D" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="675" y="98" width="280" height="95" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="815.0" y="138.0" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">块 3：[90]</text>
+<text x="815.0" y="167.0" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">sum = 90；count = 1</text>
+<path d="M815 193 L815 225 L500 225 L500 254" fill="none" stroke="#536B8D" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="260" y="265" width="480" height="74" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="500.0" y="309.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">累计：total_sum = 120；total_count = 3</text>
+<line x1="500" y1="339" x2="500" y2="371" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="500" y="403" text-anchor="middle" font-size="25" fill="#20365F" font-weight="400">全体均值 = 120 / 3 = 40 分</text>
+<text x="500" y="436" text-anchor="middle" font-size="18" fill="#536B8D" font-weight="400">块行数不是有效计数；各块均值不能直接取平均。</text>
+</g>
+</svg>

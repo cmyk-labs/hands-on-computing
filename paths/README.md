@@ -24,7 +24,7 @@
 
 ## 已有课程
 
-已有 10 套课程的正文或已完成章节，共 247 篇 Notebook；篇数只统计实际存在的正文。长代码按步骤补充注释，复杂短代码就地解释形状、状态或参数含义；输出旁说明预期值或可观察特征，便于对照实际结果。先按环境说明准备，再打开章节目录选择内容；标明“预期异常”的独立单元用于观察原始报错，查看后继续下一单元。六份编程规范可独立阅读，入口见下表“代码写法”。
+已有 11 套课程的正文或已完成章节，共 250 篇 Notebook；篇数只统计实际存在的正文。长代码按步骤补充注释，复杂短代码就地解释形状、状态或参数含义；输出旁说明预期值或可观察特征，便于对照实际结果。先按环境说明准备，再打开章节目录选择内容；标明“预期异常”的独立单元用于观察原始报错，查看后继续下一单元。六份编程规范可独立阅读，入口见下表“代码写法”。
 
 | 技术 | 分类 | 篇数 | 章节目录 | 环境与运行 | 代码写法 |
 | --- | --- | --- | --- | --- | --- |
@@ -38,16 +38,22 @@
 | pandas 数据处理 | AI原理与应用 | 26 | [章节规划](../content/AI原理与应用/pandas/plan.md) | [环境说明](../content/AI原理与应用/pandas/README.md) | [Python 编程规范](../content/编程语言/python/Python编程规范.md) |
 | 数据可视化 | AI原理与应用 | 6 | [章节目录](../content/AI原理与应用/data-visualization/plan.md) | [环境说明](../content/AI原理与应用/data-visualization/README.md) | [Python 编程规范](../content/编程语言/python/Python编程规范.md) · [JavaScript 编程规范](../content/编程语言/javascript/JavaScript编程规范.md) · [HTML 编程规范](../content/Web与应用开发/html/HTML编程规范.md) |
 | 数学基础 | AI原理与应用 | 28 | [章节目录](../content/AI原理与应用/mathematical-foundations/plan.md) | [环境说明](../content/AI原理与应用/mathematical-foundations/README.md) | [Python 编程规范](../content/编程语言/python/Python编程规范.md) |
+| 机器学习与 scikit-learn | AI原理与应用 | 3（样章） | [章节目录与后续规划](../content/AI原理与应用/machine-learning&scikit-learn/plan.md) | [环境说明](../content/AI原理与应用/machine-learning&scikit-learn/README.md) | [Python 编程规范](../content/编程语言/python/Python编程规范.md) |
 
 ## 建议阅读顺序
 
 NumPy、pandas 与数学基础可按“阅读知识点介绍 → 运行代码示例 → 对照注释观察结果”学习。数学公式与推导保留在讲解中，纯文字选学入口按需阅读。
+
+涉及对象关系、执行时序、数组轴、数据变换、布局边界和数学过程的章节配有辅助示意图。先按图注辨认关系与适用条件，再对照紧邻的代码或浏览器示例；实际图表、截图与机制示意分别说明用途。
+
+NumPy、pandas 各 26 章均提供一道重点练习的分层提示与独立解析。[FastAPI 综合交付实践](<../content/Web与应用开发/FastAPI/16-API 综合交付实践.ipynb>)包含真实 HTTP、SQLite 持久化、进程重启与退出检查；[流式响应与 SSE](<../content/Web与应用开发/FastAPI/20-流式响应与 SSE.ipynb>)分别核对客户端消费与服务端资源清理。
 
 - Python 入门：按 Python 主线章节学习，再按需要选择进阶专题。
 - Web 前端基础：HTML → CSS → JavaScript → TypeScript。已有相关基础时，按章节前置知识选择起点；浏览器应用与框架专题后续补充。
 - FastAPI：按[课程规划](../content/Web与应用开发/FastAPI/plan.md)选择主线或选修主题；测试文件入口、客户端生成步骤和本地服务的环境限制见各章与[运行说明](../content/Web与应用开发/FastAPI/README.md)。
 - AI 数据基础：建议按 NumPy → pandas → [数据可视化](../content/AI原理与应用/data-visualization/plan.md)学习数组、表格与图形表达，分别从[数组创建与形状](../content/AI原理与应用/NumPy/01-数组创建与形状.ipynb)、[Series与DataFrame](../content/AI原理与应用/pandas/01-Series与DataFrame.ipynb)和[Matplotlib基础绘图](../content/AI原理与应用/data-visualization/01-Matplotlib基础绘图.ipynb)进入。各课程保持小例子、必要边界和方法选择练习的写法；可视化按图表类型查阅，每种图在一个代码单元内讲解用途、数据、绘制与参数调整，并展示实际成图；每章附重点练习解析，交互工具综合图提供静态预览。NumPy、pandas 的版本边界与扩展范围见各自章节目录。
 - 数学基础：按[章节目录](../content/AI原理与应用/mathematical-foundations/plan.md)学习数学表达、线性代数、微积分和概率统计，再选择数值计算、数学建模与扩展主题。共 25 章主线、3 章扩展；各章独立列出所需概念，综合实践包含 PCA 选学；积分已补充反常积分衔接，各章附重点练习的分层提示与解析。
+- 机器学习与 scikit-learn：从[学习任务与估计器](../content/AI原理与应用/machine-learning&scikit-learn/01-学习任务与估计器.ipynb)进入，再阅读[数据划分泛化与基线](../content/AI原理与应用/machine-learning&scikit-learn/02-数据划分泛化与基线.ipynb)和[回归与分类评估](../content/AI原理与应用/machine-learning&scikit-learn/03-回归与分类评估.ipynb)。三章含手算、基线与指标的 NumPy 实现、scikit-learn 对照、流程示意和实际成图；模型调用明确标为接口概览，完整算法推导与实现留在后续主题。
 
 ## 项目
 

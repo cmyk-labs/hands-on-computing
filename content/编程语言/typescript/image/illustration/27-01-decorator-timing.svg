@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="450" viewBox="0 0 960 450" role="img" aria-labelledby="title desc">
+<title id="title">装饰器的四个观察时点</title><desc id="desc">只追踪本例 outer / inner 方法装饰器与字段初始化的位置。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="450" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">装饰器的四个观察时点</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">只追踪本例 outer / inner 方法装饰器与字段初始化的位置。</text>
+<rect x="35" y="110" width="220" height="55" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="145.0" y="143.5" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">① 求值</text>
+<rect x="340" y="110" width="580" height="55" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="630.0" y="143.5" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">evaluate outer → evaluate inner</text>
+<polyline points="255,137 340,137" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="630,165 630,187" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="35" y="187" width="220" height="55" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="145.0" y="220.5" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">② 应用</text>
+<rect x="340" y="187" width="580" height="55" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="630.0" y="220.5" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">apply inner → apply outer</text>
+<polyline points="255,214 340,214" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="630,242 630,264" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="35" y="264" width="220" height="55" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="145.0" y="297.5" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">③ 新建实例</text>
+<rect x="340" y="264" width="580" height="55" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="630.0" y="297.5" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">init inner → init outer → initialize field name</text>
+<polyline points="255,291 340,291" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="630,319 630,341" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="35" y="341" width="220" height="55" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="145.0" y="374.5" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">④ 调用方法</text>
+<rect x="340" y="341" width="580" height="55" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="630.0" y="374.5" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">call outer → call inner → 原方法</text>
+<polyline points="255,368 340,368" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="32" y="430" font-size="15" text-anchor="start" fill="#20365F">类装饰器与 apply field name 的完整顺序仍按 main.ts 中的事件断言核对。</text>
+</g></svg>

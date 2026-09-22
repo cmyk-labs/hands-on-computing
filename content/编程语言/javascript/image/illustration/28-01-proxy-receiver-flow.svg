@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="375" viewBox="0 0 960 375" role="img" aria-labelledby="title desc">
+<title id="title">getter 经由 receiver 再次读取代理</title><desc id="desc">调用链对应 proxy.doubled；读取 target 本身不会经过这个代理。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="375" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">getter 经由 receiver 再次读取代理</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">调用链对应 proxy.doubled；读取 target 本身不会经过这个代理。</text>
+<rect x="35" y="120" width="250" height="70" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="160.0" y="161.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">proxy.doubled</text>
+<rect x="360" y="120" width="255" height="70" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="487.5" y="148.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">get trap</text>
+<text x="487.5" y="174.0" font-size="17" text-anchor="middle" fill="#20365F">key = doubled</text>
+<rect x="690" y="120" width="235" height="70" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="807.5" y="148.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">Reflect.get</text>
+<text x="807.5" y="174.0" font-size="17" text-anchor="middle" fill="#20365F">receiver = proxy</text>
+<polyline points="285,155 360,155" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="615,155 690,155" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="360" y="270" width="255" height="70" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="487.5" y="298.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">get trap</text>
+<text x="487.5" y="324.0" font-size="17" text-anchor="middle" fill="#20365F">key = count</text>
+<rect x="690" y="270" width="235" height="70" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="807.5" y="298.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">getter: this.count</text>
+<text x="807.5" y="324.0" font-size="17" text-anchor="middle" fill="#20365F">this = proxy</text>
+<polyline points="807,190 807,270" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="690,305 615,305" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="653" y="290" font-size="15" text-anchor="middle" fill="#20365F">再次读取</text>
+<text x="32" y="355" font-size="15" text-anchor="start" fill="#20365F">第二次 trap 读取的是 count，与 doubled 不同；在 trap 内反复读取同一代理属性可能造成递归。</text>
+</g></svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+<title id="title">for：先判断，再执行，再更新</title><desc id="desc">以 text = &quot;JS&quot; 为例；箭头表示执行先后。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="420" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">for：先判断，再执行，再更新</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">以 text = &quot;JS&quot; 为例；箭头表示执行先后。</text>
+<rect x="40" y="145" width="170" height="60" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="125.0" y="181.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">初始化 i = 0</text>
+<rect x="290" y="130" width="240" height="90" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="410.0" y="168.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">判断</text>
+<text x="410.0" y="194.0" font-size="18" text-anchor="middle" fill="#20365F">i &lt; text.length</text>
+<rect x="640" y="130" width="265" height="90" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="772.5" y="168.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">循环体</text>
+<text x="772.5" y="194.0" font-size="18" text-anchor="middle" fill="#20365F">joined += text[i]</text>
+<rect x="640" y="285" width="265" height="65" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="772.5" y="323.5" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">更新 i += 1</text>
+<rect x="290" y="285" width="240" height="65" rx="12" fill="#F7F9FC" stroke="#AAB9CE" stroke-width="1.8"/>
+<text x="410.0" y="323.5" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">离开循环</text>
+<polyline points="210,175 290,175" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="533,175 640,175" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="588" y="158" font-size="15" text-anchor="middle" fill="#20365F">true</text>
+<polyline points="410,220 410,285" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="451" y="260" font-size="15" text-anchor="middle" fill="#20365F">false</text>
+<polyline points="772,220 772,285" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="905,318 935,318 935,105 410,105 410,130" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="32" y="400" font-size="15" text-anchor="start" fill="#20365F">本例循环体执行 i = 0、1 两轮；i = 2 时条件为假，不再访问 text[2]。</text>
+</g></svg>

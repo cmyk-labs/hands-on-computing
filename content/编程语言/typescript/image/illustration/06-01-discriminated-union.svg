@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="395" viewBox="0 0 960 395" role="img" aria-labelledby="title desc">
+<title id="title">判别字段把联合分到各自的数据分支</title><desc id="desc">Job 的 kind 字段决定本分支能读取哪些关联字段。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="395" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">判别字段把联合分到各自的数据分支</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">Job 的 kind 字段决定本分支能读取哪些关联字段。</text>
+<rect x="350" y="105" width="260" height="62" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="480.0" y="129.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">job: Job</text>
+<text x="480.0" y="155.0" font-size="17" text-anchor="middle" fill="#20365F">检查 job.kind</text>
+<rect x="35" y="250" width="260" height="78" rx="12" fill="#F7F9FC" stroke="#AAB9CE" stroke-width="1.8"/>
+<text x="165.0" y="282.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">kind = &quot;idle&quot;</text>
+<text x="165.0" y="308.0" font-size="17" text-anchor="middle" fill="#20365F">不需要附加字段</text>
+<polyline points="480,167 480,205 165,205 165,250" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="350" y="250" width="260" height="78" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="480.0" y="282.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">kind = &quot;done&quot;</text>
+<text x="480.0" y="308.0" font-size="17" text-anchor="middle" fill="#20365F">count: number</text>
+<polyline points="480,167 480,205 480,205 480,250" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="665" y="250" width="260" height="78" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="795.0" y="282.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">kind = &quot;failed&quot;</text>
+<text x="795.0" y="308.0" font-size="17" text-anchor="middle" fill="#20365F">reason: string</text>
+<polyline points="480,167 480,205 795,205 795,250" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="32" y="375" font-size="15" text-anchor="start" fill="#20365F">三个成员均已返回后，default 中没有剩余成员：never。新增成员时需要重新检查穷尽性。</text>
+</g></svg>

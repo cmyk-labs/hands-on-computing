@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+<title id="title">重新赋值只改变这个名称的绑定</title><desc id="desc">两个时刻的名称到对象的关系。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">重新赋值只改变这个名称的绑定</text>
+<text x="40" y="95" font-size="20" text-anchor="start" font-weight="600" fill="#20365F">① previous_count = count 之后</text>
+<rect x="40" y="130" width="190" height="65" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="135.0" y="161" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">count</text>
+<rect x="40" y="245" width="190" height="65" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="135.0" y="276" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">previous_count</text>
+<text x="535" y="95" font-size="20" text-anchor="start" font-weight="600" fill="#20365F">② count = 5 之后</text>
+<rect x="535" y="130" width="190" height="65" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="630.0" y="161" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">count</text>
+<rect x="535" y="245" width="190" height="65" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="630.0" y="276" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">previous_count</text>
+<rect x="310" y="180" width="130" height="80" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="375.0" y="211" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">整数 3</text>
+<path d="M230,164 L310,199" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M230,277 L310,241" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="805" y="125" width="130" height="75" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="870.0" y="156" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">整数 5</text>
+<rect x="805" y="245" width="130" height="75" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="870.0" y="276" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">整数 3</text>
+<path d="M725,162 L805,162" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M725,277 L805,277" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="415" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">箭头表示名称绑定；对象框表示值与类型，不表示实际内存地址。</text>
+</g></svg>

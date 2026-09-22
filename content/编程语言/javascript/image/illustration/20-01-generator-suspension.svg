@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="350" viewBox="0 0 960 350" role="img" aria-labelledby="title desc">
+<title id="title">生成器：一次 next 推进到下一个暂停点</title><desc id="desc">沿箭头逐次调用；每次返回一个 { value, done } 结果。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="350" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">生成器：一次 next 推进到下一个暂停点</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">沿箭头逐次调用；每次返回一个 { value, done } 结果。</text>
+<rect x="30" y="130" width="195" height="94" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="127.5" y="170.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">lessons()</text>
+<text x="127.5" y="196.0" font-size="17" text-anchor="middle" fill="#20365F">尚未执行函数体</text>
+<polyline points="225,177 265,177" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="265" y="130" width="195" height="94" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="362.5" y="170.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">第一次 next()</text>
+<text x="362.5" y="196.0" font-size="17" text-anchor="middle" fill="#20365F">Map / false</text>
+<polyline points="460,177 500,177" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="500" y="130" width="195" height="94" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="597.5" y="170.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">第二次 next()</text>
+<text x="597.5" y="196.0" font-size="17" text-anchor="middle" fill="#20365F">Set / false</text>
+<polyline points="695,177 735,177" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="735" y="130" width="195" height="94" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="832.5" y="170.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">第三次 next()</text>
+<text x="832.5" y="196.0" font-size="17" text-anchor="middle" fill="#20365F">完成 / true</text>
+<rect x="500" y="263" width="420" height="54" rx="12" fill="#F7F9FC" stroke="#AAB9CE" stroke-width="1.8"/>
+<text x="710.0" y="296.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">再次 next()：undefined / true</text>
+<polyline points="832,224 832,263" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="32" y="330" font-size="15" text-anchor="start" fill="#20365F">函数体只在 next() 推进时执行；for...of 不把 done: true 的最终返回值当成元素。</text>
+</g></svg>

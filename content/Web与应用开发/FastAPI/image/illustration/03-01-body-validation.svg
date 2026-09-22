@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+<title id="title">请求体先校验，再交给路由</title><desc id="desc">请求体校验通过才生成Record实例并调用路由。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">请求体先校验，再交给路由</text>
+<rect x="40" y="160" width="220" height="90" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="150.0" y="191" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">JSON 请求体</text>
+<text x="150.0" y="220" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">title / minutes</text>
+<rect x="355" y="160" width="290" height="90" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500.0" y="191" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">按 Record 校验</text>
+<text x="500.0" y="220" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">字段类型与声明约束</text>
+<path d="M260,205 L355,205" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="740" y="85" width="220" height="90" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="850.0" y="116" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">路由函数</text>
+<text x="850.0" y="145" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">接收模型实例</text>
+<rect x="740" y="285" width="220" height="90" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="850.0" y="316" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">校验错误响应</text>
+<text x="850.0" y="345" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">默认 422</text>
+<path d="M645,184 L740,130" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="692.5" y="147.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">通过</text>
+<path d="M645,232 L740,325" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="692.5" y="268.5" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">失败</text>
+<text x="40" y="415" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">图表示本章请求体校验边界；默认转换模式与严格模式决定哪些输入能够通过。</text>
+</g></svg>

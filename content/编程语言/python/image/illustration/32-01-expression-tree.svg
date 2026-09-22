@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470" role="img" aria-labelledby="title desc">
+<title id="title">把 minutes + 5 解析为结构</title><desc id="desc">Expression 包含 BinOp，左右操作数分别是Name和Constant。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">把 minutes + 5 解析为结构</text>
+<rect x="365" y="75" width="270" height="65" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500.0" y="106" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">Expression</text>
+<rect x="365" y="195" width="270" height="65" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500.0" y="226" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">BinOp</text>
+<path d="M500,140 L500,195" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="500.0" y="157.5" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">body</text>
+<rect x="45" y="325" width="270" height="95" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="180.0" y="356" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">Name</text>
+<text x="180.0" y="385" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">id = minutes</text>
+<text x="180.0" y="410" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">ctx = Load</text>
+<rect x="365" y="325" width="270" height="95" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500.0" y="356" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">Add</text>
+<text x="500.0" y="385" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">运算符 +</text>
+<rect x="685" y="325" width="270" height="95" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="820.0" y="356" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">Constant</text>
+<text x="820.0" y="385" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">value = 5</text>
+<path d="M420,260 L180,325" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="300.0" y="282.5" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">left</text>
+<path d="M500,260 L500,325" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="500.0" y="282.5" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">op</text>
+<path d="M580,260 L820,325" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="700.0" y="282.5" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">right</text>
+<text x="40" y="445" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">这里只展示表达式树；解析并不查找 minutes 的值，也不执行加法。</text>
+</g></svg>

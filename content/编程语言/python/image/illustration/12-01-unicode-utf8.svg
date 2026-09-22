@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="390" viewBox="0 0 1000 390" role="img" aria-labelledby="title desc">
+<title id="title">同一段文字：3 个码点，8 个 UTF-8 字节</title><desc id="desc">A、中、表情分别展开为一、三、四个字节。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">同一段文字：3 个码点，8 个 UTF-8 字节</text>
+<rect x="40" y="90" width="150" height="90" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="115.0" y="121" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">A</text>
+<text x="115.0" y="150" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">U+0041</text>
+<path d="M115.0,180 L115.0,230" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="40" y="235" width="150" height="75" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="115.0" y="266" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">41</text>
+<text x="115.0" y="295" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">十六进制字节</text>
+<rect x="240" y="90" width="270" height="90" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="375.0" y="121" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">中</text>
+<text x="375.0" y="150" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">U+4E2D</text>
+<path d="M375.0,180 L375.0,230" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="240" y="235" width="270" height="75" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="375.0" y="266" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">E4 B8 AD</text>
+<text x="375.0" y="295" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">十六进制字节</text>
+<rect x="560" y="90" width="400" height="90" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="760.0" y="121" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">😀</text>
+<text x="760.0" y="150" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">U+1F600</text>
+<path d="M760.0,180 L760.0,230" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="560" y="235" width="400" height="75" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="760.0" y="266" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">F0 9F 98 80</text>
+<text x="760.0" y="295" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">十六进制字节</text>
+<text x="40" y="365" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">encode(&quot;utf-8&quot;) 向下转换；decode(&quot;utf-8&quot;) 还原相同码点序列。</text>
+</g></svg>

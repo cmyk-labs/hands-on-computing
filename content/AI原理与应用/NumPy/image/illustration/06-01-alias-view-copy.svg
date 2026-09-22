@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470" role="img" aria-labelledby="title desc">
+<title id="title">名称、数组对象与数据缓冲区分开看</title>
+<desc id="desc">source 和 alias 指向同一数组对象；view 是另一个对象但共享数据；copied 有自己的数据缓冲区。图中为写入前状态。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="470" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">名称、数组对象与数据缓冲区分开看</text>
+<rect x="45" y="87" width="230" height="62" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="160.0" y="125.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">source   /   alias</text>
+<rect x="395" y="87" width="210" height="62" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="500.0" y="125.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">view</text>
+<rect x="745" y="87" width="210" height="62" rx="12" fill="#F3F0FF" stroke="#8B78C7" stroke-width="1.8"/>
+<text x="850.0" y="125.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">copied</text>
+<line x1="160" y1="149" x2="160" y2="191" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="500" y1="149" x2="500" y2="191" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="850" y1="149" x2="850" y2="191" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="45" y="200" width="230" height="75" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="160.0" y="244.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">同一个 ndarray 对象</text>
+<rect x="395" y="200" width="210" height="75" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="500.0" y="244.5" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">另一个 ndarray 对象</text>
+<rect x="745" y="200" width="210" height="75" rx="12" fill="#F3F0FF" stroke="#8B78C7" stroke-width="1.8"/>
+<text x="850.0" y="244.5" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">另一个 ndarray 对象</text>
+<path d="M160 275 L160 312 L330 312 L330 342" fill="none" stroke="#536B8D" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M500 275 L500 312 L330 312" fill="none" stroke="#536B8D" stroke-width="2.5"/>
+<line x1="850" y1="275" x2="850" y2="342" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="240" y="350" width="60" height="43" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="270.0" y="378.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">10</text>
+<rect x="300" y="350" width="60" height="43" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="330.0" y="378.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">20</text>
+<rect x="360" y="350" width="60" height="43" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="390.0" y="378.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">30</text>
+<rect x="760" y="350" width="60" height="43" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="790.0" y="378.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">10</text>
+<rect x="820" y="350" width="60" height="43" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="850.0" y="378.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">20</text>
+<rect x="880" y="350" width="60" height="43" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="910.0" y="378.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">30</text>
+<text x="330" y="428" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">共享缓冲区：任何一方写入都可见</text>
+<text x="850" y="428" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">独立缓冲区</text>
+</g>
+</svg>

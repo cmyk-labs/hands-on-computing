@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460" role="img" aria-labelledby="title desc">
+<title id="title">认证通过以后，仍需检查资源归属</title><desc id="desc">本例先找记录，再允许管理员或同属主普通用户，其他返回403。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">认证通过以后，仍需检查资源归属</text>
+<rect x="40" y="155" width="225" height="95" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="152.5" y="186" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">已认证 User</text>
+<text x="152.5" y="215" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">身份已确定</text>
+<rect x="345" y="155" width="260" height="95" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="475.0" y="186" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">查找记录</text>
+<text x="475.0" y="215" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">record_id</text>
+<path d="M265,203 L345,203" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="700" y="70" width="260" height="75" rx="14" fill="#F5F7FC" stroke="#597AAA" stroke-width="1.7"/>
+<text x="830.0" y="101" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">不存在 → 404</text>
+<path d="M605,175 L700,110" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="700" y="200" width="260" height="100" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="830.0" y="231" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">存在：检查权限</text>
+<text x="830.0" y="260" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">admin 或</text>
+<text x="830.0" y="285" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">user 且 owner_id 相同</text>
+<path d="M605,215 L700,240" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="270" y="335" width="285" height="70" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="412.5" y="366" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">允许 → 返回记录</text>
+<rect x="650" y="335" width="310" height="70" rx="14" fill="#F5F7FC" stroke="#597AAA" stroke-width="1.7"/>
+<text x="805.0" y="366" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">拒绝 → 403</text>
+<path d="M775,300 L555,360" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="665.0" y="320.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">符合规则</text>
+<path d="M885,300 L885,335" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="435" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">管理员例外是本章业务约定；不存在与无权访问的区分也属于本例接口策略。</text>
+</g></svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img" aria-labelledby="title desc">
+<title id="title">外部 JSON 逐层进入业务数据</title><desc id="desc">每一层回答不同问题；前一层通过，不代表后一层也通过。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="400" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">外部 JSON 逐层进入业务数据</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">每一层回答不同问题；前一层通过，不代表后一层也通过。</text>
+<rect x="25" y="130" width="270" height="80" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="160.0" y="163.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">JSON.parse</text>
+<text x="160.0" y="189.0" font-size="18" text-anchor="middle" fill="#20365F">文本语法</text>
+<rect x="345" y="130" width="270" height="80" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="480.0" y="163.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">isOrder</text>
+<text x="480.0" y="189.0" font-size="18" text-anchor="middle" fill="#20365F">字段结构</text>
+<rect x="665" y="130" width="270" height="80" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="800.0" y="163.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">validOrder</text>
+<text x="800.0" y="189.0" font-size="18" text-anchor="middle" fill="#20365F">业务约束</text>
+<polyline points="295,170 345,170" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="615,170 665,170" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="25" y="275" width="270" height="52" rx="12" fill="#F7F9FC" stroke="#AAB9CE" stroke-width="1.8"/>
+<text x="160.0" y="307.0" font-size="16" text-anchor="middle" fill="#20365F" font-weight="700">SyntaxError → json</text>
+<polyline points="160,210 160,275" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="345" y="275" width="270" height="52" rx="12" fill="#F7F9FC" stroke="#AAB9CE" stroke-width="1.8"/>
+<text x="480.0" y="307.0" font-size="16" text-anchor="middle" fill="#20365F" font-weight="700">不符合结构 → shape</text>
+<polyline points="480,210 480,275" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="665" y="275" width="270" height="52" rx="12" fill="#F7F9FC" stroke="#AAB9CE" stroke-width="1.8"/>
+<text x="800.0" y="307.0" font-size="16" text-anchor="middle" fill="#20365F" font-weight="700">不满足规则 → business</text>
+<polyline points="800,210 800,275" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="665" y="358" font-size="16" text-anchor="start" fill="#20365F">三层都通过：{ ok: true, value }</text>
+<text x="32" y="380" font-size="15" text-anchor="start" fill="#20365F">JSON.parse 的其他异常继续抛出；本图的 reason 名称是本例 Result 的约定。</text>
+</g></svg>

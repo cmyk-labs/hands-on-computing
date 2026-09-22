@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+<title id="title">tee 共享输入，分别记录消费进度</title><desc id="desc">快支已读取10和20，慢支尚未读取时的逻辑缓冲。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">tee 共享输入，分别记录消费进度</text>
+<rect x="40" y="175" width="230" height="100" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="155.0" y="206" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">输入生成器</text>
+<text x="155.0" y="235" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">10 → 20 → 30</text>
+<rect x="370" y="155" width="250" height="125" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="495.0" y="186" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">暂存给慢支</text>
+<text x="495.0" y="215" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">10   20</text>
+<text x="495.0" y="240" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">30 尚未从源读取</text>
+<rect x="740" y="80" width="220" height="90" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="850.0" y="111" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">fast</text>
+<text x="850.0" y="140" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">已取得 10、20</text>
+<rect x="740" y="290" width="220" height="90" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="850.0" y="321" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">slow</text>
+<text x="850.0" y="350" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">下一项仍为 10</text>
+<path d="M270,223 L370,223" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M620,180 L740,125" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M620,260 L740,330" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="415" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">这是消费进度的逻辑示意，不表示 tee 的具体内部对象结构或字节开销。</text>
+</g></svg>

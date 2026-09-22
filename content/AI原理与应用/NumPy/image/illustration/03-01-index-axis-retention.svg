@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+<title id="title">取出相同数值，可以保留不同数量的轴</title>
+<desc id="desc">整数索引移除行轴得到长度四的一维数组，长度为一的切片保留行轴得到一行四列的二维数组。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="430" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">取出相同数值，可以保留不同数量的轴</text>
+<text x="210" y="107" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">table：shape (3, 4)</text>
+<rect x="70" y="135" width="70" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="105.0" y="166.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">11</text>
+<rect x="140" y="135" width="70" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="175.0" y="166.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">12</text>
+<rect x="210" y="135" width="70" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="245.0" y="166.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">13</text>
+<rect x="280" y="135" width="70" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="315.0" y="166.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">14</text>
+<rect x="70" y="183" width="70" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="105.0" y="214.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">21</text>
+<rect x="140" y="183" width="70" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="175.0" y="214.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">22</text>
+<rect x="210" y="183" width="70" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="245.0" y="214.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">23</text>
+<rect x="280" y="183" width="70" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="315.0" y="214.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">24</text>
+<rect x="70" y="231" width="70" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="105.0" y="262.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">31</text>
+<rect x="140" y="231" width="70" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="175.0" y="262.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">32</text>
+<rect x="210" y="231" width="70" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="245.0" y="262.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">33</text>
+<rect x="280" y="231" width="70" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="315.0" y="262.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">34</text>
+<path d="M370 207 L455 207 L455 133 L520 133" fill="none" stroke="#536B8D" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M455 207 L455 293 L520 293" fill="none" stroke="#536B8D" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="740" y="98" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">table[1, :] → shape (4,)</text>
+<rect x="560" y="112" width="75" height="44" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="597.5" y="141.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">21</text>
+<rect x="635" y="112" width="75" height="44" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="672.5" y="141.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">22</text>
+<rect x="710" y="112" width="75" height="44" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="747.5" y="141.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">23</text>
+<rect x="785" y="112" width="75" height="44" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="822.5" y="141.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">24</text>
+<text x="710" y="191" text-anchor="middle" font-size="18" fill="#536B8D" font-weight="400">只有一个轴；横排只是阅读方式</text>
+<text x="740" y="252" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">table[1:2, :] → shape (1, 4)</text>
+<rect x="545" y="269" width="330" height="66" rx="12" fill="white" stroke="#4A9479" stroke-width="1.8"/>
+<rect x="560" y="280" width="75" height="44" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="597.5" y="309.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">21</text>
+<rect x="635" y="280" width="75" height="44" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="672.5" y="309.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">22</text>
+<rect x="710" y="280" width="75" height="44" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="747.5" y="309.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">23</text>
+<rect x="785" y="280" width="75" height="44" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="822.5" y="309.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">24</text>
+<text x="710" y="369" text-anchor="middle" font-size="18" fill="#536B8D" font-weight="400">行轴仍在，长度为 1</text>
+<text x="220" y="335" text-anchor="middle" font-size="18" fill="#536B8D" font-weight="400">被选择的行索引都是 1</text>
+</g>
+</svg>

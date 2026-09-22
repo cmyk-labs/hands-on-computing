@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="490" viewBox="0 0 1040 490" role="img" aria-labelledby="title desc">
+<title id="title">插槽改变显示位置，保留节点的父子关系</title><desc id="desc">light DOM 的 span title 分配给命名插槽，p 分配给默认插槽，missing 不匹配。分配不移动 DOM 节点。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526787"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#20365F;font-size:22px} .small{font-size:18px;fill:#526787}.label{font-size:23px;font-weight:600}</style>
+<rect width="1040" height="490" fill="white"/>
+<text x="32" y="46" text-anchor="start" style="font-size:30px;font-weight:700;fill:#20365F">插槽改变显示位置，保留节点的父子关系</text>
+<rect x="32" y="100" width="400" height="308" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<rect x="612" y="100" width="396" height="308" rx="12" fill="#F3F0FF" stroke="#8BADED" stroke-width="2"/>
+<text x="52" y="136" text-anchor="start" style="font-size:22px;font-weight:600;fill:#20365F">light DOM：study-card 的子节点</text>
+<text x="630" y="136" text-anchor="start" style="font-size:22px;font-weight:600;fill:#20365F">shadow tree：组件内部</text>
+<rect x="54" y="170" width="354" height="56" rx="12" fill="white" stroke="#8BADED" stroke-width="2"/>
+<text x="231.0" y="206.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">span · slot=&quot;title&quot;</text>
+<rect x="634" y="170" width="348" height="56" rx="12" fill="white" stroke="#8BADED" stroke-width="2"/>
+<text x="808.0" y="206.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">slot · name=&quot;title&quot;</text>
+<path d="M414 198 L624 198" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<rect x="54" y="247" width="354" height="56" rx="12" fill="white" stroke="#8BADED" stroke-width="2"/>
+<text x="231.0" y="283.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">p · 无 slot 名称</text>
+<rect x="634" y="247" width="348" height="56" rx="12" fill="white" stroke="#8BADED" stroke-width="2"/>
+<text x="808.0" y="283.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">slot · 默认插槽</text>
+<path d="M414 275 L624 275" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<rect x="54" y="324" width="354" height="56" rx="12" fill="white" stroke="#8BADED" stroke-width="2"/>
+<text x="231.0" y="360.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">span · slot=&quot;missing&quot;</text>
+<text x="454" y="176" text-anchor="start" style="font-size:18px;font-weight:400;fill:#20365F">分配</text>
+<text x="454" y="253" text-anchor="start" style="font-size:18px;font-weight:400;fill:#20365F">分配</text>
+<text x="634" y="352" text-anchor="start" style="font-size:20px;font-weight:400;fill:#20365F">没有 name=&quot;missing&quot; 的插槽</text>
+<text x="634" y="384" text-anchor="start" style="font-size:20px;font-weight:400;fill:#20365F">该节点不参与这里的显示</text>
+<text x="32" y="466" text-anchor="start" style="font-size:18px;font-weight:400;fill:#526787">虚线是分配关系，不是 DOM 父子连线；省略空白文本、包装元素和回退内容。</text>
+</svg>

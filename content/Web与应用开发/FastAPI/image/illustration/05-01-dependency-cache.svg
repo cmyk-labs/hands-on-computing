@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+<title id="title">同一次请求：共享依赖只求值一次</title><desc id="desc">next_call_number的请求内缓存同时提供first和second。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">同一次请求：共享依赖只求值一次</text>
+<rect x="40" y="160" width="270" height="105" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="175.0" y="191" font-size="19" text-anchor="middle" font-weight="600" fill="#20365F">next_call_number()</text>
+<text x="175.0" y="220" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">本次返回 1</text>
+<text x="175.0" y="245" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">默认请求内缓存</text>
+<rect x="420" y="80" width="210" height="80" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="525.0" y="111" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">first = 1</text>
+<rect x="420" y="265" width="210" height="80" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="525.0" y="296" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">second = 1</text>
+<rect x="730" y="160" width="230" height="105" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="845.0" y="191" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">read_cached</text>
+<text x="845.0" y="220" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">返回两个参数</text>
+<path d="M310,184 L420,120" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M310,238 L420,305" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M630,120 L730,185" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M630,305 L730,238" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="395" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">这是一次请求内的值复用，不是跨请求全局缓存；use_cache=False 可改变复用行为。</text>
+</g></svg>

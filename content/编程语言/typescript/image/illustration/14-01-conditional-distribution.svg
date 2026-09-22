@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+<title id="title">分布与整体判断产生不同的数组类型</title><desc id="desc">相同输入 string | number，差别在条件左侧是否直接是类型参数 T。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="440" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">分布与整体判断产生不同的数组类型</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">相同输入 string | number，差别在条件左侧是否直接是类型参数 T。</text>
+<text x="35" y="111" font-size="18" text-anchor="start" fill="#20365F" font-weight="700">OneArray&lt;T&gt;</text>
+<text x="35" y="292" font-size="18" text-anchor="start" fill="#20365F" font-weight="700">WholeArray&lt;T&gt;</text>
+<rect x="35" y="135" width="230" height="110" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="150.0" y="196.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">string | number</text>
+<rect x="340" y="120" width="210" height="60" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="445.0" y="156.0" font-size="16" text-anchor="middle" fill="#20365F" font-weight="700">string → string[]</text>
+<rect x="340" y="205" width="210" height="60" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="445.0" y="241.0" font-size="16" text-anchor="middle" fill="#20365F" font-weight="700">number → number[]</text>
+<rect x="650" y="150" width="275" height="90" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="787.5" y="188.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">合并分支</text>
+<text x="787.5" y="214.0" font-size="17" text-anchor="middle" fill="#20365F">string[] | number[]</text>
+<polyline points="265,168 340,150" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="265,210 340,235" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="550,150 650,178" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="550,235 650,214" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="35" y="317" width="350" height="64" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="210.0" y="355.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">[T] extends [unknown]</text>
+<rect x="580" y="317" width="345" height="64" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="752.5" y="355.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">(string | number)[]</text>
+<polyline points="385,349 580,349" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="482" y="331" font-size="15" text-anchor="middle" fill="#20365F">整体验证后构造数组</text>
+<text x="32" y="420" font-size="15" text-anchor="start" fill="#20365F">上排的数组整体属于其中一个分支；下排的每个元素都可以选择 string 或 number。</text>
+</g></svg>

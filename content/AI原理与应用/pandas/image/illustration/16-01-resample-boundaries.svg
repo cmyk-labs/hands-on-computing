@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="530" viewBox="0 0 1000 530" role="img" aria-labelledby="title desc">
+<title id="title">重采样：先决定桶成员，再决定结果标签</title>
+<desc id="desc">在十点零分到五分之间，左闭桶含十点零与四分，总和三；只改标签仍为三，右闭则含四分与五分，总和六。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="530" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">重采样：先决定桶成员，再决定结果标签</text>
+<text x="500" y="86" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">观测：10:00→1，10:04→2，10:05→4，10:09→8，10:10→16</text>
+<text x="183" y="136" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">closed=left；label=left</text>
+<line x1="360" y1="178" x2="915" y2="178" stroke="#BAC8DC" stroke-width="2"/>
+<line x1="360" y1="178" x2="620" y2="178" stroke="#3265D6" stroke-width="4"/>
+<text x="360" y="205" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:00</text>
+<text x="568" y="205" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:04</text>
+<text x="620" y="205" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:05</text>
+<text x="828" y="205" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:09</text>
+<text x="880" y="205" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:10</text>
+<circle cx="360" cy="178" r="7" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="568" cy="178" r="5" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="620" cy="178" r="7" fill="white" stroke="#3265D6" stroke-width="2"/>
+<circle cx="828" cy="178" r="3" fill="#BAC8DC" stroke="#BAC8DC" stroke-width="2"/>
+<circle cx="880" cy="178" r="3" fill="#BAC8DC" stroke="#BAC8DC" stroke-width="2"/>
+<text x="788" y="145" text-anchor="middle" font-size="20" fill="#4A9479" font-weight="400">标签 10:00；总和 3</text>
+<text x="488" y="160" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">[10:00, 10:05)</text>
+<text x="183" y="281" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">closed=left；label=right</text>
+<line x1="360" y1="323" x2="915" y2="323" stroke="#BAC8DC" stroke-width="2"/>
+<line x1="360" y1="323" x2="620" y2="323" stroke="#3265D6" stroke-width="4"/>
+<text x="360" y="350" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:00</text>
+<text x="568" y="350" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:04</text>
+<text x="620" y="350" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:05</text>
+<text x="828" y="350" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:09</text>
+<text x="880" y="350" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:10</text>
+<circle cx="360" cy="323" r="7" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="568" cy="323" r="5" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="620" cy="323" r="7" fill="white" stroke="#3265D6" stroke-width="2"/>
+<circle cx="828" cy="323" r="3" fill="#BAC8DC" stroke="#BAC8DC" stroke-width="2"/>
+<circle cx="880" cy="323" r="3" fill="#BAC8DC" stroke="#BAC8DC" stroke-width="2"/>
+<text x="788" y="290" text-anchor="middle" font-size="20" fill="#4A9479" font-weight="400">标签 10:05；总和 3</text>
+<text x="488" y="305" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">[10:00, 10:05)</text>
+<text x="183" y="426" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">closed=right；label=right</text>
+<line x1="360" y1="468" x2="915" y2="468" stroke="#BAC8DC" stroke-width="2"/>
+<line x1="360" y1="468" x2="620" y2="468" stroke="#3265D6" stroke-width="4"/>
+<text x="360" y="495" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:00</text>
+<text x="568" y="495" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:04</text>
+<text x="620" y="495" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:05</text>
+<text x="828" y="495" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:09</text>
+<text x="880" y="495" text-anchor="middle" font-size="15" fill="#20365F" font-weight="400">10:10</text>
+<circle cx="360" cy="468" r="7" fill="white" stroke="#3265D6" stroke-width="2"/>
+<circle cx="568" cy="468" r="5" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="620" cy="468" r="7" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="828" cy="468" r="3" fill="#BAC8DC" stroke="#BAC8DC" stroke-width="2"/>
+<circle cx="880" cy="468" r="3" fill="#BAC8DC" stroke="#BAC8DC" stroke-width="2"/>
+<text x="788" y="435" text-anchor="middle" font-size="20" fill="#4A9479" font-weight="400">标签 10:05；总和 6</text>
+<text x="488" y="450" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">(10:00, 10:05]</text>
+<text x="500" y="521" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">图只突出同一对边界之间的桶；完整输出还包含其他桶。</text>
+</g>
+</svg>

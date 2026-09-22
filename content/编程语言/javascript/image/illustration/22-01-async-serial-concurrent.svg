@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="340" viewBox="0 0 960 340" role="img" aria-labelledby="title desc">
+<title id="title">等待的位置决定工作能否重叠</title><desc id="desc">这是调用顺序示意，横向间距不表示真实耗时。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="340" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">等待的位置决定工作能否重叠</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">这是调用顺序示意，横向间距不表示真实耗时。</text>
+<text x="35" y="143" font-size="18" text-anchor="start" fill="#20365F" font-weight="700">串行</text>
+<text x="35" y="255" font-size="18" text-anchor="start" fill="#20365F" font-weight="700">并发</text>
+<rect x="130" y="115" width="300" height="64" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="280.0" y="153.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">start1 → end1</text>
+<rect x="515" y="115" width="300" height="64" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="665.0" y="153.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">start2 → end2</text>
+<polyline points="430,147 515,147" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="472" y="135" font-size="15" text-anchor="middle" fill="#20365F">await</text>
+<rect x="130" y="225" width="300" height="64" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="280.0" y="263.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">start1、start2 先启动</text>
+<rect x="515" y="225" width="390" height="64" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="710.0" y="263.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">Promise.all 等待两项结果</text>
+<polyline points="430,257 515,257" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="32" y="320" font-size="15" text-anchor="start" fill="#20365F">并发不承诺多核并行；只有工作相互独立时，才能采用下排的启动方式。</text>
+</g></svg>

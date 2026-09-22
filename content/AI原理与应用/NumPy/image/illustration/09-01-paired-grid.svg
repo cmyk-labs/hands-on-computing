@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460" role="img" aria-labelledby="title desc">
+<title id="title">成对坐标与矩形选择：是否组合所有行列？</title>
+<desc id="desc">在三行四列的readings中，行零和二、列一和三作为成对坐标得到两个数，通过ix_组合则得到四个数。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="460" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">成对坐标与矩形选择：是否组合所有行列？</text>
+<text x="245" y="101" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">readings[[0, 2], [1, 3]]</text>
+<rect x="85" y="137" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="125.0" y="169.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">11</text>
+<rect x="165" y="137" width="80" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="205.0" y="169.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">12</text>
+<rect x="245" y="137" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="285.0" y="169.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">13</text>
+<rect x="325" y="137" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="365.0" y="169.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">14</text>
+<rect x="85" y="187" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="125.0" y="219.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">21</text>
+<rect x="165" y="187" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="205.0" y="219.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">22</text>
+<rect x="245" y="187" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="285.0" y="219.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">23</text>
+<rect x="325" y="187" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="365.0" y="219.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">24</text>
+<rect x="85" y="237" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="125.0" y="269.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">31</text>
+<rect x="165" y="237" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="205.0" y="269.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">32</text>
+<rect x="245" y="237" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="285.0" y="269.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">33</text>
+<rect x="325" y="237" width="80" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="365.0" y="269.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">34</text>
+<text x="125" y="125" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">0</text>
+<text x="205" y="125" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">1</text>
+<text x="285" y="125" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">2</text>
+<text x="365" y="125" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">3</text>
+<text x="66" y="167" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">0</text>
+<text x="66" y="217" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">1</text>
+<text x="66" y="267" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">2</text>
+<text x="740" y="101" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">readings[np.ix_([0, 2], [1, 3])]</text>
+<rect x="580" y="137" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="620.0" y="169.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">11</text>
+<rect x="660" y="137" width="80" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="700.0" y="169.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">12</text>
+<rect x="740" y="137" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="780.0" y="169.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">13</text>
+<rect x="820" y="137" width="80" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="860.0" y="169.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">14</text>
+<rect x="580" y="187" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="620.0" y="219.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">21</text>
+<rect x="660" y="187" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="700.0" y="219.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">22</text>
+<rect x="740" y="187" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="780.0" y="219.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">23</text>
+<rect x="820" y="187" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="860.0" y="219.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">24</text>
+<rect x="580" y="237" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="620.0" y="269.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">31</text>
+<rect x="660" y="237" width="80" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="700.0" y="269.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">32</text>
+<rect x="740" y="237" width="80" height="50" rx="0" fill="#FAFCFF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="780.0" y="269.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">33</text>
+<rect x="820" y="237" width="80" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="860.0" y="269.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">34</text>
+<text x="620" y="125" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">0</text>
+<text x="700" y="125" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">1</text>
+<text x="780" y="125" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">2</text>
+<text x="860" y="125" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">3</text>
+<text x="561" y="167" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">0</text>
+<text x="561" y="217" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">1</text>
+<text x="561" y="267" text-anchor="middle" font-size="16" fill="#536B8D" font-weight="400">2</text>
+<text x="245" y="332" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">(0, 1)、(2, 3) → [12, 34]</text>
+<text x="740" y="332" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">2 行 × 2 列 → [[12, 14], [32, 34]]</text>
+<text x="245" y="374" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">结果 shape：(2,)</text>
+<text x="740" y="374" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">结果 shape：(2, 2)</text>
+<text x="500" y="436" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">绿色是被选中的元素；这里固定列 [1, 3]，用于清楚比较两种索引语义。</text>
+</g>
+</svg>

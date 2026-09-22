@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+<title id="title">修改对象与重新给参数赋值</title><desc id="desc">只展开 revise 的对象参数；number 的重新赋值同样不改调用者绑定。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="440" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">修改对象与重新给参数赋值</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">只展开 revise 的对象参数；number 的重新赋值同样不改调用者绑定。</text>
+<text x="60" y="114" font-size="18" text-anchor="start" fill="#20365F" font-weight="700">① 传入后：共享对象</text>
+<rect x="60" y="135" width="180" height="56" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="150.0" y="169.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">report</text>
+<rect x="60" y="210" width="180" height="56" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="150.0" y="244.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">item</text>
+<rect x="410" y="157" width="230" height="90" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="525.0" y="195.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">原对象</text>
+<text x="525.0" y="221.0" font-size="18" text-anchor="middle" fill="#20365F">score: 80 → 90</text>
+<polyline points="240,162 410,182" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="240,238 410,220" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="60" y="315" font-size="18" text-anchor="start" fill="#20365F" font-weight="700">② item = { score: 0 } 后</text>
+<rect x="60" y="332" width="180" height="56" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="150.0" y="366.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">item</text>
+<rect x="410" y="324" width="230" height="72" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="525.0" y="353.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">新对象</text>
+<text x="525.0" y="379.0" font-size="18" text-anchor="middle" fill="#20365F">score: 0</text>
+<polyline points="240,360 410,360" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="693" y="193" font-size="16" text-anchor="start" fill="#20365F">report 仍指向原对象</text>
+<text x="693" y="355" font-size="16" text-anchor="start" fill="#20365F">只改了参数绑定</text>
+<text x="32" y="420" font-size="15" text-anchor="start" fill="#20365F">返回文本使用重新赋值后的 item；调用者仍通过 report 读取原对象。</text>
+</g></svg>

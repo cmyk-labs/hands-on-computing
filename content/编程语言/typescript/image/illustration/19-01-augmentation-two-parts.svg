@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="355" viewBox="0 0 960 355" role="img" aria-labelledby="title desc">
+<title id="title">模块扩充需要类型与实现同时到位</title><desc id="desc">gauge-double.ts 的两段内容分别改变检查契约和运行对象。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="355" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">模块扩充需要类型与实现同时到位</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">gauge-double.ts 的两段内容分别改变检查契约和运行对象。</text>
+<rect x="35" y="135" width="300" height="90" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="185.0" y="173.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">gauge-double.ts</text>
+<text x="185.0" y="199.0" font-size="17" text-anchor="middle" fill="#20365F">导入原 Gauge</text>
+<rect x="530" y="95" width="390" height="80" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="725.0" y="128.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">declare module</text>
+<text x="725.0" y="154.0" font-size="17" text-anchor="middle" fill="#20365F">接口增加 double(): number</text>
+<rect x="530" y="230" width="390" height="80" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="725.0" y="263.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">Gauge.prototype.double = ...</text>
+<text x="725.0" y="289.0" font-size="17" text-anchor="middle" fill="#20365F">执行后方法才真正存在</text>
+<polyline points="335,160 530,135" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<text x="430" y="125" font-size="15" text-anchor="middle" fill="#20365F">检查期</text>
+<polyline points="335,201 425,201 425,270 530,270" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="423" y="244" font-size="15" text-anchor="middle" fill="#20365F">运行期</text>
+<text x="32" y="335" font-size="15" text-anchor="start" fill="#20365F">main.ts 的副作用导入负责执行补丁；只加载类型不能代替这一步。</text>
+</g></svg>

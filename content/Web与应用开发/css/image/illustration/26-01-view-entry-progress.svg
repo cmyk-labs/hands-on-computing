@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="500" viewBox="0 0 1040 500" role="img" aria-labelledby="title desc">
+<title id="title">entry 进度描述进入过程，不是整页滚动比例</title><desc id="desc">较矮目标由滚动区域下端进入：entry0刚接触，entry50进入一半，entry100完全进入。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526787"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#20365F;font-size:22px} .small{font-size:18px;fill:#526787}.label{font-size:23px;font-weight:600}</style>
+<rect width="1040" height="500" fill="white"/>
+<text x="32" y="46" text-anchor="start" style="font-size:30px;font-weight:700;fill:#20365F">entry 进度描述进入过程，不是整页滚动比例</text>
+<text x="185" y="107" text-anchor="middle" style="font-size:24px;font-weight:600;fill:#20365F">entry 0%</text>
+<rect x="60" y="140" width="250" height="170" rx="0" fill="#F7F9FC" stroke="#8BADED" stroke-width="2"/>
+<rect x="118" y="310" width="134" height="100" rx="0" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<path d="M60 310 L310 310" fill="none" stroke="#526787" stroke-width="2.5" stroke-dasharray="7 5"/>
+<path d="M284 268 L284 180" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="185" y="438" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">刚开始相交</text>
+<text x="520" y="107" text-anchor="middle" style="font-size:24px;font-weight:600;fill:#20365F">entry 50%</text>
+<rect x="395" y="140" width="250" height="170" rx="0" fill="#F7F9FC" stroke="#8BADED" stroke-width="2"/>
+<rect x="453" y="260" width="134" height="100" rx="0" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<path d="M395 310 L645 310" fill="none" stroke="#526787" stroke-width="2.5" stroke-dasharray="7 5"/>
+<path d="M619 268 L619 180" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="520" y="438" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">进入一半</text>
+<text x="855" y="107" text-anchor="middle" style="font-size:24px;font-weight:600;fill:#20365F">entry 100%</text>
+<rect x="730" y="140" width="250" height="170" rx="0" fill="#F7F9FC" stroke="#8BADED" stroke-width="2"/>
+<rect x="788" y="210" width="134" height="100" rx="0" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<path d="M730 310 L980 310" fill="none" stroke="#526787" stroke-width="2.5" stroke-dasharray="7 5"/>
+<path d="M954 268 L954 180" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="855" y="438" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">恰好完全进入</text>
+<text x="32" y="476" text-anchor="start" style="font-size:18px;font-weight:400;fill:#526787">横排向下滚动、0px 内缩、目标比滚动区域矮；画的是几何位置，不判断遮挡或用户是否看到。</text>
+</svg>

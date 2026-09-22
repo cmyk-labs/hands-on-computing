@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="405" viewBox="0 0 960 405" role="img" aria-labelledby="title desc">
+<title id="title">函数替换：输入要接得住，输出要给得够</title><desc id="desc">strictFunctionTypes 下的普通函数类型；方法参数例外不包含在此图中。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="405" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">函数替换：输入要接得住，输出要给得够</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">strictFunctionTypes 下的普通函数类型；方法参数例外不包含在此图中。</text>
+<text x="35" y="110" font-size="17" text-anchor="start" fill="#20365F" font-weight="700">参数关系</text>
+<text x="35" y="245" font-size="17" text-anchor="start" fill="#20365F" font-weight="700">返回关系</text>
+<rect x="35" y="130" width="310" height="72" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="190.0" y="159.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">调用位置可能传入</text>
+<text x="190.0" y="185.0" font-size="17" text-anchor="middle" fill="#20365F">string</text>
+<rect x="570" y="130" width="350" height="72" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="745.0" y="159.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">general 可以接收</text>
+<text x="745.0" y="185.0" font-size="17" text-anchor="middle" fill="#20365F">string | number</text>
+<polyline points="345,166 570,166" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="458" y="148" font-size="15" text-anchor="middle" fill="#20365F">每种输入都能接收</text>
+<rect x="35" y="270" width="310" height="72" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="190.0" y="299.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">提供者产生</text>
+<text x="190.0" y="325.0" font-size="17" text-anchor="middle" fill="#20365F">Timed：title + minutes</text>
+<rect x="570" y="270" width="350" height="72" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="745.0" y="299.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">调用位置需要</text>
+<text x="745.0" y="325.0" font-size="17" text-anchor="middle" fill="#20365F">Named：title</text>
+<polyline points="345,306 570,306" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="458" y="288" font-size="15" text-anchor="middle" fill="#20365F">每个结果都满足要求</text>
+<text x="32" y="385" font-size="15" text-anchor="start" fill="#20365F">箭头按数据从调用方到函数、再从函数回到调用方的方向画；两端的类型检查条件不同。</text>
+</g></svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+<title id="title">四种超时限制不同的等待</title><desc id="desc">pool取得连接，connect建连，write发送块，read接收块；不等于总时限。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">四种超时限制不同的等待</text>
+<rect x="40" y="130" width="200" height="100" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="140.0" y="161" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">pool</text>
+<text x="140.0" y="190" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">等池中可用连接</text>
+<rect x="280" y="130" width="200" height="100" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="380.0" y="161" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">connect</text>
+<text x="380.0" y="190" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">需要新连接时建连</text>
+<path d="M240,180 L277,180" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="520" y="130" width="200" height="100" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="620.0" y="161" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">write</text>
+<text x="620.0" y="190" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">等发送下一块数据</text>
+<path d="M480,180 L517,180" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="760" y="130" width="200" height="100" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="860.0" y="161" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">read</text>
+<text x="860.0" y="190" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">等收到下一块数据</text>
+<path d="M720,180 L757,180" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="40" y="290" width="920" height="60" rx="14" fill="#F5F7FC" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500" y="329" font-size="19" text-anchor="middle" font-weight="400" fill="#20365F">整个业务操作的总时限：另由 asyncio.timeout 等外层边界管理</text>
+<text x="40" y="395" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">这是阶段定位图；复用已有连接可跳过建连，流式读写可能反复等待多块数据。</text>
+</g></svg>

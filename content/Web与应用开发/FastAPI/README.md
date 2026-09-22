@@ -74,6 +74,17 @@ Step 4：阅读结束后，在 Notebook 服务的终端按 Ctrl+C，并按提示
 | 修改源码后观察新结果 | 正常停止服务，再重新启动 |
 | 对照两个进程的内存和资源 | 在 8150、8151 各启动一个独立服务，分别请求与关闭 |
 
-本机自动重载仍存在“检测到变化，但旧进程继续响应”的问题；共享端口的多 worker 启动也间歇出现 WinError 10022。第 15 章保留机制与环境边界说明，采用上表的可执行流程；两个独立服务的实验不代表共享端口多 worker 部署已经验证通过。
+2026-09-22 复查：本机自动化启动环境中，独立隐藏控制台下的源码变更仍未替换旧 PID；共享端口 --workers 2 的三轮启动均观察到 WinError 10022。部分轮次随后有两个 worker 响应，但启动与控制台信号退出仍未通过完整验收。第 15 章保留机制与环境边界说明，采用上表的可执行流程；两个独立服务的实验不代表共享端口多 worker 部署已经验证通过。
+
+
+## 综合交付与流式响应的检查范围
+
+第 16 章在正文逐步组合接口后，通过 [独立服务脚本](scripts/16-api-delivery/app.py) 监听本机 8160 端口。Notebook 向本次子进程提供临时数据库路径与凭据，实际检查创建、认证、归属、校验和约束错误，再正常停止、重启并读取 SQLite 中的记录；完成后确认 Engine 释放、进程退出、端口关闭及临时目录删除。没有新增依赖，凭据不写入 Notebook 输出或文件。
+
+第 20 章用真实 HTTP 分别检查完整接收和延迟消费后关闭。客户端只读取第一条事件，不保证服务端只生成一条；检查依据为事件内容与顺序、响应关闭以及 active、closed 的最终状态，产出数仅核对本例 1～3 条的范围。
+
+2026-09-22，第 16、20 章已从空内核顺序重跑并保存输出；第 20 章的浏览器正常完成、首条后关闭与手动关闭另行检查。上述结果不覆盖共享端口多 worker、自动重载、HTTPS、账号系统或全新环境安装。
 
 操作依据：[Conda 环境管理](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands)、[pip 依赖清单](https://pip.pypa.io/en/stable/reference/requirements-file-format/)、[Jupyter 安装](https://jupyter.org/install)。
+
+2026-09-22 安装复验：在独立的全新 Conda Python 3.12.14 环境中，沿用原清华安装源联合安装本仓库 7 份 requirements.txt；48 项直接依赖版本全部匹配，pip check 无冲突。主要模块导入及数值计算、模型拟合、Excel／Parquet 往返、图形导出和 FastAPI 请求检查通过。此项验证共同环境的安装与代表性功能，不代表各课程分别建环境或全部章节重新执行。

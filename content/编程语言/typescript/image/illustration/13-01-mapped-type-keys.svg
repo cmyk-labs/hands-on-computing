@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="335" viewBox="0 0 960 335" role="img" aria-labelledby="title desc">
+<title id="title">映射类型逐个处理属性键</title><desc id="desc">类型层变换：Flags&lt;Form&gt; 把 Form 的每个属性值类型改为 boolean。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="335" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">映射类型逐个处理属性键</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">类型层变换：Flags&lt;Form&gt; 把 Form 的每个属性值类型改为 boolean。</text>
+<rect x="35" y="125" width="250" height="120" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="160.0" y="165.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">Form</text>
+<text x="160.0" y="191.0" font-size="18" text-anchor="middle" fill="#20365F">title: string</text>
+<text x="160.0" y="217.0" font-size="18" text-anchor="middle" fill="#20365F">hours: number</text>
+<rect x="355" y="125" width="250" height="120" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="480.0" y="165.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">P in keyof Form</text>
+<text x="480.0" y="191.0" font-size="17" text-anchor="middle" fill="#20365F">P = &quot;title&quot;</text>
+<text x="480.0" y="217.0" font-size="17" text-anchor="middle" fill="#20365F">P = &quot;hours&quot;</text>
+<rect x="675" y="125" width="250" height="120" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="800.0" y="165.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">Flags&lt;Form&gt;</text>
+<text x="800.0" y="191.0" font-size="18" text-anchor="middle" fill="#20365F">title: boolean</text>
+<text x="800.0" y="217.0" font-size="18" text-anchor="middle" fill="#20365F">hours: boolean</text>
+<polyline points="285,185 355,185" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="605,185 675,185" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="32" y="315" font-size="15" text-anchor="start" fill="#20365F">这里只计算类型；title: true、hours: false 的实际数据仍由下面的对象字面量提供。</text>
+</g></svg>

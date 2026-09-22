@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="335" viewBox="0 0 960 335" role="img" aria-labelledby="title desc">
+<title id="title">模板中的两个联合形成四种组合</title><desc id="desc">每个格子是一个允许的字符串字面量类型，不是生成的运行时数据。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="335" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">模板中的两个联合形成四种组合</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">每个格子是一个允许的字符串字面量类型，不是生成的运行时数据。</text>
+<text x="430" y="128" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">Action = &quot;open&quot;</text>
+<text x="735" y="128" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">Action = &quot;close&quot;</text>
+<text x="50" y="196" font-size="17" text-anchor="start" fill="#20365F">Domain = &quot;lesson&quot;</text>
+<rect x="280" y="160" width="285" height="64" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="422.5" y="198.0" font-size="19" text-anchor="middle" fill="#20365F" font-weight="700">&quot;lesson:open&quot;</text>
+<rect x="585" y="160" width="285" height="64" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="727.5" y="198.0" font-size="19" text-anchor="middle" fill="#20365F" font-weight="700">&quot;lesson:close&quot;</text>
+<text x="50" y="276" font-size="17" text-anchor="start" fill="#20365F">Domain = &quot;quiz&quot;</text>
+<rect x="280" y="240" width="285" height="64" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="422.5" y="278.0" font-size="19" text-anchor="middle" fill="#20365F" font-weight="700">&quot;quiz:open&quot;</text>
+<rect x="585" y="240" width="285" height="64" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="727.5" y="278.0" font-size="19" text-anchor="middle" fill="#20365F" font-weight="700">&quot;quiz:close&quot;</text>
+</g></svg>

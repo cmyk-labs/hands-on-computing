@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="500" viewBox="0 0 1040 500" role="img" aria-labelledby="title desc">
+<title id="title">同样写 width: 200px，宽度计算的起止边界不同</title><desc id="desc">content-box 内容宽 200，加两侧 padding20 与 border4 后外沿248；border-box 外沿200内容152。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526787"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#20365F;font-size:22px} .small{font-size:18px;fill:#526787}.label{font-size:23px;font-weight:600}</style>
+<rect width="1040" height="500" fill="white"/>
+<text x="32" y="46" text-anchor="start" style="font-size:30px;font-weight:700;fill:#20365F">同样写 width: 200px，宽度计算的起止边界不同</text>
+<text x="32" y="150" text-anchor="start" style="font-size:24px;font-weight:600;fill:#20365F">content-box</text>
+<rect x="250" y="122" width="595.1999999999999" height="82" rx="0" fill="#F3F0FF" stroke="#8BADED" stroke-width="2"/>
+<rect x="259.6" y="130" width="576.0" height="66" rx="0" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<rect x="307.6" y="138" width="480.0" height="50" rx="0" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="547.5999999999999" y="171" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">内容 200px</text>
+<path d="M250 232 L845.1999999999999 232" fill="none" stroke="#526787" stroke-width="2.5"/>
+<text x="547.5999999999999" y="261" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">边框外沿 248px</text>
+<text x="32" y="326" text-anchor="start" style="font-size:24px;font-weight:600;fill:#20365F">border-box</text>
+<rect x="250" y="298" width="480.0" height="82" rx="0" fill="#F3F0FF" stroke="#8BADED" stroke-width="2"/>
+<rect x="259.6" y="306" width="460.79999999999995" height="66" rx="0" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<rect x="307.6" y="314" width="364.8" height="50" rx="0" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="490.0" y="347" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">内容 152px</text>
+<path d="M250 408 L730.0 408" fill="none" stroke="#526787" stroke-width="2.5"/>
+<text x="490.0" y="437" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">边框外沿 200px</text>
+<text x="32" y="85" text-anchor="start" style="font-size:20px;font-weight:400;fill:#20365F">两侧 padding 各 20px，border 各 4px；margin 不计入任何一项 width</text>
+<text x="32" y="476" text-anchor="start" style="font-size:18px;font-weight:400;fill:#526787">横向尺寸按同一比例画出，纵向仅用于区分区域；边框、内边距、内容区从外到内排列。</text>
+</svg>

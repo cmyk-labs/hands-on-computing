@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="445" viewBox="0 0 1000 445" role="img" aria-labelledby="title desc">
+<title id="title">分箱端点：10 分钟到底属于哪一组？</title>
+<desc id="desc">右闭且包含最左端点时短组含零与十、长组不含十但含二十；左闭右开时短组不含十、长组含十不含二十。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="445" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">分箱端点：10 分钟到底属于哪一组？</text>
+<text x="500" y="95" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">边界固定为 0、10、20；实心点包含端点，空心点排除端点</text>
+<text x="185" y="140" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">right=True，include_lowest=True</text>
+<line x1="350" y1="177" x2="610" y2="177" stroke="#3265D6" stroke-width="5"/>
+<line x1="610" y1="192" x2="870" y2="192" stroke="#4A9479" stroke-width="5"/>
+<circle cx="350" cy="177" r="7" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="610" cy="177" r="7" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="610" cy="192" r="7" fill="white" stroke="#4A9479" stroke-width="2"/>
+<circle cx="870" cy="192" r="7" fill="#4A9479" stroke="#4A9479" stroke-width="2"/>
+<text x="350" y="230" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">0</text>
+<text x="610" y="230" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">10</text>
+<text x="870" y="230" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">20</text>
+<text x="480" y="160" text-anchor="middle" font-size="21" fill="#3265D6" font-weight="400">短</text>
+<text x="740" y="171" text-anchor="middle" font-size="21" fill="#4A9479" font-weight="400">长</text>
+<text x="185" y="284" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">right=False</text>
+<line x1="350" y1="321" x2="610" y2="321" stroke="#3265D6" stroke-width="5"/>
+<line x1="610" y1="336" x2="870" y2="336" stroke="#4A9479" stroke-width="5"/>
+<circle cx="350" cy="321" r="7" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="610" cy="321" r="7" fill="white" stroke="#3265D6" stroke-width="2"/>
+<circle cx="610" cy="336" r="7" fill="#4A9479" stroke="#4A9479" stroke-width="2"/>
+<circle cx="870" cy="336" r="7" fill="white" stroke="#4A9479" stroke-width="2"/>
+<text x="350" y="374" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">0</text>
+<text x="610" y="374" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">10</text>
+<text x="870" y="374" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">20</text>
+<text x="480" y="304" text-anchor="middle" font-size="21" fill="#3265D6" font-weight="400">短</text>
+<text x="740" y="315" text-anchor="middle" font-size="21" fill="#4A9479" font-weight="400">长</text>
+<text x="500" y="420" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">两段略微错开以展示端点归属；超界值与原始缺失均不会落入这些箱。</text>
+</g>
+</svg>

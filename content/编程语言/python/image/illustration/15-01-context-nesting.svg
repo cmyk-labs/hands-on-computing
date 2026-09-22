@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="390" viewBox="0 0 1000 390" role="img" aria-labelledby="title desc">
+<title id="title">多个 with 管理器：后进入，先退出</title><desc id="desc">外层和内层上下文的嵌套寿命。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">多个 with 管理器：后进入，先退出</text>
+<rect x="40" y="95" width="920" height="220" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="70" y="133" font-size="20" text-anchor="start" font-weight="600" fill="#20365F">外层：__enter__</text>
+<text x="710" y="282" font-size="20" text-anchor="start" font-weight="600" fill="#20365F">__exit__：外层</text>
+<rect x="250" y="155" width="485" height="100" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="275" y="189" font-size="19" text-anchor="start" font-weight="600" fill="#20365F">内层：__enter__</text>
+<text x="505" y="231" font-size="19" text-anchor="start" font-weight="600" fill="#20365F">__exit__：内层</text>
+<text x="420" y="226" font-size="18" text-anchor="middle" font-weight="400" fill="#20365F">with 语句体</text>
+<path d="M90,338 L900,338" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="495.0" y="328.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">时间向右</text>
+<text x="40" y="365" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">嵌套区域表示资源可用范围；成功进入的内层先收尾，再退出外层。</text>
+</g></svg>

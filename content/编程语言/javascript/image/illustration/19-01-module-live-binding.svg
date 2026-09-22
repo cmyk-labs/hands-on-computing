@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="350" viewBox="0 0 960 350" role="img" aria-labelledby="title desc">
+<title id="title">具名导入读取当前绑定</title><desc id="desc">对照本例的 export let count 与 export default count 表达式。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="350" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">具名导入读取当前绑定</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">对照本例的 export let count 与 export default count 表达式。</text>
+<rect x="45" y="130" width="330" height="72" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="210.0" y="159.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">counter.mjs：count</text>
+<text x="210.0" y="185.0" font-size="18" text-anchor="middle" fill="#20365F">0 → increment() → 1</text>
+<rect x="45" y="245" width="330" height="62" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="210.0" y="282.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">独立默认绑定：0</text>
+<rect x="595" y="130" width="320" height="72" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="755.0" y="159.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">导入名称 count</text>
+<text x="755.0" y="185.0" font-size="18" text-anchor="middle" fill="#20365F">读取导出方当前值</text>
+<rect x="595" y="245" width="320" height="62" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="755.0" y="269.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">导入名称 snapshot</text>
+<text x="755.0" y="295.0" font-size="18" text-anchor="middle" fill="#20365F">仍读取默认绑定的 0</text>
+<polyline points="595,166 375,166" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="485" y="150" font-size="15" text-anchor="middle" fill="#20365F">绑定关联</text>
+<polyline points="595,276 375,276" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="485" y="260" font-size="15" text-anchor="middle" fill="#20365F">绑定关联</text>
+<text x="32" y="330" font-size="15" text-anchor="start" fill="#20365F">本图省略 settings；export { count as default } 则把默认导出名关联到现有 count。</text>
+</g></svg>

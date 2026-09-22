@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img" aria-labelledby="title desc">
+<title id="title">约束失败后恢复会话，再核对数据</title><desc id="desc">两个新增属于同一次事务；关闭 Session 是资源释放，不能替代提交或本例的显式回滚。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">约束失败后恢复会话，再核对数据</text>
+<rect x="40.0" y="120" width="200.0" height="105" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="140.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">同一事务</text>
+<text x="140.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">新增 999</text>
+<text x="140.0" y="205" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">新增重复主键</text>
+<rect x="280.0" y="120" width="200.0" height="105" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="380.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">commit / flush</text>
+<text x="380.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">唯一或主键约束失败</text>
+<path d="M240.0,172 L277.0,172" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="520.0" y="120" width="200.0" height="105" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="620.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">rollback</text>
+<text x="620.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">撤销本次事务</text>
+<text x="620.0" y="205" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">恢复 Session 使用</text>
+<path d="M480.0,172 L517.0,172" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="760.0" y="120" width="200.0" height="105" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="860.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">重新查询</text>
+<text x="860.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">999 不存在</text>
+<text x="860.0" y="205" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">原记录仍保留</text>
+<path d="M720.0,172 L757.0,172" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="335" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">两个新增属于同一次事务；关闭 Session 是资源释放，不能替代提交或本例的显式回滚。</text>
+</g></svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="355" viewBox="0 0 960 355" role="img" aria-labelledby="title desc">
+<title id="title">readonly 限制访问方式，不复制对象</title><desc id="desc">两种静态访问接口在运行时指向同一个数组。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="355" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">readonly 限制访问方式，不复制对象</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">两种静态访问接口在运行时指向同一个数组。</text>
+<rect x="40" y="130" width="290" height="70" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="185.0" y="158.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">writable</text>
+<text x="185.0" y="184.0" font-size="17" text-anchor="middle" fill="#20365F">可以 push</text>
+<rect x="40" y="245" width="290" height="70" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="185.0" y="273.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">view</text>
+<text x="185.0" y="299.0" font-size="17" text-anchor="middle" fill="#20365F">只读数组接口</text>
+<rect x="590" y="165" width="325" height="110" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="752.5" y="200.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">同一个数组</text>
+<text x="752.5" y="226.0" font-size="17" text-anchor="middle" fill="#20365F">[{ count: 1 }]</text>
+<text x="752.5" y="252.0" font-size="17" text-anchor="middle" fill="#20365F">元素对象仍可修改</text>
+<polyline points="330,165 590,192" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="330,280 590,246" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="32" y="335" font-size="15" text-anchor="start" fill="#20365F">view 没有 push 接口；这不阻止 writable 追加，也不把元素对象的 count 变为 readonly。</text>
+</g></svg>

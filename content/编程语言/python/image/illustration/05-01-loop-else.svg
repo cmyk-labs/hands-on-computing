@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460" role="img" aria-labelledby="title desc">
+<title id="title">循环 else：看遍历怎样结束</title><desc id="desc">正常耗尽进入 else，break 跳过 else。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">循环 else：看遍历怎样结束</text>
+<rect x="55" y="105" width="250" height="85" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="180.0" y="136" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">取下一个元素</text>
+<text x="180.0" y="165" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">本例 numbers</text>
+<rect x="380" y="105" width="250" height="85" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="505.0" y="136" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">是否匹配 target？</text>
+<text x="505.0" y="165" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">执行本轮判断</text>
+<rect x="700" y="105" width="245" height="85" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="822.5" y="136" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">break</text>
+<text x="822.5" y="165" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">退出当前循环</text>
+<path d="M305,148 L380,148" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="342.5" y="138.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">有元素</text>
+<path d="M630,148 L700,148" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="665.0" y="138.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">匹配</text>
+<path d="M505,190 L505,250 L175,250 L175,190" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="260" y="240" font-size="16" text-anchor="start" font-weight="400" fill="#20365F">不匹配，继续遍历</text>
+<rect x="55" y="315" width="250" height="75" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="180.0" y="346" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">循环 else</text>
+<text x="180.0" y="375" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">所有元素均未匹配</text>
+<path d="M55,145 L25,145 L25,350 L55,350" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="28" y="282" font-size="16" text-anchor="start" font-weight="400" fill="#20365F">耗尽</text>
+<rect x="700" y="315" width="245" height="75" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="822.5" y="346" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">循环之后</text>
+<text x="822.5" y="375" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">两条路径在这里汇合</text>
+<path d="M305,352 L700,352" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M822,190 L822,315" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="822.0" y="242.5" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">不执行 else</text>
+<text x="40" y="435" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">图只展示正常耗尽与 break；异常等提前退出也不进入循环 else。</text>
+</g></svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="505" viewBox="0 0 1000 505" role="img" aria-labelledby="title desc">
+<title id="title">丢失更新：两个线程写回同一个旧值</title><desc id="desc">最后两次写入可互换；关键是两者都先保存了旧值 0。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">丢失更新：两个线程写回同一个旧值</text>
+<rect x="25.0" y="75" width="210" height="52" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="130.0" y="106" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">线程 A</text>
+<path d="M130.0,130 L130.0,445" stroke="#A7BAD6" stroke-dasharray="5 5" stroke-width="1.5"/>
+<rect x="395.0" y="75" width="210" height="52" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500.0" y="106" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">共享 counter</text>
+<path d="M500.0,130 L500.0,445" stroke="#A7BAD6" stroke-dasharray="5 5" stroke-width="1.5"/>
+<rect x="765.0" y="75" width="210" height="52" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="870.0" y="106" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">线程 B</text>
+<path d="M870.0,130 L870.0,445" stroke="#A7BAD6" stroke-dasharray="5 5" stroke-width="1.5"/>
+<path d="M130.0,173 L500.0,173" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="315.0" y="163.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">读取 value = 0</text>
+<path d="M870.0,236 L500.0,236" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="685.0" y="226.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">也读取 value = 0</text>
+<path d="M130.0,299 L870.0,299" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="500.0" y="289.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">Barrier：两者读完后才放行</text>
+<path d="M130.0,362 L500.0,362" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="315.0" y="352.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">写入 previous + 1，即 1</text>
+<path d="M870.0,425 L500.0,425" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="685.0" y="415.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">再次写入 1；不是在最新值上加 1</text>
+<text x="40" y="480" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">最后两次写入可互换；关键是两者都先保存了旧值 0。</text>
+</g></svg>

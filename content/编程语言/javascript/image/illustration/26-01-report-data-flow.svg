@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="365" viewBox="0 0 960 365" role="img" aria-labelledby="title desc">
+<title id="title">文件输入到完整报告的边界</title><desc id="desc">先等全部输入完成并校验，才允许汇总与写出。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="365" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">文件输入到完整报告的边界</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">先等全部输入完成并校验，才允许汇总与写出。</text>
+<rect x="25" y="130" width="270" height="90" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="160.0" y="168.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">多个输入文件</text>
+<text x="160.0" y="194.0" font-size="17" text-anchor="middle" fill="#20365F">并发读取、解析、校验</text>
+<rect x="345" y="130" width="270" height="90" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="480.0" y="168.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">allSettled</text>
+<text x="480.0" y="194.0" font-size="17" text-anchor="middle" fill="#20365F">等待每个任务结束</text>
+<rect x="665" y="130" width="270" height="90" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="800.0" y="168.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">全部成功</text>
+<text x="800.0" y="194.0" font-size="17" text-anchor="middle" fill="#20365F">汇总 → 等待写入</text>
+<polyline points="295,175 345,175" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="615,175 665,175" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="345" y="280" width="350" height="52" rx="12" fill="#F7F9FC" stroke="#AAB9CE" stroke-width="1.8"/>
+<text x="520.0" y="312.0" font-size="16" text-anchor="middle" fill="#20365F" font-weight="700">存在输入失败：抛 AggregateError</text>
+<polyline points="480,220 480,280" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="32" y="345" font-size="15" text-anchor="start" fill="#20365F">输入失败不写出；汇总溢出或写入失败继续抛出，不能当作完整报告成功。</text>
+</g></svg>

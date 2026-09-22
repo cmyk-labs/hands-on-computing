@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="340" viewBox="0 0 960 340" role="img" aria-labelledby="title desc">
+<title id="title">声明与实现分别服务检查器和运行时</title><desc id="desc">导入说明符相同，但两个阶段读取的文件不同。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="340" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">声明与实现分别服务检查器和运行时</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">导入说明符相同，但两个阶段读取的文件不同。</text>
+<rect x="35" y="145" width="280" height="84" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="175.0" y="180.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">main.ts</text>
+<text x="175.0" y="206.0" font-size="17" text-anchor="middle" fill="#20365F">导入 ./meter/index.js</text>
+<rect x="530" y="110" width="390" height="70" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="725.0" y="138.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">检查：meter/index.d.ts</text>
+<text x="725.0" y="164.0" font-size="17" text-anchor="middle" fill="#20365F">label 与 Meter 的签名</text>
+<rect x="530" y="230" width="390" height="70" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="725.0" y="258.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">运行：meter/index.js</text>
+<text x="725.0" y="284.0" font-size="17" text-anchor="middle" fill="#20365F">真正的函数体与类</text>
+<polyline points="315,166 530,145" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<text x="414" y="136" font-size="15" text-anchor="middle" fill="#20365F">TypeScript</text>
+<polyline points="315,202 420,202 420,265 530,265" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="416" y="242" font-size="15" text-anchor="middle" fill="#20365F">生成后由 Node 加载</text>
+<text x="32" y="320" font-size="15" text-anchor="start" fill="#20365F">.d.ts 不生成实现，也不证明实现正确；声明与实际行为必须保持一致。</text>
+</g></svg>

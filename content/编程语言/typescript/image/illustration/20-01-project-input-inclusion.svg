@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="350" viewBox="0 0 960 350" role="img" aria-labelledby="title desc">
+<title id="title">exclude 只过滤 include 的搜索结果</title><desc id="desc">主入口的显式导入仍会把被排除文件带入检查项目。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="350" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">exclude 只过滤 include 的搜索结果</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">主入口的显式导入仍会把被排除文件带入检查项目。</text>
+<rect x="35" y="125" width="230" height="65" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="150.0" y="163.5" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">include 搜索</text>
+<rect x="370" y="125" width="230" height="65" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="485.0" y="163.5" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">exclude 过滤</text>
+<rect x="705" y="125" width="220" height="65" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="815.0" y="163.5" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">初始输入</text>
+<polyline points="265,157 370,157" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="600,157 705,157" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="35" y="250" width="230" height="65" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="150.0" y="288.5" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">main.ts</text>
+<rect x="455" y="250" width="470" height="65" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="690.0" y="275.5" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">included/excluded.ts</text>
+<text x="690.0" y="301.5" font-size="17" text-anchor="middle" fill="#20365F">因被导入而纳入</text>
+<polyline points="265,282 455,282" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="360" y="267" font-size="15" text-anchor="middle" fill="#20365F">显式 import</text>
+<text x="32" y="330" font-size="15" text-anchor="start" fill="#20365F">files 也可显式纳入文件；rootDir 负责输出层级，不负责筛选输入。</text>
+</g></svg>

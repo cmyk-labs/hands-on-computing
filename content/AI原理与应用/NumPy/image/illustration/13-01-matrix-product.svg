@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="425" viewBox="0 0 1000 425" role="img" aria-labelledby="title desc">
+<title id="title">矩阵乘积：一行与一列配对后求和</title>
+<desc id="desc">data 的一行有三个特征，weights 的一列有三个权重，按位置乘积并求和得到 scores 的一个元素。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="425" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">矩阵乘积：一行与一列配对后求和</text>
+<text x="178" y="105" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">data：(2, 3)</text>
+<rect x="70" y="127" width="65" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="102.5" y="158.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">1</text>
+<rect x="135" y="127" width="65" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="167.5" y="158.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">2</text>
+<rect x="200" y="127" width="65" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="232.5" y="158.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">3</text>
+<rect x="70" y="175" width="65" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="102.5" y="206.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">4</text>
+<rect x="135" y="175" width="65" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="167.5" y="206.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">5</text>
+<rect x="200" y="175" width="65" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="232.5" y="206.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">6</text>
+<text x="320" y="190" text-anchor="middle" font-size="30" fill="#20365F" font-weight="400">@</text>
+<text x="469" y="105" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">weights：(3, 2)</text>
+<rect x="407" y="127" width="62" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="438.0" y="158.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">1</text>
+<rect x="469" y="127" width="62" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="500.0" y="158.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0</text>
+<rect x="407" y="175" width="62" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="438.0" y="206.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0</text>
+<rect x="469" y="175" width="62" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="500.0" y="206.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">1</text>
+<rect x="407" y="223" width="62" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="438.0" y="254.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">1</text>
+<rect x="469" y="223" width="62" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="500.0" y="254.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">1</text>
+<text x="606" y="190" text-anchor="middle" font-size="30" fill="#20365F" font-weight="400">=</text>
+<text x="784" y="105" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">scores：(2, 2)</text>
+<rect x="715" y="127" width="68" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="749.0" y="158.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">4</text>
+<rect x="783" y="127" width="68" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="817.0" y="158.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">5</text>
+<rect x="715" y="175" width="68" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="749.0" y="206.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">10</text>
+<rect x="783" y="175" width="68" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="817.0" y="206.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">11</text>
+<rect x="202" y="317" width="595" height="60" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="499.5" y="354.0" text-anchor="middle" font-size="22" fill="#20365F" font-weight="400">scores[0, 0] = 1×1 + 2×0 + 3×1 = 4</text>
+<text x="500" y="408" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">匹配的内轴长度都是 3；结果保留记录轴与权重组轴。</text>
+</g>
+</svg>

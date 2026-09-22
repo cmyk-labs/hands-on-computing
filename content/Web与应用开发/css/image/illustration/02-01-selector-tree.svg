@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="510" viewBox="0 0 1040 510" role="img" aria-labelledby="title desc">
+<title id="title">组合器沿同一棵树，选择不同的目标</title><desc id="desc">直接子段落与嵌套段落都匹配后代选择器，只有 direct-one 和 direct-two 匹配直接子代。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526787"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#20365F;font-size:22px} .small{font-size:18px;fill:#526787}.label{font-size:23px;font-weight:600}</style>
+<rect width="1040" height="510" fill="white"/>
+<text x="32" y="46" text-anchor="start" style="font-size:30px;font-weight:700;fill:#20365F">组合器沿同一棵树，选择不同的目标</text>
+<rect x="420" y="86" width="210" height="56" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<text x="525.0" y="122.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">.relations</text>
+<path d="M525 142 L138 204" fill="none" stroke="#526787" stroke-width="2.5"/>
+<rect x="30" y="204" width="216" height="60" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="138.0" y="242.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">h3</text>
+<path d="M525 142 L390 204" fill="none" stroke="#526787" stroke-width="2.5"/>
+<rect x="282" y="204" width="216" height="60" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="390.0" y="242.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">p · direct-one</text>
+<path d="M525 142 L642 204" fill="none" stroke="#526787" stroke-width="2.5"/>
+<rect x="534" y="204" width="216" height="60" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="642.0" y="242.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">div</text>
+<path d="M525 142 L894 204" fill="none" stroke="#526787" stroke-width="2.5"/>
+<rect x="786" y="204" width="216" height="60" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="894.0" y="242.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">p · direct-two</text>
+<path d="M642 264 L642 320" fill="none" stroke="#526787" stroke-width="2.5"/>
+<rect x="534" y="320" width="216" height="60" rx="12" fill="#F3F0FF" stroke="#8BADED" stroke-width="2"/>
+<text x="642.0" y="358.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">p · nested-one</text>
+<text x="32" y="414" text-anchor="start" style="font-size:22px;font-weight:400;fill:#20365F">.relations p → 三个 p；.relations &gt; p → 两个直接子 p</text>
+<text x="32" y="450" text-anchor="start" style="font-size:22px;font-weight:400;fill:#20365F">h3 + p → direct-one；h3 ~ p → direct-one、direct-two</text>
+<text x="32" y="486" text-anchor="start" style="font-size:18px;font-weight:400;fill:#526787">连线只表示元素父子关系；兄弟顺序从左向右。容器外的 outside-one 不在这棵子树中。</text>
+</svg>

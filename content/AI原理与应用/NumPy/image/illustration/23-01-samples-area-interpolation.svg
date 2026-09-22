@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+<title id="title">相邻样本的连线：面积与插值是两种读取方式</title>
+<desc id="desc">采样点零零、一一、三九；左图两段梯形面积为零点五和十，右图在二处线性插值得五而平方函数为四。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="440" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">相邻样本的连线：面积与插值是两种读取方式</text>
+<text x="245" y="88" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">trapezoid：累积折线下方的面积</text>
+<line x1="105" y1="350" x2="445.0" y2="350" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="105" y1="350" x2="105" y2="110" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="105" y="374" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">0</text>
+<text x="205" y="374" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">1</text>
+<text x="305" y="374" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">2</text>
+<text x="405" y="374" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">3</text>
+<text x="91" y="259" text-anchor="end" font-size="16" fill="#20365F" font-weight="400">4</text>
+<text x="91" y="139" text-anchor="end" font-size="16" fill="#20365F" font-weight="400">9</text>
+<text x="455" y="351" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">x</text>
+<text x="81" y="119" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">y</text>
+<path d="M105 350 L205 326 L205 350 Z" fill="#ECF3FF" stroke="#3265D6" stroke-width="1"/>
+<path d="M205 350 L205 326 L405 134 L405 350 Z" fill="#EFF8F4" stroke="#4A9479" stroke-width="1"/>
+<text x="167" y="325" text-anchor="middle" font-size="16" fill="#20365F" font-weight="400">0.5</text>
+<text x="340" y="302" text-anchor="middle" font-size="21" fill="#4A9479" font-weight="400">10</text>
+<path d="M105 350 L205 326 L405 134" fill="none" stroke="#3265D6" stroke-width="3"/>
+<circle cx="105" cy="350" r="5" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="205" cy="326" r="5" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="405" cy="134" r="5" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<text x="733" y="88" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">interp：读取折线在新坐标处的高度</text>
+<line x1="593" y1="350" x2="933.0" y2="350" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="593" y1="350" x2="593" y2="110" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="593" y="374" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">0</text>
+<text x="693" y="374" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">1</text>
+<text x="793" y="374" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">2</text>
+<text x="893" y="374" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">3</text>
+<text x="579" y="259" text-anchor="end" font-size="16" fill="#20365F" font-weight="400">4</text>
+<text x="579" y="139" text-anchor="end" font-size="16" fill="#20365F" font-weight="400">9</text>
+<text x="943" y="351" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">x</text>
+<text x="569" y="119" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">y</text>
+<path d="M593.00 350.00 L596.33 349.97 L599.67 349.89 L603.00 349.76 L606.33 349.57 L609.67 349.33 L613.00 349.04 L616.33 348.69 L619.67 348.29 L623.00 347.84 L626.33 347.33 L629.67 346.77 L633.00 346.16 L636.33 345.49 L639.67 344.77 L643.00 344.00 L646.33 343.17 L649.67 342.29 L653.00 341.36 L656.33 340.37 L659.67 339.33 L663.00 338.24 L666.33 337.09 L669.67 335.89 L673.00 334.64 L676.33 333.33 L679.67 331.97 L683.00 330.56 L686.33 329.09 L689.67 327.57 L693.00 326.00 L696.33 324.37 L699.67 322.69 L703.00 320.96 L706.33 319.17 L709.67 317.33 L713.00 315.44 L716.33 313.49 L719.67 311.49 L723.00 309.44 L726.33 307.33 L729.67 305.17 L733.00 302.96 L736.33 300.69 L739.67 298.37 L743.00 296.00 L746.33 293.57 L749.67 291.09 L753.00 288.56 L756.33 285.97 L759.67 283.33 L763.00 280.64 L766.33 277.89 L769.67 275.09 L773.00 272.24 L776.33 269.33 L779.67 266.37 L783.00 263.36 L786.33 260.29 L789.67 257.17 L793.00 254.00 L796.33 250.77 L799.67 247.49 L803.00 244.16 L806.33 240.77 L809.67 237.33 L813.00 233.84 L816.33 230.29 L819.67 226.69 L823.00 223.04 L826.33 219.33 L829.67 215.57 L833.00 211.76 L836.33 207.89 L839.67 203.97 L843.00 200.00 L846.33 195.97 L849.67 191.89 L853.00 187.76 L856.33 183.57 L859.67 179.33 L863.00 175.04 L866.33 170.69 L869.67 166.29 L873.00 161.84 L876.33 157.33 L879.67 152.77 L883.00 148.16 L886.33 143.49 L889.67 138.77 L893.00 134.00" fill="none" stroke="#8B78C7" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="793" y1="350" x2="793" y2="230" stroke="#4A9479" stroke-width="2" stroke-dasharray="6 5"/>
+<circle cx="793" cy="230" r="5" fill="#4A9479" stroke="#4A9479" stroke-width="2"/>
+<circle cx="793" cy="254" r="5" fill="#8B78C7" stroke="#8B78C7" stroke-width="2"/>
+<text x="828" y="224" text-anchor="middle" font-size="17" fill="#4A9479" font-weight="400">(2, 5)：插值</text>
+<text x="836" y="283" text-anchor="middle" font-size="17" fill="#8B78C7" font-weight="400">(2, 4)：x²</text>
+<path d="M593 350 L693 326 L893 134" fill="none" stroke="#3265D6" stroke-width="3"/>
+<circle cx="593" cy="350" r="5" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="693" cy="326" r="5" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="893" cy="134" r="5" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<text x="500" y="419" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">同一组点连成分段直线；既不假定等距，也不自动恢复原曲线。</text>
+</g>
+</svg>

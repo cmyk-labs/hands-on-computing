@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+<title id="title">try 的两条常见路径最终都经过 finally</title><desc id="desc">正常转换进入 else，ValueError 进入 except，二者经过 finally。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">try 的两条常见路径最终都经过 finally</text>
+<rect x="40" y="160" width="230" height="85" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="155.0" y="191" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">try: int(text)</text>
+<text x="155.0" y="220" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">只覆盖预期失败的转换</text>
+<rect x="360" y="90" width="270" height="80" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="495.0" y="121" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">else</text>
+<text x="495.0" y="150" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">转换正常完成</text>
+<rect x="360" y="260" width="270" height="80" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="495.0" y="291" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">except ValueError</text>
+<text x="495.0" y="320" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">处理转换错误</text>
+<path d="M270,192 L360,130" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="315.0" y="151.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">正常</text>
+<path d="M270,212 L360,300" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="315.0" y="246.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">匹配异常</text>
+<rect x="730" y="165" width="230" height="85" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="845.0" y="196" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">finally</text>
+<text x="845.0" y="225" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">本项结束</text>
+<path d="M630,130 L730,190" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M630,300 L730,225" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="415" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">只画本例两条路径；未匹配异常也先执行 finally，再向外传播。</text>
+</g></svg>

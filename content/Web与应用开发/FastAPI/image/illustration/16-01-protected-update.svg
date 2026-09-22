@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="365" viewBox="0 0 1000 365" role="img" aria-labelledby="title desc">
+<title id="title">一次受保护的更新跨过哪些边界</title><desc id="desc">流程概括更新操作的主要责任，不规定独立依赖之间的求值先后。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">一次受保护的更新跨过哪些边界</text>
+<rect x="40.0" y="120" width="200.0" height="105" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="140.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">请求准备</text>
+<text x="140.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">输入校验</text>
+<text x="140.0" y="205" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">当前用户与 Session</text>
+<rect x="280.0" y="120" width="200.0" height="105" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="380.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">资源授权</text>
+<text x="380.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">find_owned</text>
+<text x="380.0" y="205" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">检查 owner_id</text>
+<path d="M240.0,172 L277.0,172" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="520.0" y="120" width="200.0" height="105" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="620.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">数据库事务</text>
+<text x="620.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">变更并提交</text>
+<text x="620.0" y="205" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">失败则回滚</text>
+<path d="M480.0,172 L517.0,172" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="760.0" y="120" width="200.0" height="105" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="860.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">公开响应</text>
+<text x="860.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">输出模型</text>
+<text x="860.0" y="205" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">结束请求并关会话</text>
+<path d="M720.0,172 L757.0,172" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="340" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">流程概括更新操作的主要责任，不规定独立依赖之间的求值先后。</text>
+</g></svg>

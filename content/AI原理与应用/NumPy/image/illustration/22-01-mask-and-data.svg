@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+<title id="title">掩码保留位置，并标出哪些值不参与计算</title>
+<desc id="desc">data 为五、负九、七，mask 为假、真、假，显示结果为五、屏蔽、七；数值负九仍存在于底层。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="430" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">掩码保留位置，并标出哪些值不参与计算</text>
+<text x="205" y="135" text-anchor="middle" font-size="23" fill="#20365F" font-weight="400">data</text>
+<rect x="305" y="104" width="122" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="366.0" y="136.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">5</text>
+<rect x="427" y="104" width="122" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="488.0" y="136.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">-9</text>
+<rect x="549" y="104" width="122" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="610.0" y="136.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">7</text>
+<text x="205" y="228" text-anchor="middle" font-size="23" fill="#20365F" font-weight="400">mask</text>
+<rect x="305" y="197" width="122" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="366.0" y="229.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">False</text>
+<rect x="427" y="197" width="122" height="50" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="488.0" y="229.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">True</text>
+<rect x="549" y="197" width="122" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="610.0" y="229.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">False</text>
+<text x="205" y="331" text-anchor="middle" font-size="23" fill="#20365F" font-weight="400">显示</text>
+<rect x="305" y="300" width="122" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="366.0" y="332.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">5</text>
+<rect x="427" y="300" width="122" height="50" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="488.0" y="332.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">--</text>
+<rect x="549" y="300" width="122" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="610.0" y="332.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">7</text>
+<line x1="366" y1="255" x2="366" y2="289" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="488" y1="255" x2="488" y2="289" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="610" y1="255" x2="610" y2="289" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="803" y="135" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">-9 仍在底层</text>
+<text x="803" y="228" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">True 表示屏蔽</text>
+<text x="803" y="332" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">size = 3；count = 2</text>
+<text x="500" y="406" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">“无效”的判断来自掩码，不来自原值是否已经被删除。</text>
+</g>
+</svg>

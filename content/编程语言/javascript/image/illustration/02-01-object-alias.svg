@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" role="img" aria-labelledby="title desc">
+<title id="title">两个名称，同一个对象</title><desc id="desc">箭头表示引用关系；const 限制重新绑定，不冻结对象。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="320" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">两个名称，同一个对象</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">箭头表示引用关系；const 限制重新绑定，不冻结对象。</text>
+<rect x="60" y="110" width="220" height="66" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="170.0" y="149.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">report</text>
+<rect x="60" y="210" width="220" height="66" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="170.0" y="249.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">alias</text>
+<rect x="530" y="140" width="330" height="106" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="695.0" y="186.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">同一个对象</text>
+<text x="695.0" y="212.0" font-size="18" text-anchor="middle" fill="#20365F">score: 80 → 90</text>
+<polyline points="280,143 410,143 530,169" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="280,243 410,243 530,218" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="32" y="300" font-size="15" text-anchor="start" fill="#20365F">alias.score = 90 修改右侧对象；两个名称读取到同一个属性。</text>
+</g></svg>

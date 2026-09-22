@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+<title id="title">先构建依赖，再构建使用它的项目</title><desc id="desc">上排画依赖方向，下排画首次构建时的产物供给顺序。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="360" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">先构建依赖，再构建使用它的项目</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">上排画依赖方向，下排画首次构建时的产物供给顺序。</text>
+<rect x="55" y="120" width="300" height="64" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="205.0" y="158.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">app 引用 core</text>
+<rect x="630" y="120" width="285" height="64" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="772.5" y="158.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">core 项目</text>
+<polyline points="355,152 630,152" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="490" y="138" font-size="15" text-anchor="middle" fill="#20365F">references 依赖方向</text>
+<rect x="55" y="245" width="300" height="70" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="205.0" y="273.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">core 构建</text>
+<text x="205.0" y="299.0" font-size="17" text-anchor="middle" fill="#20365F">生成声明与 JavaScript</text>
+<rect x="630" y="245" width="285" height="70" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="772.5" y="273.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">app 构建</text>
+<text x="772.5" y="299.0" font-size="17" text-anchor="middle" fill="#20365F">读取 core 声明</text>
+<polyline points="355,280 630,280" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="490" y="264" font-size="15" text-anchor="middle" fill="#20365F">tsc --build 构建先后</text>
+<text x="32" y="340" font-size="15" text-anchor="start" fill="#20365F">普通 tsc -p 不自动构建上游；references 不安装包，也不改写生成文件的相对导入。</text>
+</g></svg>

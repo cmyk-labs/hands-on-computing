@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="355" viewBox="0 0 960 355" role="img" aria-labelledby="title desc">
+<title id="title">extends 同时连接两条继承关系</title><desc id="desc">纵向虚线是 prototype 属性；横向实线是对象的原型关系。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="355" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">extends 同时连接两条继承关系</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">纵向虚线是 prototype 属性；横向实线是对象的原型关系。</text>
+<rect x="170" y="125" width="260" height="62" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="300.0" y="162.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">Lab 构造函数</text>
+<rect x="640" y="125" width="265" height="62" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="772.5" y="149.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">Lesson 构造函数</text>
+<text x="772.5" y="175.0" font-size="17" text-anchor="middle" fill="#20365F">静态 kind</text>
+<rect x="170" y="255" width="260" height="62" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="300.0" y="279.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">Lab.prototype</text>
+<text x="300.0" y="305.0" font-size="17" text-anchor="middle" fill="#20365F">describe</text>
+<rect x="640" y="255" width="265" height="62" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="772.5" y="279.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">Lesson.prototype</text>
+<text x="772.5" y="305.0" font-size="17" text-anchor="middle" fill="#20365F">describe</text>
+<polyline points="430,156 640,156" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="535" y="142" font-size="15" text-anchor="middle" fill="#20365F">静态成员查找</text>
+<polyline points="430,286 640,286" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="535" y="272" font-size="15" text-anchor="middle" fill="#20365F">实例方法查找</text>
+<polyline points="300,187 300,255" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<polyline points="772,187 772,255" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<text x="35" y="285" font-size="18" text-anchor="start" fill="#20365F">lab</text>
+<polyline points="65,281 170,281" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="32" y="335" font-size="15" text-anchor="start" fill="#20365F">省略两条链的后续对象。super.describe() 找到父类方法后，调用接收者仍是 lab。</text>
+</g></svg>

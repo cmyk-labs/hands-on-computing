@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470" role="img" aria-labelledby="title desc">
+<title id="title">merge_asof：最近记录可能位于事件之后</title>
+<desc id="desc">事件10:08，测量10:00、10:04和10:10，backward选择10:04，forward和nearest选择10:10。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="470" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">merge_asof：最近记录可能位于事件之后</text>
+<text x="123" y="165" text-anchor="middle" font-size="23" fill="#20365F" font-weight="400">backward</text>
+<line x1="380" y1="158" x2="925" y2="158" stroke="#ADBFD8" stroke-width="2"/>
+<circle cx="380" cy="158" r="5" fill="#ECF3FF" stroke="#3265D6" stroke-width="2"/>
+<text x="380" y="188" text-anchor="middle" font-size="16" fill="#20365F" font-weight="400">10:00</text>
+<circle cx="588" cy="158" r="5" fill="#ECF3FF" stroke="#3265D6" stroke-width="2"/>
+<text x="588" y="188" text-anchor="middle" font-size="16" fill="#20365F" font-weight="400">10:04</text>
+<circle cx="900" cy="158" r="5" fill="#ECF3FF" stroke="#3265D6" stroke-width="2"/>
+<text x="900" y="188" text-anchor="middle" font-size="16" fill="#20365F" font-weight="400">10:10</text>
+<circle cx="796" cy="158" r="7" fill="#F3F0FF" stroke="#8B78C7" stroke-width="2"/>
+<text x="796" y="188" text-anchor="middle" font-size="16" fill="#8B78C7" font-weight="400">10:08</text>
+<path d="M796 146 Q692.0 92 588 146" fill="none" stroke="#3265D6" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="665" y="110" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">历史 4 分钟 → 10:04</text>
+<text x="123" y="287" text-anchor="middle" font-size="23" fill="#20365F" font-weight="400">forward</text>
+<line x1="380" y1="280" x2="925" y2="280" stroke="#ADBFD8" stroke-width="2"/>
+<circle cx="380" cy="280" r="5" fill="#ECF3FF" stroke="#3265D6" stroke-width="2"/>
+<text x="380" y="310" text-anchor="middle" font-size="16" fill="#20365F" font-weight="400">10:00</text>
+<circle cx="588" cy="280" r="5" fill="#ECF3FF" stroke="#3265D6" stroke-width="2"/>
+<text x="588" y="310" text-anchor="middle" font-size="16" fill="#20365F" font-weight="400">10:04</text>
+<circle cx="900" cy="280" r="5" fill="#ECF3FF" stroke="#3265D6" stroke-width="2"/>
+<text x="900" y="310" text-anchor="middle" font-size="16" fill="#20365F" font-weight="400">10:10</text>
+<circle cx="796" cy="280" r="7" fill="#F3F0FF" stroke="#8B78C7" stroke-width="2"/>
+<text x="796" y="310" text-anchor="middle" font-size="16" fill="#8B78C7" font-weight="400">10:08</text>
+<path d="M796 268 Q848.0 214 900 268" fill="none" stroke="#3265D6" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="665" y="232" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">未来 2 分钟 → 10:10</text>
+<text x="123" y="409" text-anchor="middle" font-size="23" fill="#20365F" font-weight="400">nearest</text>
+<line x1="380" y1="402" x2="925" y2="402" stroke="#ADBFD8" stroke-width="2"/>
+<circle cx="380" cy="402" r="5" fill="#ECF3FF" stroke="#3265D6" stroke-width="2"/>
+<text x="380" y="432" text-anchor="middle" font-size="16" fill="#20365F" font-weight="400">10:00</text>
+<circle cx="588" cy="402" r="5" fill="#ECF3FF" stroke="#3265D6" stroke-width="2"/>
+<text x="588" y="432" text-anchor="middle" font-size="16" fill="#20365F" font-weight="400">10:04</text>
+<circle cx="900" cy="402" r="5" fill="#ECF3FF" stroke="#3265D6" stroke-width="2"/>
+<text x="900" y="432" text-anchor="middle" font-size="16" fill="#20365F" font-weight="400">10:10</text>
+<circle cx="796" cy="402" r="7" fill="#F3F0FF" stroke="#8B78C7" stroke-width="2"/>
+<text x="796" y="432" text-anchor="middle" font-size="16" fill="#8B78C7" font-weight="400">10:08</text>
+<path d="M796 390 Q848.0 336 900 390" fill="none" stroke="#3265D6" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="665" y="354" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">2 分钟更近 → 10:10</text>
+<text x="500" y="88" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">同一事件：10:08；本图未设置 tolerance</text>
+<text x="500" y="463" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">箭头从事件指向所选测量；如果只能用历史资料，不能直接选择 nearest。</text>
+</g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+<title id="title">转置交换坐标，reshape 重新分组</title>
+<desc id="desc">同一个二行三列数组，经转置和默认 C 顺序 reshape 后均为三行二列，但元素位置不同。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="430" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">转置交换坐标，reshape 重新分组</text>
+<rect x="65" y="165" width="62" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="96.0" y="196.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">10</text>
+<rect x="127" y="165" width="62" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="158.0" y="196.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">11</text>
+<rect x="189" y="165" width="62" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="220.0" y="196.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">12</text>
+<rect x="65" y="213" width="62" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="96.0" y="244.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">20</text>
+<rect x="127" y="213" width="62" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="158.0" y="244.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">21</text>
+<rect x="189" y="213" width="62" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="220.0" y="244.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">22</text>
+<text x="158" y="137" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">table：(2, 3)</text>
+<path d="M270 204 L340 204 L340 118 L430 118" fill="none" stroke="#536B8D" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M340 204 L340 300 L430 300" fill="none" stroke="#536B8D" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="465" y="75" width="60" height="40" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="495.0" y="102.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">10</text>
+<rect x="525" y="75" width="60" height="40" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="555.0" y="102.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">20</text>
+<rect x="465" y="115" width="60" height="40" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="495.0" y="142.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">11</text>
+<rect x="525" y="115" width="60" height="40" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="555.0" y="142.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">21</text>
+<rect x="465" y="155" width="60" height="40" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="495.0" y="182.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">12</text>
+<rect x="525" y="155" width="60" height="40" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="555.0" y="182.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">22</text>
+<rect x="465" y="247" width="60" height="40" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="495.0" y="274.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">10</text>
+<rect x="525" y="247" width="60" height="40" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="555.0" y="274.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">11</text>
+<rect x="465" y="287" width="60" height="40" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="495.0" y="314.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">12</text>
+<rect x="525" y="287" width="60" height="40" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="555.0" y="314.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">20</text>
+<rect x="465" y="327" width="60" height="40" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="495.0" y="354.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">21</text>
+<rect x="525" y="327" width="60" height="40" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="555.0" y="354.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">22</text>
+<text x="775" y="111" text-anchor="middle" font-size="22" fill="#3265D6" font-weight="400">table.T</text>
+<text x="775" y="147" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">原第 i 行、第 j 列 → 第 j 行、第 i 列</text>
+<text x="775" y="286" text-anchor="middle" font-size="22" fill="#4A9479" font-weight="400">table.reshape(3, 2)</text>
+<text x="775" y="323" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">按 10、11、12、20、21、22 重新分组</text>
+<text x="500" y="409" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">两者 shape 都是 (3, 2)，仍要核对值与位置的对应关系。</text>
+</g>
+</svg>

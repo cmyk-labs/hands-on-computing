@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="425" viewBox="0 0 1000 425" role="img" aria-labelledby="title desc">
+<title id="title">稀疏表示：省略填充值，不删除逻辑位置</title>
+<desc id="desc">A至F六个门店数值零零三零零一，以零为fill_value，只显式保存位置二和五及数值三和一，但读取时仍有六个位置。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="425" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">稀疏表示：省略填充值，不删除逻辑位置</text>
+<text x="485" y="98" text-anchor="middle" font-size="22" fill="#20365F" font-weight="400">逻辑序列：标签和长度都保留</text>
+<rect x="185" y="119" width="90" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="230.0" y="150.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">A</text>
+<rect x="275" y="119" width="90" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="320.0" y="150.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">B</text>
+<rect x="365" y="119" width="90" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="410.0" y="150.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">C</text>
+<rect x="455" y="119" width="90" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="500.0" y="150.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">D</text>
+<rect x="545" y="119" width="90" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="590.0" y="150.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">E</text>
+<rect x="635" y="119" width="90" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="680.0" y="150.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">F</text>
+<rect x="185" y="167" width="90" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="230.0" y="198.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0</text>
+<rect x="275" y="167" width="90" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="320.0" y="198.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0</text>
+<rect x="365" y="167" width="90" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="410.0" y="198.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">3</text>
+<rect x="455" y="167" width="90" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="500.0" y="198.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0</text>
+<rect x="545" y="167" width="90" height="48" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="590.0" y="198.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0</text>
+<rect x="635" y="167" width="90" height="48" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="680.0" y="198.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">1</text>
+<line x1="455" y1="224" x2="455" y2="275" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="115" y="289" width="220" height="70" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="225.0" y="331.0" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">fill_value = 0</text>
+<rect x="385" y="277" width="80" height="43" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="425.0" y="305.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">位置</text>
+<rect x="465" y="277" width="80" height="43" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="505.0" y="305.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">2</text>
+<rect x="545" y="277" width="80" height="43" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="585.0" y="305.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">5</text>
+<rect x="385" y="320" width="80" height="43" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="425.0" y="348.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">数值</text>
+<rect x="465" y="320" width="80" height="43" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="505.0" y="348.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">3</text>
+<rect x="545" y="320" width="80" height="43" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="585.0" y="348.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">1</text>
+<text x="800" y="307" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">其余位置读取为 0</text>
+<text x="800" y="345" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">count 仍为 6</text>
+<text x="500" y="402" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">位置索引从 0 开始；图示是逻辑结构，不表示内部字节布局。</text>
+</g>
+</svg>

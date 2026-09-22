@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="505" viewBox="0 0 1000 505" role="img" aria-labelledby="title desc">
+<title id="title">一次 WebSocket 连接内的消息往返</title><desc id="desc">握手之后复用同一连接交换消息；不是每条消息都重新建立一次 HTTP 请求。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">一次 WebSocket 连接内的消息往返</text>
+<rect x="25.0" y="75" width="210" height="52" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="130.0" y="106" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">客户端</text>
+<path d="M130.0,130 L130.0,445" stroke="#A7BAD6" stroke-dasharray="5 5" stroke-width="1.5"/>
+<rect x="765.0" y="75" width="210" height="52" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="870.0" y="106" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">WebSocket 路由</text>
+<path d="M870.0,130 L870.0,445" stroke="#A7BAD6" stroke-dasharray="5 5" stroke-width="1.5"/>
+<path d="M130.0,173 L870.0,173" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="500.0" y="163.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">发起连接</text>
+<path d="M870.0,236 L130.0,236" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="500.0" y="226.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">accept：接受连接</text>
+<path d="M130.0,299 L870.0,299" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="500.0" y="289.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">send_text：你好</text>
+<path d="M870.0,362 L130.0,362" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="500.0" y="352.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">send_text：收到：你好</text>
+<path d="M870.0,425 L130.0,425" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="500.0" y="415.0" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">close(code=1000)：正常关闭</text>
+<text x="40" y="480" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">握手之后复用同一连接交换消息；不是每条消息都重新建立一次 HTTP 请求。</text>
+</g></svg>

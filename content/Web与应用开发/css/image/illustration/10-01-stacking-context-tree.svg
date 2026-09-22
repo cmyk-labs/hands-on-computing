@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="440" viewBox="0 0 1040 440" role="img" aria-labelledby="title desc">
+<title id="title">先比较上下文 A 与 B，再看各自内部</title><desc id="desc">外层中 A 为1、B为2，A内子元素9999不能独自跨越到B之上。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526787"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#20365F;font-size:22px} .small{font-size:18px;fill:#526787}.label{font-size:23px;font-weight:600}</style>
+<rect width="1040" height="440" fill="white"/>
+<text x="32" y="46" text-anchor="start" style="font-size:30px;font-weight:700;fill:#20365F">先比较上下文 A 与 B，再看各自内部</text>
+<rect x="390" y="90" width="260" height="60" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<text x="520.0" y="128.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">外层上下文</text>
+<path d="M520 150 L270 208" fill="none" stroke="#526787" stroke-width="2.5"/>
+<path d="M520 150 L800 208" fill="none" stroke="#526787" stroke-width="2.5"/>
+<rect x="60" y="208" width="440" height="160" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="85" y="247" text-anchor="start" style="font-size:24px;font-weight:600;fill:#20365F">上下文 A · z-index: 1</text>
+<rect x="118" y="281" width="320" height="64" rx="12" fill="#F3F0FF" stroke="#8BADED" stroke-width="2"/>
+<text x="278.0" y="321.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">子元素 · z-index: 9999</text>
+<rect x="625" y="208" width="350" height="160" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<text x="800.0" y="281.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">上下文 B</text>
+<text x="800.0" y="311.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">z-index: 2</text>
+<text x="515" y="290" text-anchor="start" style="font-size:26px;font-weight:600;fill:#20365F">1 &lt; 2</text>
+<text x="32" y="416" text-anchor="start" style="font-size:18px;font-weight:400;fill:#526787">树表示参与比较的上下文，不是所有 DOM 元素；本例重叠时 B 绘制在整个 A 之后。</text>
+</svg>

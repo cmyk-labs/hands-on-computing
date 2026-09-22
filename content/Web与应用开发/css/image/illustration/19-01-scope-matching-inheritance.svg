@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="480" viewBox="0 0 1040 480" role="img" aria-labelledby="title desc">
+<title id="title">@scope 限定匹配范围，继承仍沿元素树传播</title><desc id="desc">scope-root包含作用域，stop及后代被排除选择器匹配，但color仍可从父元素继承。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526787"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#20365F;font-size:22px} .small{font-size:18px;fill:#526787}.label{font-size:23px;font-weight:600}</style>
+<rect width="1040" height="480" fill="white"/>
+<text x="32" y="46" text-anchor="start" style="font-size:30px;font-weight:700;fill:#20365F">@scope 限定匹配范围，继承仍沿元素树传播</text>
+<rect x="48" y="90" width="920" height="310" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<text x="75" y="128" text-anchor="start" style="font-size:25px;font-weight:600;fill:#20365F">.scope-root：上边界包含在作用域内</text>
+<rect x="90" y="176" width="335" height="74" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="257.5" y="206.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">p.scoped-text</text>
+<text x="257.5" y="236.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">匹配块内边框规则</text>
+<rect x="525" y="163" width="405" height="205" rx="12" fill="white" stroke="#8BADED" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="548" y="201" text-anchor="start" style="font-size:22px;font-weight:400;fill:#20365F">.stop：下边界及后代排除</text>
+<rect x="552" y="246" width="350" height="102" rx="12" fill="#F3F0FF" stroke="#8BADED" stroke-width="2"/>
+<text x="727.0" y="275.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">p.scoped-text</text>
+<text x="727.0" y="305.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">不匹配块内边框规则</text>
+<text x="727.0" y="335.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">仍可继承 color</text>
+<path d="M472 132 L472 292" fill="none" stroke="#526787" stroke-width="2.5"/>
+<path d="M472 292 L545 292" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<text x="354" y="330" text-anchor="start" style="font-size:20px;font-weight:400;fill:#20365F">color 继承</text>
+<text x="32" y="456" text-anchor="start" style="font-size:18px;font-weight:400;fill:#526787">绿色区域表示作用域，右侧白色子树是排除区域；虚线箭头表示继承，不表示选择器匹配。</text>
+</svg>

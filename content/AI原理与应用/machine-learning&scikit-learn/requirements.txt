@@ -1,0 +1,10 @@
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+notebook==7.6.2
+ipykernel==7.3.0
+joblib==1.6.0
+threadpoolctl==3.7.0
+narwhals==2.26.0
+cloudpickle==3.1.2

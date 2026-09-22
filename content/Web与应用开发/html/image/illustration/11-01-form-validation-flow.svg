@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="500" viewBox="0 0 1040 500" role="img" aria-labelledby="title desc">
+<title id="title">原生校验决定是否继续，服务端仍有自己的判断</title><desc id="desc">正常提交经过原生约束；失败停在浏览器，成功继续构造条目并发送，服务端独立处理。formnovalidate 跳过浏览器约束。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526787"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#20365F;font-size:22px} .small{font-size:18px;fill:#526787}.label{font-size:23px;font-weight:600}</style>
+<rect width="1040" height="500" fill="white"/>
+<text x="32" y="46" text-anchor="start" style="font-size:30px;font-weight:700;fill:#20365F">原生校验决定是否继续，服务端仍有自己的判断</text>
+<rect x="32" y="130" width="190" height="88" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="127.0" y="182.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">点击提交按钮</text>
+<rect x="302" y="130" width="205" height="88" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<text x="404.5" y="167.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">浏览器原生约束</text>
+<text x="404.5" y="197.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">检查适用控件</text>
+<rect x="590" y="130" width="180" height="88" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="680.0" y="167.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">提交事件</text>
+<text x="680.0" y="197.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">未被取消</text>
+<rect x="840" y="130" width="170" height="88" rx="12" fill="#F3F0FF" stroke="#8BADED" stroke-width="2"/>
+<text x="925.0" y="167.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">构造条目</text>
+<text x="925.0" y="197.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">编码并发送</text>
+<path d="M222 174 L292 174" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M507 174 L580 174" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M770 174 L830 174" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="526" y="155" text-anchor="start" style="font-size:18px;font-weight:400;fill:#20365F">通过</text>
+<path d="M405 218 L405 302" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="302" y="302" width="205" height="70" rx="12" fill="#F3F0FF" stroke="#8BADED" stroke-width="2"/>
+<text x="404.5" y="345.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">未通过：留在页面</text>
+<text x="417" y="271" text-anchor="start" style="font-size:18px;font-weight:400;fill:#20365F">不发送</text>
+<path d="M125 130 L125 92" fill="none" stroke="#526787" stroke-width="2.5"/>
+<path d="M125 92 L680 92" fill="none" stroke="#526787" stroke-width="2.5"/>
+<path d="M680 92 L680 126" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="280" y="82" text-anchor="start" style="font-size:19px;font-weight:400;fill:#20365F">formnovalidate：跳过这次约束校验</text>
+<path d="M925 218 L925 300" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="650" y="302" width="360" height="92" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<text x="830.0" y="341.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">到达服务端</text>
+<text x="830.0" y="371.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">真实业务仍需独立校验</text>
+<text x="32" y="476" text-anchor="start" style="font-size:18px;font-weight:400;fill:#526787">简化正常网络提交；本章服务仅回显，收到 200 不代表业务数据有效。</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330" role="img" aria-labelledby="title desc">
+<title id="title">TSX 从标签语法到本例描述树</title><desc id="desc">本章执行 react-jsx 自动运行时模式；输出不创建 DOM。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="330" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">TSX 从标签语法到本例描述树</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">本章执行 react-jsx 自动运行时模式；输出不创建 DOM。</text>
+<rect x="25" y="125" width="270" height="90" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="160.0" y="163.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">main.tsx</text>
+<text x="160.0" y="189.0" font-size="18" text-anchor="middle" fill="#20365F">&lt;Badge ...&gt;</text>
+<rect x="345" y="125" width="270" height="90" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="480.0" y="163.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">tsc 转换</text>
+<text x="480.0" y="189.0" font-size="18" text-anchor="middle" fill="#20365F">jsx / jsxs 调用</text>
+<rect x="665" y="125" width="270" height="90" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="800.0" y="163.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">本地运行实现</text>
+<text x="800.0" y="189.0" font-size="18" text-anchor="middle" fill="#20365F">构造 View 树</text>
+<polyline points="295,170 345,170" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="615,170 665,170" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="35" y="272" font-size="17" text-anchor="start" fill="#20365F">类型检查读取 JSX 声明；执行时必须有对应 jsx-runtime 实现。</text>
+<text x="32" y="310" font-size="15" text-anchor="start" fill="#20365F">preserve 会保留标签语法给后续工具处理，不能直接套用上排的运行路径。</text>
+</g></svg>

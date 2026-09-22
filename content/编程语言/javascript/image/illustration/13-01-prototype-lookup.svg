@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="315" viewBox="0 0 960 315" role="img" aria-labelledby="title desc">
+<title id="title">属性读取沿原型链查找</title><desc id="desc">实线箭头表示 [[Prototype]]；先检查当前对象的自有属性。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="315" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">属性读取沿原型链查找</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">实线箭头表示 [[Prototype]]；先检查当前对象的自有属性。</text>
+<rect x="35" y="140" width="190" height="85" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="130.0" y="175.5" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">note</text>
+<text x="130.0" y="201.5" font-size="18" text-anchor="middle" fill="#20365F">title: &quot;原型&quot;</text>
+<rect x="285" y="140" width="235" height="85" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="402.5" y="175.5" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">base</text>
+<text x="402.5" y="201.5" font-size="18" text-anchor="middle" fill="#20365F">category / describe</text>
+<rect x="580" y="140" width="235" height="85" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="697.5" y="188.5" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">Object.prototype</text>
+<rect x="855" y="154" width="70" height="56" rx="12" fill="#F7F9FC" stroke="#AAB9CE" stroke-width="1.8"/>
+<text x="890.0" y="188.0" font-size="16" text-anchor="middle" fill="#20365F" font-weight="700">null</text>
+<polyline points="225,182 285,182" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="520,182 580,182" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="815,182 855,182" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="295" y="260" font-size="17" text-anchor="start" fill="#20365F">category 在这里命中；missing 一直找不到。</text>
+<text x="32" y="295" font-size="15" text-anchor="start" fill="#20365F">本图针对普通属性读取；继承的 describe 仍以 note 作为方法调用接收者。</text>
+</g></svg>

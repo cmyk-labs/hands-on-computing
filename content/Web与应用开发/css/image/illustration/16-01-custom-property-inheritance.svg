@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="460" viewBox="0 0 1040 460" role="img" aria-labelledby="title desc">
+<title id="title">别名在父元素求值后，子元素继承的是结果</title><desc id="desc">父元素alias计算为teal，子元素改source不会重新计算已继承alias；重新声明alias才会采用本地source。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526787"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#20365F;font-size:22px} .small{font-size:18px;fill:#526787}.label{font-size:23px;font-weight:600}</style>
+<rect width="1040" height="460" fill="white"/>
+<text x="32" y="46" text-anchor="start" style="font-size:30px;font-weight:700;fill:#20365F">别名在父元素求值后，子元素继承的是结果</text>
+<rect x="290" y="90" width="460" height="88" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
+<text x="520.0" y="127.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">父：--source: teal</text>
+<text x="520.0" y="157.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">--alias: var(--source) → teal</text>
+<path d="M520 178 L260 242" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M520 178 L790 242" fill="none" stroke="#526787" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="40" y="242" width="440" height="130" rx="12" fill="#ECF3FF" stroke="#8BADED" stroke-width="2"/>
+<text x="260.0" y="285.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">子一：只改 --source</text>
+<text x="260.0" y="315.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">--source: #754300</text>
+<text x="260.0" y="345.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">继承 --alias: teal</text>
+<rect x="560" y="242" width="440" height="130" rx="12" fill="#F3F0FF" stroke="#8BADED" stroke-width="2"/>
+<text x="780.0" y="285.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">子二：同时重声明 --alias</text>
+<text x="780.0" y="315.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">--alias: var(--source)</text>
+<text x="780.0" y="345.0" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">在本地得到 #754300</text>
+<text x="32" y="436" text-anchor="start" style="font-size:18px;font-weight:400;fill:#526787">两段都以 color: var(--alias) 消费别名；箭头传递已计算的值，不传递可重新绑定的公式。</text>
+</svg>

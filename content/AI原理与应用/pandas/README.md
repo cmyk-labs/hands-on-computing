@@ -4,9 +4,13 @@
 
 **26 章正文已编写并完成空内核执行，包含 22 章主线和 4 章扩展；HTML 实际页面已检查并附截图。** 从 [Series与DataFrame](01-Series与DataFrame.ipynb)开始，或在[章节目录](plan.md)中按主题选择。
 
+每章选取一道重点练习，提供两级提示和独立参考解析；先完成题目，再核对方法选择、标签、类型、缺失和业务口径。分组、连接与宽长转换采用 pandas 官方原图，按图注与章末来源区分通用机制和本例数据。
+
+标签对齐、写时复制、分箱、时间关系、分组连接、重塑、窗口与分块处理按需配有图示。先追踪一条记录、一个标签或一个时间边界，再对照代码输出；综合实践用数据流程图区分接受的记录与问题记录。辅助学习示意图放在 `image/illustration/`，实际截图保留在 `image/`。
+
 ## 环境与依赖
 
-沿用 `hands-on-computing` Conda 环境和 Python 3.12 基线。2026-09-20 在本机 Windows x64 环境核对到 Python 3.12.14，pandas 3.0.6、NumPy 2.5.3、Notebook 7.6.2、ipykernel 7.3.0 均可导入；时区数据包为 tzdata 2026.3。依赖固定在 [requirements.txt](requirements.txt)。26 章均已在该环境从空内核顺序执行并保存输出；首次安装流程尚未在全新环境复验。
+沿用 `hands-on-computing` Conda 环境和 Python 3.12 基线。2026-09-20 在本机 Windows x64 环境核对到 Python 3.12.14，pandas 3.0.6、NumPy 2.5.3、Notebook 7.6.2、ipykernel 7.3.0 均可导入；时区数据包为 tzdata 2026.3。依赖固定在 [requirements.txt](requirements.txt)。26 章均已在该环境从空内核顺序执行并保存输出；首次安装的联合复验范围见文末。
 
 pandas 和 NumPy 用于示例计算，Notebook 用于交互界面，ipykernel 用于执行 Python 单元；tzdata 为跨平台时区数据提供支持。通用阅读工具见[开始使用](../../../docs/START_HERE.md)。工作目录统一为 `content/AI原理与应用/pandas/`，路径相对于该目录。
 
@@ -55,7 +59,7 @@ Step 5：安装基础依赖；沿用项目现有安装源。
 python -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
-本轮在同一 Conda 环境补装 PyArrow、Matplotlib、NumExpr 及所需依赖；pandas 和 NumPy 保持原版本。首次安装清单尚未在全新环境复验。若遇到依赖冲突，应报告冲突包和版本，再调整课程配置；不另外创建 uv/venv 环境。
+本轮在同一 Conda 环境补装 PyArrow、Matplotlib、NumExpr 及所需依赖；pandas 和 NumPy 保持原版本。首次安装的联合复验范围见文末。若遇到依赖冲突，应报告冲突包和版本，再调整课程配置；不另外创建 uv/venv 环境。
 
 ## 日常运行
 
@@ -91,6 +95,10 @@ Step 5：完成后在启动 Notebook 的终端按 Ctrl+C，并按提示确认停
 
 操作依据：[pandas 安装与可选依赖](https://pandas.pydata.org/docs/getting_started/install.html)、[Conda 环境管理](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html)、[pip 依赖清单](https://pip.pypa.io/en/stable/reference/requirements-file-format/)、[Jupyter 安装](https://jupyter.org/install)。
 
-配套输入放在 date/：[商品 CSV](date/02-products.csv)、[测量工作簿](date/19-station-readings.xlsx)、[订单](date/22-orders.csv)、[明细](date/22-lines.csv)和[事件](date/22-events.csv)。这些都是小型自制教学数据，字段、单位与缺失约定见相应章节；读取后保留原文件。分组、连接、重塑、多级索引和时间窗口的图片放在 image/，由正文就地引用。
+配套输入放在 date/：[商品 CSV](date/02-products.csv)、[测量工作簿](date/19-station-readings.xlsx)、[订单](date/22-orders.csv)、[明细](date/22-lines.csv)和[事件](date/22-events.csv)。这些都是小型自制教学数据，字段、单位与缺失约定见相应章节；读取后保留原文件。分组、连接、重塑、多级索引和时间窗口的辅助示意图放在 image/illustration/，由正文就地引用。
 
 2026-09-21 复验：修订的 02、03、04、11、12、13、14、16、17、19、22、25、26 章共 13 份 Notebook 已从空内核顺序执行并保存真实输出，覆盖整数文本校验、索引语义、持久 CSV／Excel 读取和原有文件往返。全课程 Notebook 格式、代码语法与本地链接检查通过；未在 Excel 桌面程序检查工作簿外观，也未复验首次全新安装。
+
+2026-09-22 练习反馈检查：26 道重点题的解析均已用原题输入实际计算核对。第 25 章调整 Styler 表格宽度与留白后，从空内核执行并保存真实输出；Chrome 153.0.8010.52 中核对标题、三行数据、百分比、红色粗体和缺测底色，更新实际截图，375 像素视口未横向溢出。其余章节的 Code 单元及保存输出保持原样，本轮未将它们记作全章重跑。
+
+2026-09-22 安装复验：在独立的全新 Conda Python 3.12.14 环境中，沿用原清华安装源联合安装本仓库 7 份 requirements.txt；48 项直接依赖版本全部匹配，pip check 无冲突。主要模块导入及数值计算、模型拟合、Excel／Parquet 往返、图形导出和 FastAPI 请求检查通过。此项验证共同环境的安装与代表性功能，不代表各课程分别建环境或全部章节重新执行。

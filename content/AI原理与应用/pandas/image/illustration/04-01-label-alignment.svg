@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+<title id="title">自动对齐：先找同标签，再相加</title>
+<desc id="desc">两个 Series 的物理排列顺序不同，C、A、B 重新对应 A、B、C 后求和。箭头表示标签匹配而不是位置相加。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="430" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">自动对齐：先找同标签，再相加</text>
+<text x="164" y="102" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">first</text>
+<rect x="72" y="125" width="70" height="57" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="107.0" y="160.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">A</text>
+<rect x="142" y="125" width="70" height="57" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="177.0" y="160.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">10</text>
+<rect x="72" y="182" width="70" height="57" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="107.0" y="217.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">B</text>
+<rect x="142" y="182" width="70" height="57" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="177.0" y="217.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">20</text>
+<rect x="72" y="239" width="70" height="57" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="107.0" y="274.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">C</text>
+<rect x="142" y="239" width="70" height="57" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="177.0" y="274.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">30</text>
+<text x="390" y="102" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">second 原顺序</text>
+<rect x="320" y="125" width="70" height="57" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="355.0" y="160.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">C</text>
+<rect x="390" y="125" width="70" height="57" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="425.0" y="160.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">3</text>
+<rect x="320" y="182" width="70" height="57" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="355.0" y="217.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">A</text>
+<rect x="390" y="182" width="70" height="57" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="425.0" y="217.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">2</text>
+<rect x="320" y="239" width="70" height="57" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="355.0" y="274.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">B</text>
+<rect x="390" y="239" width="70" height="57" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="425.0" y="274.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">4</text>
+<text x="651" y="102" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">按 first 标签对应</text>
+<rect x="581" y="125" width="70" height="57" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="616.0" y="160.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">A</text>
+<rect x="651" y="125" width="70" height="57" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="686.0" y="160.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">2</text>
+<rect x="581" y="182" width="70" height="57" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="616.0" y="217.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">B</text>
+<rect x="651" y="182" width="70" height="57" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="686.0" y="217.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">4</text>
+<rect x="581" y="239" width="70" height="57" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="616.0" y="274.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">C</text>
+<rect x="651" y="239" width="70" height="57" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="686.0" y="274.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">3</text>
+<line x1="470" y1="153.5" x2="570" y2="267.5" stroke="#8B78C7" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="470" y1="210.5" x2="570" y2="153.5" stroke="#3265D6" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="470" y1="267.5" x2="570" y2="210.5" stroke="#4A9479" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="765" y="219" text-anchor="middle" font-size="30" fill="#20365F" font-weight="400">→</text>
+<text x="870" y="102" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">total</text>
+<rect x="800" y="125" width="65" height="57" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="832.5" y="160.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">A</text>
+<rect x="865" y="125" width="65" height="57" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="897.5" y="160.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">12</text>
+<rect x="800" y="182" width="65" height="57" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="832.5" y="217.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">B</text>
+<rect x="865" y="182" width="65" height="57" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="897.5" y="217.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">24</text>
+<rect x="800" y="239" width="65" height="57" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="832.5" y="274.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">C</text>
+<rect x="865" y="239" width="65" height="57" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="897.5" y="274.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">33</text>
+<text x="500" y="347" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">A：10 + 2 = 12      B：20 + 4 = 24      C：30 + 3 = 33</text>
+<text x="500" y="399" text-anchor="middle" font-size="18" fill="#536B8D" font-weight="400">图中标签都匹配；只有一方存在的标签还要处理缺失值。</text>
+</g>
+</svg>

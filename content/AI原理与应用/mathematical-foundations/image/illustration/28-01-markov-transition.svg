@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+<title id="title">状态转移图与转移矩阵描述同一个模型</title>
+<desc id="desc">状态零以零点八留在零、零点二到一；状态一以零点七留在一、零点三到零。矩阵每行为当前状态、每列为下一状态。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="420" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">状态转移图与转移矩阵描述同一个模型</text>
+<circle cx="210" cy="204" r="50" fill="#ECF3FF" stroke="#3265D6" stroke-width="2"/>
+<text x="210" y="212" text-anchor="middle" font-size="23" fill="#20365F" font-weight="400">状态 0</text>
+<circle cx="520" cy="204" r="50" fill="#EFF8F4" stroke="#4A9479" stroke-width="2"/>
+<text x="520" y="212" text-anchor="middle" font-size="23" fill="#20365F" font-weight="400">状态 1</text>
+<path d="M256 180 Q365 98 474 180" fill="none" stroke="#3265D6" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="365" y="134" text-anchor="middle" font-size="22" fill="#3265D6" font-weight="400">0.2</text>
+<path d="M474 230 Q365 314 256 230" fill="none" stroke="#4A9479" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="365" y="294" text-anchor="middle" font-size="22" fill="#4A9479" font-weight="400">0.3</text>
+<path d="M174 169 C63 57 65 316 175 239" fill="none" stroke="#3265D6" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="94" y="212" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">0.8</text>
+<path d="M556 169 C667 57 665 316 555 239" fill="none" stroke="#4A9479" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="636" y="212" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">0.7</text>
+<text x="819" y="102" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">下一状态：0 / 1</text>
+<rect x="728" y="137" width="90" height="62" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="773.0" y="175.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0.8</text>
+<rect x="818" y="137" width="90" height="62" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="863.0" y="175.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0.2</text>
+<rect x="728" y="199" width="90" height="62" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="773.0" y="237.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0.3</text>
+<rect x="818" y="199" width="90" height="62" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="863.0" y="237.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0.7</text>
+<text x="817" y="300" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">当前状态对应行</text>
+<text x="500" y="381" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">每个状态的出边概率和为 1；箭头给概率，不指定下一步必走哪条边。</text>
+</g>
+</svg>

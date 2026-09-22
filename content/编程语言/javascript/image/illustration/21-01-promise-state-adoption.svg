@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="445" viewBox="0 0 960 445" role="img" aria-labelledby="title desc">
+<title id="title">Promise 状态与结果采用</title><desc id="desc">resolved 描述结果已经锁定，不是第四种 Promise 状态。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="445" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">Promise 状态与结果采用</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">resolved 描述结果已经锁定，不是第四种 Promise 状态。</text>
+<rect x="60" y="120" width="220" height="70" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="170.0" y="148.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">pending</text>
+<text x="170.0" y="174.0" font-size="18" text-anchor="middle" fill="#20365F">尚未敲定</text>
+<rect x="615" y="105" width="280" height="65" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="755.0" y="143.5" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">fulfilled</text>
+<rect x="615" y="205" width="280" height="65" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="755.0" y="243.5" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">rejected</text>
+<polyline points="280,147 440,147 615,137" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="450" y="120" font-size="15" text-anchor="middle" fill="#20365F">兑现</text>
+<polyline points="280,167 440,167 440,237 615,237" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="520" y="223" font-size="15" text-anchor="middle" fill="#20365F">拒绝</text>
+<rect x="60" y="327" width="360" height="70" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="240.0" y="355.0" font-size="16" text-anchor="middle" fill="#20365F" font-weight="700">outer 采用 inner.promise</text>
+<text x="240.0" y="381.0" font-size="16" text-anchor="middle" fill="#20365F">inner 仍 pending → outer 仍 pending</text>
+<rect x="600" y="327" width="295" height="70" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="747.5" y="355.0" font-size="16" text-anchor="middle" fill="#20365F" font-weight="700">inner 兑现 7</text>
+<text x="747.5" y="381.0" font-size="16" text-anchor="middle" fill="#20365F">outer 随后兑现 7</text>
+<polyline points="420,362 600,362" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="510" y="344" font-size="15" text-anchor="middle" fill="#20365F">等待所采用的结果</text>
+<text x="32" y="425" font-size="15" text-anchor="start" fill="#20365F">下排是本例的采用过程；后续 reject 不会改写 outer 已采用的结果。</text>
+</g></svg>

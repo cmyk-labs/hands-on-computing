@@ -4,9 +4,13 @@
 
 **26 章正文已编写并完成空内核执行，包含 19 章主线和 7 章扩展。** 从 [数组创建与形状](01-数组创建与形状.ipynb)开始，或在[章节目录](plan.md)中按主题选择。
 
+每章选一道重点练习提供分层提示与独立参考解析，放在全部题目之后、参考来源之前。先完成原题，再核对方法选择、数值、形状及相关边界；解析不替代其余练习的独立尝试。
+
+数组轴、索引、广播、共享数据、矩阵计算与坐标映射配有示意图。先沿图判断元素和轴的对应关系，再核对相邻小数组的值、形状与共享检查；图中的分组不自动表示真实内存布局。辅助学习示意图保存在 `image/illustration/`，不需要新增绘图库依赖。
+
 ## 环境与依赖
 
-沿用 `hands-on-computing` Conda 环境和 Python 3.12 基线。2026-09-20 在本机 Windows x64 环境核对到 Python 3.12.14，NumPy 2.5.3、Notebook 7.6.2、ipykernel 7.3.0 均可导入。基础依赖固定在 [requirements.txt](requirements.txt)。已链接章节均已在该环境从空内核顺序执行并保存输出；首次安装流程尚未在全新环境复验。
+沿用 `hands-on-computing` Conda 环境和 Python 3.12 基线。2026-09-20 在本机 Windows x64 环境核对到 Python 3.12.14，NumPy 2.5.3、Notebook 7.6.2、ipykernel 7.3.0 均可导入。基础依赖固定在 [requirements.txt](requirements.txt)。已链接章节均已在该环境从空内核顺序执行并保存输出；首次安装的联合复验范围见文末。
 
 NumPy 用于示例计算，Notebook 用于交互界面，ipykernel 用于执行 Python 单元。通用阅读工具见[开始使用](../../../docs/START_HERE.md)。示例工作目录统一为 `content/AI原理与应用/NumPy/`，路径相对于该目录。
 
@@ -74,8 +78,10 @@ Step 4：打开章节，选择该环境的 Python 3 (ipykernel)，重启内核�
 
 Step 5：完成后在启动 Notebook 的终端按 Ctrl+C，并按提示确认停止。
 
-文件读写示例使用自制小数据；[测量 CSV](date/19-measurements.csv) 保留在 date/，供综合实践直接读取，其余临时文件按章关闭和清理。内存布局、高级索引、病态方程和频谱示意图位于 image/，正文就地引用，阅读图片不需要安装绘图库。数值、形状、类型和内存共享的成功条件按章给出。互操作扩展仅验证本地 CPU 数组，未验证 GPU 框架、静态类型检查器或编译扩展。
+文件读写示例使用自制小数据；[测量 CSV](date/19-measurements.csv) 保留在 date/，供综合实践直接读取，其余临时文件按章关闭和清理。内存布局、高级索引等辅助示意图位于 image/illustration/，病态方程与频谱的实际计算结果图保留在 image/，正文就地引用；阅读图片不需要安装绘图库。数值、形状、类型和内存共享的成功条件按章给出。互操作扩展仅验证本地 CPU 数组，未验证 GPU 框架、静态类型检查器或编译扩展。
 
 操作依据：[NumPy 安装](https://numpy.org/install/)、[Conda 环境管理](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html)、[pip 依赖清单](https://pip.pypa.io/en/stable/reference/requirements-file-format/)、[Jupyter 安装](https://jupyter.org/install)。
 
-综合实践明确约定输入范围，用常量列、相邻浮点数、大整数转换与数值退化示例观察精度边界；函数聚焦计算过程，超出约定的输入不再逐项包装报错。首次全新安装和上述未覆盖平台未复验。
+综合实践明确约定输入范围，用常量列、相邻浮点数、大整数转换与数值退化示例观察精度边界；函数聚焦计算过程，超出约定的输入不再逐项包装报错。全新环境只做了文末所述联合安装检查；上述未覆盖平台仍未复验。
+
+2026-09-22 安装复验：在独立的全新 Conda Python 3.12.14 环境中，沿用原清华安装源联合安装本仓库 7 份 requirements.txt；48 项直接依赖版本全部匹配，pip check 无冲突。主要模块导入及数值计算、模型拟合、Excel／Parquet 往返、图形导出和 FastAPI 请求检查通过。此项验证共同环境的安装与代表性功能，不代表各课程分别建环境或全部章节重新执行。

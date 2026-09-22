@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460" role="img" aria-labelledby="title desc">
+<title id="title">MultiIndex：每行 codes 指向各层标签</title>
+<desc id="desc">levels为地区华东华北与日期两天，codes零零、零一、一零、一一映射四个完整标签元组。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="460" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">MultiIndex：每行 codes 指向各层标签</text>
+<text x="500" y="85" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">levels[0] = [华东, 华北]；levels[1] = [2026-09-01, 2026-09-02]</text>
+<rect x="60" y="122" width="210" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="165.0" y="154.0" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">行位置</text>
+<rect x="270" y="122" width="210" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="375.0" y="154.0" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">codes[0]</text>
+<rect x="480" y="122" width="210" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="585.0" y="154.0" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">codes[1]</text>
+<rect x="690" y="122" width="210" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="795.0" y="154.0" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">完整标签</text>
+<rect x="60" y="172" width="210" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="165.0" y="204.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">0</text>
+<rect x="270" y="172" width="210" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="375.0" y="204.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">0</text>
+<rect x="480" y="172" width="210" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="585.0" y="204.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">0</text>
+<rect x="690" y="172" width="210" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="795.0" y="204.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">(华东, 09-01)</text>
+<rect x="60" y="222" width="210" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="165.0" y="254.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">1</text>
+<rect x="270" y="222" width="210" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="375.0" y="254.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">0</text>
+<rect x="480" y="222" width="210" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="585.0" y="254.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">1</text>
+<rect x="690" y="222" width="210" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="795.0" y="254.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">(华东, 09-02)</text>
+<rect x="60" y="272" width="210" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="165.0" y="304.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">2</text>
+<rect x="270" y="272" width="210" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="375.0" y="304.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">1</text>
+<rect x="480" y="272" width="210" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="585.0" y="304.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">0</text>
+<rect x="690" y="272" width="210" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="795.0" y="304.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">(华北, 09-01)</text>
+<rect x="60" y="322" width="210" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="165.0" y="354.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">3</text>
+<rect x="270" y="322" width="210" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="375.0" y="354.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">1</text>
+<rect x="480" y="322" width="210" height="50" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="585.0" y="354.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">1</text>
+<rect x="690" y="322" width="210" height="50" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="795.0" y="354.0" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">(华北, 09-02)</text>
+<text x="500" y="410" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">逐行标签由每层编码共同确定；levels 本身不是逐行展开的标签。</text>
+<text x="500" y="445" text-anchor="middle" font-size="17" fill="#536B8D" font-weight="400">右列省略共同年份 2026；codes 中的 −1 表示缺失，并非倒数索引。</text>
+</g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+<title id="title">同一模块的类型依赖与值依赖</title><desc id="desc">本章 verbatimModuleSyntax 下，显式 type 导入导出在生成时擦除。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="360" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">同一模块的类型依赖与值依赖</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">本章 verbatimModuleSyntax 下，显式 type 导入导出在生成时擦除。</text>
+<rect x="35" y="120" width="300" height="75" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="185.0" y="150.5" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">model.ts</text>
+<text x="185.0" y="176.5" font-size="17" text-anchor="middle" fill="#20365F">Entry / total / unit</text>
+<rect x="470" y="100" width="435" height="70" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="687.5" y="128.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">类型通道：Entry</text>
+<text x="687.5" y="154.0" font-size="17" text-anchor="middle" fill="#20365F">供 TypeScript 检查</text>
+<rect x="470" y="225" width="435" height="70" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="687.5" y="253.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">值通道：total / unit</text>
+<text x="687.5" y="279.0" font-size="17" text-anchor="middle" fill="#20365F">输出模块交给 Node.js 加载</text>
+<polyline points="335,145 470,135" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<text x="400" y="118" font-size="15" text-anchor="middle" fill="#20365F">类型</text>
+<polyline points="335,177 400,177 400,260 470,260" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="400" y="220" font-size="15" text-anchor="middle" fill="#20365F">值</text>
+<text x="32" y="340" font-size="15" text-anchor="start" fill="#20365F">barrel.ts 可分别转出两类名称；类型通道不执行初始化副作用，运行时需要真实值导入。</text>
+</g></svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="410" viewBox="0 0 1000 410" role="img" aria-labelledby="title desc">
+<title id="title">混合索引：shape 相同，轴含义仍可能不同</title>
+<desc id="desc">三维cube的形状二三四；相邻高级索引时批次轴在前，高级索引被切片隔开时坐标对轴在前。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="410" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">混合索引：shape 相同，轴含义仍可能不同</text>
+<text x="500" y="86" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">cube.shape = (2, 3, 4)：批次 × 观测 × 传感器</text>
+<text x="266" y="151" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">相邻：cube[:, [0, 1, 2], [1, 2, 3]]</text>
+<line x1="490" y1="147" x2="574" y2="147" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="595" y="112" width="165" height="70" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="677.5" y="154.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">批次：2</text>
+<rect x="771" y="112" width="175" height="70" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="858.5" y="154.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">坐标对：3</text>
+<text x="266" y="262" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">隔开：cube[[0, 1], :, [1, 3]]</text>
+<line x1="490" y1="258" x2="574" y2="258" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="595" y="223" width="165" height="70" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="677.5" y="265.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">坐标对：2</text>
+<rect x="771" y="223" width="175" height="70" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="858.5" y="265.0" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">观测：3</text>
+<text x="500" y="349" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">绿色是高级索引广播形成的轴；蓝色是基本切片保留的轴。</text>
+<text x="500" y="389" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">两者 shape 均为 (2, 3)，但选中值与每个轴的含义不同。</text>
+</g>
+</svg>

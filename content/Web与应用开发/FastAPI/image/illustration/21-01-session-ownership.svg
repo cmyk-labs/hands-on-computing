@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="445" viewBox="0 0 1000 445" role="img" aria-labelledby="title desc">
+<title id="title">共享工厂，不共享并发任务的会话</title><desc id="desc">应用共用engine和factory，每个并发任务创建自己的AsyncSession。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">共享工厂，不共享并发任务的会话</text>
+<rect x="270" y="80" width="460" height="90" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500.0" y="111" font-size="19" text-anchor="middle" font-weight="600" fill="#20365F">应用：AsyncEngine + 会话工厂</text>
+<text x="500.0" y="140" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">复用配置与连接池</text>
+<rect x="45" y="245" width="410" height="125" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="70" y="278" font-size="20" text-anchor="start" font-weight="600" fill="#20365F">任务 A</text>
+<text x="70" y="309" font-size="20" text-anchor="start" font-weight="400" fill="#20365F">自己的 AsyncSession</text>
+<text x="70" y="341" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">自己的事务状态 → 退出后关闭</text>
+<rect x="545" y="245" width="410" height="125" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="570" y="278" font-size="20" text-anchor="start" font-weight="600" fill="#20365F">任务 B</text>
+<text x="570" y="309" font-size="20" text-anchor="start" font-weight="400" fill="#20365F">自己的 AsyncSession</text>
+<text x="570" y="341" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">自己的事务状态 → 退出后关闭</text>
+<path d="M400,170 L250,245" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="325.0" y="197.5" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">factory()</text>
+<path d="M600,170 L750,245" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="675.0" y="197.5" font-size="16" text-anchor="middle" font-weight="400" fill="#20365F">factory()</text>
+<text x="40" y="420" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">会话对象不等于永久独占物理连接；两个并发任务不能共同操作同一个 AsyncSession。</text>
+</g></svg>

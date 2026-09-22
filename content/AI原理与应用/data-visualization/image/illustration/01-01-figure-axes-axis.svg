@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+<title id="title">Figure 包含绘图区，Axes 包含坐标轴对象</title>
+<desc id="desc">一个Figure包含两个二维Axes，每个Axes各有xaxis和yaxis；散点只是示意，不是本章数据输出。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="440" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">Figure 包含绘图区，Axes 包含坐标轴对象</text>
+<rect x="70" y="82" width="860" height="310" rx="18" fill="#FAFCFF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="120" y="114" text-anchor="start" font-size="24" fill="#20365F" font-weight="600">Figure</text>
+<rect x="135" y="145" width="320" height="202" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="305" y="176" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">Axes 1</text>
+<line x1="185" y1="310" x2="420" y2="310" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="185" y1="310" x2="185" y2="191" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="313" y="337" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">xaxis → 横向 Axis</text>
+<text x="301" y="205" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">yaxis → 纵向 Axis</text>
+<circle cx="215" cy="275" r="4" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="260" cy="249" r="4" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="317" cy="270" r="4" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<circle cx="380" cy="231" r="4" fill="#3265D6" stroke="#3265D6" stroke-width="2"/>
+<rect x="545" y="145" width="320" height="202" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="715" y="176" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">Axes 2</text>
+<line x1="595" y1="310" x2="830" y2="310" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="595" y1="310" x2="595" y2="191" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="723" y="337" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">xaxis → 横向 Axis</text>
+<text x="711" y="205" text-anchor="middle" font-size="17" fill="#20365F" font-weight="400">yaxis → 纵向 Axis</text>
+<circle cx="625" cy="275" r="4" fill="#4A9479" stroke="#4A9479" stroke-width="2"/>
+<circle cx="670" cy="249" r="4" fill="#4A9479" stroke="#4A9479" stroke-width="2"/>
+<circle cx="727" cy="270" r="4" fill="#4A9479" stroke="#4A9479" stroke-width="2"/>
+<circle cx="790" cy="231" r="4" fill="#4A9479" stroke="#4A9479" stroke-width="2"/>
+<text x="500" y="420" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">布局与导出交给 fig；数据和标题交给 ax；刻度等设置对应 Axis。</text>
+</g>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+<title id="title">SSE 按空行识别事件，不按网络块识别</title><desc id="desc">UTF8字节块需按行重组，完整字段块以空行结束后分派事件。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">SSE 按空行识别事件，不按网络块识别</text>
+<rect x="40" y="120" width="240" height="150" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="160.0" y="151" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">HTTP 字节流</text>
+<text x="160.0" y="180" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">块 1：event: up…</text>
+<text x="160.0" y="205" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">块 2：…date\ndata…</text>
+<text x="160.0" y="230" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">块边界可以切开行</text>
+<rect x="365" y="100" width="285" height="220" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="507.5" y="131" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">按行组织的一个事件</text>
+<text x="507.5" y="160" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">event: update</text>
+<text x="507.5" y="185" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">id: 1</text>
+<text x="507.5" y="210" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">data: {&quot;step&quot;: 1, …}</text>
+<text x="507.5" y="235" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">空行：事件边界</text>
+<rect x="735" y="140" width="225" height="120" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="847.5" y="171" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">浏览器事件</text>
+<text x="847.5" y="200" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">类型 update</text>
+<text x="847.5" y="225" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">data 是文本</text>
+<path d="M280,195 L365,195" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M650,195 L735,195" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="405" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">网络分块只是示意；data 由 ServerSentEvent 编码为 JSON，浏览器再 JSON.parse。</text>
+</g></svg>

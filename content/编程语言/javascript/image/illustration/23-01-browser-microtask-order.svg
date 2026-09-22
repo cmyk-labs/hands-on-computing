@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380" role="img" aria-labelledby="title desc">
+<title id="title">一次点击后的任务与微任务</title><desc id="desc">仅对应本例浏览器点击回调；不是所有宿主的完整事件循环。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="380" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">一次点击后的任务与微任务</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">仅对应本例浏览器点击回调；不是所有宿主的完整事件循环。</text>
+<rect x="30" y="120" width="255" height="100" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="157.5" y="150.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">当前点击任务</text>
+<text x="157.5" y="176.0" font-size="17" text-anchor="middle" fill="#20365F">sync start</text>
+<text x="157.5" y="202.0" font-size="17" text-anchor="middle" fill="#20365F">sync end</text>
+<rect x="350" y="120" width="255" height="100" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="477.5" y="150.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">微任务检查点</text>
+<text x="477.5" y="176.0" font-size="17" text-anchor="middle" fill="#20365F">promise</text>
+<text x="477.5" y="202.0" font-size="17" text-anchor="middle" fill="#20365F">microtask</text>
+<rect x="670" y="120" width="255" height="100" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="797.5" y="163.0" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">后续定时器任务</text>
+<text x="797.5" y="189.0" font-size="17" text-anchor="middle" fill="#20365F">timer</text>
+<polyline points="285,170 350,170" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="605,170 670,170" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="350" y="280" width="430" height="56" rx="12" fill="#F7F9FC" stroke="#AAB9CE" stroke-width="1.8"/>
+<text x="565.0" y="314.0" font-size="16" text-anchor="middle" fill="#20365F" font-weight="700">检查点内新追加的微任务也继续处理</text>
+<polyline points="478,220 478,280" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<text x="32" y="360" font-size="15" text-anchor="start" fill="#20365F">浏览器可能在任务间获得渲染机会；本图不承诺每次微任务之后都会绘制。</text>
+</g></svg>

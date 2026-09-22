@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="490" viewBox="0 0 1000 490" role="img" aria-labelledby="title desc">
+<title id="title">继承关系与 super 的前进顺序</title><desc id="desc">左图是菱形继承，右图是 Branch 的 MRO。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">继承关系与 super 的前进顺序</text>
+<rect x="165" y="85" width="150" height="55" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="240.0" y="116" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">Root</text>
+<rect x="45" y="220" width="150" height="55" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="120.0" y="251" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">Left</text>
+<rect x="285" y="220" width="150" height="55" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="360.0" y="251" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">Right</text>
+<rect x="165" y="345" width="150" height="55" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="240.0" y="376" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">Branch</text>
+<path d="M120,220 L205,140" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M360,220 L275,140" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M205,345 L120,275" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M275,345 L360,275" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="45" y="435" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">左侧箭头：子类 → 基类</text>
+<rect x="660" y="85" width="240" height="50" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="780.0" y="116" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">Branch</text>
+<path d="M780,135 L780,155" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="660" y="155" width="240" height="50" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="780.0" y="186" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">Left</text>
+<path d="M780,205 L780,225" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="660" y="225" width="240" height="50" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="780.0" y="256" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">Right</text>
+<path d="M780,275 L780,295" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="660" y="295" width="240" height="50" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="780.0" y="326" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">Root</text>
+<path d="M780,345 L780,365" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="660" y="365" width="240" height="50" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="780.0" y="396" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">object</text>
+<text x="500" y="207" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">Left 的下一站</text>
+<text x="500" y="232" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">可能是 Right</text>
+<text x="40" y="465" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">右侧箭头：沿 MRO 查找；Root.steps 主动终止，因此本例不调用 object.steps。</text>
+</g></svg>

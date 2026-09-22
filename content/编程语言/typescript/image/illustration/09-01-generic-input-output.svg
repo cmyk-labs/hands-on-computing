@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="355" viewBox="0 0 960 355" role="img" aria-labelledby="title desc">
+<title id="title">泛型把输入与输出的类型连接起来</title><desc id="desc">T 是本次调用的类型参数，不是运行时的变量或构造函数。</desc>
+<metadata>Original illustration by CMYK Labs (cmyk-labs); CC BY-NC-SA 4.0.</metadata>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#5374AB"/></marker></defs>
+<rect width="960" height="355" fill="white"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#20365F">
+<text x="32" y="40" font-size="26" text-anchor="start" fill="#20365F" font-weight="700">泛型把输入与输出的类型连接起来</text>
+<text x="32" y="72" font-size="15" text-anchor="start" fill="#20365F">T 是本次调用的类型参数，不是运行时的变量或构造函数。</text>
+<rect x="35" y="130" width="250" height="84" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
+<text x="160.0" y="178.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">输入 value: T</text>
+<rect x="365" y="130" width="230" height="84" rx="12" fill="#F3F0FF" stroke="#AA9BDE" stroke-width="1.8"/>
+<text x="480.0" y="178.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">identity&lt;T&gt;</text>
+<rect x="675" y="130" width="250" height="84" rx="12" fill="#EFF8F4" stroke="#82BEA7" stroke-width="1.8"/>
+<text x="800.0" y="178.0" font-size="18" text-anchor="middle" fill="#20365F" font-weight="700">返回值: T</text>
+<polyline points="285,172 365,172" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="595,172 675,172" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="145" y="255" width="670" height="45" rx="12" fill="#F7F9FC" stroke="#AAB9CE" stroke-width="1.8"/>
+<text x="480.0" y="283.5" font-size="16" text-anchor="middle" fill="#20365F" font-weight="700">identity&lt;number&gt;(3)：输入要求 number，结果也按 number 使用</text>
+<text x="32" y="333" font-size="15" text-anchor="start" fill="#20365F">类型关系在检查时建立；本例函数体只返回 value，不在运行时创建或转换类型。</text>
+</g></svg>

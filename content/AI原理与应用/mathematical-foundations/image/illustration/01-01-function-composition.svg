@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="380" viewBox="0 0 1000 380" role="img" aria-labelledby="title desc">
+<title id="title">复合函数：沿输入流向读计算顺序</title>
+<desc id="desc">输入二，先加一再平方得到九；先平方再加一得到五。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="380" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">复合函数：沿输入流向读计算顺序</text>
+<circle cx="70" cy="139" r="22" fill="#ECF3FF" stroke="#3265D6" stroke-width="2"/>
+<text x="70" y="146" text-anchor="middle" font-size="22" fill="#20365F" font-weight="400">2</text>
+<line x1="99" y1="139" x2="154" y2="139" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="164" y="101" width="215" height="76" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="271.5" y="146.0" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">g(x) = x + 1</text>
+<line x1="389" y1="139" x2="455" y2="139" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="425" y="121" text-anchor="middle" font-size="20" fill="#3265D6" font-weight="400">3</text>
+<rect x="465" y="101" width="215" height="76" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="572.5" y="146.0" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">f(x) = x²</text>
+<line x1="690" y1="139" x2="750" y2="139" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="765" y="101" width="180" height="76" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="855.0" y="146.0" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">f(g(2)) = 9</text>
+<circle cx="70" cy="279" r="22" fill="#EFF8F4" stroke="#4A9479" stroke-width="2"/>
+<text x="70" y="286" text-anchor="middle" font-size="22" fill="#20365F" font-weight="400">2</text>
+<line x1="99" y1="279" x2="154" y2="279" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="164" y="241" width="215" height="76" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="271.5" y="286.0" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">f(x) = x²</text>
+<line x1="389" y1="279" x2="455" y2="279" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="425" y="261" text-anchor="middle" font-size="20" fill="#4A9479" font-weight="400">4</text>
+<rect x="465" y="241" width="215" height="76" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="572.5" y="286.0" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">g(x) = x + 1</text>
+<line x1="690" y1="279" x2="750" y2="279" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="765" y="241" width="180" height="76" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="855.0" y="286.0" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">g(f(2)) = 5</text>
+<text x="500" y="360" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">外层函数接收内层函数的输出；箭头方向与书写嵌套方向相反。</text>
+</g>
+</svg>

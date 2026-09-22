@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+<title id="title">多个闭包可以共享同一个外层绑定</title><desc id="desc">make_late_adders 一次调用中的三个函数共同访问 offset。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">多个闭包可以共享同一个外层绑定</text>
+<rect x="45" y="100" width="275" height="90" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="182.5" y="131" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">named[0]</text>
+<text x="182.5" y="160" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">不同的函数对象</text>
+<rect x="360" y="100" width="275" height="90" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="497.5" y="131" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">named[1]</text>
+<text x="497.5" y="160" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">不同的函数对象</text>
+<rect x="675" y="100" width="275" height="90" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="812.5" y="131" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">named[2]</text>
+<text x="812.5" y="160" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">不同的函数对象</text>
+<rect x="305" y="280" width="390" height="90" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="500.0" y="311" font-size="19" text-anchor="middle" font-weight="600" fill="#20365F">同一次外层调用：offset = 2</text>
+<text x="500.0" y="340" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">循环结束后，各函数调用时读取此绑定</text>
+<path d="M182,190 L500,280" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M497,190 L500,280" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M812,190 L500,280" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="415" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">箭头表示自由变量访问关系；for 每轮不会自动创建新的函数作用域。</text>
+</g></svg>

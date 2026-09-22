@@ -72,6 +72,7 @@
 | **pandas** | 覆盖 Series 与 DataFrame、索引对齐、筛选赋值与写时复制、类型转换、缺失与重复值、统计排序与函数应用、文本与分类数据、分组聚合、连接拼接与比较、重塑与多级索引、日期时间与时区、重采样与窗口、CSV、JSON、SQL、Excel 与列式文件、数据质量与复现、内存与分块、Arrow 互操作、稀疏数据、表格展示、表达式计算及综合实践。 | [目录](content/AI原理与应用/pandas/plan.md) |
 | **数据可视化** | 覆盖图形选择与视觉编码、比较与组成占比、变化与统计分布、变量关系与不确定性、层级与流向，以及 Matplotlib、Seaborn 科研绘图、Plotly、Altair、Bokeh 交互与导出和 Vega-Lite 图表规范与 Vega-Embed 网页嵌入。 | [目录](content/AI原理与应用/data-visualization/plan.md) |
 | **数学基础** | 覆盖数学表达、线性代数与矩阵分解、微积分与矩阵求导、极值与凸性、概率统计推断、信息量、数值稳定性与蒙特卡洛计算、数学建模与 PCA 选学，以及变量变换、贝叶斯推断和 MCMC 扩展。 | [目录](content/AI原理与应用/mathematical-foundations/plan.md) |
+| **机器学习与 scikit-learn** | 前三章样例覆盖学习任务与估计器接口、数据划分与基线、回归与分类评估；后续规划包括预处理与流水线、回归与分类算法、集成学习、模型选择、特征工程与模型解释、降维、聚类、混合模型与异常检测、半监督与在线学习、模型保存和综合实践，结合公式推导、Python 手写、scikit-learn 与部分主题的 PyTorch 对照。 | [目录与规划](content/AI原理与应用/machine-learning&scikit-learn/plan.md) |
 
 ### Web与应用开发
 

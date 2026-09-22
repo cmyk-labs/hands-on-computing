@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="410" viewBox="0 0 1000 410" role="img" aria-labelledby="title desc">
+<title id="title">缩减 SVD：先核对形状，再核对重构</title>
+<desc id="desc">对于三行二列输入，U 为三行二列，奇异值向量为长度二，diag(s) 为二行二列，Vh 为二行二列。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="410" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">缩减 SVD：先核对形状，再核对重构</text>
+<text x="120" y="105" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">U：(3, 2)</text>
+<rect x="55" y="135" width="65" height="49" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="87.5" y="166.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">•</text>
+<rect x="120" y="135" width="65" height="49" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="152.5" y="166.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">•</text>
+<rect x="55" y="184" width="65" height="49" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="87.5" y="215.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">•</text>
+<rect x="120" y="184" width="65" height="49" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="152.5" y="215.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">•</text>
+<rect x="55" y="233" width="65" height="49" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="87.5" y="264.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">•</text>
+<rect x="120" y="233" width="65" height="49" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="152.5" y="264.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">•</text>
+<text x="409" y="105" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">diag(s)：(2, 2)</text>
+<rect x="344" y="135" width="65" height="49" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="376.5" y="166.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">3</text>
+<rect x="409" y="135" width="65" height="49" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="441.5" y="166.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0</text>
+<rect x="344" y="184" width="65" height="49" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="376.5" y="215.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">0</text>
+<rect x="409" y="184" width="65" height="49" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="441.5" y="215.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">2</text>
+<text x="723" y="105" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">Vh：(2, 2)</text>
+<rect x="658" y="135" width="65" height="49" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="690.5" y="166.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">•</text>
+<rect x="723" y="135" width="65" height="49" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="755.5" y="166.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">•</text>
+<rect x="658" y="184" width="65" height="49" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="690.5" y="215.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">•</text>
+<rect x="723" y="184" width="65" height="49" rx="0" fill="#F3F0FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="755.5" y="215.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">•</text>
+<text x="265" y="192" text-anchor="middle" font-size="30" fill="#20365F" font-weight="400">@</text>
+<text x="565" y="192" text-anchor="middle" font-size="30" fill="#20365F" font-weight="400">@</text>
+<text x="890" y="175" text-anchor="middle" font-size="22" fill="#20365F" font-weight="400">→ (3, 2)</text>
+<text x="890" y="214" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">还原输入</text>
+<rect x="90" y="321" width="820" height="55" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="500.0" y="355.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">s 本身是 (2,)；U * s 按列缩放，可替代 U @ diag(s)。</text>
+</g>
+</svg>

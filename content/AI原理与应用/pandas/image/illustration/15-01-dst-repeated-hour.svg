@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+<title id="title">回拨时的同一个钟面时间，对应两个时刻</title>
+<desc id="desc">2018年10月28日 CET 时区夏令时回拨，两次02:30分别为00:30 UTC与01:30 UTC。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="420" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">回拨时的同一个钟面时间，对应两个时刻</text>
+<text x="500" y="91" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">2018-10-28 · CET 的回拨日</text>
+<rect x="70" y="125" width="330" height="82" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="235.0" y="158.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">02:30（夏令时，+02:00）</text>
+<text x="235.0" y="187.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">ambiguous=True</text>
+<rect x="70" y="261" width="330" height="82" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="235.0" y="294.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">02:30（标准时，+01:00）</text>
+<text x="235.0" y="323.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">ambiguous=False</text>
+<line x1="415" y1="166" x2="565" y2="166" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="415" y1="302" x2="565" y2="302" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="580" y="125" width="330" height="82" rx="12" fill="#ECF3FF" stroke="#3265D6" stroke-width="1.8"/>
+<text x="745.0" y="158.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">00:30 UTC</text>
+<text x="745.0" y="187.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">较早的实际时刻</text>
+<rect x="580" y="261" width="330" height="82" rx="12" fill="#EFF8F4" stroke="#4A9479" stroke-width="1.8"/>
+<text x="745.0" y="294.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">01:30 UTC</text>
+<text x="745.0" y="323.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">较晚的实际时刻</text>
+<line x1="745" y1="215" x2="745" y2="250" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="859" y="239" text-anchor="middle" font-size="18" fill="#20365F" font-weight="400">相差 1 小时</text>
+<text x="500" y="393" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">只给“02:30”无法区分两次；必须使用记录依据决定所属时刻。</text>
+</g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="410" viewBox="0 0 1000 410" role="img" aria-labelledby="title desc">
+<title id="title">谁调用函数，决定是否由 FastAPI 调度</title><desc id="desc">框架调度def路由到线程池；async路由直接调用helper仍在事件循环线程。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#597AAA"/></marker></defs>
+<rect width="1000" height="100%" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#20365F">
+<text x="40" y="42" font-size="27" text-anchor="start" font-weight="600" fill="#20365F">谁调用函数，决定是否由 FastAPI 调度</text>
+<rect x="40" y="150" width="235" height="95" rx="14" fill="#ECF3FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="157.5" y="181" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">FastAPI 调度</text>
+<text x="157.5" y="210" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">框架负责调用路由</text>
+<rect x="375" y="80" width="245" height="90" rx="14" fill="#EFF8F4" stroke="#597AAA" stroke-width="1.7"/>
+<text x="497.5" y="111" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">def 路由</text>
+<text x="497.5" y="140" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">线程池中执行</text>
+<path d="M275,170 L375,125" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="375" y="250" width="245" height="90" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="497.5" y="281" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">async def 路由</text>
+<text x="497.5" y="310" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">事件循环线程</text>
+<path d="M275,223 L375,295" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="730" y="250" width="230" height="90" rx="14" fill="#F3F0FF" stroke="#597AAA" stroke-width="1.7"/>
+<text x="845.0" y="281" font-size="20" text-anchor="middle" font-weight="600" fill="#20365F">直接调用 helper()</text>
+<text x="845.0" y="310" font-size="17" text-anchor="middle" font-weight="400" fill="#20365F">仍在调用线程</text>
+<path d="M620,295 L730,295" fill="none" stroke="#597AAA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="385" font-size="17" text-anchor="start" font-weight="400" fill="#20365F">普通辅助函数不会仅因使用 def 就自动换线程；阻塞调用也不会自动变为异步。</text>
+</g></svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+<title id="title">三维数组：先选批次，再选观测和传感器</title>
+<desc id="desc">两个三行四列的数据块表示形状 2、3、4。批次轴选择数据块，观测轴选择行，传感器轴选择列。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#536B8D"/></marker></defs>
+<rect width="1000" height="420" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" fill="#20365F">
+<text x="500.0" y="38" text-anchor="middle" font-size="26" fill="#20365F" font-weight="600">三维数组：先选批次，再选观测和传感器</text>
+<text x="269" y="109" text-anchor="middle" font-size="22" fill="#20365F" font-weight="400">批次 0</text>
+<rect x="145" y="135" width="62" height="45" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="176.0" y="164.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">11</text>
+<rect x="207" y="135" width="62" height="45" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="238.0" y="164.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">12</text>
+<rect x="269" y="135" width="62" height="45" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="300.0" y="164.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">13</text>
+<rect x="331" y="135" width="62" height="45" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="362.0" y="164.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">14</text>
+<rect x="145" y="180" width="62" height="45" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="176.0" y="209.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">21</text>
+<rect x="207" y="180" width="62" height="45" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="238.0" y="209.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">22</text>
+<rect x="269" y="180" width="62" height="45" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="300.0" y="209.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">23</text>
+<rect x="331" y="180" width="62" height="45" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="362.0" y="209.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">24</text>
+<rect x="145" y="225" width="62" height="45" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="176.0" y="254.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">31</text>
+<rect x="207" y="225" width="62" height="45" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="238.0" y="254.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">32</text>
+<rect x="269" y="225" width="62" height="45" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="300.0" y="254.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">33</text>
+<rect x="331" y="225" width="62" height="45" rx="0" fill="#ECF3FF" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="362.0" y="254.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">34</text>
+<line x1="145" y1="124" x2="393" y2="124" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="269" y="73" text-anchor="middle" font-size="17" fill="#536B8D" font-weight="400">axis 2：4 个传感器</text>
+<line x1="127" y1="135" x2="127" y2="270" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="115" y="285" text-anchor="middle" font-size="17" fill="#536B8D" font-weight="400">axis 1：3 次观测</text>
+<text x="694" y="109" text-anchor="middle" font-size="22" fill="#20365F" font-weight="400">批次 1</text>
+<rect x="570" y="135" width="62" height="45" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="601.0" y="164.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">111</text>
+<rect x="632" y="135" width="62" height="45" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="663.0" y="164.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">112</text>
+<rect x="694" y="135" width="62" height="45" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="725.0" y="164.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">113</text>
+<rect x="756" y="135" width="62" height="45" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="787.0" y="164.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">114</text>
+<rect x="570" y="180" width="62" height="45" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="601.0" y="209.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">121</text>
+<rect x="632" y="180" width="62" height="45" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="663.0" y="209.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">122</text>
+<rect x="694" y="180" width="62" height="45" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="725.0" y="209.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">123</text>
+<rect x="756" y="180" width="62" height="45" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="787.0" y="209.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">124</text>
+<rect x="570" y="225" width="62" height="45" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="601.0" y="254.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">131</text>
+<rect x="632" y="225" width="62" height="45" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="663.0" y="254.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">132</text>
+<rect x="694" y="225" width="62" height="45" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="725.0" y="254.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">133</text>
+<rect x="756" y="225" width="62" height="45" rx="0" fill="#EFF8F4" stroke="#91AAD8" stroke-width="1.8"/>
+<text x="787.0" y="254.5" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">134</text>
+<line x1="570" y1="124" x2="818" y2="124" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="694" y="73" text-anchor="middle" font-size="17" fill="#536B8D" font-weight="400">axis 2：4 个传感器</text>
+<line x1="552" y1="135" x2="552" y2="270" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="540" y="285" text-anchor="middle" font-size="17" fill="#536B8D" font-weight="400">axis 1：3 次观测</text>
+<line x1="390" y1="307" x2="570" y2="307" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="500" y="335" text-anchor="middle" font-size="19" fill="#20365F" font-weight="400">axis 0：2 个批次</text>
+<text x="500" y="385" text-anchor="middle" font-size="21" fill="#20365F" font-weight="400">shape = (2, 3, 4)     ndim = 3     size = 2 × 3 × 4 = 24</text>
+</g>
+</svg>
