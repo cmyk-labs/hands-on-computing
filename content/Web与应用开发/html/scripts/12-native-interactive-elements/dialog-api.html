@@ -28,10 +28,10 @@
   <script>
     const dialog = document.querySelector("#note-dialog");
     document.querySelector("#open-modeless").addEventListener("click", () => {
-      if (!dialog.open) dialog.show();
+      dialog.show();
     });
     document.querySelector("#open-modal").addEventListener("click", () => {
-      if (!dialog.open) dialog.showModal();
+      dialog.showModal();
     });
     document.querySelector("#api-close").addEventListener("click", () => {
       dialog.close();

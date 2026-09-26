@@ -1,6 +1,6 @@
 """所属章节：24-自动化测试
 演示知识点：直接 assert 断言与 pytest.raises 精确异常断言检查公开行为
-运行命令：PYTHONPATH=scripts/24-automated-testing python -m pytest -q scripts/24-automated-testing/tests/test_basic.py（工作目录 content/编程语言/python）
+运行命令：python -m pytest -q tests/test_basic.py（工作目录 content/编程语言/python/scripts/24-automated-testing）
 期望结果：2 项测试通过
 """
 
@@ -14,8 +14,8 @@ def test_total_minutes() -> None:
     assert study_records.total_minutes([25, 5]) == 30
 
 
-def test_rejects_negative() -> None:
-    """负数记录必须在业务边界被拒绝。"""
-    with pytest.raises(ValueError, match="0 到 1440") as error:
-        study_records.total_minutes([-1])
-    assert error.type is ValueError
+def test_sum_type_error() -> None:
+    """错误元素类型产生原生求和异常，测试精确检查它。"""
+    with pytest.raises(TypeError, match="unsupported operand") as error:
+        study_records.total_minutes(["bad"])
+    assert error.type is TypeError

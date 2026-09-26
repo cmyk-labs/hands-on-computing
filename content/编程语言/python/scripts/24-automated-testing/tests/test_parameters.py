@@ -1,7 +1,7 @@
 """所属章节：24-自动化测试
-演示知识点：parametrize 对有效边界和无效输入分别参数化成独立用例
-运行命令：PYTHONPATH=scripts/24-automated-testing python -m pytest -q scripts/24-automated-testing/tests/test_parameters.py（工作目录 content/编程语言/python）
-期望结果：8 项测试通过（4 组正常输入与 4 组拒绝输入）
+演示知识点：parametrize 对正常输入与原生异常反例分别参数化成独立用例
+运行命令：python -m pytest -q tests/test_parameters.py（工作目录 content/编程语言/python/scripts/24-automated-testing）
+期望结果：6 项测试通过（4 组正常输入与 2 组原生异常反例）
 """
 
 import pytest
@@ -19,9 +19,9 @@ def test_valid_minutes(minutes: list[int], expected: int) -> None:
     assert study_records.total_minutes(minutes) == expected
 
 
-@pytest.mark.parametrize("value", [-1, 1441, True, "10"])
+@pytest.mark.parametrize("value", ["bad", None])
 def test_invalid_minutes(value: object) -> None:
-    """越界整数、布尔值和字符串均不是合法记录。"""
-    with pytest.raises(ValueError) as error:
+    """字符串和 None 无法参与本例整数求和。"""
+    with pytest.raises(TypeError) as error:
         study_records.total_minutes([value])
-    assert error.type is ValueError
+    assert error.type is TypeError

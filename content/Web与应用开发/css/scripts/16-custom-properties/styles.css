@@ -87,11 +87,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .registered-invalid { --badge-tone: 16px; }
 .registered-inherit { --badge-tone: inherit; }
 .plain-parent { --plain-tone: #754300; }
-.plain-fallback {
-  --plain-tone: teal;
-  color: teal;
-  color: var(--plain-tone, teal);
-  /* 支持注册时前三段为 teal、teal、棕色；本回退段明确为 teal。 */
+.plain-inherited {
+  color: var(--plain-tone);
+  /* 前三段为 teal、teal、棕色；未注册对照段继承父属性，呈棕色。 */
 }
 
 /* 主题先给出浅色令牌，下面分别处理系统偏好和固定选择。 */

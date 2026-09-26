@@ -29,5 +29,5 @@
 <rect x="340" y="341" width="580" height="55" rx="12" fill="#ECF3FF" stroke="#84A6E8" stroke-width="1.8"/>
 <text x="630.0" y="374.5" font-size="17" text-anchor="middle" fill="#20365F" font-weight="700">call outer → call inner → 原方法</text>
 <polyline points="255,368 340,368" fill="none" stroke="#5374AB" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="32" y="430" font-size="15" text-anchor="start" fill="#20365F">类装饰器与 apply field name 的完整顺序仍按 main.ts 中的事件断言核对。</text>
+<text x="32" y="430" font-size="15" text-anchor="start" fill="#20365F">类装饰器与 apply field name 的完整顺序仍按 main.ts 中的事件输出核对。</text>
 </g></svg>

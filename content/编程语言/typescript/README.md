@@ -67,3 +67,7 @@ npm run run:01
 Notebook 查看方式见[开始使用](../../../docs/START_HERE.md)；PowerShell 若拦截 npm.ps1，使用 npm.cmd。
 
 操作依据：[npm ci](https://docs.npmjs.com/cli/v11/commands/npm-ci/)、[npm run](https://docs.npmjs.com/cli/v11/commands/npm-run/)、[TypeScript 基础](https://www.typescriptlang.org/docs/handbook/2/basic-types.html)。
+
+## 本次修订与验证范围
+
+2026-09-23、2026-09-26 按新协议逐章检查全部 29 章、配套源码/配置和每张示意图；沿用课程锁定的 TypeScript 7.0.2 与 Node.js 24.11.0。第 03、06、16、17、26、27、29 章完成受影响项目的真实构建与运行；第 16 章另核对 6 处预期类型诊断。第 18、25 章的临时打包、安装和消费者检查通过。第 24、25 章补齐独立消费者反例步骤，实际构建、本地离线安装后分别只得到预期 TS2345、TS2322，临时安装已清理。其余章节核对源码、类型关系、输出约定及文档结构，未把未改项目、浏览器交互、旧式装饰器、全部错误配置或性能场景记作本轮重跑。

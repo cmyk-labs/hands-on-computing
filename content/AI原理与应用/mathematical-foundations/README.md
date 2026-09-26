@@ -100,3 +100,7 @@ Step 5：完成后在启动 Notebook 的终端按 Ctrl+C，并按提示确认停
 环境依据：[Conda 环境管理](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html)、[pip 依赖清单](https://pip.pypa.io/en/stable/reference/requirements-file-format/)、[SciPy 工具链与兼容条件](https://docs.scipy.org/doc/scipy/dev/toolchain.html)。数学定义、定理与具体 API 来源在各章篇末定位。
 
 2026-09-22 安装复验：在独立的全新 Conda Python 3.12.14 环境中，沿用原清华安装源联合安装本仓库 7 份 requirements.txt；48 项直接依赖版本全部匹配，pip check 无冲突。主要模块导入及数值计算、模型拟合、Excel／Parquet 往返、图形导出和 FastAPI 请求检查通过。此项验证共同环境的安装与代表性功能，不代表各课程分别建环境或全部章节重新执行。
+
+## 本次修订与验证范围
+
+2026-09-23 按新协议逐章检查全部 28 章，实际查看全部 76 个 PNG 图形输出和 6 幅 SVG 示意图。沿用 Windows、CPython 3.12.14、NumPy 2.5.3、SciPy 1.18.1、Matplotlib 3.11.2；第 01、04、15、17、21、23 章共 148 个 Code 单元完成空内核重跑并保存真实结果，其余章节核对既有输出。全课程 4 个预期异常逐项匹配。未把模拟结果当作定理证明，也未新增其他平台或后端的数值一致性声明。

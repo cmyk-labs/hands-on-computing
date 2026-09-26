@@ -1,6 +1,6 @@
 """所属章节：24-自动化测试
 演示知识点：mock.patch 在使用方替换文件读取边界，autospec 签名检查与错误传播
-运行命令：PYTHONPATH=scripts/24-automated-testing python -m pytest -q scripts/24-automated-testing/tests/test_mock.py（工作目录 content/编程语言/python）
+运行命令：python -m pytest -q tests/test_mock.py（工作目录 content/编程语言/python/scripts/24-automated-testing）
 期望结果：4 项测试通过
 """
 

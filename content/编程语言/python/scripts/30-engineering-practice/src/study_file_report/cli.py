@@ -1,7 +1,7 @@
 """所属章节：30-综合工程实践
 演示知识点：命令行参数、TOML 配置与日志级别的组合及优先级，失败时不输出残缺 JSON
-运行命令：PYTHONPATH=scripts/30-engineering-practice/src python -m study_file_report 输入文件（工作目录 content/编程语言/python）
-期望结果：输出 JSON 统计结果；配置或文件错误输出诊断并以 1 退出，用法错误为 2
+运行命令：python -m study_file_report 输入文件（工作目录 content/编程语言/python）
+期望结果：输出 JSON 统计结果；本章捕获的配置或文件错误输出诊断并以 1 退出，用法错误为 2
 """
 
 import argparse
@@ -16,29 +16,14 @@ from .core import analyze_batch
 
 
 def load_options(path: Path | None) -> tuple[int, str]:
-    """读取并校验可选配置，返回线程数与日志级别。"""
+    """读取合法的可选配置，返回线程数与日志级别。"""
     if path is None:
         return 1, "WARNING"
 
-    # 1. 校验表名和选项名，不把拼错的配置静默丢弃。
     with path.open("rb") as stream:
-        data = tomllib.load(stream)
-    if set(data) - {"analysis"}:
-        raise ValueError(f"{path}: 只允许 analysis 配置表")
-    section = data.get("analysis", {})
-    if not isinstance(section, dict):
-        raise ValueError(f"{path}: analysis 必须是表")
-    if set(section) - {"workers", "log_level"}:
-        raise ValueError(f"{path}: analysis 含未知选项")
-
-    # 2. 明确拒绝 bool、文本线程数和不支持的日志级别。
-    workers = section.get("workers", 1)
-    level = section.get("log_level", "WARNING")
-    if type(workers) is not int or workers < 1:
-        raise ValueError(f"{path}: workers 必须是正整数")
-    if level not in ("DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"):
-        raise ValueError(f"{path}: log_level 无效")
-    return workers, level
+        section = tomllib.load(stream)["analysis"]
+    # 两个选项均可省略，缺省值属于配置选择，不检查假设中的非法输入。
+    return section.get("workers", 1), section.get("log_level", "WARNING")
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -61,15 +46,13 @@ def main(argv: list[str] | None = None) -> int:
     """成功返回 0；可预期的配置或文件处理错误返回 1。"""
     arguments = parse_args(argv)
 
-    # 1. 先校验配置，再应用显式命令行选项。
+    # 1. 先读取配置，再应用显式命令行选项。
     try:
         workers, level = load_options(arguments.config)
         if arguments.workers is not None:
             workers = arguments.workers
         if arguments.log_level is not None:
             level = arguments.log_level
-        if workers < 1:
-            raise ValueError("workers 必须大于零")
     except (OSError, ValueError) as error:
         # stderr 以“配置错误：”开头并附具体原因；stdout 保持为空。
         print(f"配置错误：{error}", file=sys.stderr)

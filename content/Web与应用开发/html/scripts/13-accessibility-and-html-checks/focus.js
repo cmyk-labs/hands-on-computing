@@ -6,6 +6,7 @@
 document.querySelector("#move-focus").addEventListener("click", () => {
   document.querySelector("#negative").focus(); // 焦点进入说明段，底部焦点名变为 negative。
 });
+// 本页既有带 id 的观察段，也有无 id 的按钮；分别显示标识或可见文字。
 document.addEventListener("focusin", event => {
   document.querySelector("#focus-name").textContent =
     event.target.id || event.target.textContent.trim();

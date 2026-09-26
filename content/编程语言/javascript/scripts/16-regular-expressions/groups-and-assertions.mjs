@@ -4,7 +4,7 @@
 // 期望结果：首行输出 go-go go 0，其余断言判定与正文行内注释一致
 const pair = /^(?<word>[a-z]+)-\k<word>$/;
 const matched = pair.exec("go-go");
-if (matched) console.log(matched[0], matched.groups.word, matched.index);
+console.log(matched[0], matched.groups.word, matched.index);
 console.log(pair.test("go-stop"), /^(ab)-\1$/.test("ab-ab"));
 console.log(/(?:cat|dog)s?/.exec("dogs")[0]);
 console.log(/\d+(?=kg)/.exec("12kg")[0]);

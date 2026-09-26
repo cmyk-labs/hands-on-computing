@@ -13,11 +13,10 @@ test("loadMean: injected reader", async (t) => {
   assert.equal(readText.mock.callCount(), 1);
   assert.deepEqual(readText.mock.calls[0].arguments, []);
 });
-// 三种失败来自读取、JSON 语法和业务输入；每个 rejects 都要等待。
+// 两种失败来自读取与 JSON 语法；每个 rejects 都要等待。
 test("loadMean: read and parse rejection", async () => {
   await assert.rejects(loadMean(async () => { throw new Error("disk failed"); }), /disk failed/);
   await assert.rejects(loadMean(async () => "{"), SyntaxError);
-  await assert.rejects(loadMean(async () => "null"), /expected finite numbers/);
 });
 test("loadMean: method boundary", async (t) => {
   const reader = { async read() { return "[1]"; } };

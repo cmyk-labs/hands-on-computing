@@ -1,5 +1,8 @@
 # FastAPI 课程规划
 
+编写规则统一见[全局协议](../../../AGENTS.md)、[Notebook 协议](../../../docs/notebook-protocol.md)及本课程 [AGENTS.md](AGENTS.md)。本规划中的校验、异常、入口与错误恢复条目表示相应主题的教学范围，不要求普通示例预先添加这些结构；全部示例默认输入满足其说明的条件。
+
+
 学习目标：使用 FastAPI 编写、测试和运行 HTTP API，正确处理请求校验、并发执行、数据持久化、身份与权限，以及服务资源的创建和退出。
 
 本目录 `content/Web与应用开发/FastAPI/` 收录 FastAPI 课程。本文件保存章节规划，环境与运行步骤见 [README.md](README.md)。
@@ -63,7 +66,7 @@ Python 沿用项目的 **3.12 基线和 hands-on-computing Conda 环境**，模�
 | 运行与交付 | 15–16：服务进程管理和小型综合实践 | 多 worker 实验限制为少量进程，不要求容器运行时。 |
 | 选修扩展 | 17–23：按应用需求选择 | 上游使用本地辅助服务，不实际发送邮件或调用收费服务；WebSocket、SSE 和模板使用本地浏览器，异步数据库使用 SQLite，客户端在本地生成与调用。 |
 
-先确认第 01 章的小示例与运行方式，再按编号推进。并行编写时每人一次负责一章，完成并检查后领取下一个编号；不按并行分工拆分教学主题。
+样章、确认与可选分工遵循根协议和当前任务授权；按本规划的学习关系组织主题，不因编写分工拆分章节。
 
 服务源码及必要资源按 [Notebook 编写协议](../../../docs/notebook-protocol.md)放入技术目录的 `scripts/章节/`，例如 `scripts/01-http-api-and-fastapi/`；代码遵循 [Python 编程规范](../../编程语言/python/Python编程规范.md)与 [FastAPI 编程规范](FastAPI编程规范.md)。Notebook 保留唯一教学正文，环境安装集中在技术目录 README.md。
 

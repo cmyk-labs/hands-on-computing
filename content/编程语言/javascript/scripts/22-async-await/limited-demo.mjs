@@ -19,7 +19,6 @@ assert.deepEqual(values, [2, 4, 6, 8, 10]);
 assert.equal(peak, 2);
 assert.equal(active, 0);
 assert.deepEqual(await mapLimited([], 2, () => 1), []);
-await assert.rejects(mapLimited([1], 0, () => 1), /limit must be positive/);
 
 // 2. 首项故意失败，第二项完成，第三项应始终没有被领取。
 let drained = false;

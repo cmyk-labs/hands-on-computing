@@ -1,7 +1,7 @@
 /* 所属章节：25-锚点定位
-   演示知识点：@supports 内的锚点关联与 anchor()/anchor-size() 增强、仅 Popover 可用时的居中浮层回退、position-try-fallbacks 与 @position-try 候选、都不支持时的静态展示
+   演示知识点：锚点关联与 anchor()/anchor-size()、position-try-fallbacks 与 @position-try 候选
    运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随各页面加载，页面入口 http://127.0.0.1:8101/scripts/25-anchor-positioning/index.html
-   期望结果：各层级按浏览器支持情况逐级生效，行为与规则内注释一致 */
+   期望结果：位置和尺寸随锚点变化，行为与规则内注释一致 */
 * { box-sizing: border-box; }
 body { max-width: 65rem; margin: 0 auto; padding: 1rem; font: 1rem/1.6 system-ui, sans-serif; color: #17212b; background: #fff; }
 h1 { font-size: 2rem; } h2 { font-size: 1.3rem; }
@@ -11,50 +11,38 @@ a { color: #0645ad; } button { font: inherit; padding: 0.5rem 1rem; }
 .after { min-height: 65vh; }
 .anchor-stage { position: relative; min-height: 14rem; padding: 1rem; border: 1px solid #657080; }
 .anchor { width: 14rem; max-width: 100%; padding: 0.5rem; margin: 0; background: #d8eafa; }
-.callout { width: 16rem; max-width: 100%; padding: 0.5rem; margin: 0.5rem 0 0; border: 1px solid #657080; }
-/* 基础样式是正常流说明；关闭锚点增强后，仍在锚点后面阅读。 */
+.callout { max-width: 100%; padding: 0.5rem; border: 1px solid #657080; }
+/* 外框建立定位包含块，锚点与说明的边框和内边距保持可见。 */
 
-@supports (anchor-name: --sample) and (top: anchor(bottom)) and (width: anchor-size(width)) {
-  .anchor { anchor-name: --sample; }
-  .callout {
-    position: absolute;
-    position-anchor: --sample;
-    position-visibility: always;
-    margin: 0;
-    top: calc(anchor(bottom, 4rem) + 0.5rem);
-    left: anchor(left, 1rem);
-    width: anchor-size(width, 12rem);
-  }
+.anchor { anchor-name: --sample; }
+.callout {
+  position: absolute;
+  position-anchor: --sample;
+  position-visibility: always;
+  margin: 0;
+  top: calc(anchor(bottom, 4rem) + 0.5rem);
+  left: anchor(left, 1rem);
+  width: anchor-size(width, 12rem);
 }
 /* 改变锚点宽度或上外边距：说明框跟随；临时取消anchor-name时使用函数内回退。 */
 
 #help-panel { padding: 1rem; border: 2px solid #657080; color: #17212b; background: #fff; }
-@supports selector(:popover-open) {
-  #help-panel {
-    position: fixed;
-    inset: 0;
-    margin: auto;
-    width: min(20rem, calc(100% - 2rem));
-    max-height: calc(100% - 2rem);
-    overflow: auto;
-  }
-}
-/* Popover可用而锚点不可用：保留有边距的居中浮层。 */
+#help-panel { overflow: auto; }
+/* 长内容保留内部滚动；下一节直接设置锚点定位。 */
 
-@supports selector(:popover-open) and (anchor-name: --help) and (top: anchor(bottom)) and (position-try-fallbacks: flip-block) {
-  #help-trigger { anchor-name: --help; }
-  #help-panel {
-    position: fixed;
-    position-anchor: --help;
-    position-visibility: always;
-    inset: auto;
-    margin: 0;
-    top: calc(anchor(bottom) + 0.5rem);
-    left: anchor(left);
-    width: min(20rem, calc(100vw - 2rem));
-    max-height: calc(100vh - 2rem);
-    position-try-fallbacks: flip-inline, flip-block, flip-block flip-inline, --inside-viewport;
-  }
+
+#help-trigger { anchor-name: --help; }
+#help-panel {
+  position: fixed;
+  position-anchor: --help;
+  position-visibility: always;
+  inset: auto;
+  margin: 0;
+  top: calc(anchor(bottom) + 0.5rem);
+  left: anchor(left);
+  width: min(20rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  position-try-fallbacks: flip-inline, flip-block, flip-block flip-inline, --inside-viewport;
 }
 /* 默认在锚点下方且左边对齐；右下角可能需要同时翻转两个方向。 */
 
@@ -67,10 +55,3 @@ a { color: #0645ad; } button { font: inherit; padding: 0.5rem 1rem; }
   max-height: calc(100vh - 2rem);
 }
 /* 前三个候选都放不下时，尝试视口内左上角；内容过长由原有overflow:auto滚动。 */
-
-@supports not selector(:popover-open) {
-  #help-trigger, .close { display: none; }
-  #help-panel { position: static; margin-block: 1rem; }
-  .edge-zone { display: block; height: auto; overflow: visible; }
-}
-/* 不支持Popover的浏览器把说明作为普通内容显示，不留下失效开关。 */

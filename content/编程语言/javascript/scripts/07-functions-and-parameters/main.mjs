@@ -109,9 +109,6 @@ console.log(configured);
 // job:ready
 
 function factorial(n) {
-  if (!Number.isInteger(n) || n < 0 || n > 10) {
-    throw new RangeError("n 必须是 0 到 10 的整数");
-  }
   if (n === 0) return 1;
   return n * factorial(n - 1);
 }

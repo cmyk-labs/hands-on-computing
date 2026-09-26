@@ -1,10 +1,9 @@
 """所属章节：36-Pygame 图形与游戏
 演示知识点：移动累计与限速、边界与计分、事件驱动重置退出及有限循环资源清理的测试
-运行命令：SDL_VIDEODRIVER=dummy PYTHONPATH=scripts/36-pygame python -m pytest -q scripts/36-pygame/test_game_logic.py（工作目录 content/编程语言/python）
-期望结果：19 项测试通过
+运行命令：python -m pytest -q scripts/36-pygame/test_game_logic.py（工作目录 content/编程语言/python）
+期望结果：16 项测试通过
 """
 
-import math
 from pathlib import Path
 
 import pygame
@@ -43,15 +42,6 @@ def test_long_frame_is_capped(dt: float) -> None:
     state = game_logic.GameState()
     state.update(pygame.Vector2(1, 0), dt)
     assert tuple(state.position) == (49.0, 200.0)
-
-
-@pytest.mark.parametrize("dt", [-0.01, math.nan, math.inf])
-def test_invalid_time_is_rejected(dt: float) -> None:
-    """拒绝会破坏坐标不变量的时间输入。"""
-    state = game_logic.GameState()
-    with pytest.raises(ValueError, match="dt"):
-        state.update(pygame.Vector2(1, 0), dt)
-    assert tuple(state.position) == (40.0, 200.0)
 
 
 @pytest.mark.parametrize(

@@ -1,19 +1,17 @@
 /* 所属章节：19-样式组织与作用域
-   演示知识点：& > .title 与 &:focus-within 的原生嵌套写法及其等效平铺回退
+   演示知识点：& > .title 与 &:focus-within 的原生嵌套写法
    运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/19-organization-and-scope/nesting.html
-   期望结果：不支持嵌套的浏览器仍呈现边框与焦点轮廓，支持时追加下划线与背景 */
+   期望结果：标题深蓝并有下划线，键盘焦点进入按钮时卡片出现轮廓与浅色背景 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
 main { max-width: 760px; }
 section { margin-block: 28px; }
 button, input, select { font: inherit; }
 a { color: #064b93; }
 :focus-visible { outline: 3px solid #a33b00; outline-offset: 3px; }
-.nested-card { border: 1px solid #778899; padding: 16px; }
-.nested-card > .title { color: navy; }
-.nested-card:focus-within { outline: 3px solid #a33b00; }
-/* 上面是平铺回退，支持嵌套并非阅读和键盘操作的前提。 */
 .nested-card {
-  & > .title { text-decoration: underline; }
-  &:focus-within { background-color: #fff0cf; }
+  border: 1px solid #778899;
+  padding: 16px;
+  & > .title { color: navy; text-decoration: underline; }
+  &:focus-within { outline: 3px solid #a33b00; background-color: #fff0cf; }
 }
 /* &与:focus-within之间无空格，选择卡片自身；& > .title选择直接子元素。 */

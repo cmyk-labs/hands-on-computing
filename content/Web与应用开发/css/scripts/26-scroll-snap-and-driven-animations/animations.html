@@ -2,7 +2,7 @@
 <!-- 所属章节：26-滚动吸附与滚动驱动动画
      演示知识点：scroll(root block) 文档进度条、命名 scroll-timeline 的局部进度、view() 与 view-timeline 两种视图进度动画
      运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；浏览器打开 http://127.0.0.1:8101/scripts/26-scroll-snap-and-driven-animations/animations.html
-     期望结果：顶部条带随文档滚动伸缩、局部条只随内部滚动推进、色块进入视口过程渐显、装饰线随整节进入进度变化；不支持时正文仍可阅读 -->
+     期望结果：顶部条带随文档滚动伸缩、局部条只随内部滚动推进、色块进入视口过程渐显、装饰线随整节进入进度变化；减少动画偏好下装饰保持静态 -->
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="page-meter" aria-hidden="true"></div><h1>滚动与视图进度</h1><nav><a href="index.html">返回滚动吸附</a></nav><main><section class="story-section"><h2>文档进度</h2><p>向下滚动观察顶端条带；反向滚动观察它退回。没有动画支持时，全部正文仍可阅读。</p></section><section class="story-section"><h2>局部进度</h2><div class="local-reader" tabindex="0" role="region" aria-label="局部阅读进度">
+<div class="page-meter" aria-hidden="true"></div><h1>滚动与视图进度</h1><nav><a href="index.html">返回滚动吸附</a></nav><main><section class="story-section"><h2>文档进度</h2><p>向下滚动观察顶端条带；反向滚动观察它退回。减少动画偏好下，全部正文仍可阅读。</p></section><section class="story-section"><h2>局部进度</h2><div class="local-reader" tabindex="0" role="region" aria-label="局部阅读进度">
   <div class="local-meter" aria-hidden="true"></div>
   <p>第 1 段局部阅读内容：只有这个边框内的滚动决定它自己的进度条。</p>
 <p>第 2 段局部阅读内容：只有这个边框内的滚动决定它自己的进度条。</p>

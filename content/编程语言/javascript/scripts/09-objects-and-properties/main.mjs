@@ -46,9 +46,6 @@ let storedScore = 0;
 const scoreCard = {
   get score() { return storedScore; },
   set score(value) {
-    if (!Number.isFinite(value) || value < 0 || value > 100) {
-      throw new RangeError("score 必须是 0 到 100 的有限数值");
-    }
     storedScore = value;
   },
 };

@@ -21,9 +21,10 @@
 <text x="620" y="250" text-anchor="middle" font-size="20" fill="#4A9479" font-weight="400">0</text>
 <circle cx="860" cy="267" r="5" fill="#4A9479" stroke="#4A9479" stroke-width="2"/>
 <text x="860" y="250" text-anchor="middle" font-size="20" fill="#4A9479" font-weight="400">1</text>
-<line x1="380" y1="149" x2="380" y2="241" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="620" y1="149" x2="620" y2="241" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
-<line x1="860" y1="149" x2="860" y2="241" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="380" y1="149" x2="380" y2="220" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="620" y1="149" x2="620" y2="220" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="860" y1="149" x2="860" y2="220" stroke="#536B8D" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="480" y="184" width="280" height="30" fill="white"/>
 <text x="620" y="207" text-anchor="middle" font-size="20" fill="#20365F" font-weight="400">t = (x − 11.5) / 1.5</text>
 <text x="500" y="333" text-anchor="middle" font-size="23" fill="#20365F" font-weight="400">24 + 3t = 24 + 3(x − 11.5)/1.5 = 1 + 2x</text>
 <text x="500" y="373" text-anchor="middle" font-size="18" fill="#536B8D" font-weight="400">系数改变是坐标表达改变；fitted(x) 与 convert() 后的求值仍一致。</text>

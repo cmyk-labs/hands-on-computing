@@ -45,13 +45,15 @@ function pad(value: string | number): string {
 console.log(upper, changing.toFixed(0), pad(" 类型 "), pad(2)); // TS 4 类型 2.0
 
 type Job = { kind: "idle" } | { kind: "done"; count: number } | { kind: "failed"; reason: string };
-function unreachable(value: never): never { throw new Error("未处理状态"); }
 function describe(job: Job): string {
   switch (job.kind) {
     case "idle": return "等待";
     case "done": return "完成:" + job.count;
     case "failed": return "失败:" + job.reason;
-    default: return unreachable(job);
+    default: {
+      const remaining: never = job; // 未处理的联合成员会在此产生类型诊断。
+      return remaining;
+    }
   }
 }
 assert.equal(describe({ kind: "idle" }), "等待");

@@ -6,7 +6,6 @@ function* session() {
   try {
     yield "准备";
   } catch (error) {
-    if (!(error instanceof RangeError)) throw error;
     yield "恢复:" + error.message;
   }
   return "结束";

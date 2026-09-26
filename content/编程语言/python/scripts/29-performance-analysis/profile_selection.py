@@ -28,24 +28,18 @@ def count_selected_batches(
     return total
 
 
-def main() -> None:
-    """准备输入，剖析三次筛选并输出按累计时间排序的报告。"""
-    # 1. 输入准备不在剖析区间内，与 Notebook 的固定工作负载一致。
-    request_ids = list(range(800)) * 2
-    allowed_ids = list(range(400))
+# 1. 输入准备不在剖析区间内，与 Notebook 的固定工作负载一致。
+request_ids = list(range(800)) * 2
+allowed_ids = list(range(400))
 
-    # 2. 显式使用经过时间；runcall 返回后停止剖析。
-    profiler = cProfile.Profile(timer=time.perf_counter)
-    selected_count = profiler.runcall(
-        count_selected_batches, request_ids, allowed_ids, 3
-    )
+# 2. 显式使用经过时间；runcall 返回后停止剖析。
+profiler = cProfile.Profile(timer=time.perf_counter)
+selected_count = profiler.runcall(
+    count_selected_batches, request_ids, allowed_ids, 3
+)
 
-    # 3. 打印结果用于核对调用次数与数据规模，不写入性能报告文件。
-    print(f"选中总数：{selected_count}")  # 选中总数：2400。
-    report = pstats.Stats(profiler).strip_dirs()
-    # 表按累计耗时排序；批处理调用一次、筛选调用三次，实际耗时不固定。
-    report.sort_stats(pstats.SortKey.CUMULATIVE).print_stats(6)
-
-
-if __name__ == "__main__":
-    main()
+# 3. 打印结果用于核对调用次数与数据规模，不写入性能报告文件。
+print(f"选中总数：{selected_count}")  # 选中总数：2400。
+report = pstats.Stats(profiler).strip_dirs()
+# 表按累计耗时排序；批处理调用一次、筛选调用三次，实际耗时不固定。
+report.sort_stats(pstats.SortKey.CUMULATIVE).print_stats(6)

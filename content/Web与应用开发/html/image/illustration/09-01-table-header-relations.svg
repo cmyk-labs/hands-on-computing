@@ -7,7 +7,7 @@
 <rect x="55" y="100" width="150" height="61" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
 <text x="130.0" y="138.5" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">工具</text>
 <rect x="210" y="100" width="150" height="61" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
-<text x="285.0" y="138.5" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">库存</text>
+<text x="285.0" y="138.5" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">可借</text>
 <rect x="365" y="100" width="150" height="61" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>
 <text x="440.0" y="138.5" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#20365F">借出</text>
 <rect x="55" y="166" width="150" height="61" rx="12" fill="#EFF8F4" stroke="#8BADED" stroke-width="2"/>

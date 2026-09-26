@@ -88,8 +88,6 @@ SessionDep = Annotated[Session, Depends(get_session)]
 
 
 tokens = {name: os.environ[f"DELIVERY_{name.upper()}_TOKEN"] for name in ("alice", "bob")}
-if not all(tokens.values()) or tokens["alice"] == tokens["bob"]:
-    raise ValueError("两份教学凭据必须非空且不同")
 token_users = {token: name for name, token in tokens.items()}
 bearer = HTTPBearer(auto_error=False)
 
@@ -174,25 +172,25 @@ def delete_record(record_id: int, user: CurrentUser, session: SessionDep) -> Res
     return Response(status_code=204)
 
 
-if __name__ == "__main__":
-    import argparse
-    import sys
-    import threading
+# 本文件是专用服务入口，由 Notebook 启动为独立进程。
+import argparse
+import sys
+import threading
 
-    import uvicorn
+import uvicorn
 
-    parser = argparse.ArgumentParser(description="运行本章学习记录 API")
-    parser.add_argument("--stdin-stop", action="store_true")
-    args = parser.parse_args()
-    server = uvicorn.Server(uvicorn.Config(
-        app, host="127.0.0.1", port=8160, timeout_graceful_shutdown=5,
-    ))
+parser = argparse.ArgumentParser(description="运行本章学习记录 API")
+parser.add_argument("--stdin-stop", action="store_true")
+args = parser.parse_args()
+server = uvicorn.Server(uvicorn.Config(
+    app, host="127.0.0.1", port=8160, timeout_graceful_shutdown=5,
+))
 
-    def stop_on_input():
-        """Notebook 发送一行或关闭管道后，请求服务正常退出。"""
-        sys.stdin.readline()
-        server.should_exit = True
+def stop_on_input():
+    """Notebook 发送一行或关闭管道后，请求服务正常退出。"""
+    sys.stdin.readline()
+    server.should_exit = True
 
-    if args.stdin_stop:
-        threading.Thread(target=stop_on_input, daemon=True).start()
-    server.run()
+if args.stdin_stop:
+    threading.Thread(target=stop_on_input, daemon=True).start()
+server.run()

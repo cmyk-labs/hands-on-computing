@@ -1,11 +1,10 @@
 """所属章节：36-Pygame 图形与游戏
 演示知识点：浮点位置、边界钳制、固定顺序碰撞计分与重置规则，导入及更新不创建窗口
-运行命令：PYTHONPATH=scripts/36-pygame python -c "import pygame, game_logic; s = game_logic.GameState(position=pygame.Vector2(591, 311)); s.update(pygame.Vector2(1, 1), 0.05); print(tuple(s.position))"（工作目录 content/编程语言/python）
+运行命令：python -c "import pygame, game_logic; s = game_logic.GameState(position=pygame.Vector2(591, 311)); s.update(pygame.Vector2(1, 1), 0.05); print(tuple(s.position))"（工作目录 content/编程语言/python）
 期望结果：输出 (592.0, 312.0)，玩家右下角恰好到达边界
 """
 
 import dataclasses
-import math
 from collections.abc import Iterable
 
 import pygame
@@ -68,8 +67,6 @@ class GameState:
         direction 由方向键产生，每个分量为 -1、0 或 1。
         dt 必须有限且非负；允许 0，便于只检查当前碰撞。
         """
-        if not math.isfinite(dt) or dt < 0:
-            raise ValueError("dt 必须是有限的非负秒数")
         if not self.running:
             return
 

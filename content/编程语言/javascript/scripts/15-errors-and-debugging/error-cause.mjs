@@ -17,7 +17,6 @@ function loadConfig(text) {
 }
 try { loadConfig('{"title":}'); }
 catch (error) {
-  if (!(error instanceof ConfigError) || !(error.cause instanceof SyntaxError)) throw error;
   console.log(error.name, error.message, error.cause.name);
   console.log(error instanceof Error);
 }

@@ -1,6 +1,6 @@
 """所属章节：22-命令行、日志与配置
 演示知识点：argparse 位置参数、选项与默认值，以及退出状态约定：成功 0、业务失败 1、用法错误 2
-运行命令：python scripts/22-cli-logging-config/study_cli.py Python 学习 --count 2 --format json（工作目录 content/编程语言/python）
+运行命令：python scripts/22-cli-logging-config/study_cli.py "Python 学习" --count 2 --format json（工作目录 content/编程语言/python）
 期望结果：输出 ["Python 学习", "Python 学习"]，退出状态 0；--help 为 0，非法参数为 2，空白标题为 1
 """
 

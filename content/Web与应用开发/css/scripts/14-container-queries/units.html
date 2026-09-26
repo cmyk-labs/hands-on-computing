@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- 所属章节：14-容器查询
-     演示知识点：cqi 容器单位与 clamp 字号跟随最近容器，语法不支持与无容器时的两级回退
+     演示知识点：cqi 容器单位与 clamp 字号跟随最近容器，无合格容器时使用小视口的规则
      运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；浏览器打开 http://127.0.0.1:8101/scripts/14-container-queries/units.html
      期望结果：两个容器的条宽各为最近容器内容宽度的一半、字号在 rem 上下限内变化；无容器时 cqi 按小视口行内尺寸回退 -->
 <html lang="zh-CN">
@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>容器查询</h1>
-<nav aria-label="本章示例"><a href="index.html">卡片与容器类型</a> · <a href="nested.html">祖先搜索与嵌套条件</a> · <a href="units.html">容器单位与回退</a> · <a href="style-query.html">样式查询与显式类回退</a></nav>
+<nav aria-label="本章示例"><a href="index.html">卡片与容器类型</a> · <a href="nested.html">祖先搜索与嵌套条件</a> · <a href="units.html">容器单位与回退</a> · <a href="style-query.html">样式查询与显式类对照</a></nav>
 <main>
 <section>
 <h2>容器单位及无容器时的回退</h2>

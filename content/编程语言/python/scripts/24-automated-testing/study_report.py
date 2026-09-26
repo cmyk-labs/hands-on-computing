@@ -1,6 +1,6 @@
 """所属章节：24-自动化测试
-演示知识点：组合文件读取、校验与求和生成汇总文本，并提供 CLI 最终输出函数
-运行命令：PYTHONPATH=scripts/24-automated-testing python -m pytest -q scripts/24-automated-testing/tests/test_files.py（工作目录 content/编程语言/python）
+演示知识点：组合文件读取与求和生成汇总文本，并提供 CLI 最终输出函数
+运行命令：python -m pytest -q tests/test_files.py（工作目录 content/编程语言/python/scripts/24-automated-testing）
 期望结果：4 项测试通过，合计输出为“合计 30 分钟”且无标准错误
 """
 

@@ -9,7 +9,6 @@ import { mkdtempSync, mkdirSync, writeFileSync, copyFileSync } from "node:fs";
 import { resolve, relative, isAbsolute } from "node:path";
 
 const npmCli = process.env.npm_execpath;
-assert.ok(npmCli, "run with npm run pack:26");
 const root = import.meta.dirname;
 const directory = mkdtempSync(resolve(root, "js-c-pack-"));
 const packageDirectory = resolve("scripts/26-data-pipeline");

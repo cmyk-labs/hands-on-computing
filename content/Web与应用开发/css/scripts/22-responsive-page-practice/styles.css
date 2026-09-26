@@ -51,13 +51,11 @@ button { padding: 0.5em 1em; background: var(--paper); border: 2px solid var(--l
 
 .card { display: grid; gap: 1rem; }
 .card img { max-inline-size: 100%; block-size: auto; }
-@supports (container-type: inline-size) {
-  .card-slot { container-type: inline-size; container-name: card; }
-  @container card (min-width: 24rem) {
-    .card { grid-template-columns: 7rem minmax(0, 1fr); align-items: center; }
-  }
+.card-slot { container-type: inline-size; container-name: card; }
+@container card (min-width: 24rem) {
+  .card { grid-template-columns: 7rem minmax(0, 1fr); align-items: center; }
 }
-/* 查询 .card-slot 的内容区宽度，改变其后代 .card；不支持时卡片仍为单列。 */
+/* 查询 .card-slot 的内容区宽度，改变其后代 .card；容器未达到24rem时卡片为单列。 */
 
 .long-text, .card, label { overflow-wrap: anywhere; }
 .article-image { display: block; max-inline-size: 100%; block-size: auto; }

@@ -2,7 +2,7 @@
 <!-- 所属章节：10-定位与层叠上下文
      演示知识点：showModal() 将对话框送入顶层，与极大 z-index 普通内容对照
      运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/10-positioning-stacking/top-layer.html（工作目录 content/Web与应用开发/css）
-     期望结果：模态出现在普通内容之上且不被祖先 overflow 裁剪，无支持时 details 回退可读 -->
+     期望结果：模态出现在普通内容之上且不被祖先 overflow 裁剪 -->
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <section>
 <h2>模态与普通内容</h2>
 <div class="clipped-container">
-  <button id="open-dialog" type="button" hidden>打开模态提示</button>
+  <button id="open-dialog" type="button">打开模态提示</button>
   <dialog id="reading-dialog" aria-labelledby="dialog-title">
     <h2 id="dialog-title">阅读提示</h2>
     <p>每次练习后保存源文件，再刷新页面检查。</p>
@@ -24,7 +24,6 @@
   </dialog>
 </div>
 <div class="ordinary-cover">普通内容：z-index 为 2147483647</div>
-<details><summary>直接阅读提示（无需模态支持）</summary><p>每次练习后保存源文件，再刷新页面检查。</p></details>
 <script src="dialog.js"></script>
 </section>
 

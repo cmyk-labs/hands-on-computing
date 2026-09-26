@@ -11,7 +11,6 @@ function middle() {
 }
 try { middle(); }
 catch (error) {
-  if (!(error instanceof RangeError) || error.message !== "数量不足") throw error;
   events.push("outer:" + error.name);
 }
 console.log(events.join(","));

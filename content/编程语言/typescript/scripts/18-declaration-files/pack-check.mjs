@@ -6,7 +6,7 @@ import { rm } from "node:fs/promises";
 import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, cpSync } from "node:fs";
 import { dirname, resolve, relative, isAbsolute, sep } from "node:path";
 import { fileURLToPath } from "node:url";
-import { spawnSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 const chapter = dirname(fileURLToPath(import.meta.url));
 const course = resolve(chapter, "../..");
 const scratch = chapter;
@@ -15,10 +15,7 @@ const npmCli = resolve(dirname(process.execPath), "node_modules/npm/bin/npm-cli.
 const compiler = resolve(course, "node_modules/typescript/bin/tsc");
 function runNode(args, cwd = work) {
   // 模块解析跟踪包含大量完整路径，捕获输出的上限设为 8 MiB。
-  const result = spawnSync(process.execPath, args, { cwd, encoding: "utf8", windowsHide: true, maxBuffer: 8 * 1024 * 1024 });
-  if (result.error) throw result.error;
-  if (result.status !== 0) throw new Error(`${result.status}: ${result.stdout}${result.stderr}`);
-  return result.stdout;
+  return execFileSync(process.execPath, args, { cwd, encoding: "utf8", windowsHide: true, maxBuffer: 8 * 1024 * 1024 });
 }
 try {
   const cache = resolve(work, "cache");

@@ -1,18 +1,18 @@
 <!doctype html>
 <!-- 所属章节：16-自定义属性与主题
-     演示知识点：@property 声明类型、初始值与非继承行为，错误类型回退初始值，普通自定义属性的显式值回退
+     演示知识点：@property 声明类型、初始值与非继承行为，错误类型回退初始值，未注册自定义属性的默认继承
      运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；浏览器打开 http://127.0.0.1:8101/scripts/16-custom-properties/registered.html
-     期望结果：支持注册时未赋值段取初始 teal、错误类型段回退初始值而非 var() 回退、显式 inherit 段取父级棕色；普通属性回退段固定 teal -->
+     期望结果：支持注册时未赋值段取初始 teal、错误类型段回退初始值而非 var() 回退、显式 inherit 段取父级棕色；未注册属性对照段继承父值呈棕色 -->
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>自定义属性与主题 · 注册属性与普通值回退</title>
+<title>自定义属性与主题 · 注册属性与未注册对照</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <h1>自定义属性与主题</h1>
-<nav aria-label="本章示例"><a href="index.html">复用、继承与作用范围</a> · <a href="invalid.html">回退与计算值无效</a> · <a href="registered.html">注册属性与普通值回退</a> · <a href="themes.html">跟随系统主题</a> · <a href="light.html">固定浅色主题</a> · <a href="dark.html">固定暗色主题</a></nav>
+<nav aria-label="本章示例"><a href="index.html">复用、继承与作用范围</a> · <a href="invalid.html">回退与计算值无效</a> · <a href="registered.html">注册属性与未注册对照</a> · <a href="themes.html">跟随系统主题</a> · <a href="light.html">固定浅色主题</a> · <a href="dark.html">固定暗色主题</a></nav>
 <main>
 <section>
 <h2>@property 声明类型、初始值与继承行为</h2>
@@ -21,7 +21,7 @@
   <p class="registered-invalid">自身给出错误类型</p>
   <p class="registered-inherit">显式要求继承</p>
 </div>
-<div class="plain-parent"><p class="plain-fallback">普通自定义属性的显式值回退</p></div>
+<div class="plain-parent"><p class="plain-inherited">未注册自定义属性的默认继承</p></div>
 </section>
 </main>
 </body>

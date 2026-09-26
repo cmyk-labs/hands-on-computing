@@ -1,6 +1,6 @@
 """所属章节：34-C 扩展
 演示知识点：安装后扩展的参数边界、异常传播、对象身份与弱引用回收检查
-运行命令：PYTHONPATH=<扩展安装目录> python -m pytest -q scripts/34-c-extensions/tests/test_extension.py（工作目录 content/编程语言/python）
+运行命令：python -m pytest -q scripts/34-c-extensions/tests/test_extension.py（工作目录 content/编程语言/python）
 期望结果：27 项测试通过；<扩展安装目录> 为 pip --target 安装本章构建 wheel 的目录
 """
 

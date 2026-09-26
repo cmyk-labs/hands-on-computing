@@ -13,7 +13,6 @@ try {
   execute(() => { throw new Error("operation failed"); },
           () => { throw new Error("cleanup failed"); });
 } catch (error) {
-  if (!(error instanceof AggregateError)) throw error;
   console.log(error.name, error.message);
   console.log(error.errors.map(item => item.message).join(","));
 }

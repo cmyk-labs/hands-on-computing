@@ -107,19 +107,14 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   outline: 1px solid gray;
 }
 .unit-wide { inline-size: min(600px, 100%); }
-.unit-bar { inline-size: 50%; background-color: #dfefea; }
-.unit-text { font-size: 1rem; }
-@container (inline-size >= 0px) {
-  .unit-bar { inline-size: 50cqi; }
-  .unit-text { font-size: clamp(1rem, 4cqi, 2rem); }
-  /* 两条宽度分别为最近容器内容宽度的一半；字号有 rem 上下限。 */
-}
+.unit-bar { inline-size: 50cqi; background-color: #dfefea; }
+.unit-text { font-size: clamp(1rem, 4cqi, 2rem); }
+/* 两条宽度分别为最近容器内容宽度的一半；字号有 rem 上下限。 */
 .no-container-unit {
-  inline-size: 10vw;
   inline-size: 10cqi;
   overflow-wrap: anywhere;
   border: 1px solid teal;
-  /* 支持 cqi 但没有容器时，以小视口行内尺寸计算；前一条是语法不支持回退。 */
+  /* 没有合格尺寸容器时，以小视口行内尺寸计算。 */
 }
 
 /* style-query：比较自定义属性条件与显式类名提供的紧凑样式。 */
@@ -129,10 +124,10 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 }
 .density-list { padding: 16px 32px; border: 2px solid gray; }
 .density-list li { margin-block: 12px; }
-.density-fallback .density-list { padding-block: 8px; }
-.density-fallback .density-list li { margin-block: 4px; }
+.density-class .density-list { padding-block: 8px; }
+.density-class .density-list li { margin-block: 4px; }
 @container density-space style(--density: compact) {
   .density-list { padding-block: 8px; border-color: teal; }
   .density-list li { margin-block: 4px; }
-  /* 支持时与显式类回退一样紧凑；不支持时内容和列表标记仍在。 */
+  /* compact 时与显式类对照一样紧凑；改为 comfortable 后仅查询组恢复普通间距。 */
 }

@@ -2,7 +2,7 @@
 <!-- 所属章节：25-锚点定位
      演示知识点：anchor-name 与 position-anchor 关联、anchor() 坐标、anchor-size() 宽度及函数内回退
      运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；浏览器打开 http://127.0.0.1:8101/scripts/25-anchor-positioning/index.html
-     期望结果：支持的浏览器中说明框位于锚点下方并取锚点宽度，改变锚点宽度或上边距时跟随；不支持时按正常流排在锚点后面 -->
+     期望结果：说明框位于锚点下方并取锚点宽度，改变锚点宽度或上边距时跟随 -->
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -13,7 +13,7 @@
 <body>
 <h1>锚点位置与尺寸</h1><nav><a href="popover.html">打开浮层与位置回退</a></nav><main><h2>位置和尺寸参照</h2><div class="anchor-stage">
   <p class="anchor" id="sample-anchor">这是被参照的锚点</p>
-  <p class="callout">这块说明在支持时跟随锚点，并取锚点宽度。</p>
+  <p class="callout">这块说明跟随锚点，并取锚点宽度。</p>
 </div><p>在开发者工具中改变蓝色锚点的宽度或上外边距，再观察说明框。</p></main>
 </body>
 </html>

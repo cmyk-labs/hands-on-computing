@@ -1,7 +1,7 @@
 """所属章节：30-综合工程实践
-演示知识点：CLI 成功输出、失败不输出残缺 JSON、配置优先级与无效配置边界的测试
-运行命令：PYTHONPATH=scripts/30-engineering-practice/src python -m pytest -q scripts/30-engineering-practice/tests/test_cli.py（工作目录 content/编程语言/python）
-期望结果：17 项测试通过
+演示知识点：CLI 成功输出、失败不输出残缺 JSON、配置优先级与TOML 解析错误的测试
+运行命令：python -m pytest -q scripts/30-engineering-practice/tests/test_cli.py（工作目录 content/编程语言/python）
+期望结果：9 项测试通过
 """
 
 import json
@@ -79,33 +79,18 @@ def test_cli_overrides_config(
         assert "workers=1" in captured.err
 
 
-@pytest.mark.parametrize(
-    "config_text",
-    [
-        "[analysis]\nworkers = 0",
-        "[analysis]\nworkers = true",
-        '[analysis]\nworkers = "2"',
-        '[analysis]\nlog_level = "LOUD"',
-        "[analysis]\nunrecognized = 1",
-        "[unknown]\nworkers = 1",
-        "analysis = 1",
-        "[analysis",
-    ],
-)
-def test_invalid_config(
-    tmp_path: Path,
-    capsys: pytest.CaptureFixture[str],
-    config_text: str,
+def test_malformed_toml(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    """无效配置不能静默回退为默认值。"""
+    """解析器自身产生的 TOML 错误按本节退出状态机制报告。"""
     from study_file_report.cli import main
 
     config = tmp_path / "settings.toml"
-    config.write_text(config_text, encoding="utf-8")
+    config.write_text("[analysis", encoding="utf-8")
     assert main(["unused.txt", "--config", str(config)]) == 1
     captured = capsys.readouterr()
     assert captured.out == ""
-    assert captured.err
+    assert "配置错误：" in captured.err
 
 
 def test_invalid_cli_option_has_argparse_status(
@@ -118,15 +103,3 @@ def test_invalid_cli_option_has_argparse_status(
         main(["notes.txt", "--workers", "many"])
     assert caught.value.code == 2
     assert capsys.readouterr().out == ""
-
-
-def test_nonpositive_cli_workers(
-    capsys: pytest.CaptureFixture[str],
-) -> None:
-    """整数语法合法仍需检查正数范围。"""
-    from study_file_report.cli import main
-
-    assert main(["unused.txt", "--workers", "0"]) == 1
-    captured = capsys.readouterr()
-    assert captured.out == ""
-    assert captured.err

@@ -51,7 +51,6 @@ console.log(loaded.total, nested);
 // 预期输出：4 6
 
 export function choose<C extends string>(choices: readonly C[], fallback: NoInfer<C>): C {
-  if (!choices.includes(fallback)) throw new Error("默认值必须在候选中");
   return fallback;
 }
 console.log(choose(["read", "write"], "read"));

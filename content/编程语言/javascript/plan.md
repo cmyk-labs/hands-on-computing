@@ -1,5 +1,8 @@
 # JavaScript 模块规划
 
+编写规则统一见[全局协议](../../../AGENTS.md)、[Notebook 协议](../../../docs/notebook-protocol.md)及本课程 [AGENTS.md](AGENTS.md)。本规划中的校验、异常、入口与错误恢复条目表示相应主题的教学范围，不要求普通示例预先添加这些结构；全部示例默认输入满足其说明的条件。
+
+
 主线 **26 个模块、26 个 .ipynb 文件**；选修 **4 个专题、4 个 .ipynb 文件**，全部展开共 **30 个文件**。每行对应一个 Notebook，主线按顺序学习，选修按需编写。
 
 文件按“二位序号-模块名称.ipynb”命名，主线编号 01–26，选修编号 27–30，例如 `01-运行与代码书写.ipynb`。
@@ -44,7 +47,7 @@
 | **[29. 内存管理与性能分析](<29-内存管理与性能分析.ipynb>)** | 可达性与垃圾回收、闭包和缓存持有对象、WeakRef/FinalizationRegistry；清理时机的不确定性；使用宿主性能工具分析耗时与内存，区分语言保证和引擎实现，比较优化收益。 |
 | **[30. 显式资源管理](<30-显式资源管理.ipynb>)** | using/await using、Symbol.dispose/Symbol.asyncDispose、DisposableStack/AsyncDisposableStack、SuppressedError；释放顺序、异步释放与异常传播，标准版本及运行环境支持条件。 |
 
-主线以 ECMAScript 2025（ECMA-262 第 16 版）及同期 ECMA-402 为基线；Temporal、显式资源管理等超出基线的内容标为补充或选修，分别核对标准状态与宿主支持。使用 Node.js LTS 执行语言示例，具体版本在首章固定，需要时与浏览器对照。正式内容归入 `content/编程语言/javascript/`。
+主线以 ECMAScript 2025（ECMA-262 第 16 版）及同期 ECMA-402 为基线；Temporal、显式资源管理等超出基线的内容标为补充或选修，分别核对标准状态与宿主支持。使用 Node.js LTS 执行语言示例，实际版本统一维护在本课程 README.md，首章链接该环境入口，需要时与浏览器对照。正式内容归入 `content/编程语言/javascript/`。
 
 DOM、事件、Fetch、浏览器存储及完整 Web 应用开发另属 Web 应用专题；本课程只在演示运行、调度和测试时使用必要的宿主 API，并用一句话标明边界。类型总览中的对象在后续按对象、数组和集合展开。必需的脚本及资源按需放在 `scripts/章节/` 下，例如 `scripts/19-es-modules/`，Notebook 头部列明位置与用途；工程注意随对应知识点讲解。
 

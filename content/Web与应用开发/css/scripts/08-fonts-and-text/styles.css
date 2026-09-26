@@ -36,10 +36,10 @@ section { margin-bottom: 32px; }
 
 .long { width: 160px; border: 1px solid #777; }
 .normal-break { overflow-wrap: normal; }
-.emergency { overflow-wrap: break-word; overflow-wrap: anywhere; }
+.emergency { overflow-wrap: anywhere; }
 .break-all { word-break: break-all; }
 .keep-all { word-break: keep-all; }
-.hyphenated { hyphens: auto; overflow-wrap: break-word; }
+.hyphenated { hyphens: auto; }
 .manual-hyphen { hyphens: manual; }
 /* 长连续字符串对照溢出与应急换行；keep-all 的中文可能溢出。
    自动断词依赖英文词典，不能预先断言断点；软连字符只在断行处显示。 */

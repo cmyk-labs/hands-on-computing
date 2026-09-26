@@ -1,5 +1,8 @@
 # Python 模块规划
 
+编写规则统一见[全局协议](../../../AGENTS.md)、[Notebook 协议](../../../docs/notebook-protocol.md)及本课程 [AGENTS.md](AGENTS.md)。本规划中的校验、异常、入口与错误恢复条目表示相应主题的教学范围，不要求普通示例预先添加这些结构；全部示例默认输入满足其说明的条件。
+
+
 主线 **30 个模块、30 个 .ipynb 文件**；选修 **6 个专题、6 个 .ipynb 文件**，全部展开共 **36 个文件**。每行对应一个 Notebook，主线按顺序学习，选修按需编写。
 
 文件按“二位序号-模块名称.ipynb”命名，主线编号 01–30，选修编号 31–36，例如 `01-运行与代码书写.ipynb`、`31-描述器与元类.ipynb`。
@@ -33,7 +36,7 @@
 | **[23. SQLite 与事务](<23-SQLite 与事务.ipynb>)** | 连接、查询、SQL 参数绑定、事务、提交与回滚、结果处理、连接关闭。 |
 | **[24. 自动化测试](<24-自动化测试.ipynb>)** | unittest 的定位、pytest、测试发现与断言、fixture、参数化、unittest.mock、monkeypatch、临时文件、输出捕获、测试隔离与 mock 的替换位置；了解 doctest。 |
 | **[25. 项目组织与打包](<25-项目组织与打包.ipynb>)** | Python 环境与依赖管理、项目布局、PEP 8、代码检查、pyproject.toml、构建后端、wheel、源码分发包、命令行入口、安装检查与持续集成；依赖可复现、敏感配置与版本兼容。 |
-| **[26. 线程与进程](<26-线程与进程.ipynb>)** | 并发与并行、threading/multiprocessing、锁、队列、concurrent.futures、线程池与进程池、竞态与死锁、进程启动方式、数据传递与序列化、资源清理；使用 `if __name__ == '__main__':` 保护程序入口。 |
+| **[26. 线程与进程](<26-线程与进程.ipynb>)** | 并发与并行、threading/multiprocessing、锁、队列、concurrent.futures、线程池与进程池、竞态与死锁、进程启动方式、数据传递与序列化、资源清理；仅在所讲进程启动方式需要时使用入口隔离，并解释其作用。 |
 | **[27. 异步编程](<27-异步编程.ipynb>)** | 协程、事件循环、async def/await、asyncio 任务、async for/with、异步迭代器与生成器、TaskGroup、超时、取消、Semaphore、asyncio.to_thread、contextvars；阻塞事件循环、取消传播与资源清理。 |
 | **[28. CPython 运行机制](<28-CPython 运行机制.ipynb>)** | Python 与 CPython、编译与字节码、dis、导入查找与 sys.modules 缓存、引用计数、循环引用与垃圾回收、弱引用、GIL；自由线程（free-threading）的版本概览、语言保证与实现细节。 |
 | **[29. 性能分析与优化](<29-性能分析与优化.ipynb>)** | timeit、cProfile、tracemalloc、工作负载与基准、耗时与内存；先测量再优化、优化前后正确性与收益比较。 |

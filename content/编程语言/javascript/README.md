@@ -85,3 +85,7 @@ Step 3：打开[示例页面](http://127.0.0.1:8102/scripts/01-running-and-writi
 结束后按 Ctrl+C 停止服务。Notebook 查看方式见[开始使用](../../../docs/START_HERE.md)；PowerShell 若拦截 npm.ps1，使用 npm.cmd。
 
 操作依据：[Node.js 24.11.0 命令行](https://nodejs.org/download/release/v24.11.0/docs/api/cli.html)、[Python 本地服务](https://docs.python.org/3.12/library/http.server.html#command-line-interface)。
+
+## 本次修订与验证范围
+
+2026-09-23 按新协议逐章检查全部 30 章、配套源码和每张示意图；使用 Node.js 24.11.0。实际重跑第 07、09、14–17、20、22–24、26、28 章中改变行为的脚本或消费者检查；第 24 章 9 项测试通过，第 26 章打包、离线安装和消费者导入通过。其余章节按实际修改核对源码、预期和静态结构，未将其记作全部脚本重跑。未重新完成全部浏览器交互、调试器操作、CPU/内存剖析、未改错误脚本和远程 CI。

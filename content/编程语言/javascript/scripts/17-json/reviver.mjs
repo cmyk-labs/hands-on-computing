@@ -6,7 +6,7 @@ const visited = [];
 const value = JSON.parse('{"id":"9007199254740993","nested":{"drop":1,"keep":2}}', (key, item) => {
   visited.push(key === "" ? "<root>" : key);
   if (key === "drop") return undefined;
-  if (key === "id" && typeof item === "string" && /^[0-9]+$/.test(item)) return BigInt(item);
+  if (key === "id") return BigInt(item);
   return item;
 });
 console.log(value.id === 9007199254740993n, Object.hasOwn(value.nested, "drop"));

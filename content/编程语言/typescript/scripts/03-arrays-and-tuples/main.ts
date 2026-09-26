@@ -34,11 +34,11 @@ const absent = rows[4]?.[0]; // 行不存在时，安全返回 undefined。
 const checked = first === undefined ? "缺失" : first.toFixed(1);
 console.log(checked, absent, lesson[0]); // 6.0 undefined 数组
 
-const writable = [{ count: 1 }];
+const item = { count: 1 };
+const writable = [item];
 const view: readonly { count: number }[] = writable;
 writable.push({ count: 2 });
-const item = view[0];
-if (item !== undefined) item.count += 1;
+item.count += 1; // 两个数组视图中的首元素都引用 item。
 const readonlyLesson: readonly [string, number] = lesson;
 const names: ReadonlyArray<string> = ["甲", "乙"];
 console.log(view.length, view[0]?.count, readonlyLesson[1], names.join(",")); // 2 2 25 甲,乙

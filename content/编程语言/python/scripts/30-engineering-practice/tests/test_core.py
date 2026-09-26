@@ -1,6 +1,6 @@
 """所属章节：30-综合工程实践
 演示知识点：文件计数口径、错误编码与缺失文件传播、批处理顺序与线程数的测试
-运行命令：PYTHONPATH=scripts/30-engineering-practice/src python -m pytest -q scripts/30-engineering-practice/tests/test_core.py（工作目录 content/编程语言/python）
+运行命令：python -m pytest -q scripts/30-engineering-practice/tests/test_core.py（工作目录 content/编程语言/python）
 期望结果：13 项测试通过
 """
 

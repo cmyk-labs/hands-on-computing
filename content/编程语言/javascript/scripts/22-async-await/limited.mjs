@@ -3,8 +3,7 @@
 // 运行命令：node scripts/22-async-await/limited-demo.mjs（工作目录 content/编程语言/javascript）
 // 期望结果：自身无输出，行为由 limited-demo.mjs 断言
 export async function mapLimited(items, limit, worker) {
-  // 至少要有一个消费者；非法上限会使任务根本无法领取。
-  if (!Number.isInteger(limit) || limit < 1) throw new RangeError("limit must be positive");
+  // 本例约定 limit 是正整数，不增加入口检查。
   // 结果按输入下标保存，完成顺序不会打乱返回数组。
   const results = new Array(items.length);
   let next = 0;

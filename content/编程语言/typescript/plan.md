@@ -1,5 +1,8 @@
 # TypeScript 模块规划
 
+编写规则统一见[全局协议](../../../AGENTS.md)、[Notebook 协议](../../../docs/notebook-protocol.md)及本课程 [AGENTS.md](AGENTS.md)。本规划中的校验、异常、入口与错误恢复条目表示相应主题的教学范围，不要求普通示例预先添加这些结构；全部示例默认输入满足其说明的条件。
+
+
 主线 **25 个模块、25 个 .ipynb 文件**；选修 **4 个专题、4 个 .ipynb 文件**，全部展开共 **29 个文件**。每行对应一个 Notebook，主线按顺序学习，选修按需展开。
 
 文件按“二位序号-模块名称.ipynb”命名，主线编号 01–25，选修编号 26–29，例如 01-TypeScript 与工具链.ipynb。以 JavaScript 基础为前置，复用已有语言知识，重点学习类型系统及工程使用。
@@ -43,7 +46,7 @@
 | **[28. 命名空间与旧项目阅读](<28-命名空间与旧项目阅读.ipynb>)** | namespace、命名空间别名、跨文件声明、环境命名空间；三斜线指令的 path/types/lib 用途与顺序；旧式模块输出及历史 module 命名空间语法的识别、已弃用选项与迁移，不作为新项目默认组织方式。 |
 | **[29. 项目引用与编译性能](<29-项目引用与编译性能.ipynb>)** | project references、composite、declarationMap、tsc --build、incremental 与构建缓存；依赖图、分包构建和清理、isolatedDeclarations；extendedDiagnostics、traceResolution、类型复杂度与编辑器性能；区分编译检查耗时和 JavaScript 运行耗时。 |
 
-以已发布的 **TypeScript 7.0 系列**为编写基线，实施首章时固定具体补丁版本、Node.js LTS 和项目配置；其他版本的行为及旧式特性单独注明。默认显式启用 strict，noUncheckedIndexedAccess、exactOptionalPropertyTypes 等附加选项在相关示例中说明，不依赖随版本变化的隐含默认值。正式内容归入 content/编程语言/typescript/。
+以已发布的 **TypeScript 7.0 系列**为编写基线，实际补丁版本、Node.js 与项目配置集中维护在本课程 README.md，首章引用该入口；其他版本的行为及旧式特性单独注明。默认显式启用 strict，noUncheckedIndexedAccess、exactOptionalPropertyTypes 等附加选项在相关示例中说明，不依赖随版本变化的隐含默认值。正式内容归入 content/编程语言/typescript/。
 
 数组和常用泛型类型先介绍使用方式，第 9 章再系统定义泛型；第 13 章先讲基本键映射，结合模板字面量的写法在第 15 章展开。模块配置在首次运行时给出最小必要说明，第 17、20 章系统解释。浏览器 API、JavaScript 运行机制及框架开发只补足本例需要的前置，不重复整门课程。
 

@@ -1,7 +1,7 @@
 // 所属章节：26-JSX 与 TSX
 // 演示知识点：JSX 命名空间声明、IntrinsicElements 与 jsx/jsxs 最小实现
 // 运行命令：npm run run:26（工作目录 content/编程语言/typescript）
-// 期望结果：主入口断言通过并输出描述树
+// 期望结果：主入口输出 section(span(Ada),ready) 描述树
 export interface View { tag: string; children: Child[] }
 export type Child = View | string;
 export namespace JSX {

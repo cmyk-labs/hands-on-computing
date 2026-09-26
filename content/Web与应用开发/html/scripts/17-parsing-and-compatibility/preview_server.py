@@ -34,18 +34,10 @@ class PreviewHandler(http.server.SimpleHTTPRequestHandler):
         return io.BytesIO(payload)
 
 
-def main() -> None:
-    """在终端启动本章服务，按 Ctrl+C 退出并关闭套接字。"""
-    handler = functools.partial(
-        PreviewHandler, directory=Path(__file__).resolve().parent
-    )
-    with http.server.ThreadingHTTPServer(("127.0.0.1", 8017), handler) as server:
-        print("http://127.0.0.1:8017/dom.html")
-        try:
-            server.serve_forever()
-        except KeyboardInterrupt:
-            print("预览服务已停止。")
-
-
-if __name__ == "__main__":
-    main()
+# 终端执行即可启动；上下文管理器负责关闭监听套接字。
+handler = functools.partial(
+    PreviewHandler, directory=Path(__file__).resolve().parent
+)
+with http.server.ThreadingHTTPServer(("127.0.0.1", 8017), handler) as server:
+    print("http://127.0.0.1:8017/dom.html")
+    server.serve_forever()

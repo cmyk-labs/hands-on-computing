@@ -7,12 +7,5 @@
 from report_value import parse_count
 
 
-def main() -> None:
-    """读取固定文本并输出转换结果。"""
-    count: int = parse_count("12")
-    # 12；parse_count 已把固定输入文本转换成整数。
-    print(count)
-
-
-if __name__ == "__main__":
-    main()
+count: int = parse_count("12")
+print(count)  # 12：转换来自 .py 实现，类型声明来自 .pyi。

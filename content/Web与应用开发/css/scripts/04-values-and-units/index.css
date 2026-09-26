@@ -31,7 +31,6 @@ html { font-size: 20px; }
 
 .viewport-width { width: 50vw; background-color: lightyellow; }
 .viewport-height {
-  min-height: 20vh;
   min-height: 20dvh;
   border: 1px solid teal;
 }
@@ -42,11 +41,11 @@ html { font-size: 20px; }
 .calc-scale { width: calc((100px + 20px) / 2); border: 1px solid teal; }
 /* 父内容宽 320px 时，第一个内容宽 296px；第二个内容宽 60px，不含边框。 */
 
-.bounded-min { width: 100%; max-width: 240px; width: min(100%, 240px); background-color: lightyellow; }
+.bounded-min { width: min(100%, 240px); background-color: lightyellow; }
 .bounded-max { padding-left: max(8px, 2vw); padding-right: max(8px, 2vw); border: 1px solid teal; }
-.bounded-clamp { width: 240px; width: clamp(160px, 50vw, 400px); background-color: lightyellow; }
+.bounded-clamp { width: clamp(160px, 50vw, 400px); background-color: lightyellow; }
 /* 视口 900px 时 clamp 宽度为 400px；400px 时为 200px；280px 时触及下限 160px。
-   min 与 clamp 前面保留普通声明作旧环境回退；极窄视口仍需检查内容溢出。 */
+   极窄视口仍需观察下限对内容溢出的影响。 */
 
 .angle-frame { padding: 24px; }
 .angle-sample { width: 40px; height: 40px; border: 1px solid teal; transform: rotate(0.125turn); }

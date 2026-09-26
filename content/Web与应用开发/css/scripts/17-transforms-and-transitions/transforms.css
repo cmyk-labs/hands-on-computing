@@ -1,5 +1,5 @@
 /* 所属章节：17-变换与过渡
-   演示知识点：translate 百分比相对参考盒、变换顺序与原点、独立变换属性的 @supports 切换及阅读辅助样式
+   演示知识点：translate 百分比相对参考盒、变换顺序与原点、独立变换属性的固定组合顺序及阅读辅助样式
    运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；随页面加载，页面入口 http://127.0.0.1:8101/scripts/17-transforms-and-transitions/index.html
    期望结果：各盒位移与缩放数值和规则内行内注释一致 */
 body { font-family: sans-serif; line-height: 1.6; margin: 24px; color: #17212b; }
@@ -17,13 +17,9 @@ a { color: #064b93; }
 .order-b { transform-origin: 0 0; transform: scale(1.5) translateX(40px); }
 .pivot { transform-origin: left top; transform: rotate(20deg); }
 /* A 的平移为 40px，B 的平移被缩放为 60px；两者宽度都变为 150px。 */
-.individual { transform: translateX(40px) rotate(10deg) scale(1.1); }
-@supports (translate: 40px) and (rotate: 10deg) and (scale: 1.1) {
-  .individual {
-    transform: none;
-    scale: 1.1;
-    rotate: 10deg;
-    translate: 40px;
-    /* 清除 transform 回退，避免同一个变换被叠加两次。 */
-  }
+.individual {
+  scale: 1.1;
+  rotate: 10deg;
+  translate: 40px;
+  /* 声明顺序虽是缩放、旋转、平移，组合顺序仍为平移、旋转、缩放。 */
 }

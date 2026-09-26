@@ -50,7 +50,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 }
 @media (640px <= width < 960px) {
   .range-sample { border-color: teal; }
-  /* 960px 时回退背景仍在，严格范围的蓝绿色边框退出。 */
+  /* 960px 时闭区间背景仍在，严格范围的蓝绿色边框退出。 */
 }
 @media screen and (min-width: 640px), print {
   .logic-sample { border-style: dashed; }

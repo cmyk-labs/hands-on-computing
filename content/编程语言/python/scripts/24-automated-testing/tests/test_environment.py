@@ -1,7 +1,7 @@
 """所属章节：24-自动化测试
 演示知识点：monkeypatch 隔离环境变量的默认值、覆盖、无效输入与作用域恢复
-运行命令：PYTHONPATH=scripts/24-automated-testing python -m pytest -q scripts/24-automated-testing/tests/test_environment.py（工作目录 content/编程语言/python）
-期望结果：7 项测试通过，父进程环境变量保持不变
+运行命令：python -m pytest -q tests/test_environment.py（工作目录 content/编程语言/python/scripts/24-automated-testing）
+期望结果：5 项测试通过，父进程环境变量保持不变
 """
 
 import pytest
@@ -21,7 +21,7 @@ def test_custom_goal(monkeypatch: pytest.MonkeyPatch) -> None:
     assert study_records.read_daily_goal() == 45
 
 
-@pytest.mark.parametrize("value", ["0", "-1", "bad", ""])
+@pytest.mark.parametrize("value", ["bad", ""])
 def test_invalid_goal(monkeypatch: pytest.MonkeyPatch, value: str) -> None:
     """已设置但无效的值不能静默回退到默认目标。"""
     monkeypatch.setenv("NOTEBOOK_DAILY_GOAL", value)

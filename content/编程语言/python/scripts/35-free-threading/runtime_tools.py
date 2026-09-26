@@ -1,52 +1,27 @@
 """所属章节：35-自由线程实践
-演示知识点：下载并校验固定版本 NuGet 运行包、受控解压与实验子进程的启动和清理
-运行命令：PYTHONPATH=scripts/35-free-threading python -m pytest -q scripts/35-free-threading/tests/test_runtime_tools.py（工作目录 content/编程语言/python）
-期望结果：5 项测试通过，解压检查使用内存归档、不联网
+演示知识点：下载并校验固定版本 NuGet 运行包、提取运行目录与实验子进程的启动和清理
+运行命令：python -m pytest -q scripts/35-free-threading/tests/test_runtime_tools.py（工作目录 content/编程语言/python）
+期望结果：2 项测试通过，解压检查使用内存归档、不联网
 """
 
 import hashlib
 import io
 import json
-import platform
 import subprocess
 import sys
 import zipfile
 from collections.abc import Iterator
 from contextlib import contextmanager
-from pathlib import Path, PurePosixPath
+from pathlib import Path
 from tempfile import TemporaryDirectory
 from urllib.request import urlopen
 
 
 def extract_runtime(payload: bytes, expected_sha256: str, target: Path) -> Path:
-    """核对下载内容并检查全部路径后，提取运行所需 tools 目录。"""
-    # 先核对下载内容，再检查所有归档路径，避免检查过程中就写入文件。
-    if hashlib.sha256(payload).hexdigest() != expected_sha256:
-        raise ValueError("运行包 SHA-256 与本章固定值不符")
-    if target.exists():
-        raise FileExistsError(f"运行目录必须尚不存在：{target}")
-    target = target.resolve()
+    """核对固定版本包内容，只提取运行所需的 tools 目录。"""
+    assert hashlib.sha256(payload).hexdigest() == expected_sha256
     with zipfile.ZipFile(io.BytesIO(payload)) as archive:
-        members = []
-        for member in archive.infolist():
-            relative = PurePosixPath(member.filename)
-            if (
-                relative.is_absolute()
-                or ".." in relative.parts
-                or "\\" in member.filename
-                or ":" in member.filename
-            ):
-                raise ValueError(f"运行包包含不允许的路径：{member.filename}")
-            if relative.parts and relative.parts[0] == "tools":
-                destination = (target / member.filename).resolve()
-                if not destination.is_relative_to(target):
-                    raise ValueError(f"运行包路径越界：{member.filename}")
-                members.append(member)
-        names = {member.filename for member in members}
-        if "tools/python.exe" not in names:
-            raise ValueError("运行包缺少 tools/python.exe")
-        # 只提取前面筛选的 tools 目录，包元数据不进入运行目录。
-        target.mkdir()
+        members = [name for name in archive.namelist() if name.startswith("tools/")]
         archive.extractall(target, members=members)
     return target / "tools/python.exe"
 
@@ -54,8 +29,6 @@ def extract_runtime(payload: bytes, expected_sha256: str, target: Path) -> Path:
 @contextmanager
 def temporary_runtimes() -> Iterator[dict[str, Path]]:
     """下载两个固定版本包，在 with 结束时清理解释器与所有运行文件。"""
-    if platform.system() != "Windows" or platform.machine() != "AMD64":
-        raise RuntimeError("本章运行包需要 Windows x64")
     packages = {
         "regular": (
             "python",

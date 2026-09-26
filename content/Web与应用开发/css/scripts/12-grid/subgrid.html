@@ -1,18 +1,18 @@
 <!doctype html>
 <!-- 所属章节：12-Grid 布局
-     演示知识点：subgrid 共享父网格轨道与独立网格回退对照
+     演示知识点：subgrid 共享父网格轨道与独立网格对照
      运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/12-grid/subgrid.html（工作目录 content/Web与应用开发/css）
-     期望结果：支持时两卡摘要顶部对齐，回退组各行仍独立计算 -->
+     期望结果：子网格组两卡摘要顶部对齐，独立网格组各行仍独立计算 -->
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grid 布局 · 子网格与独立网格回退</title>
+<title>Grid 布局 · 子网格与独立网格对照</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <h1>Grid 布局</h1>
-<nav aria-label="本章示例"><a href="index.html">轨道、尺寸与页面区域</a> · <a href="placement.html">自动放置与隐式轨道</a> · <a href="alignment.html">对齐与重叠</a> · <a href="subgrid.html">子网格与独立网格回退</a></nav>
+<nav aria-label="本章示例"><a href="index.html">轨道、尺寸与页面区域</a> · <a href="placement.html">自动放置与隐式轨道</a> · <a href="alignment.html">对齐与重叠</a> · <a href="subgrid.html">子网格与独立网格对照</a></nav>
 <main>
 <section>
 <h2>subgrid 共享父网格轨道</h2>
@@ -20,8 +20,8 @@
   <article class="course-card"><h3>短标题</h3><p>短摘要。</p><button type="button">阅读</button></article>
   <article class="course-card"><h3>较长标题<br>占用两行</h3><p>这张卡片也有摘要。</p><button type="button">阅读</button></article>
 </div>
-<h3>始终使用独立网格的回退对照</h3>
-<div class="cards fallback-cards">
+<h3>独立网格对照</h3>
+<div class="cards independent-cards">
   <article class="course-card"><h3>短标题</h3><p>短摘要。</p><button type="button">阅读</button></article>
   <article class="course-card"><h3>较长标题<br>占用两行</h3><p>这张卡片也有摘要。</p><button type="button">阅读</button></article>
 </div>

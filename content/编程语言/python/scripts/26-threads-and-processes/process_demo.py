@@ -32,15 +32,13 @@ def main() -> None:
         target=append_and_send,
         args=(parent_minutes, output_queue),
     )
+    process.start()
     try:
-        process.start()
         # 2. 先取完消息，避免父进程等待退出、子进程等待管道被读取。
         child_minutes = output_queue.get(timeout=10)
         process.join(timeout=10)
-        if process.is_alive():
-            raise TimeoutError("统计子进程在 10 秒内没有退出")
-        if process.exitcode != 0:
-            raise RuntimeError(f"统计子进程异常退出：{process.exitcode}")
+        assert not process.is_alive()
+        assert process.exitcode == 0
         # JSON 中 start_method=spawn、parent=[15, 20]、child=[15, 20, 30]、exitcode=0。
         print(json.dumps({
             "start_method": context.get_start_method(),
@@ -49,16 +47,10 @@ def main() -> None:
             "exitcode": process.exitcode,
         }))
     finally:
-        # 3. 正常路径已经 join；强制终止只作异常兜底，队列不再复用。
-        if process.pid is not None:
-            if process.is_alive():
-                process.terminate()
-            process.join(timeout=5)
-            if process.is_alive():
-                process.kill()
-                process.join(timeout=5)
-            if process.is_alive():
-                raise TimeoutError("统计子进程无法终止")
+        # 3. 等待失败时终止仍存活的工作进程，再关闭本例不再使用的队列。
+        if process.is_alive():
+            process.terminate()
+        process.join()
         process.close()
         output_queue.close()
         output_queue.join_thread()

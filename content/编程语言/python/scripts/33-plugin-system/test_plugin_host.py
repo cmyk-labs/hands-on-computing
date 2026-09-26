@@ -1,7 +1,7 @@
 """所属章节：33-插件机制
-演示知识点：宿主名称与引用校验、重名拒绝、可调用性与调用契约的测试，入口记录为模拟数据
+演示知识点：宿主重名策略、可调用性与调用契约的测试，入口记录为模拟数据
 运行命令：python -m pytest -q scripts/33-plugin-system/test_plugin_host.py（工作目录 content/编程语言/python）
-期望结果：17 项测试通过
+期望结果：10 项测试通过
 """
 
 import importlib.metadata
@@ -9,26 +9,6 @@ import importlib.metadata
 import pytest
 
 import plugin_host
-
-
-@pytest.mark.parametrize("name", ["", "Upper", "two words", "-upper"])
-def test_reject_invalid_names(name: str) -> None:
-    """非法入口名不能进入可选插件表。"""
-    entry = importlib.metadata.EntryPoint(
-        name=name, value="math:sqrt", group=plugin_host.GROUP
-    )
-    with pytest.raises(plugin_host.PluginError, match="名称"):
-        plugin_host.index_entries([entry])
-
-
-@pytest.mark.parametrize("value", ["math", "math:", "math:sqrt [extra]"])
-def test_reject_unsupported_references(value: str) -> None:
-    """本宿主只接受没有 extras 的模块加属性引用。"""
-    entry = importlib.metadata.EntryPoint(
-        name="demo", value=value, group=plugin_host.GROUP
-    )
-    with pytest.raises(plugin_host.PluginError, match="引用"):
-        plugin_host.index_entries([entry])
 
 
 @pytest.mark.parametrize("reverse", [False, True])

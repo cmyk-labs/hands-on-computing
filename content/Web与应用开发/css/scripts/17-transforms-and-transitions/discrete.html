@@ -1,18 +1,18 @@
 <!doctype html>
 <!-- 所属章节：17-变换与过渡
-     演示知识点：transition-behavior: allow-discrete 过渡 display、@starting-style 进入起始样式、@supports 之外的立即切换回退
+     演示知识点：transition-behavior: allow-discrete 过渡 display、@starting-style 进入起始样式、减少运动时的立即切换
      运行命令：python -m http.server 8101 --bind 127.0.0.1（工作目录 content/Web与应用开发/css）；浏览器打开 http://127.0.0.1:8101/scripts/17-transforms-and-transitions/discrete.html
-     期望结果：支持的浏览器中说明渐入渐出、显示隐藏时机延后；不支持时勾选复选框仍能立即显示或隐藏说明 -->
+     期望结果：说明渐入渐出，进入之初显示、退出结束隐藏；减少运动时勾选复选框立即切换 -->
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>显示隐藏的渐进增强</title>
+  <title>显示隐藏的离散过渡</title>
   <link rel="stylesheet" href="discrete.css">
 </head>
 <body>
 <main>
-<h1>显示隐藏的渐进增强</h1>
+<h1>显示隐藏的离散过渡</h1>
 <p><a href="index.html">返回首页</a></p><input id="show" type="checkbox"><label for="show">显示说明</label>
 <div class="panel"><p>这段内容可立即切换，也可渐入渐出。</p></div>
 <p>后续内容用于观察显示隐藏时的重新排版。</p>

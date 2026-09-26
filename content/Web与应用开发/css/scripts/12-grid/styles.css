@@ -1,5 +1,5 @@
 /* 所属章节：12-Grid 布局
-   演示知识点：本章四页实验规则：grid-template-*、gap、auto-flow、对齐系列、同格重叠与 subgrid 回退，及阅读辅助样式
+   演示知识点：本章四页实验规则：grid-template-*、gap、auto-flow、对齐系列、同格重叠与 subgrid 对照，及阅读辅助样式
    运行命令：python -m http.server 8101 --bind 127.0.0.1；浏览器打开 http://127.0.0.1:8101/scripts/12-grid/index.html（工作目录 content/Web与应用开发/css）
    期望结果：四页轨道与放置结果与行内注释一致 */
 /* 页面阅读辅助：统一盒尺寸计算、字号与分组间距；各实验规则在下方。 */
@@ -146,10 +146,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 }
 .course-card h3, .course-card p { margin: 0; }
 .course-card button { justify-self: start; }
-@supports (grid-template-rows: subgrid) {
-  .use-subgrid > .course-card {
-    grid-row: span 3;
-    grid-template-rows: subgrid;
-    /* 比较两卡摘要的顶部坐标；回退对照组的行仍独立计算。 */
-  }
+.use-subgrid > .course-card {
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  /* 比较两卡摘要的顶部坐标；独立网格对照组的行仍各自计算。 */
 }

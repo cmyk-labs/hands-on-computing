@@ -21,8 +21,6 @@ def render_preview(query: str) -> bytes:
             f"<tr><td>{html.escape(name)}</td>"
             f"<td>{html.escape(value)}</td></tr>"
         )
-    if not rows:
-        rows.append('<tr><td colspan="2">未收到查询字段</td></tr>')
 
     # 2. 用户输入只进入文本位置；回显仅表明接收，不表示报名成功。
     page = f"""<!doctype html>
@@ -81,31 +79,9 @@ class PreviewHandler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
-    def log_request(self, code: int | str = "-", size: int | str = "-") -> None:
-        """仅记录方法、路径与状态，省略查询字段。"""
-        self.log_message(
-            "%s %s %s", self.command, urllib.parse.urlsplit(self.path).path, code
-        )
-
-
-def create_server() -> http.server.ThreadingHTTPServer:
-    """绑定本机 8014 端口，只以本章 site 目录作为静态服务根目录。"""
-    # 静态文件限定在 site；处理器继承现成文件服务，仅增加 /preview 回显。
-    site_dir = Path(__file__).resolve().parent / "site"
-    handler = functools.partial(PreviewHandler, directory=str(site_dir))
-    return http.server.ThreadingHTTPServer(("127.0.0.1", 8014), handler)
-
-
-def main() -> None:
-    """在终端启动预览，Ctrl+C 结束后关闭监听端口。"""
-    # 上下文管理器负责关闭监听端口；终端中断只用于结束预览。
-    with create_server() as server:
-        print("预览地址：http://127.0.0.1:8014/index.html")
-        try:
-            server.serve_forever()
-        except KeyboardInterrupt:
-            print("\n预览服务已关闭。")
-
-
-if __name__ == "__main__":
-    main()
+# 静态文件以 site 为根；正常表单包含已讲解的字段。
+site_dir = Path(__file__).resolve().parent / "site"
+handler = functools.partial(PreviewHandler, directory=str(site_dir))
+with http.server.ThreadingHTTPServer(("127.0.0.1", 8014), handler) as server:
+    print("预览地址：http://127.0.0.1:8014/index.html")
+    server.serve_forever()

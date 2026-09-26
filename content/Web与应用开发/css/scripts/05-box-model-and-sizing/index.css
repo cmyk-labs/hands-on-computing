@@ -36,10 +36,7 @@ body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5;
    改字体或内容后重新测量，不能把某个单词的像素宽度当成规范常量。 */
 
 .ratio-auto, .ratio-fixed, .ratio-min { width: 240px; border: 1px solid teal; margin-bottom: 8px; }
-.ratio-auto, .ratio-min { height: 135px; }
-@supports (aspect-ratio: 16 / 9) {
-  .ratio-auto, .ratio-min { height: auto; aspect-ratio: 16 / 9; }
-}
+.ratio-auto, .ratio-min { aspect-ratio: 16 / 9; }
 .ratio-fixed { height: 100px; aspect-ratio: 16 / 9; }
 .ratio-min { min-height: 160px; }
 /* 检查内容高度依次为 135px、100px、160px；后两组没有保持 16:9。 */

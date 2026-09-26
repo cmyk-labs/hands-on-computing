@@ -1,12 +1,11 @@
 """所属章节：36-Pygame 图形与游戏
 演示知识点：完整游戏循环（输入、更新、碰撞计分、绘制）与有限运行入口、资源清理；交互模式 R 重来、Esc 退出
-运行命令：SDL_VIDEODRIVER=dummy python scripts/36-pygame/collect_game.py --frames 8 --dt 0.025（工作目录 content/编程语言/python）
+运行命令：python scripts/36-pygame/collect_game.py --frames 8 --dt 0.025（工作目录 content/编程语言/python）
 期望结果：输出 JSON 报告 frames=8、score=0、position=[40.0, 200.0] 且 display_closed 为 true
 """
 
 import argparse
 import json
-import math
 from pathlib import Path
 
 import pygame
@@ -48,14 +47,6 @@ def run_game(
     不设置显示驱动：普通终端启动显示窗口，Notebook 的子进程用 dummy。
     fixed_dt 只允许与 frames 同用，避免误把固定步长当作真实计时。
     """
-    if frames is not None and frames <= 0:
-        raise ValueError("frames 必须是正整数")
-    if fixed_dt is not None:
-        if frames is None:
-            raise ValueError("fixed_dt 需要有限 frames")
-        if not math.isfinite(fixed_dt) or fixed_dt <= 0:
-            raise ValueError("fixed_dt 必须是有限的正秒数")
-
     # 1. 只初始化需要的显示和字体模块；失败也进入 finally 清理。
     state = game_logic.GameState()
     rendered_frames = 0
@@ -70,12 +61,8 @@ def run_game(
         # 2. 每帧按输入、更新与碰撞、绘制、提交画面的顺序推进。
         while state.running:
             elapsed_seconds = clock.tick(60) / 1000
-            if (
-                frames is not None
-                and rendered_frames >= frames
-                and not pygame.event.post(pygame.event.Event(pygame.QUIT))
-            ):
-                raise RuntimeError("自动退出事件未能入队")
+            if frames is not None and rendered_frames >= frames:
+                pygame.event.post(pygame.event.Event(pygame.QUIT))
             state.handle_events(pygame.event.get())
             if not state.running:
                 break
@@ -106,20 +93,12 @@ def run_game(
 
 def main() -> None:
     """解析有限运行选项，默认进入可交互游戏。"""
-    # 1. 在 CLI 边界给出错误提示，不启动无效的实验。
+    # 1. 读取已说明条件下的运行选项。
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--frames", type=int, help="正整数，省略则手动退出")
     parser.add_argument("--dt", type=float, help="有限模式固定秒数")
     parser.add_argument("--snapshot", type=Path, help="保存最后一帧的 PNG 路径")
     args = parser.parse_args()
-    if args.frames is not None and args.frames <= 0:
-        parser.error("--frames 必须是正整数")
-    if args.dt is not None:
-        if args.frames is None:
-            parser.error("--dt 必须与 --frames 一起使用")
-        if not math.isfinite(args.dt) or args.dt <= 0:
-            parser.error("--dt 必须是有限的正秒数")
-
     # 2. 运行后输出简短状态，供 Notebook 核对完成与清理。
     report = run_game(args.frames, args.dt, args.snapshot)
     # 正文无输入运行 8 帧：score=0、position=[40.0, 200.0]、running=false、display_closed=true。

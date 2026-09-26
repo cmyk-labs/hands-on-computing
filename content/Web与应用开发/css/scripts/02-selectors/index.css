@@ -47,10 +47,8 @@ body { margin: 24px; font-family: sans-serif; font-size: 16px; line-height: 1.5;
 :where(.choice) { background-color: lightyellow; }
 .relational-card { border: 2px solid gray; padding: 12px; }
 .relational-card > input:checked + label { font-weight: bold; }
-@supports selector(:has(*)) {
-  .relational-card:has(> input:checked) { border-color: teal; }
-}
-/* 勾选后标签变粗；支持 :has() 时卡片边框也变色，不支持时控件与标签仍可用。 */
+.relational-card:has(> input:checked) { border-color: teal; }
+/* 勾选后标签变粗；卡片边框也变成蓝绿色；它们分别由两条选择器匹配。 */
 
 .generated-note::before { content: "• "; color: teal; }
 .generated-note::after { content: " •"; color: teal; }
